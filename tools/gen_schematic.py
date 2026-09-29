@@ -36,7 +36,7 @@ def hdr(n):
 
 RES = {'10k': 'C17414', '1k': 'C17513', '4k7': 'C17673', '100': 'C17408', '12k': 'C17444',
        '2k2': 'C17520', '150k': 'C17470', '220k': 'C17556', '470': 'C17710'}
-CAP = {'100n': ('C49678', C0805), '10n': ('C1710', C0805), '47p': ('C14857', C0805), '1n': ('C46653', C0805),
+CAP = {'100n': ('C49678', C0805), '10n': ('C1710', C0805), '47p': ('C14857', C0805),
        '10u': ('C15850', C0805), '47u': ('C96123', C1206), '4u7/50V': ('C29823', C1206)}
 REICHELT = 'Reichelt'
 
@@ -255,16 +255,16 @@ sh.note('On-board pH front end: glass electrode on BNC centre, reference on BNC 
 bnc = sh.part('Connector:Conn_Coaxial', 'J', 'pH probe', {'1': 'PH_BNC', '2': 'PH_REF'},
               fp='Connector_Coaxial:BNC_Amphenol_031-5539_Vertical', fields={REICHELT: 'UG 1094PL'})
 rin = R(sh, '220k', 'PH_BNC', 'PH_IN')
-cin = C(sh, '1n', 'PH_IN', 'PH_REF')
 opa = sh.part('Amplifier_Operational:TLV9062xD', 'U', 'TLV9062IDR', {
     '3': 'PH_IN', '2': 'PH_BUF', '1': 'PH_BUF',
     '5': 'PH_MID', '6': 'PH_REF', '7': 'PH_REF',
     '8': '+3V3', '4': 'GND'}, lcsc='C398355')
 rf = R(sh, '10k', 'PH_BUF', 'PH_SIG')
 cf = C(sh, '10u', 'PH_SIG', 'GND')
-sh.row([bnc, rin, cin, (opa, 1), rf, cf])
-sh.note('1n with the electrode resistance (100M..1G) filters at the high-impedance input; 10k/10u after\n'
-        'the buffer: 1.6 Hz, about -30 dB at 50 Hz (pump interference).')
+sh.row([bnc, rin, (opa, 1), rf, cf])
+sh.note('Probe load: only the TLV9062 input (0.5 pA typ). No capacitor or clamp on PH_BNC/PH_IN - their\n'
+        'leakage would load the probe. 50 Hz filter after the buffer: 10k/10u, 1.6 Hz, about -30 dB at 50 Hz.\n'
+        'LAYOUT: guard ring around PH_BNC, R45 and U6 pin 3, connected to PH_BUF; short traces; clean flux.')
 rk = R(sh, '470', '+3V3', 'VREF25')
 ref = sh.part('Reference_Voltage:TL431DBZ', 'U', 'TL431BCDBZR', {'1': 'VREF25', '2': 'VREF25', '3': 'GND'},
               lcsc='C6971')

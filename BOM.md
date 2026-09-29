@@ -46,7 +46,6 @@ Reichelt EUR incl. 19 % VAT.
 | 1 | buck FB bottom 2.2 kΩ (5.16 V) | 0805 1 % | 0805 | C17520 | basic | – | 0.004 |
 | 1 | pH input series 220 kΩ | 0805 1 % | 0805 | C17556 | basic | – | 0.004 |
 | 1 | TL431 feed 470 Ω | 0805 1 % | 0805 | C17710 | basic | – | 0.004 |
-| 1 | pH input filter 1 nF | X7R | 0805 | C46653 | basic | – | 0.01 |
 | 1 | buck COMP 10 nF | X7R | 0805 | C1710 | basic | – | 0.01 |
 | 1 | buck COMP 47 pF | C0G | 0805 | C14857 | basic | – | 0.01 |
 
