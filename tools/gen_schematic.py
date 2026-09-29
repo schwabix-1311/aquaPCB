@@ -261,9 +261,12 @@ opa = sh.part('Amplifier_Operational:TLV9062xD', 'U', 'TLV9062IDR', {
     '8': '+3V3', '4': 'GND'}, lcsc='C398355')
 rf = R(sh, '10k', 'PH_BUF', 'PH_SIG')
 cf = C(sh, '10u', 'PH_SIG', 'GND')
-sh.row([bnc, rin, (opa, 1), rf, cf])
-sh.note('Probe load: only the TLV9062 input (0.5 pA typ). No capacitor or clamp on PH_BNC/PH_IN - their\n'
-        'leakage would load the probe. 50 Hz filter after the buffer: 10k/10u, 1.6 Hz, about -30 dB at 50 Hz.\n'
+cin = sh.part('Device:C', 'C', '2n2 styroflex', {'1': 'PH_IN', '2': 'PH_REF'},
+              fp='Capacitor_THT:C_Axial_L12.0mm_D6.5mm_P15.00mm_Horizontal', fields={REICHELT: 'STYROFLEX 2,2N'})
+sh.row([bnc, rin, cin, (opa, 1), rf, cf])
+sh.note('Probe load: TLV9062 input (0.5 pA typ) and the polystyrene (styroflex) filter cap across the probe;\n'
+        'no ceramic cap or clamp on PH_BNC/PH_IN (leakage). Cap x electrode R (100M..1G): 0.2..2 s input filter;\n'
+        'swap for 47p..6n8 as needed. Second 50 Hz filter after the buffer: 10k/10u, 1.6 Hz.\n'
         'LAYOUT: guard ring around PH_BNC, R45 and U6 pin 3, connected to PH_BUF; short traces; clean flux.')
 rk = R(sh, '470', '+3V3', 'VREF25')
 ref = sh.part('Reference_Voltage:TL431DBZ', 'U', 'TL431BCDBZR', {'1': 'VREF25', '2': 'VREF25', '3': 'GND'},

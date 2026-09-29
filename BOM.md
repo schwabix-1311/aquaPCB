@@ -59,6 +59,7 @@ SMD parts ≈ **$9 per board**. Extended parts: **12 unique** → ≈ $36 loadin
 | 9 | IN1–4, 1-Wire ×3, pH module, AIN3 terminals | AKL 101-03 | terminal 3-pole, 5.08 mm | 0.39 |
 | 1 | input fuse, holder incl. 10 A fuse | LITT 0154010.DR | Littelfuse OMNI-BLOK SMD holder + 10 A Nano2 fuse, 125 V (large SMD, hand-soldered) | 2.99 |
 | 1 | bulk capacitor 470 µF 50 V | RAD FR 470/50 | Panasonic FR, low ESR, 105 °C | 0.60 |
+| 1 | pH input filter across the probe, low leakage | STYROFLEX 2,2N | polystyrene 2.2 nF 2 % 160 V, axial Ø5.8×11.5 mm (47 pF..6.8 nF available) | 0.75 |
 | 1 | pH probe connector | UG 1094PL | BNC PCB jack, straight, 50 Ω | 1.99 |
 | 1 | Pi connector, variant Zero (plug-on) | MPE 094-2-040 | female header 2×20, 2.54 mm | 1.10 |
 | (1) | Pi connector, variant Pi 3/4 (ribbon) | WSL 40G | box header 40-pole, straight | 0.23 |

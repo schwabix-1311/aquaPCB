@@ -136,13 +136,16 @@ GPIO4 with 4.7 kΩ pull-up to 3.3 V; three 3-pin terminals (GND / DQ / 3V3), so 
   biased to PH_REF = 1.25 V from a TL431 reference, so AIN0 reads 1.25 V ± 59 mV/pH; the
   offset is removed by aquaPi's 2-point calibration. A precision reference instead of a
   3.3 V divider keeps the offset drift well below 0.05 pH.
-- Probe load: only the op-amp input, 0.5 pA typical (≈ 10¹² Ω or more), for long probe
-  life and < 0.01 pH error with a 1 GΩ electrode. Deliberately no capacitor or clamp on the
-  high-impedance input, since their leakage (MLCCs are only specified to ~10 GΩ) would
-  dominate. Layout: guard ring around the input (BNC centre, 220 k, op-amp pin 3) driven by
-  the buffer output, short traces, flux-free board.
-- 50 Hz suppression (e.g. from filter pumps): 10 k / 10 µF after the buffer (1.6 Hz,
-  about −30 dB at 50 Hz).
+- Probe load: the op-amp input, 0.5 pA typical (≈ 10¹² Ω or more), plus a polystyrene
+  (styroflex) filter capacitor across the probe, for long probe life and < 0.01 pH error
+  with a 1 GΩ electrode. No ceramic capacitor or clamp on the high-impedance input: MLCC
+  leakage (only specified to ~10 GΩ) would dominate. Layout: guard ring around the input
+  (BNC centre, 220 k, styroflex cap lead, op-amp pin 3) driven by the buffer output, short
+  traces, flux-free board.
+- 50 Hz suppression (e.g. from filter pumps), two stages: 2.2 nF styroflex with the
+  electrode resistance (100 MΩ..1 GΩ → 0.2..2 s), then 10 k / 10 µF after the buffer
+  (1.6 Hz, about −30 dB at 50 Hz). The styroflex value can be changed (47 pF..6.8 nF at
+  Reichelt).
 - AIN1: PH_REF, as a monitor and for a later AIN0−AIN1 differential reading if the driver
   gets support for it.
 - AIN2: terminal +5 V / SIG / GND for an external pH amplifier module (the board that comes
@@ -211,15 +214,15 @@ per board                                     batch 5    batch 10
   PCB 100x100, 2 layers                         ~ €2       ~ €1.5
   SMD parts (LCSC, checked)                     ~ €8       ~ €7.5
   PCBA setup + 12 extended-part fees, share     ~ €8.5     ~ €4.5
-  THT parts (Reichelt, checked, incl. VAT)      ~ €14      ~ €14
+  THT parts (Reichelt, checked, incl. VAT)      ~ €14.75   ~ €14.75
   shipping JLC + Reichelt, share                ~ €5       ~ €2.5
   EU import VAT 19 % + €3 duty/category (JLC)   ~ €4       ~ €3.5
   -----------------------------------------------------------------
-                                                ~ €41      ~ €33
+                                                ~ €42      ~ €34
 ```
 
-Target limit **≤ €40 per board** at batch 5 is exceeded by about €1 since the single-ended
-pH rework (TL431 reference, extra terminal). Levers: order 10 boards instead of 5; cheaper
+Target limit **≤ €40 per board** at batch 5 is exceeded by about €2 since the single-ended
+pH rework (TL431 reference, extra terminal, styroflex filter cap). Levers: order 10 boards instead of 5; cheaper
 terminals for signal lines (~€6 of the THT share); or leave the on-board pH front end
 unpopulated when an external pH module is used (BNC, TLV9062, TL431: ~€2.50 plus 2 extended
 part fees).
