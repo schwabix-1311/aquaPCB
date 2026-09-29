@@ -21,7 +21,8 @@ Power outputs   6x low-side MOSFET, 5 A each, 2 with hardware PWM (Q1..Q6)
 SSR outputs     4x open-collector sink, ULN2803A, for SSR / relay modules (S1..S4)
 Inputs          4x protected 3.3 V digital inputs (IN1..IN4)
 1-Wire          GPIO4, 3 sensor terminals, parasitic power supported
-Analog          ADS1115, 16 bit, 4 channels, pH probe front end with BNC
+Analog          ADS1115, 16 bit, 4 channels single-ended: on-board pH front end (BNC),
+                external pH amplifier module input, general input
 Expansion       2x I2C header (OLED, PCA9685, ...), SPI display header
 Board           100 x 100 mm, 2 layers, 1 oz Cu, 4x M3
 ```
@@ -42,7 +43,7 @@ SSRs or relay modules driven from S1..S4.
    Pi GPIO ──> [ULN2803A] ─────────────> S1..S4 ──> terminals (+5V|+V_IN / OUT)
    IN1..IN4 terminals ──[1k + clamp, 10k pull-up]──> Pi GPIO
    1-Wire terminals ──[4k7 pull-up, ESD]──> GPIO4
-   I2C (GPIO2/3) ──> ADS1115 ──< pH buffer ──< BNC ;  AIN terminals ;  2x I2C header
+   I2C (GPIO2/3) ──> ADS1115 ──< pH buffer ──< BNC ;  pH module + AIN3 terminals ;  2x I2C header
    SPI0 + DC/RST ──> display header
 ```
 
@@ -128,11 +129,21 @@ GPIO4 with 4.7 kΩ pull-up to 3.3 V; three 3-pin terminals (GND / DQ / 3V3), so 
 3-wire and parasitic-powered (GND / DQ only) DS18B20 sensors work. ESD protection diode.
 
 ### ADS1115 and pH
-- ADS1115 on the I²C bus, address 0x48 by default, 0x49..0x4B by solder jumper.
-- AIN0/AIN1: pH front end. BNC jack, TLV9062 CMOS op-amp buffer on 3.3 V (0.5 pA input
-  bias, output cannot exceed the ADS1115 input range), probe reference biased to 1.65 V,
-  read differentially.
-- AIN2/AIN3 on a terminal for other 0..3.3 V sensors.
+- ADS1115 on the I²C bus, address 0x48 by default, 0x49 by solder jumper.
+- All inputs are read **single-ended**, as aquaPi's ADS1115 driver does today.
+- AIN0: on-board pH front end. BNC jack, TLV9062 CMOS op-amp buffer on 3.3 V (0.5 pA input
+  bias, output cannot exceed the ADS1115 input range). The probe reference (BNC shell) is
+  biased to PH_REF = 1.25 V from a TL431 reference, so AIN0 reads 1.25 V ± 59 mV/pH; the
+  offset is removed by aquaPi's 2-point calibration. A precision reference instead of a
+  3.3 V divider keeps the offset drift well below 0.05 pH.
+- 50 Hz suppression (e.g. from filter pumps): 1 nF at the high-impedance input (with the
+  electrode's 100 MΩ..1 GΩ a very slow filter), 10 k / 10 µF after the buffer (1.6 Hz,
+  about −30 dB at 50 Hz).
+- AIN1: PH_REF, as a monitor and for a later AIN0−AIN1 differential reading if the driver
+  gets support for it.
+- AIN2: terminal +5 V / SIG / GND for an external pH amplifier module (the board that comes
+  with many probe kits; about 2.5 V at pH 7), filtered 10 k / 10 µF and clamped to 0..3.3 V.
+- AIN3: terminal 3V3 / AIN3 / GND for other 0..3.3 V sensors, 1 k / 100 nF, clamped.
 
 ### Display and I²C expansion
 - 2x 4-pin I²C header, pin order GND / VCC / SCL / SDA (common SSD1306 OLED modules).
@@ -195,17 +206,19 @@ are estimates.
 per board                                     batch 5    batch 10
   PCB 100x100, 2 layers                         ~ €2       ~ €1.5
   SMD parts (LCSC, checked)                     ~ €8       ~ €7.5
-  PCBA setup + 11 extended-part fees, share     ~ €8       ~ €4
-  THT parts (Reichelt, checked, incl. VAT)      ~ €13.5    ~ €13.5
+  PCBA setup + 12 extended-part fees, share     ~ €8.5     ~ €4.5
+  THT parts (Reichelt, checked, incl. VAT)      ~ €14      ~ €14
   shipping JLC + Reichelt, share                ~ €5       ~ €2.5
   EU import VAT 19 % + €3 duty/category (JLC)   ~ €4       ~ €3.5
   -----------------------------------------------------------------
-                                                ~ €40      ~ €32
+                                                ~ €41      ~ €33
 ```
 
-Target limit **≤ €40 per board** at batch 5 is met, just. The biggest levers are the
-terminals (~€6 of the THT share; pluggable or 3.5 mm types for signal lines are cheaper)
-and ordering 10 boards instead of 5.
+Target limit **≤ €40 per board** at batch 5 is exceeded by about €1 since the single-ended
+pH rework (TL431 reference, extra terminal). Levers: order 10 boards instead of 5; cheaper
+terminals for signal lines (~€6 of the THT share); or leave the on-board pH front end
+unpopulated when an external pH module is used (BNC, TLV9062, TL431: ~€2.50 plus 2 extended
+part fees).
 
 ## Not on v1
 

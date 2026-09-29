@@ -35,8 +35,8 @@ def hdr(n):
 
 
 RES = {'10k': 'C17414', '1k': 'C17513', '4k7': 'C17673', '100': 'C17408', '12k': 'C17444',
-       '2k2': 'C17520', '150k': 'C17470', '220k': 'C17556'}
-CAP = {'100n': ('C49678', C0805), '10n': ('C1710', C0805), '47p': ('C14857', C0805),
+       '2k2': 'C17520', '150k': 'C17470', '220k': 'C17556', '470': 'C17710'}
+CAP = {'100n': ('C49678', C0805), '10n': ('C1710', C0805), '47p': ('C14857', C0805), '1n': ('C46653', C0805),
        '10u': ('C15850', C0805), '47u': ('C96123', C1206), '4u7/50V': ('C29823', C1206)}
 REICHELT = 'Reichelt'
 
@@ -239,7 +239,9 @@ sh.row([disp, jbl])
 
 # ================================================================ ADC and pH
 sh = p.sheet('analog', 'analog.kicad_sch', 'ADS1115 ADC and pH front end')
-sh.note('ADS1115 on 3.3 V, I2C address 0x48 (JP 1-2, default) or 0x49 (2-3). ALERT/RDY unused.', 2)
+sh.note('ADS1115 on 3.3 V, I2C address 0x48 (JP 1-2, default) or 0x49 (2-3). ALERT/RDY unused.\n'
+        'All channels are read single-ended (aquaPi driver): AIN0 on-board pH, AIN1 pH reference\n'
+        '(monitor, allows AIN0-AIN1 differential later), AIN2 external pH amplifier module, AIN3 general.', 2)
 adc = sh.part('Analog_ADC:ADS1115IDGS', 'U', 'ADS1115IDGSR', {
     '1': 'ADS_ADDR', '2': NC, '3': 'GND', '4': 'PH_SIG', '5': 'PH_REF', '6': 'AIN2', '7': 'AIN3',
     '8': '+3V3', '9': 'GPIO2_SDA', '10': 'GPIO3_SCL'}, lcsc='C37593')
@@ -247,28 +249,44 @@ cadc = C(sh, '100n', '+3V3', 'GND')
 jaddr = sh.part('Jumper:SolderJumper_3_Bridged12', 'JP', 'ADDR', {'1': 'GND', '2': 'ADS_ADDR', '3': '+3V3'},
                 fp='Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm')
 sh.row([adc, cadc, jaddr])
-sh.note('pH probe: glass electrode on BNC centre, reference on BNC shell. The shell sits at PH_REF\n'
-        '(1.65 V), NOT at GND - BNC shell pads must stay on net PH_REF. Read AIN0-AIN1 differentially.', 2)
-opa = sh.part('Amplifier_Operational:TLV9062xD', 'U', 'TLV9062IDR', {
-    '3': 'PH_IN', '2': 'PH_SIG', '1': 'PH_SIG',
-    '5': 'PH_MID', '6': 'PH_REF', '7': 'PH_REF',
-    '8': '+3V3', '4': 'GND'}, lcsc='C398355')
+sh.note('On-board pH front end: glass electrode on BNC centre, reference on BNC shell. The probe is\n'
+        'biased to PH_REF = 1.25 V (TL431 2.495 V / 2), so AIN0 reads 1.25 V +/- 59 mV/pH single-ended;\n'
+        'aquaPi\'s 2-point calibration removes the offset. BNC shell pads must stay on PH_REF, NOT GND.', 2)
 bnc = sh.part('Connector:Conn_Coaxial', 'J', 'pH probe', {'1': 'PH_BNC', '2': 'PH_REF'},
               fp='Connector_Coaxial:BNC_Amphenol_031-5539_Vertical', fields={REICHELT: 'UG 1094PL'})
 rin = R(sh, '220k', 'PH_BNC', 'PH_IN')
-sh.row([bnc, rin, (opa, 1)])
-rm1 = R(sh, '10k', '+3V3', 'PH_MID')
+cin = C(sh, '1n', 'PH_IN', 'PH_REF')
+opa = sh.part('Amplifier_Operational:TLV9062xD', 'U', 'TLV9062IDR', {
+    '3': 'PH_IN', '2': 'PH_BUF', '1': 'PH_BUF',
+    '5': 'PH_MID', '6': 'PH_REF', '7': 'PH_REF',
+    '8': '+3V3', '4': 'GND'}, lcsc='C398355')
+rf = R(sh, '10k', 'PH_BUF', 'PH_SIG')
+cf = C(sh, '10u', 'PH_SIG', 'GND')
+sh.row([bnc, rin, cin, (opa, 1), rf, cf])
+sh.note('1n with the electrode resistance (100M..1G) filters at the high-impedance input; 10k/10u after\n'
+        'the buffer: 1.6 Hz, about -30 dB at 50 Hz (pump interference).')
+rk = R(sh, '470', '+3V3', 'VREF25')
+ref = sh.part('Reference_Voltage:TL431DBZ', 'U', 'TL431BCDBZR', {'1': 'VREF25', '2': 'VREF25', '3': 'GND'},
+              lcsc='C6971')
+rm1 = R(sh, '10k', 'VREF25', 'PH_MID')
 rm2 = R(sh, '10k', 'PH_MID', 'GND')
 cm = C(sh, '100n', 'PH_MID', 'GND')
 copa = C(sh, '100n', '+3V3', 'GND')
-sh.row([rm1, rm2, cm, (opa, 2), (opa, 3), copa])
-sh.note('AIN2/AIN3: general 0..3.3 V inputs, 1k + 100n low-pass, clamped. Terminal: AIN2 / AIN3 / GND.', 2)
-tain = term(sh, ['AIN2_T', 'AIN3_T', 'GND'], 'AIN')
-ra2 = R(sh, '1k', 'AIN2_T', 'AIN2')
+sh.row([rk, ref, rm1, rm2, cm, (opa, 2), (opa, 3), copa])
+sh.note('TL431B (TI, DBZ pinout 1=K 2=REF 3=A; TL432 differs!), ~1.6 mA via 470R. Divided and buffered\n'
+        'to PH_REF = 1.25 V, which also drives the probe reference electrode.')
+
+sh.note('AIN2: external pH amplifier module (probe kit board), terminal +5V / SIG / GND. The module\n'
+        'output (about 2.5 V at pH 7) is filtered 10k/10u (1.6 Hz) and clamped to 0..3.3 V.', 2)
+tmod = term(sh, ['+5V', 'PHM_T', 'GND'], 'pH module')
+rm = R(sh, '10k', 'PHM_T', 'AIN2')
+cmf = C(sh, '10u', 'AIN2', 'GND')
+sh.row([tmod, rm, cmf, clamp(sh, 'AIN2')])
+sh.note('AIN3: general 0..3.3 V input, 1k + 100n low-pass, clamped. Terminal: 3V3 / AIN3 / GND.', 2)
+tain = term(sh, ['+3V3', 'AIN3_T', 'GND'], 'AIN3')
 ra3 = R(sh, '1k', 'AIN3_T', 'AIN3')
-ca2 = C(sh, '100n', 'AIN2', 'GND')
 ca3 = C(sh, '100n', 'AIN3', 'GND')
-sh.row([tain, ra2, ca2, clamp(sh, 'AIN2'), ra3, ca3, clamp(sh, 'AIN3')])
+sh.row([tain, ra3, ca3, clamp(sh, 'AIN3')])
 
 if __name__ == '__main__':
     os.makedirs(OUT, exist_ok=True)
