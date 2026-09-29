@@ -30,17 +30,18 @@ Reichelt EUR incl. 19 % VAT.
 | 1 | pH buffer, dual CMOS, 0.5 pA bias, 1.8–5.5 V | TI TLV9062IDR | SOIC-8 | C398355 | ext | 171 837 | 0.12 |
 | 1 | pH bias reference 2.495 V, ±0.5 % (TI DBZ pinout; not TL432) | TI TL431BCDBZR | SOT-23 | C6971 | ext | 6 717 | 0.13 |
 | 7 | input/1-Wire/ADC clamps | BAT54S | SOT-23 | C12765 | ext | 211 230 | 0.01 |
-| 1 | 3.3 V LDO 1 A | AMS1117-3.3 | SOT-223 | C6186 | basic | 759 785 | 0.21 |
+| 2 | 3.3 V LDO 1 A (main + isolated analog) | AMS1117-3.3 | SOT-223 | C6186 | basic | 759 785 | 0.21 |
+| 1 | I²C isolator, 2.5 kV (side 2 → Pi, side 1 → ADS1115) | TI ISO1540DR | SOIC-8 | C179739 | ext | 16 446 | 0.94 |
 | 11 | status LEDs Q1–Q6, S1–S4, 3V3 (green) | KT-0805G | 0805 | C2297 | basic | 1.08 M | 0.02 |
 | 1 | power LED (red, V_IN) | NCD0805R1 | 0805 | C84256 | basic | 4.9 M | 0.01 |
 | 22 | 10 kΩ pull-downs/-ups, pH bias divider, pH filters, LED | 0805 1 % | 0805 | C17414 | basic | 60 M | 0.004 |
-| 12 | 1 kΩ input series, AIN3 filter, Q/3V3 LEDs | 0805 1 % | 0805 | C17513 | basic | 31 M | 0.004 |
-| 5 | 4.7 kΩ 1-Wire pull-up, SSR LEDs | 0805 1 % | 0805 | C17673 | basic | 5.2 M | 0.005 |
+| 13 | 1 kΩ input series, AIN3 filter, Q/3V3 LEDs, DC/DC dummy load | 0805 1 % | 0805 | C17513 | basic | 31 M | 0.004 |
+| 7 | 4.7 kΩ 1-Wire pull-up, SSR LEDs, isolated I²C pull-ups | 0805 1 % | 0805 | C17673 | basic | 5.2 M | 0.005 |
 | 6 | gate resistors 100 Ω | 0805 1 % | 0805 | C17408 | basic | 9.5 M | 0.004 |
-| 7 | 100 nF 50 V decoupling, boot, filters | X7R | 0805 | C49678 | basic | 17 M | 0.02 |
+| 9 | 100 nF 50 V decoupling, boot, filters | X7R | 0805 | C49678 | basic | 17 M | 0.02 |
 | 2 | buck input 4.7 µF 50 V | X7R | 1206 | C29823 | basic | 619 131 | 0.17 |
 | 2 | buck output 47 µF 10 V | X5R | 1206 | C96123 | basic | 316 224 | 0.26 |
-| 4 | 10 µF 25 V: LDO in/out, pH low-pass AIN0/AIN2 | X5R | 0805 | C15850 | basic | 5.2 M | 0.08 |
+| 8 | 10 µF 25 V: LDOs in/out, DC/DC in/out, pH low-pass AIN0/AIN2 | X5R | 0805 | C15850 | basic | 5.2 M | 0.08 |
 | 1 | buck RT 150 kΩ (644 kHz) | 0805 1 % | 0805 | C17470 | basic | – | 0.004 |
 | 2 | buck FB top 12 kΩ, COMP 12 kΩ | 0805 1 % | 0805 | C17444 | basic | – | 0.004 |
 | 1 | buck FB bottom 2.2 kΩ (5.16 V) | 0805 1 % | 0805 | C17520 | basic | – | 0.004 |
@@ -49,7 +50,7 @@ Reichelt EUR incl. 19 % VAT.
 | 1 | buck COMP 10 nF | X7R | 0805 | C1710 | basic | – | 0.01 |
 | 1 | buck COMP 47 pF | C0G | 0805 | C14857 | basic | – | 0.01 |
 
-SMD parts ≈ **$9 per board**. Extended parts: **12 unique** → ≈ $36 loading fees per order.
+SMD parts ≈ **$11 per board**. Extended parts: **14 unique** → ≈ $42 loading fees per order.
 
 ## THT and hand-soldered, Reichelt
 
@@ -59,6 +60,7 @@ SMD parts ≈ **$9 per board**. Extended parts: **12 unique** → ≈ $36 loadin
 | 9 | IN1–4, 1-Wire ×3, pH module, AIN3 terminals | AKL 101-03 | terminal 3-pole, 5.08 mm | 0.39 |
 | 1 | input fuse, holder incl. 10 A fuse | LITT 0154010.DR | Littelfuse OMNI-BLOK SMD holder + 10 A Nano2 fuse, 125 V (large SMD, hand-soldered) | 2.99 |
 | 1 | bulk capacitor 470 µF 50 V | RAD FR 470/50 | Panasonic FR, low ESR, 105 °C | 0.60 |
+| 1 | isolated DC/DC 5 V → 5 V, 1 W, 1 kV, SIP-4 (pinout 1 GND, 2 Vin, 3 0V, 4 +Vo) | – | **from LCSC**: B0505S-1WR3 clone (rlt) C512048, $0.71, add to the JLC order; Reichelt only has Murata NME0505SC at €7.10 (check pinout) | – |
 | 1 | pH input filter across the probe, low leakage | STYROFLEX 2,2N | polystyrene 2.2 nF 2 % 160 V, axial Ø5.8×11.5 mm (47 pF..6.8 nF available) | 0.75 |
 | 1 | pH probe connector | UG 1094PL | BNC PCB jack, straight, 50 Ω | 1.99 |
 | 1 | Pi connector, variant Zero (plug-on) | MPE 094-2-040 | female header 2×20, 2.54 mm | 1.10 |

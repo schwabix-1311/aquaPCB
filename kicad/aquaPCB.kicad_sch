@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "9dc36d06-9fe9-4bd1-aa74-847cb6598aa7")
+	(uuid "58e047c8-5e2c-481f-8c56-e7d5c450ddf1")
 	(paper "A4")
 	(title_block
 		(title "aquaPCB – Overview")
@@ -21,53 +21,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ff6722f8-bf44-423b-b7a6-e28e4d0e2967")
-	)
-	(sheet
-		(at 30.48 38.1)
-		(size 55.88 17.78)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "09c6497c-8320-45bf-a216-7dcf24ad1025")
-		(property "Sheetname" "Power supply"
-			(at 30.48 37.3884 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "power.kicad_sch"
-			(at 30.48 56.4684 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/9dc36d06-9fe9-4bd1-aa74-847cb6598aa7"
-					(page "2")
-				)
-			)
-		)
+		(uuid "aa6f3c17-748b-4548-9e01-58437df378d1")
 	)
 	(sheet
 		(at 182.88 38.1)
@@ -84,7 +38,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "180f5017-1de0-452c-90b0-eeec43c92dbb")
+		(uuid "02fb6413-4114-4318-a2ff-e645e64e6f49")
 		(property "Sheetname" "Power outputs Q1..Q6"
 			(at 182.88 37.3884 0)
 			(show_name no)
@@ -109,54 +63,8 @@
 		)
 		(instances
 			(project "aquaPCB"
-				(path "/9dc36d06-9fe9-4bd1-aa74-847cb6598aa7"
+				(path "/58e047c8-5e2c-481f-8c56-e7d5c450ddf1"
 					(page "4")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 106.68 38.1)
-		(size 55.88 17.78)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "70a868cf-7eb0-4c6a-b05e-d53c4a1f153b")
-		(property "Sheetname" "Raspberry Pi connector"
-			(at 106.68 37.3884 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "pi.kicad_sch"
-			(at 106.68 56.4684 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/9dc36d06-9fe9-4bd1-aa74-847cb6598aa7"
-					(page "3")
 				)
 			)
 		)
@@ -176,7 +84,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "76b2a41d-76b9-4e65-90bb-e3c992e1647f")
+		(uuid "3fe76219-1830-4d14-bd73-8da22579d025")
 		(property "Sheetname" "Inputs, 1-Wire, I2C and display headers"
 			(at 106.68 75.4884 0)
 			(show_name no)
@@ -201,7 +109,7 @@
 		)
 		(instances
 			(project "aquaPCB"
-				(path "/9dc36d06-9fe9-4bd1-aa74-847cb6598aa7"
+				(path "/58e047c8-5e2c-481f-8c56-e7d5c450ddf1"
 					(page "6")
 				)
 			)
@@ -222,8 +130,8 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "a4201fb0-14d6-4f54-8bd7-dd2774553e9c")
-		(property "Sheetname" "ADS1115 ADC and pH front end"
+		(uuid "40c0ce5b-6cf6-445b-b8a6-ab8109d09254")
+		(property "Sheetname" "Isolated ADC and pH front end"
 			(at 182.88 75.4884 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -247,8 +155,100 @@
 		)
 		(instances
 			(project "aquaPCB"
-				(path "/9dc36d06-9fe9-4bd1-aa74-847cb6598aa7"
+				(path "/58e047c8-5e2c-481f-8c56-e7d5c450ddf1"
 					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 30.48 38.1)
+		(size 55.88 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "52f70785-3feb-455d-a9f9-772e3028cbce")
+		(property "Sheetname" "Power supply"
+			(at 30.48 37.3884 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power.kicad_sch"
+			(at 30.48 56.4684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/58e047c8-5e2c-481f-8c56-e7d5c450ddf1"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 106.68 38.1)
+		(size 55.88 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "b54fac39-4bec-4aba-914d-c7463515aefc")
+		(property "Sheetname" "Raspberry Pi connector"
+			(at 106.68 37.3884 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "pi.kicad_sch"
+			(at 106.68 56.4684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/58e047c8-5e2c-481f-8c56-e7d5c450ddf1"
+					(page "3")
 				)
 			)
 		)
@@ -268,7 +268,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "d50e4442-8cdd-478c-8313-e26fc51ee1ee")
+		(uuid "d67992db-f28d-4391-970f-a15838361219")
 		(property "Sheetname" "SSR / relay control outputs S1..S4"
 			(at 30.48 75.4884 0)
 			(show_name no)
@@ -293,7 +293,7 @@
 		)
 		(instances
 			(project "aquaPCB"
-				(path "/9dc36d06-9fe9-4bd1-aa74-847cb6598aa7"
+				(path "/58e047c8-5e2c-481f-8c56-e7d5c450ddf1"
 					(page "5")
 				)
 			)
