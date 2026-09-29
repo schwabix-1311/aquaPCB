@@ -21,8 +21,8 @@ Power outputs   6x low-side MOSFET, 5 A each, 2 with hardware PWM (Q1..Q6)
 SSR outputs     4x open-collector sink, ULN2803A, for SSR / relay modules (S1..S4)
 Inputs          4x protected 3.3 V digital inputs (IN1..IN4)
 1-Wire          GPIO4, 3 sensor terminals, parasitic power supported
-Analog          galvanically isolated (1 kV) ADS1115, 16 bit, 4 channels single-ended: on-board pH front end (BNC),
-                external pH amplifier module input, general input
+Analog          ADS1115, 16 bit, 4 channels single-ended: on-board pH amplifier (BNC),
+                module input 0..5 V (e.g. PH-4502C, ORP board), general 0..3.3 V input
 Expansion       2x I2C header (OLED, PCA9685, ...), SPI display header
 Board           100 x 100 mm, 2 layers, 1 oz Cu, 4x M3
 ```
@@ -44,8 +44,7 @@ SSRs or relay modules driven from S1..S4.
    IN1..IN4 terminals ──[1k + clamp, 10k pull-up]──> Pi GPIO
    1-Wire terminals ──[4k7 pull-up, ESD]──> GPIO4
    I2C (GPIO2/3) ──> 2x I2C header
-                └──> [ISO1540] ══ isolated ══ ADS1115 ──< pH buffer ──< BNC ;  pH module + AIN3 terminals
-   5V ──> [B0505S isolated DC/DC] ══> ISO_5V ──> [LDO] ──> ISO_3V3 (analog domain, ISO_GND)
+                └──> ADS1115 ──< pH buffer ──< BNC ;  module input (0..5 V) ;  AIN3 terminal
    SPI0 + DC/RST ──> display header
 ```
 
@@ -131,46 +130,44 @@ GPIO4 with 4.7 kΩ pull-up to 3.3 V; three 3-pin terminals (GND / DQ / 3V3), so 
 3-wire and parasitic-powered (GND / DQ only) DS18B20 sensors work. ESD protection diode.
 
 ### ADS1115 and pH
-- The whole analog section is **galvanically isolated** from the rest of the board: isolated
-  DC/DC B0505S (5 V → 5 V, 1 W, 1 kV) plus its own AMS1117 for ISO_3V3, and an ISO1540 I²C
-  isolator. Reason: the tank water is usually tied to board GND through other sensors (e.g.
-  the stainless sleeve of a DS18B20). Without isolation, the pH reference electrode, held at
-  the 1.25 V bias, would drive a continuous DC current through the water into GND, which both
-  ruins the measurement and destroys the reference electrode. With isolation the pH domain
-  floats with the water and no DC current can flow through the probe.
-- ISO1540 orientation: side 2 (normal low level) on the Pi I²C bus, side 1 (low level
-  0.57..0.8 V) only drives the ADS1115 (V_IL 0.99 V at 3.3 V); side-1 pull-ups 4.7 k.
-- Layout: ≥ 2 mm clearance, better a milled slot, between GND and ISO_GND; only the DC/DC
-  and the ISO1540 bridge the gap. Sensors on AIN2/AIN3 must use the terminal's ISO_GND.
-- ADS1115 on the I²C bus, address 0x48 by default, 0x49 by solder jumper.
+- ADS1115 on 3.3 V directly on the Pi's I²C bus (matching logic levels, no level shifter),
+  address 0x48 by default, 0x49 by solder jumper.
 - All inputs are read **single-ended**, as aquaPi's ADS1115 driver does today.
-- AIN0: on-board pH front end. BNC jack, TLV9062 CMOS op-amp buffer on 3.3 V (0.5 pA input
-  bias, output cannot exceed the ADS1115 input range). The probe reference (BNC shell) is
-  biased to PH_REF = 1.25 V from a TL431 reference, so AIN0 reads 1.25 V ± 59 mV/pH; the
-  offset is removed by aquaPi's 2-point calibration. A precision reference instead of a
-  3.3 V divider keeps the offset drift well below 0.05 pH.
-- Probe load: the op-amp input, 0.5 pA typical (≈ 10¹² Ω or more), plus a polystyrene
-  (styroflex) filter capacitor across the probe, for long probe life and < 0.01 pH error
-  with a 1 GΩ electrode. No ceramic capacitor or clamp on the high-impedance input: MLCC
-  leakage (only specified to ~10 GΩ) would dominate.
-- Layout of the high-impedance node (PH_BNC / PH_IN: BNC centre, 220 k, styroflex lead,
+- Requirements behind this design: good probe lifetime; ~0.1 pH stability is enough, since
+  aquaPi's ScaleAux calibration removes offset and slope. Derived from the hand-built
+  controller (PH-4502C amplifier with 10 MΩ / 4.7 nF styroflex input filter, probe life > 2
+  years).
+- AIN0: on-board pH amplifier, like the PH-4502C but with a low-leakage input. BNC jack,
+  10 MΩ in series, styroflex capacitor to the probe reference, TLV9062 CMOS buffer on 3.3 V
+  (0.5 pA input bias). The probe reference (BNC shell) sits at PH_REF = 1.65 V (3.3 V / 2,
+  buffered by the second op-amp half), so AIN0 reads 1.65 V ± 59 mV/pH.
+- Probe load: only the op-amp input (0.5 pA typical, ≈ 10¹² Ω or more) and the leakage of
+  the polystyrene capacitor. No ceramic capacitor or clamp on the high-impedance input:
+  MLCC leakage (only specified to ~10 GΩ) would dominate.
+- 50 Hz suppression (filter pumps), two stages: 10 MΩ / 6.8 nF styroflex at the input
+  (68 ms; together with the electrode's 100 MΩ..1 GΩ: 0.7..7 s), then 10 k / 10 µF after the
+  buffer (1.6 Hz, about −30 dB at 50 Hz). Styroflex values 47 pF..6.8 nF are available.
+- Ground-loop insurance: 1 MΩ between the PH_REF buffer and the BNC shell. Nothing in the
+  tank is grounded today; if that ever changes (a grounded sensor), the DC current through
+  the reference electrode stays below ~1.7 µA instead of mA. The reading goes visibly wrong,
+  the probe survives. In normal operation only pA flow through it. (A fully isolated pH
+  stage was designed and dropped: ~€3 per board for a case that doesn't occur.)
+- Layout of the high-impedance node (PH_BNC / PH_IN: BNC centre, 10 MΩ, styroflex lead,
   op-amp pin 3), replacing the point-to-point "air wiring" of the hand-built version:
   - guard ring on both layers around all of it, on net PH_BUF (the buffer output follows
     the input within the op-amp offset, so input-to-guard leakage is ~1.6 mV / R_leak:
-    femtoamps on a clean board); stray leakage from PH_REF or other nets ends in the guard;
+    femtoamps on a clean board); stray leakage from other nets ends in the guard;
   - non-plated milled slots between the BNC centre pad and the shell pads, and around the
     input pads, to cut surface leakage paths;
   - shortest possible node, solder mask on, no silkscreen inside the guard, flux washed off
     (and the board dried) after hand-soldering; optional conformal coating of the pH corner.
-- 50 Hz suppression (e.g. from filter pumps), two stages: 2.2 nF styroflex with the
-  electrode resistance (100 MΩ..1 GΩ → 0.2..2 s), then 10 k / 10 µF after the buffer
-  (1.6 Hz, about −30 dB at 50 Hz). The styroflex value can be changed (47 pF..6.8 nF at
-  Reichelt).
 - AIN1: PH_REF, as a monitor and for a later AIN0−AIN1 differential reading if the driver
   gets support for it.
-- AIN2: terminal ISO_5V / SIG / ISO_GND for an external pH amplifier module (the board that comes
-  with many probe kits; about 2.5 V at pH 7), filtered 10 k / 10 µF and clamped to 0..3.3 V.
-- AIN3: terminal ISO_3V3 / AIN3 / ISO_GND for other 0..3.3 V sensors, 1 k / 100 nF, clamped.
+- AIN2: module input for 5 V amplifier boards (e.g. the PH-4502C from probe kits, ORP or
+  conductivity boards), terminal +5 V / SIG / GND. Divider 10 k / 20 k, fitted by default,
+  maps 0..5 V to 0..3.33 V (leave the 20 k off for 1:1 up to 3.3 V); with 10 µF a 2.4 Hz
+  low-pass; clamped to 0..3.3 V.
+- AIN3: terminal 3V3 / AIN3 / GND for other 0..3.3 V sensors, 1 k / 100 nF, clamped.
 
 ### Display and I²C expansion
 - 2x 4-pin I²C header, pin order GND / VCC / SCL / SDA (common SSD1306 OLED modules).
@@ -232,20 +229,19 @@ are estimates.
 ```
 per board                                     batch 5    batch 10
   PCB 100x100, 2 layers                         ~ €2       ~ €1.5
-  SMD parts (LCSC, checked, incl. isolation)    ~ €10.5    ~ €10
-  PCBA setup + 14 extended-part fees, share     ~ €9.5     ~ €5
-  THT parts (Reichelt, checked, incl. VAT)      ~ €14.75   ~ €14.75
+  SMD parts (LCSC, checked)                     ~ €8       ~ €7.5
+  PCBA setup + 11 extended-part fees, share     ~ €7.5     ~ €3.75
+  THT parts (Reichelt, checked, incl. VAT)      ~ €14.6    ~ €14.6
   shipping JLC + Reichelt, share                ~ €5       ~ €2.5
   EU import VAT 19 % + €3 duty/category (JLC)   ~ €4       ~ €3.5
   -----------------------------------------------------------------
-                                                ~ €45      ~ €37
+                                                ~ €41      ~ €33
 ```
 
-Target limit **≤ €40 per board** at batch 5 is exceeded by about €5 since the pH rework
-(TL431 reference, extra terminal, styroflex filter cap, galvanic isolation ~€3). Levers: order 10 boards instead of 5; cheaper
-terminals for signal lines (~€6 of the THT share); or leave the on-board pH front end
-unpopulated when an external pH module is used (BNC, TLV9062, TL431: ~€2.50 plus 2 extended
-part fees).
+Target limit **≤ €40 per board** at batch 5 is exceeded by about €1, mostly by the on-board pH
+amplifier (~€3: BNC, TLV9062, styroflex). Levers: order 10 boards (~€33 each); cheaper
+terminals for signal lines (~€6 of the THT share); or leave the on-board pH amplifier
+unpopulated when an external amplifier board is used on AIN2.
 
 ## Not on v1
 

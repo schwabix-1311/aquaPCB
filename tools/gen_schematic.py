@@ -35,7 +35,8 @@ def hdr(n):
 
 
 RES = {'10k': 'C17414', '1k': 'C17513', '4k7': 'C17673', '100': 'C17408', '12k': 'C17444',
-       '2k2': 'C17520', '150k': 'C17470', '220k': 'C17556', '470': 'C17710'}
+       '2k2': 'C17520', '150k': 'C17470', '220k': 'C17556', '470': 'C17710', '10M': 'C26108', '1M': 'C17514',
+       '20k': 'C4328'}
 CAP = {'100n': ('C49678', C0805), '10n': ('C1710', C0805), '47p': ('C14857', C0805),
        '10u': ('C15850', C0805), '47u': ('C96123', C1206), '4u7/50V': ('C29823', C1206)}
 REICHELT = 'Reichelt'
@@ -237,88 +238,62 @@ jbl = sh.part('Jumper:Jumper_2_Open', 'JP', 'Backlight', {'1': '+3V3', '2': 'DIS
               fields={REICHELT: 'ECON SL40G1 (cut) + JUMPER 2,54 SW'})
 sh.row([disp, jbl])
 
-# ================================================================ ADC and pH (isolated)
-sh = p.sheet('analog', 'analog.kicad_sch', 'Isolated ADC and pH front end')
-AG, A3, A5 = 'ISO_GND', 'ISO_3V3', 'ISO_5V'
-sh.note('The whole analog section is galvanically isolated (ISO_GND). The tank water is often tied to\n'
-        'board GND through other sensors (e.g. a DS18B20 sleeve); without isolation a DC current would flow\n'
-        'through the pH reference electrode and destroy it. LAYOUT: keep >= 2 mm (better a slot) between the\n'
-        'GND and ISO_GND domains; only the B0505S DC/DC and the ISO1540 cross the gap.', 2)
-dcdc = sh.part('Converter_DCDC_Isolated:CRE1S0505SC', 'U', 'B0505S-1WR3', {'1': 'GND', '2': '+5V', '3': AG, '4': A5},
-               lcsc='C512048', fields={'Note': 'SIP-4 pinout 1 GND, 2 Vin, 3 0V, 4 +Vo; verify footprint vs. part'})
-cdi = C(sh, '10u', '+5V', 'GND')
-cdo = C(sh, '10u', A5, AG)
-rdl = R(sh, '1k', A5, AG)
-sh.row([cdi, dcdc, cdo, rdl])
-ldo = sh.part('Regulator_Linear:AMS1117-3.3', 'U', 'AMS1117-3.3', {'1': AG, '2': A3, '3': A5}, lcsc='C6186')
-cli = C(sh, '10u', A5, AG)
-clo = C(sh, '10u', A3, AG)
-sh.row([ldo, cli, clo])
-sh.note('1W isolated DC/DC, 1 kV. 1k dummy load (5 mA) plus LDO quiescent current keep its output from\n'
-        'rising at light load. ISO_5V also supplies the external pH module terminal.')
-iso = sh.part('Isolator:ISO1540', 'U', 'ISO1540DR', {
-    '1': A3, '2': 'ISO_SDA', '3': 'ISO_SCL', '4': AG,
-    '5': 'GND', '6': 'GPIO3_SCL', '7': 'GPIO2_SDA', '8': '+3V3'}, lcsc='C179739')
-ci1 = C(sh, '100n', A3, AG)
-ci2 = C(sh, '100n', '+3V3', 'GND')
-rpu1 = R(sh, '4k7', A3, 'ISO_SDA')
-rpu2 = R(sh, '4k7', A3, 'ISO_SCL')
-sh.row([iso, ci1, ci2, rpu1, rpu2])
-sh.note('ISO1540: side 2 (normal low level) on the Pi I2C bus; side 1 (low level 0.57..0.8 V) only drives the\n'
-        'ADS1115 (V_IL 0.99 V at 3.3 V). Side-1 pull-ups 4k7 -> 0.7 mA, within the required 0.5..3.5 mA.')
-
-sh.note('ADS1115 on ISO_3V3, I2C address 0x48 (JP 1-2, default) or 0x49 (2-3). ALERT/RDY unused.\n'
-        'All channels are read single-ended (aquaPi driver): AIN0 on-board pH, AIN1 pH reference\n'
-        '(monitor, allows AIN0-AIN1 differential later), AIN2 external pH amplifier module, AIN3 general.', 2)
+# ================================================================ ADC and pH
+sh = p.sheet('analog', 'analog.kicad_sch', 'ADS1115 ADC and pH amplifier')
+sh.note('ADS1115 on 3.3 V (I2C levels match the Pi), address 0x48 (JP 1-2, default) or 0x49 (2-3).\n'
+        'All channels are read single-ended (aquaPi driver): AIN0 on-board pH, AIN1 pH bias (monitor, allows\n'
+        'AIN0-AIN1 differential later), AIN2 module input (0..5 V via divider), AIN3 general 0..3.3 V.', 2)
 adc = sh.part('Analog_ADC:ADS1115IDGS', 'U', 'ADS1115IDGSR', {
-    '1': 'ADS_ADDR', '2': NC, '3': AG, '4': 'PH_SIG', '5': 'PH_REF', '6': 'AIN2', '7': 'AIN3',
-    '8': A3, '9': 'ISO_SDA', '10': 'ISO_SCL'}, lcsc='C37593')
-cadc = C(sh, '100n', A3, AG)
-jaddr = sh.part('Jumper:SolderJumper_3_Bridged12', 'JP', 'ADDR', {'1': AG, '2': 'ADS_ADDR', '3': A3},
+    '1': 'ADS_ADDR', '2': NC, '3': 'GND', '4': 'PH_SIG', '5': 'PH_REF', '6': 'AIN2', '7': 'AIN3',
+    '8': '+3V3', '9': 'GPIO2_SDA', '10': 'GPIO3_SCL'}, lcsc='C37593')
+cadc = C(sh, '100n', '+3V3', 'GND')
+jaddr = sh.part('Jumper:SolderJumper_3_Bridged12', 'JP', 'ADDR', {'1': 'GND', '2': 'ADS_ADDR', '3': '+3V3'},
                 fp='Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm')
 sh.row([adc, cadc, jaddr])
-sh.note('On-board pH front end: glass electrode on BNC centre, reference on BNC shell. The probe is\n'
-        'biased to PH_REF = 1.25 V (TL431 2.495 V / 2), so AIN0 reads 1.25 V +/- 59 mV/pH single-ended;\n'
-        'aquaPi\'s 2-point calibration removes the offset. BNC shell pads must stay on PH_REF, NOT GND.', 2)
-bnc = sh.part('Connector:Conn_Coaxial', 'J', 'pH probe', {'1': 'PH_BNC', '2': 'PH_REF'},
+
+sh.note('On-board pH amplifier (like the PH-4502C with low-leakage input). Glass electrode on BNC centre,\n'
+        'reference on BNC shell. Probe biased to PH_REF = 1.65 V (3V3 / 2, buffered), AIN0 reads\n'
+        '1.65 V +/- 59 mV/pH; aquaPi\'s ScaleAux calibration removes offset and slope.', 2)
+bnc = sh.part('Connector:Conn_Coaxial', 'J', 'pH probe', {'1': 'PH_BNC', '2': 'PH_SHELL'},
               fp='Connector_Coaxial:BNC_Amphenol_031-5539_Vertical', fields={REICHELT: 'UG 1094PL'})
-rin = R(sh, '220k', 'PH_BNC', 'PH_IN')
+rin = R(sh, '10M', 'PH_BNC', 'PH_IN')
+cin = sh.part('Device:C', 'C', '6n8 styroflex', {'1': 'PH_IN', '2': 'PH_SHELL'},
+              fp='Capacitor_THT:C_Axial_L12.0mm_D6.5mm_P15.00mm_Horizontal', fields={REICHELT: 'STYROFLEX 6,8N'})
 opa = sh.part('Amplifier_Operational:TLV9062xD', 'U', 'TLV9062IDR', {
     '3': 'PH_IN', '2': 'PH_BUF', '1': 'PH_BUF',
     '5': 'PH_MID', '6': 'PH_REF', '7': 'PH_REF',
-    '8': A3, '4': AG}, lcsc='C398355')
+    '8': '+3V3', '4': 'GND'}, lcsc='C398355')
 rf = R(sh, '10k', 'PH_BUF', 'PH_SIG')
-cf = C(sh, '10u', 'PH_SIG', AG)
-cin = sh.part('Device:C', 'C', '2n2 styroflex', {'1': 'PH_IN', '2': 'PH_REF'},
-              fp='Capacitor_THT:C_Axial_L12.0mm_D6.5mm_P15.00mm_Horizontal', fields={REICHELT: 'STYROFLEX 2,2N'})
+cf = C(sh, '10u', 'PH_SIG', 'GND')
 sh.row([bnc, rin, cin, (opa, 1), rf, cf])
-sh.note('Probe load: TLV9062 input (0.5 pA typ) and the polystyrene (styroflex) filter cap across the probe;\n'
-        'no ceramic cap or clamp on PH_BNC/PH_IN (leakage). Cap x electrode R (100M..1G): 0.2..2 s input filter;\n'
-        'swap for 47p..6n8 as needed. Second 50 Hz filter after the buffer: 10k/10u, 1.6 Hz.\n'
-        'LAYOUT: guard ring around PH_BNC, R/C input parts and TLV9062 pin 3, connected to PH_BUF; slots; clean flux.')
-rk = R(sh, '470', A3, 'VREF25')
-ref = sh.part('Reference_Voltage:TL431DBZ', 'U', 'TL431BCDBZR', {'1': 'VREF25', '2': 'VREF25', '3': AG},
-              lcsc='C6971')
-rm1 = R(sh, '10k', 'VREF25', 'PH_MID')
-rm2 = R(sh, '10k', 'PH_MID', AG)
-cm = C(sh, '100n', 'PH_MID', AG)
-copa = C(sh, '100n', A3, AG)
-sh.row([rk, ref, rm1, rm2, cm, (opa, 2), (opa, 3), copa])
-sh.note('TL431B (TI, DBZ pinout 1=K 2=REF 3=A; TL432 differs!), ~1.6 mA via 470R. Divided and buffered\n'
-        'to PH_REF = 1.25 V, which also drives the probe reference electrode.')
+sh.note('Input filter 10M / 6n8 styroflex (68 ms; with the electrode 100M..1G: 0.7..7 s) against pump 50 Hz,\n'
+        'second filter 10k/10u after the buffer. Probe load: TLV9062 input only (0.5 pA typ) plus styroflex\n'
+        'leakage - no ceramic cap or clamp on PH_BNC/PH_IN.\n'
+        'LAYOUT: guard ring (both layers) around PH_BNC, 10M, styroflex lead and TLV9062 pin 3, on net PH_BUF;\n'
+        'milled slots around BNC centre pad; short node; flux washed off.')
+rm1 = R(sh, '10k', '+3V3', 'PH_MID')
+rm2 = R(sh, '10k', 'PH_MID', 'GND')
+cm = C(sh, '100n', 'PH_MID', 'GND')
+rref = R(sh, '1M', 'PH_REF', 'PH_SHELL')
+copa = C(sh, '100n', '+3V3', 'GND')
+sh.row([rm1, rm2, cm, (opa, 2), rref, (opa, 3), copa])
+sh.note('1M in the reference line: if the tank water ever gets a DC path to GND (grounded sensor), the current\n'
+        'through the reference electrode stays below ~1.7 uA instead of mA. The reading then goes visibly wrong,\n'
+        'the probe survives. Normal operation: only pA flow, no measurable drop.')
 
-sh.note('AIN2: external pH amplifier module (probe kit board), terminal ISO_5V / SIG / ISO_GND - isolated\n'
-        'as well. Output (about 2.5 V at pH 7) filtered 10k/10u (1.6 Hz) and clamped to 0..3.3 V.', 2)
-tmod = term(sh, [A5, 'PHM_T', AG], 'pH module')
+sh.note('AIN2: module input for amplifier boards (e.g. PH-4502C, ORP) on 5 V. Terminal +5V / SIG / GND.\n'
+        'Divider 10k/20k (fitted by default) maps 0..5 V to 0..3.33 V; leave 20k off for 1:1 up to 3.3 V.\n'
+        'With 10u: about 2.4 Hz low-pass. Clamped to 0..3.3 V.', 2)
+tmod = term(sh, ['+5V', 'PHM_T', 'GND'], 'Module')
 rm = R(sh, '10k', 'PHM_T', 'AIN2')
-cmf = C(sh, '10u', 'AIN2', AG)
-sh.row([tmod, rm, cmf, clamp(sh, 'AIN2', AG, A3)])
-sh.note('AIN3: general 0..3.3 V input on the isolated side (sensor GND must be ISO_GND!), 1k + 100n,\n'
-        'clamped. Terminal: ISO_3V3 / AIN3 / ISO_GND.', 2)
-tain = term(sh, [A3, 'AIN3_T', AG], 'AIN3')
+rdiv = R(sh, '20k', 'AIN2', 'GND')
+cmf = C(sh, '10u', 'AIN2', 'GND')
+sh.row([tmod, rm, rdiv, cmf, clamp(sh, 'AIN2')])
+sh.note('AIN3: general 0..3.3 V input, 1k + 100n low-pass, clamped. Terminal: 3V3 / AIN3 / GND.', 2)
+tain = term(sh, ['+3V3', 'AIN3_T', 'GND'], 'AIN3')
 ra3 = R(sh, '1k', 'AIN3_T', 'AIN3')
-ca3 = C(sh, '100n', 'AIN3', AG)
-sh.row([tain, ra3, ca3, clamp(sh, 'AIN3', AG, A3)])
+ca3 = C(sh, '100n', 'AIN3', 'GND')
+sh.row([tain, ra3, ca3, clamp(sh, 'AIN3')])
 
 if __name__ == '__main__':
     os.makedirs(OUT, exist_ok=True)
