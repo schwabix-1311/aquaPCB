@@ -139,9 +139,16 @@ GPIO4 with 4.7 kΩ pull-up to 3.3 V; three 3-pin terminals (GND / DQ / 3V3), so 
 - Probe load: the op-amp input, 0.5 pA typical (≈ 10¹² Ω or more), plus a polystyrene
   (styroflex) filter capacitor across the probe, for long probe life and < 0.01 pH error
   with a 1 GΩ electrode. No ceramic capacitor or clamp on the high-impedance input: MLCC
-  leakage (only specified to ~10 GΩ) would dominate. Layout: guard ring around the input
-  (BNC centre, 220 k, styroflex cap lead, op-amp pin 3) driven by the buffer output, short
-  traces, flux-free board.
+  leakage (only specified to ~10 GΩ) would dominate.
+- Layout of the high-impedance node (PH_BNC / PH_IN: BNC centre, 220 k, styroflex lead,
+  op-amp pin 3), replacing the point-to-point "air wiring" of the hand-built version:
+  - guard ring on both layers around all of it, on net PH_BUF (the buffer output follows
+    the input within the op-amp offset, so input-to-guard leakage is ~1.6 mV / R_leak:
+    femtoamps on a clean board); stray leakage from PH_REF or other nets ends in the guard;
+  - non-plated milled slots between the BNC centre pad and the shell pads, and around the
+    input pads, to cut surface leakage paths;
+  - shortest possible node, solder mask on, no silkscreen inside the guard, flux washed off
+    (and the board dried) after hand-soldering; optional conformal coating of the pH corner.
 - 50 Hz suppression (e.g. from filter pumps), two stages: 2.2 nF styroflex with the
   electrode resistance (100 MΩ..1 GΩ → 0.2..2 s), then 10 k / 10 µF after the buffer
   (1.6 Hz, about −30 dB at 50 Hz). The styroflex value can be changed (47 pF..6.8 nF at
