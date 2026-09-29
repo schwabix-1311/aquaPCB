@@ -1,0 +1,10 @@
+# KiCad backups, caches and local state
+*-backups/
+*.kicad_prl
+*.lck
+fp-info-cache
+_autosave-*
+*.bak
+\#auto_saved_files#
+# generated fabrication outputs are rebuilt with kicad-cli
+fab/*.zip
