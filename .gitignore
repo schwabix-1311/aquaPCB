@@ -8,3 +8,6 @@ _autosave-*
 \#auto_saved_files#
 # generated fabrication outputs are rebuilt with kicad-cli
 fab/*.zip
+
+# python
+__pycache__/

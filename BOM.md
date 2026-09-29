@@ -1,7 +1,8 @@
 # aquaPCB – Bill of Materials (v1 draft)
 
 Prices and stock checked 2026-09-29 (LCSC/JLCPCB parts API, reichelt.de product pages).
-Final designators and passive values come from the schematic; quantities here are per board.
+Quantities per board, taken from the schematic (`kicad-cli sch export bom`).
+The ADS1115 address solder jumper JP4 is a PCB feature, no part.
 
 Sourcing rule:
 - **SMD → JLCPCB assembly.** JLC can only place parts from its own LCSC stock, so all SMD
@@ -31,15 +32,20 @@ Reichelt EUR incl. 19 % VAT.
 | 1 | 3.3 V LDO 1 A | AMS1117-3.3 | SOT-223 | C6186 | basic | 759 785 | 0.21 |
 | 11 | status LEDs Q1–Q6, S1–S4, 3V3 (green) | KT-0805G | 0805 | C2297 | basic | 1.08 M | 0.02 |
 | 1 | power LED (red, V_IN) | NCD0805R1 | 0805 | C84256 | basic | 4.9 M | 0.01 |
-| ~20 | 10 kΩ pull-downs/-ups, bias | 0805 1 % | 0805 | C17414 | basic | 60 M | 0.004 |
-| ~20 | 1 kΩ series / LED | 0805 1 % | 0805 | C17513 | basic | 31 M | 0.004 |
-| 1 | 1-Wire pull-up 4.7 kΩ | 0805 1 % | 0805 | C17673 | basic | 5.2 M | 0.005 |
+| 20 | 10 kΩ pull-downs/-ups, pH bias, LED | 0805 1 % | 0805 | C17414 | basic | 60 M | 0.004 |
+| 13 | 1 kΩ input series, AIN filter, Q/3V3 LEDs | 0805 1 % | 0805 | C17513 | basic | 31 M | 0.004 |
+| 5 | 4.7 kΩ 1-Wire pull-up, SSR LEDs | 0805 1 % | 0805 | C17673 | basic | 5.2 M | 0.005 |
 | 6 | gate resistors 100 Ω | 0805 1 % | 0805 | C17408 | basic | 9.5 M | 0.004 |
-| ~12 | decoupling 100 nF 50 V | X7R | 0805 | C49678 | basic | 17 M | 0.02 |
-| 3 | buck input 4.7 µF 50 V | X7R | 1206 | C29823 | basic | 619 131 | 0.17 |
-| 3 | buck output 22 µF 25 V | X5R | 0805 | C45783 | basic | 4.1 M | 0.22 |
-| 4 | LDO / ADC bulk 10 µF 25 V | X5R | 0805 | C15850 | basic | 5.2 M | 0.08 |
-| ~6 | buck feedback/RT/compensation | values from schematic | 0805 | basic | basic | – | ~0.01 |
+| 8 | 100 nF 50 V decoupling, boot, filters | X7R | 0805 | C49678 | basic | 17 M | 0.02 |
+| 2 | buck input 4.7 µF 50 V | X7R | 1206 | C29823 | basic | 619 131 | 0.17 |
+| 2 | buck output 47 µF 10 V | X5R | 1206 | C96123 | basic | 316 224 | 0.26 |
+| 2 | LDO in/out 10 µF 25 V | X5R | 0805 | C15850 | basic | 5.2 M | 0.08 |
+| 1 | buck RT 150 kΩ (644 kHz) | 0805 1 % | 0805 | C17470 | basic | – | 0.004 |
+| 2 | buck FB top 12 kΩ, COMP 12 kΩ | 0805 1 % | 0805 | C17444 | basic | – | 0.004 |
+| 1 | buck FB bottom 2.2 kΩ (5.16 V) | 0805 1 % | 0805 | C17520 | basic | – | 0.004 |
+| 1 | pH input series 220 kΩ | 0805 1 % | 0805 | C17556 | basic | – | 0.004 |
+| 1 | buck COMP 10 nF | X7R | 0805 | C1710 | basic | – | 0.01 |
+| 1 | buck COMP 47 pF | C0G | 0805 | C14857 | basic | – | 0.01 |
 
 SMD parts ≈ **$9 per board**. Extended parts: **11 unique** → ≈ $33 loading fees per order.
 
@@ -54,15 +60,15 @@ SMD parts ≈ **$9 per board**. Extended parts: **11 unique** → ≈ $33 loadin
 | 1 | pH probe connector | UG 1094PL | BNC PCB jack, straight, 50 Ω | 1.99 |
 | 1 | Pi connector, variant Zero (plug-on) | MPE 094-2-040 | female header 2×20, 2.54 mm | 1.10 |
 | (1) | Pi connector, variant Pi 3/4 (ribbon) | WSL 40G | box header 40-pole, straight | 0.23 |
-| 1 | I²C ×2, SPI display, jumpers, spare ULN header | ECON SL40G1 | pin header 1×40, 2.54 mm (cut to length) | 0.75 |
-| 4 | 5V→Pi, SSR supply, BL, ADS address | JUMPER 2,54 SW | shunt, 2.54 mm | 0.02 |
+| 1 | UART, I²C ×2, display, ULN spare, JP1–3 (38 pins) | ECON SL40G1 | pin header 1×40, 2.54 mm (cut to length) | 0.75 |
+| 3 | JP1 5V→Pi, JP2 SSR supply, JP3 backlight | JUMPER 2,54 SW | shunt, 2.54 mm | 0.02 |
 | 4 | Pi Zero standoffs | – | M2.5 × 11 mm, any Pi mounting kit | – |
 
 THT parts ≈ **€13.50 per board**. Reichelt shipping within Germany: €5.95 (shown on
 reichelt.de at the time of the check).
 
-LCSC fallbacks: blade-fuse PCB clips Keystone 3557-2 (C352820, $1.45, 2 per fuse) instead
-of the OMNI-BLOK holder.
+LCSC fallback: the OMNI-BLOK holder 0154010.DR is also stocked at LCSC (C206921), so JLC
+could place it instead of hand-soldering.
 
 ## Rejected during the check
 
