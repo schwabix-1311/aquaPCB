@@ -11,3 +11,8 @@ fab/*.zip
 
 # python
 __pycache__/
+
+# KiCad local history, restore backups, lock files
+.history/
+_restore_backup_*/
+*.lck

@@ -1,4 +1,0 @@
-(fp_lib_table
-	(version 7)
-	(lib (name "aquaPCB") (type "KiCad") (uri "${KIPRJMOD}/aquaPCB.pretty") (options "") (descr "aquaPCB project footprints"))
-)
