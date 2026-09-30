@@ -10537,11 +10537,11 @@
 	(footprint "Capacitor_SMD:C_1206_3216Metric"
 		(layer "F.Cu")
 		(uuid "49b35cdb-a0e8-4fb9-b004-fb1a4b9d5d71")
-		(at 262.6 85.8 90)
+		(at 265.399999 77.5 -90)
 		(descr "Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C8"
-			(at 0 -1.85 90)
+			(at 0 -1.85 270)
 			(layer "F.SilkS")
 			(uuid "a61376dc-3d82-43bb-8c12-31d7873ea019")
 			(effects
@@ -10552,7 +10552,7 @@
 			)
 		)
 		(property "Value" "47u"
-			(at 0 1.85 90)
+			(at 0 1.85 270)
 			(layer "F.Fab")
 			(uuid "104a0dca-6dcc-4edf-ad5a-17a8946fa63a")
 			(effects
@@ -10563,7 +10563,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "cd92199c-6766-4822-ad54-d4121f68308a")
@@ -10574,7 +10574,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c462d6fb-a1fd-4753-959f-f6417edef0bb")
@@ -10585,7 +10585,7 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "7f3d4440-65c4-4a4d-99f8-e1c04b843964")
@@ -10597,7 +10597,7 @@
 			)
 		)
 		(property "LCSC" "C96123"
-			(at 0 0 90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -10622,16 +10622,6 @@
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -0.711252 -0.91)
-			(end 0.711252 -0.91)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "8a9b239e-54e8-4578-b7c3-df75ec4247d6")
-		)
-		(fp_line
 			(start -0.711252 0.91)
 			(end 0.711252 0.91)
 			(stroke
@@ -10640,6 +10630,16 @@
 			)
 			(layer "F.SilkS")
 			(uuid "9b15bb15-9f79-4c3c-9a72-79c079396441")
+		)
+		(fp_line
+			(start -0.711252 -0.91)
+			(end 0.711252 -0.91)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "8a9b239e-54e8-4578-b7c3-df75ec4247d6")
 		)
 		(fp_rect
 			(start -2.3 -1.15)
@@ -10664,7 +10664,7 @@
 			(uuid "68fe3048-dee6-4750-83f1-00a78de662e2")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "F.Fab")
 			(uuid "d45e7b1d-6777-476a-9820-4a8887b07987")
 			(effects
@@ -10675,7 +10675,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -1.475 0 90)
+			(at -1.475 0 270)
 			(size 1.15 1.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
@@ -10684,7 +10684,7 @@
 			(uuid "3b8b4872-0e07-400b-b346-df7fe1e31ed1")
 		)
 		(pad "2" smd roundrect
-			(at 1.475 0 90)
+			(at 1.475 0 270)
 			(size 1.15 1.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
@@ -13463,7 +13463,7 @@
 	(footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
 		(layer "F.Cu")
 		(uuid "5fe7175b-ecd0-46dc-a43f-fb4f2f7814e7")
-		(at 266.214999 73.815)
+		(at 266.214999 87.015)
 		(descr "Through hole straight pin header, 1x03, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x03 2.54mm single row")
 		(property "Reference" "JP2"
@@ -30030,11 +30030,11 @@
 	(footprint "Capacitor_SMD:C_1206_3216Metric"
 		(layer "F.Cu")
 		(uuid "c34c16ed-2fab-4a08-afbd-78a983257678")
-		(at 259.8 85.8 90)
+		(at 265.399999 82.4 -90)
 		(descr "Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf)")
 		(tags "capacitor")
 		(property "Reference" "C9"
-			(at 0 -1.85 90)
+			(at 0 -1.85 270)
 			(layer "F.SilkS")
 			(uuid "258bf071-9ae2-4b1f-b982-3a445533486f")
 			(effects
@@ -30045,7 +30045,7 @@
 			)
 		)
 		(property "Value" "47u"
-			(at 0 1.85 90)
+			(at 0 1.85 270)
 			(layer "F.Fab")
 			(uuid "3cba049f-7e55-4c76-8681-ec0089936e16")
 			(effects
@@ -30056,7 +30056,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ebee899f-cd95-436f-86a3-4610714833e9")
@@ -30067,7 +30067,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4a4ded14-7507-4136-8067-83225fc407ca")
@@ -30078,7 +30078,7 @@
 			)
 		)
 		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "f6c1554b-92d9-4335-8b96-501d28ad47e9")
@@ -30090,7 +30090,7 @@
 			)
 		)
 		(property "LCSC" "C96123"
-			(at 0 0 90)
+			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
@@ -30115,16 +30115,6 @@
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -0.711252 -0.91)
-			(end 0.711252 -0.91)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "62a64f5f-a6bf-4cb9-84ad-7ac7671314b5")
-		)
-		(fp_line
 			(start -0.711252 0.91)
 			(end 0.711252 0.91)
 			(stroke
@@ -30133,6 +30123,16 @@
 			)
 			(layer "F.SilkS")
 			(uuid "3c3a7c36-7daf-4176-a07d-6ce14eec806d")
+		)
+		(fp_line
+			(start -0.711252 -0.91)
+			(end 0.711252 -0.91)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "62a64f5f-a6bf-4cb9-84ad-7ac7671314b5")
 		)
 		(fp_rect
 			(start -2.3 -1.15)
@@ -30157,7 +30157,7 @@
 			(uuid "4c15a3a6-473f-40f3-bdcc-8f44870b7714")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 90)
+			(at 0 0 270)
 			(layer "F.Fab")
 			(uuid "1e8c5e55-5bbb-48e8-bf81-c9a167cac786")
 			(effects
@@ -30168,7 +30168,7 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -1.475 0 90)
+			(at -1.475 0 270)
 			(size 1.15 1.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
@@ -30177,7 +30177,7 @@
 			(uuid "485a37ee-e144-4a0a-a254-2b5a06e1fa1b")
 		)
 		(pad "2" smd roundrect
-			(at 1.475 0 90)
+			(at 1.475 0 270)
 			(size 1.15 1.8)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.217391)
