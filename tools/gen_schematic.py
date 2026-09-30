@@ -296,6 +296,11 @@ ca3 = C(sh, '100n', 'AIN3', 'GND')
 sh.row([tain, ra3, ca3, clamp(sh, 'AIN3')])
 
 if __name__ == '__main__':
+    existing = [f for f in os.listdir(OUT) if f.endswith('.kicad_sch')] if os.path.isdir(OUT) else []
+    if existing and '--force' not in sys.argv:
+        sys.exit('Refusing to overwrite existing schematics in kicad/ - they are edited by hand now and are the\n'
+                 'source of truth. This generator only created the first draft. Use --force only for a fresh\n'
+                 'draft in an empty directory you have backed up.')
     os.makedirs(OUT, exist_ok=True)
     p.write(OUT, 'aquaPCB', 'v1 draft', '2026-09-29')
     print('written to', os.path.normpath(OUT))
