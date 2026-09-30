@@ -15,7 +15,7 @@ I²C port that aquaPi discovers by itself and offers in its Wiring editor.
 ## Key figures
 
 ```
-Supply          12 V DC, 10 A max (parts rated >= 40 V; 24 V operation planned, not yet validated)
+Supply          12 V DC, 8 A max total (parts rated >= 40 V; 24 V operation planned, not yet validated)
 Pi              Zero 2 W plugged on face-up; Pi 3/4 via 40-pin ribbon (Pi 5: own PSU)
 Power outputs   6x low-side MOSFET, 5 A each, 2 with hardware PWM (Q1..Q6)
 SSR outputs     4x open-collector sink, ULN2803A, for SSR / relay modules (S1..S4)
@@ -33,7 +33,7 @@ SSRs or relay modules driven from S1..S4.
 ## Block diagram
 
 ```
- 12 V in ──[fuse 10A]──[rev.pol. P-FET]──┬──[TVS]── V_IN rail ─────────────┐
+ 12 V in ──[fuse 8A]───[rev.pol. P-FET]──┬──[TVS]── V_IN rail ─────────────┐
                                          │                                  │
                                     [buck 5V/3A]──┬── jumper "5V→Pi" ──> Pi 5V
                                                   │                         │
@@ -82,8 +82,9 @@ Raspberry Pi OS settings: `dtoverlay=pwm-2chan,pin=18,func=2,pin2=19,func2=2`,
 ## Circuit blocks
 
 ### Power input
-- 2-pin 5.08 mm terminal, 10 A fuse in a Littelfuse OMNI-BLOK holder (replaceable Nano2
-  fuse; common 5x20 mm PCB holders are only rated 6.3 A).
+- 2-pin push-in terminal, 8 A fuse in a Littelfuse OMNI-BLOK holder (replaceable Nano2
+  fuse; common 5x20 mm PCB holders are only rated 6.3 A). 8 A is the board's total current
+  limit, set by the terminals' rating (8 A IEC per contact).
 - Reverse-polarity protection: P-channel MOSFET in the positive line, gate via resistor
   to GND with a 15 V zener clamp (needed only above ~18 V, kept for 24 V readiness).
 - TVS SMBJ33A across V_IN, bulk electrolytic 470 µF / 50 V.
@@ -100,7 +101,8 @@ Raspberry Pi OS settings: `dtoverlay=pwm-2chan,pin=18,func=2,pin2=19,func2=2`,
   don't load the Pi's own regulator.
 
 ### Power outputs Q1..Q6
-Identical low-side switches, terminal pair +V_IN / OUT per channel, 5 A each.
+Identical low-side switches, terminal pair +V_IN / OUT per channel, 5 A each (8 A in total
+for the whole board).
 - 74HCT244 on 5 V as gate driver: accepts 3.3 V logic (V_IH 2.0 V), drives gates at 5 V,
   and keeps the Pi's GPIOs isolated from the power stage.
 - 100 Ω gate resistor, 10 kΩ gate pull-down (output stays off when the Pi is absent or
@@ -232,6 +234,9 @@ design variants once they are needed.
   resistance is only specified at ≥ 5 GΩ (POM insulator); with a 1 GΩ electrode that is a worst-case
   gain error of ~17 % (typical parts are far better and ScaleAux calibrates the slope), but humidity can
   change it - a PTFE-insulated BNC would be the upgrade if readings drift.
+- All terminals are push-in spring terminals (Kangnex WJ250B, 3.5 mm pitch, staggered pins) on the
+  board edges, wire entry facing outwards: wires up to 1.5 mm² / 16 AWG, strip 9–10 mm; solid wire
+  or ferrules push in, the button releases.
 - All terminals on the board edges; power path along one edge; the analog/pH corner away
   from the switching outputs.
 
@@ -239,7 +244,7 @@ design variants once they are needed.
 
 ```
 Path                      current   trace width, 1 oz, 10 °C rise (IPC-2221)
-V_IN input + GND return   10 A      7.2 mm  -> copper pour / bottom GND plane
+V_IN input + GND return    8 A      5.3 mm  -> copper pour / bottom GND plane
 one power output Q        5 A       2.8 mm
 buck input                ~1.5 A    0.7 mm
 5 V to Pi                 3 A       1.4 mm
@@ -258,18 +263,19 @@ per board                                     batch 5    batch 10
   PCB 100x100, 2 layers                         ~ €2       ~ €1.5
   SMD parts (LCSC, checked)                     ~ €8       ~ €7.5
   PCBA setup + 11 extended-part fees, share     ~ €7.5     ~ €3.75
-  THT parts (Reichelt + BNC from LCSC)          ~ €12.4    ~ €12.4
+  THT parts (LCSC: terminals, fuse, BNC;
+            Reichelt: rest)                     ~ €8       ~ €8
   shipping JLC + Reichelt, share                ~ €5       ~ €2.5
   EU import VAT 19 % + €3 duty/category (JLC)   ~ €4       ~ €3.5
   -----------------------------------------------------------------
-                                                ~ €39      ~ €31
+                                                ~ €35      ~ €27
 ```
 
-Target limit **≤ €40 per board** at batch 5 is met (about €39) after dropping the UART header
-and two of the three 1-Wire terminals and moving the BNC to LCSC. The on-board pH amplifier costs
-about €1.50 (BNC, TLV9062, styroflex). Levers: order 10 boards (~€31 each); cheaper terminals for signal lines
-(~€5 of the THT share); or leave the on-board pH amplifier unpopulated when an external
-amplifier board is used on AIN2.
+Target limit **≤ €40 per board** at batch 5 is met with margin (about €35) after dropping the UART
+header and two 1-Wire terminals, moving the BNC to LCSC and switching to LCSC push-in terminals.
+The on-board pH amplifier costs about €1.50 (BNC, TLV9062, styroflex). Levers: order 10 boards
+(~€27 each), or leave the on-board pH amplifier unpopulated when an external amplifier board is
+used on AIN2.
 
 ## Not on v1
 

@@ -56,35 +56,39 @@ SMD parts ≈ **$9 per board**. Extended parts: **11 unique** → ≈ $33 loadin
 
 | Qty | Function | Reichelt Art.-Nr. | Description | €/pc |
 |---:|---|---|---|---:|
-| 11 | V_IN, Q1–Q6, S1–S4 terminals | AKL 101-02 | terminal 2-pole, 5.08 mm, 13 A | 0.26 |
-| 7 | IN1–4, 1-Wire, module input, AIN3 terminals | AKL 101-03 | terminal 3-pole, 5.08 mm | 0.39 |
-| 1 | input fuse, holder incl. 10 A fuse | LITT 0154010.DR | Littelfuse OMNI-BLOK SMD holder + 10 A Nano2 fuse, 125 V (large SMD, hand-soldered) | 2.99 |
 | 1 | bulk capacitor 470 µF 50 V | RAD FR 470/50 | Panasonic FR, low ESR, 105 °C | 0.60 |
 | 1 | pH input filter across the probe, low leakage | STYROFLEX 6,8N | polystyrene 6.8 nF 2 % 160 V, axial (47 pF..6.8 nF available, no 4.7 nF) | 0.57 |
 | 1 | Pi connector, variant Zero (plug-on) | MPE 094-2-040 | female header 2×20, 2.54 mm | 1.10 |
 | (1) | Pi connector, variant Pi 3/4 (ribbon) | WSL 40G | box header 40-pole, straight | 0.23 |
 | 1 | I²C 1, JP1, JP2 (9 pins; +26 for the optional headers below) | ECON SL40G1 | pin header 1×40, 2.54 mm (cut to length) | 0.75 |
 | 2 | JP1 5V→Pi, JP2 SSR supply (+1 for optional JP3) | JUMPER 2,54 SW | shunt, 2.54 mm | 0.02 |
+| 4 | Pi Zero standoffs | – | M2.5 × 11 mm, any Pi mounting kit | – |
 
 Optional, marked DNP (not in the exported BOM / placement file; pads are on the board):
 J10 ULN spare header (10 pins), J23 second I²C header (4), J24 display header (10), JP3 backlight
 jumper (2 + shunt) – all from the same pin header strip.
-| 4 | Pi Zero standoffs | – | M2.5 × 11 mm, any Pi mounting kit | – |
 
-THT parts ≈ **€13.50 per board**. Reichelt shipping within Germany: €5.95 (shown on
-reichelt.de at the time of the check).
+Reichelt parts ≈ **€3.10 per board**. Reichelt shipping within Germany: €5.95 (shown on
+reichelt.de at the time of the check). All of them except the styroflex capacitor are also
+available at LCSC, so the Reichelt order could be dropped entirely.
 
 **THT from LCSC** (order with the JLC board, JLC can fit it or ship it loose):
 
 | Qty | Function | Part | LCSC | Stock | $/pc |
 |---:|---|---|---|---:|---:|
+| 11 | V_IN, Q1–Q6, S1–S4 terminals: push-in spring, 2-pole, 3.5 mm, 8 A | Ningbo Kangnex WJ250B-3.5-02P-11-00A | C8454 | 63 742 | 0.12 |
+| 7 | IN1–4, 1-Wire, module input, AIN3 terminals: push-in spring, 3-pole | Ningbo Kangnex WJ250B-3.5-03P-11-00A | C8420 | 1 953 | 0.17 |
+| 1 | input fuse, OMNI-BLOK holder incl. 8 A Nano2 fuse (large SMD) | Littelfuse 0154008.DR | C206919 | 1 479 | 2.11 |
 | 1 | pH probe connector, BNC right angle at the board edge | HanElectricity BNC-Q9-50KWE | C49352232 | 272 | 0.68 |
+
+LCSC through-hole parts ≈ **$5.30 (≈ €4.90) per board**. Terminal footprints
+`aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-0xP_P3.50mm_Staggered` (EasyEDA pads, maker drawing;
+wire entry on the pin-1 side, facing the board edge). Wires 26–16 AWG / up to 1.5 mm², strip
+9–10 mm; solid wire or ferrules push in directly, the button releases (or opens for fine
+stranded wire). Rating 8 A (IEC) / 7 A (UL) per contact.
 
 Footprint `aquaPCB:BNC_HanElectricity_BNC-Q9-50KWE_Horizontal` (from the LCSC/EasyEDA pad data and
 the maker drawing). Insulation resistance only specified ≥ 5 GΩ (POM insulator), see README.
-
-LCSC fallback: the OMNI-BLOK holder 0154010.DR is also stocked at LCSC (C206921), so JLC
-could place it instead of hand-soldering.
 
 ## Rejected during the check
 
@@ -101,5 +105,8 @@ could place it instead of hand-soldering.
 - LMC6482 / LMP7702: little or no stock, $2–7.
 - 5×20 mm PCB fuse holders at Reichelt (MTA 501100, ESKA 503400, Stelvio): rated 6.3 A only.
 - MTA 370000 blade-fuse holder: 20 A, but panel snap-in with spade tabs, not PCB.
+- Screw terminals AKL 101-02/-03 (Reichelt, 5.08 mm, €5.59 per board): replaced by push-in spring
+  terminals for easier wiring. Real lever terminals (WAGO 2601/2604) would cost €13–21 per board more;
+  no cheap lever clones found at LCSC. The spring terminals' 8 A rating sets the board's total current.
 - BNC UG 1094PL (Reichelt, €1.99): upright jack, probe plugs in from above. Replaced by a right-angle
   jack at the board edge; Reichelt's only right-angle PCB BNC (BKL 0401109) costs €6.50.

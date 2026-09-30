@@ -6208,7 +6208,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal"
+		(property "Footprint" "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
 			(at 48.26 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -6241,7 +6241,7 @@
 				)
 			)
 		)
-		(property "Reichelt" "AKL 101-02"
+		(property "LCSC" "C8454"
 			(at 48.26 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -7035,7 +7035,7 @@
 				)
 			)
 		)
-		(property "Value" "10A"
+		(property "Value" "8A"
 			(at 66.04 59.69 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7078,7 +7078,7 @@
 				)
 			)
 		)
-		(property "Reichelt" "LITT 0154010.DR"
+		(property "LCSC" "C206919"
 			(at 69.85 59.69 0)
 			(hide yes)
 			(show_name no)
