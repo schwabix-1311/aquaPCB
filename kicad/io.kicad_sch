@@ -1935,12 +1935,6 @@
 		(uuid "bafb4ca3-e9c4-4759-9371-ef05b32fb179")
 	)
 	(junction
-		(at 46.99 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d186eef2-3e8d-4664-b59f-7c56827f199b")
-	)
-	(junction
 		(at 111.76 44.45)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2207,16 +2201,6 @@
 			(type default)
 		)
 		(uuid "33ce424a-eeb4-49e4-b4d3-12c9a278d7cc")
-	)
-	(wire
-		(pts
-			(xy 41.91 158.75) (xy 38.1 158.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "33f2fb22-6450-4640-bf62-210db7bec907")
 	)
 	(wire
 		(pts
@@ -2500,16 +2484,6 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 156.21) (xy 46.99 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "88bd44f7-c590-457f-8bf5-8c5cf1d8bda3")
-	)
-	(wire
-		(pts
 			(xy 111.76 39.37) (xy 111.76 44.45)
 		)
 		(stroke
@@ -2527,16 +2501,6 @@
 			(type default)
 		)
 		(uuid "8b0f872f-a501-4c2d-a353-70377b30636c")
-	)
-	(wire
-		(pts
-			(xy 41.91 153.67) (xy 38.1 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8c1478c9-cb62-46cb-b97e-a76693519a51")
 	)
 	(wire
 		(pts
@@ -2627,16 +2591,6 @@
 			(type default)
 		)
 		(uuid "a169d1c7-365c-4ced-8a2a-c6b714d4f5fc")
-	)
-	(wire
-		(pts
-			(xy 41.91 160.02) (xy 41.91 158.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a20ca3e5-bdcc-403e-9971-77d14390756a")
 	)
 	(wire
 		(pts
@@ -2807,16 +2761,6 @@
 			(type default)
 		)
 		(uuid "cd589ff4-4c6b-430b-b00d-ecfc2790d86d")
-	)
-	(wire
-		(pts
-			(xy 41.91 151.13) (xy 41.91 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d3cae80d-a18d-4a98-b0f7-583b55f3ea7e")
 	)
 	(wire
 		(pts
@@ -2997,16 +2941,6 @@
 			(type default)
 		)
 		(uuid "f9d46812-f1a7-41bb-90ab-0d593533ae42")
-	)
-	(wire
-		(pts
-			(xy 46.99 156.21) (xy 46.99 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fd49fd3e-e2ea-4a91-bde3-151045475a79")
 	)
 	(wire
 		(pts
@@ -3531,99 +3465,6 @@
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/69a76064-578d-4a49-aad8-2873571f78bd"
 					(reference "D25")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Screw_Terminal_01x03")
-		(at 33.02 156.21 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "09f651c2-e10c-4738-a524-d5ab65186990")
-		(property "Reference" "J21"
-			(at 34.036 150.876 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1-Wire 3"
-			(at 34.036 161.544 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal"
-			(at 33.02 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 33.02 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 33.02 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Reichelt" "AKL 101-03"
-			(at 33.02 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "977107ff-b247-445f-88f3-049fec986a6f")
-		)
-		(pin "2"
-			(uuid "4254e014-9654-41bd-a035-2d57e193fb67")
-		)
-		(pin "3"
-			(uuid "7e3f2c4e-6e61-4e69-8a8a-cf59a8323568")
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/69a76064-578d-4a49-aad8-2873571f78bd"
-					(reference "J21")
 					(unit 1)
 				)
 			)
@@ -5040,83 +4881,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 41.91 151.13 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "764d9a88-ca7a-45e0-ac82-ced54db86561")
-		(property "Reference" "#PWR132"
-			(at 44.45 151.13 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 39.37 151.13 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 41.91 151.13 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 41.91 151.13 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 41.91 151.13 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "32724ff5-f506-40d4-b335-021c2893b911")
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/69a76064-578d-4a49-aad8-2873571f78bd"
-					(reference "#PWR132")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 67.31 57.15 0)
 		(unit 1)
@@ -5835,84 +5599,6 @@
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/69a76064-578d-4a49-aad8-2873571f78bd"
 					(reference "R39")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 41.91 160.02 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ad3b9056-812c-4dd0-83f1-ae466b7e3125")
-		(property "Reference" "#PWR131"
-			(at 39.37 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 44.45 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 41.91 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 41.91 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 41.91 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a7a0365a-6704-4cd7-9b53-92f2b90b8dd3")
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/69a76064-578d-4a49-aad8-2873571f78bd"
-					(reference "#PWR131")
 					(unit 1)
 				)
 			)
