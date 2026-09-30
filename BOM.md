@@ -78,12 +78,16 @@ available at LCSC, so the Reichelt order could be dropped entirely.
 |---:|---|---|---|---:|---:|
 | 11 | V_IN, Q1–Q6, S1–S4 terminals: push-in spring, 2-pole, 3.5 mm, 8 A | Ningbo Kangnex WJ250B-3.5-02P-11-00A | C8454 | 63 742 | 0.12 |
 | 7 | IN1–4, 1-Wire, module input, AIN3 terminals: push-in spring, 3-pole | Ningbo Kangnex WJ250B-3.5-03P-11-00A | C8420 | 1 953 | 0.17 |
+| (11) | alternative 2-pole, same footprint | MAX MX250-3.5-02P-B-GY01-Cu-A | C7470116 | 4 797 | 0.10 |
+| (7) | alternative 3-pole, same footprint | MAX MX250-3.5-03P-B-GY01-Cu-A | C7470117 | 3 181 | 0.17 |
 | 1 | input fuse, OMNI-BLOK holder incl. 8 A Nano2 fuse (large SMD) | Littelfuse 0154008.DR | C206919 | 1 479 | 2.11 |
 | 1 | pH probe connector, BNC right angle at the board edge | HanElectricity BNC-Q9-50KWE | C49352232 | 272 | 0.68 |
 
 LCSC through-hole parts ≈ **$5.30 (≈ €4.90) per board**. Terminal footprints
-`aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-0xP_P3.50mm_Staggered` (EasyEDA pads, maker drawing;
-wire entry on the pin-1 side, facing the board edge). Wires 26–16 AWG / up to 1.5 mm², strip
+`aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-0xP_P3.50mm_Staggered` (EasyEDA pads, maker drawings;
+wire entry facing the board edge) have a hole in both pin rows for every pole, so Kangnex
+(pole 1 in the front row) and MAX MX250-B (pole 1 in the back row) fit the same spot. Both holes
+of a pole must be joined by copper when routing. Wires 26–16 AWG / up to 1.5 mm², strip
 9–10 mm; solid wire or ferrules push in directly, the button releases (or opens for fine
 stranded wire). Rating 8 A (IEC) / 7 A (UL) per contact.
 

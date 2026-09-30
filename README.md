@@ -237,6 +237,9 @@ design variants once they are needed.
 - All terminals are push-in spring terminals (Kangnex WJ250B, 3.5 mm pitch, staggered pins) on the
   board edges, wire entry facing outwards: wires up to 1.5 mm² / 16 AWG, strip 9–10 mm; solid wire
   or ferrules push in, the button releases.
+  The footprints have a hole in both staggered pin rows for every pole, so the MAX MX250-B
+  (LCSC C7470116 / C7470117) fits as a drop-in alternative; when routing, join both holes of
+  each pole.
 - All terminals on the board edges; power path along one edge; the analog/pH corner away
   from the switching outputs.
 

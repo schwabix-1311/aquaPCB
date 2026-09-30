@@ -3,12 +3,12 @@
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(layer "F.Cu")
-	(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-	(tags "terminal block push-in spring WJ250 3.5mm")
+	(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420, pole 1 in the front row) and MAX MX250-3.5-03P-B (LCSC C7470117, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+	(tags "terminal block push-in spring WJ250 MX250 3.5mm")
 	(property "Reference" "REF**"
 		(at 2.67 10.96 0)
 		(layer "F.SilkS")
-		(uuid "9d2f6180-db4b-4f5b-a448-21528a2faed5")
+		(uuid "b4166536-1d34-43ad-a888-38b1efc908da")
 		(effects
 			(font
 				(size 1 1)
@@ -19,7 +19,7 @@
 	(property "Value" "TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered"
 		(at 2.67 12.46 0)
 		(layer "F.Fab")
-		(uuid "ad9bbd01-6f73-45a6-bc86-0608490e6205")
+		(uuid "ed5c5738-dbf2-4401-b5cd-cd337dfed417")
 		(effects
 			(font
 				(size 1 1)
@@ -31,7 +31,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "de66f739-effc-4dfa-8046-dfa6e71a46ff")
+		(uuid "6cd7534f-c081-43a6-b51d-0cbe85a6c6f5")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -42,7 +42,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "491ed9ec-12b1-436e-b4e3-9275f57cc197")
+		(uuid "25bb48f9-9dcd-4f67-8858-ce73e1dba482")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -59,7 +59,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "00beca6b-d1d4-499b-92d2-18d560c11a08")
+		(uuid "d04d6f4f-b6c5-4d7c-a8ba-2c56554f7d71")
 	)
 	(fp_rect
 		(start -3.48 -2.78)
@@ -70,7 +70,7 @@
 		)
 		(fill no)
 		(layer "F.SilkS")
-		(uuid "e19b8299-6d74-462d-93f1-efbdf5a1dba5")
+		(uuid "e3b0f45e-6d72-490d-985a-ee46a5488189")
 	)
 	(fp_rect
 		(start -3.61 -2.91)
@@ -81,7 +81,7 @@
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "b7a9ad8b-b209-4931-818b-8416b4db9a8c")
+		(uuid "8cef0410-b5e4-4b71-96c9-b4ddc7e8c2a8")
 	)
 	(fp_rect
 		(start -3.36 -2.66)
@@ -92,12 +92,12 @@
 		)
 		(fill no)
 		(layer "F.Fab")
-		(uuid "a9734fa3-1831-4d66-b7f0-35111dd63c1e")
+		(uuid "c2c2bb0b-19a2-44f2-a23a-201a251d1107")
 	)
 	(fp_text user "wire entry"
 		(at 2.67 -1.76 0)
 		(layer "F.Fab")
-		(uuid "f75e52b7-1cfe-4499-a3f7-86375a92e4ec")
+		(uuid "dc74e47c-f938-46d1-bb93-90f2312fd716")
 		(effects
 			(font
 				(size 0.6 0.6)
@@ -108,7 +108,7 @@
 	(fp_text user "${REFERENCE}"
 		(at 2.67 5 0)
 		(layer "F.Fab")
-		(uuid "31a38344-88b8-499f-bffa-ea8a499632fd")
+		(uuid "b59aef71-429c-4bf1-9f11-3d10a757e665")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -119,26 +119,50 @@
 	(pad "1" thru_hole rect
 		(at 0 0)
 		(size 2 2)
-		(drill 1.1)
+		(drill 1.2)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "b9743616-f87f-4b76-a8ae-18b66f2464c4")
+		(uuid "829e0d66-9b51-4803-828f-8d3f257b81f5")
+	)
+	(pad "1" thru_hole circle
+		(at 0 5.1)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "d8dcb3a0-5672-4c97-9194-4f4a4721e407")
+	)
+	(pad "2" thru_hole circle
+		(at 3.5 0)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "43f7574f-6345-48eb-af67-bff48fe5d58c")
 	)
 	(pad "2" thru_hole circle
 		(at 3.5 5.1)
 		(size 2 2)
-		(drill 1.1)
+		(drill 1.2)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "2389bb45-61d3-43ed-ba54-1e5c29f82a1d")
+		(uuid "a64c0687-58ac-4ef0-93b4-01ee2abba744")
 	)
 	(pad "3" thru_hole circle
 		(at 7 0)
 		(size 2 2)
-		(drill 1.1)
+		(drill 1.2)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "bab90923-0154-4d89-b121-95270f17a3ee")
+		(uuid "2c5a1962-7e3e-4958-8e8d-3b71ae6f00df")
+	)
+	(pad "3" thru_hole circle
+		(at 7 5.1)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "f71e7d2e-bbb7-4f97-9058-fb4a4a23d54e")
 	)
 	(embedded_fonts no)
 	(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered.wrl"

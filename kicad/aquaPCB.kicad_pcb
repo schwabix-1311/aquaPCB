@@ -2681,6 +2681,197 @@
 			)
 		)
 	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "11de7d46-648c-4552-9263-99b9413b2212")
+		(at 252.275 122.305 180)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454, pole 1 in the front row) and MAX MX250-3.5-02P-B (LCSC C7470116, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J8"
+			(at 1 11 180)
+			(layer "F.SilkS")
+			(uuid "6e55a584-fdb5-4661-9087-4b470ff778ab")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "OUT Q5"
+			(at 1 12.5 180)
+			(layer "F.Fab")
+			(uuid "1dc18ca3-a817-4718-aa90-aae883fdf506")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "412209bf-8de0-4bf8-bc68-0ecc5cb70f18")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8d32c879-33c4-421e-8527-98771ffda0b1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "aca89b1a-d221-40e5-85c9-5f80b765683a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8454"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "7659812b-cbda-4842-829b-dce5813308a7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/662aa388-f80b-440b-be99-bc584ab7592b/222ae924-815e-43e4-b180-40ed08743199")
+		(sheetname "/Power outputs Q1..Q6/")
+		(sheetfile "outputs.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.37 -2.9)
+			(end 5.37 -2.9)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "db42579d-3c34-4eda-a4c5-fce3729d14a6")
+		)
+		(fp_rect
+			(start -3.37 -2.52)
+			(end 5.37 9.82)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "aab5c181-30af-494a-9c70-61e669683f47")
+		)
+		(fp_rect
+			(start -3.5 -2.65)
+			(end 5.5 9.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "1a2adb1d-5c37-4c86-a2ed-12886d5b998d")
+		)
+		(fp_rect
+			(start -3.25 -2.4)
+			(end 5.25 9.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "46f06fbe-acef-4168-a717-c8595547f88d")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 1 5.15 180)
+			(layer "F.Fab")
+			(uuid "f32a43dd-a93d-4aac-913b-cacb5299869c")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(fp_text user "wire entry"
+			(at 1 -1.5 180)
+			(layer "F.Fab")
+			(uuid "88fd594d-8108-4fd0-962f-ca3e535ff554")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "VIN")
+			(uuid "2c0e325d-b504-40ad-a100-e297a3559ed9")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.05 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "VIN")
+			(uuid "80c1598a-a1b4-447b-a237-7c12bee2e65e")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/Power outputs Q1..Q6/Q5_OUT")
+			(uuid "3996f87e-b347-4a5e-a537-5ae6beda2c3b")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.05 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/Power outputs Q1..Q6/Q5_OUT")
+			(uuid "332e5963-e27e-4123-ac8c-bf3276525bde")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "MountingHole:MountingHole_3.2mm_M3"
 		(layer "F.Cu")
 		(uuid "127ef493-9d0c-4078-a531-15ce9501ac69")
@@ -3382,179 +3573,6 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0805_2012Metric.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "17b7339a-552a-4849-9a5b-3e8c3d2fb379")
-		(at 277.305 58.945 -90)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J12"
-			(at 1 11 270)
-			(layer "F.SilkS")
-			(uuid "7590a384-4138-4f8d-85a0-560f53eb2ca8")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "SSR S2"
-			(at 1 12.5 270)
-			(layer "F.Fab")
-			(uuid "31544b6c-d997-49b9-80f0-3214aaaaac91")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "6321040f-ca49-4e10-a052-d34fa48f0ca3")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "6f9a1dd7-7547-476f-a0d6-4a5713e27628")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 270)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "debb3b91-95df-4e23-a4a2-f2634dc775d1")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8454"
-			(at 0 0 270)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "8688e922-b7be-458b-b46b-fb256695d348")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/b36de559-7e9c-4c60-acb5-187afccc7a04/f49bc0ca-6bfe-478d-ba3d-f93804737d70")
-		(sheetname "/SSR / relay control outputs S1..S4/")
-		(sheetfile "ssr.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.37 -2.9)
-			(end 5.37 -2.9)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "1f807966-0194-49ee-b0d6-c638e3fea7fc")
-		)
-		(fp_rect
-			(start -3.37 -2.52)
-			(end 5.37 9.82)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "ccf17d6f-1a9c-42f5-8425-ee9440d355f5")
-		)
-		(fp_rect
-			(start -3.5 -2.65)
-			(end 5.5 9.95)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "1edc33e1-5cc1-4169-94bf-c7935807abdc")
-		)
-		(fp_rect
-			(start -3.25 -2.4)
-			(end 5.25 9.7)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "0a8f747f-7c42-4e41-b51d-a59093d40570")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 1 5.15 270)
-			(layer "F.Fab")
-			(uuid "14e20492-b349-43e3-b6c9-c1314652556a")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(fp_text user "wire entry"
-			(at 1 -1.5 270)
-			(layer "F.Fab")
-			(uuid "ff63e379-0ec3-49ca-b177-2a030700b4ed")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0 270)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "/SSR {slash} relay control outputs S1..S4/SSR_V")
-			(uuid "c840c82b-c9bd-4a8e-bf17-53fa6f4cc49b")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5 270)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "/SSR {slash} relay control outputs S1..S4/S2_OUT")
-			(uuid "77cebd26-c171-4969-b137-cd4ef12e7bfd")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -5977,361 +5995,6 @@
 			)
 		)
 	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "2d76df7f-0e3c-47dd-b0ff-0bd36142af88")
-		(at 252.275 122.305 180)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J8"
-			(at 1 11 180)
-			(layer "F.SilkS")
-			(uuid "202bbcfe-2fc7-462a-9b30-ba73ec454b8c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "OUT Q5"
-			(at 1 12.5 180)
-			(layer "F.Fab")
-			(uuid "b512822b-4c52-49a9-97dc-e99780d37fcc")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 180)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "0b3d6bf9-88c1-46bc-ac1f-91134ea85a39")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 180)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "eb4983a9-61ee-455e-af8f-d4441c70a7a6")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 180)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "d4bfc442-3d7b-4682-94b0-76de090e456e")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8454"
-			(at 0 0 180)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "be4461e2-af94-4fa6-9319-5125bf3a4930")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/662aa388-f80b-440b-be99-bc584ab7592b/222ae924-815e-43e4-b180-40ed08743199")
-		(sheetname "/Power outputs Q1..Q6/")
-		(sheetfile "outputs.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.37 -2.9)
-			(end 5.37 -2.9)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "d3ea1ab1-9abc-4f53-b852-e57b3e40130d")
-		)
-		(fp_rect
-			(start -3.37 -2.52)
-			(end 5.37 9.82)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "2c9359a6-bc64-4a72-a33d-61b1557b599d")
-		)
-		(fp_rect
-			(start -3.5 -2.65)
-			(end 5.5 9.95)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "fa53e35c-a946-42d6-8a1c-ca6750286088")
-		)
-		(fp_rect
-			(start -3.25 -2.4)
-			(end 5.25 9.7)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "81acb4fe-25cf-4442-bf46-d5dc2af286e3")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 1 5.15 180)
-			(layer "F.Fab")
-			(uuid "57c2db2c-a387-44cf-b507-77ded2b7d448")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(fp_text user "wire entry"
-			(at 1 -1.5 180)
-			(layer "F.Fab")
-			(uuid "6f3fc180-4f1a-4931-8ced-07829e0e0bad")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0 180)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "VIN")
-			(uuid "d71b488d-5e08-4408-9ba0-64722b12d29e")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5 180)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "/Power outputs Q1..Q6/Q5_OUT")
-			(uuid "10115e6c-3aa4-4023-b64f-5eb2eb88fad9")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "2f52910e-d8c4-4b5f-9cef-c2c4122b5476")
-		(at 277.044999 36.655 -90)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J19"
-			(at 2.67 10.96 270)
-			(layer "F.SilkS")
-			(uuid "5c65dfb1-7f65-4d30-9589-8024a2dca60d")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "1-Wire 1"
-			(at 2.67 12.46 270)
-			(layer "F.Fab")
-			(uuid "3cb20cb0-9219-43e2-976b-bf195e741005")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "c65dbd9e-e28c-4574-9b3e-4d6d3e9d4af4")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "8cfe0a4d-c10f-44ea-bc2a-5168f11eb904")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 270)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "187038bd-c4d7-456f-a33f-0d58d1c46689")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8420"
-			(at 0 0 270)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "87d3743a-0f9f-4d09-8481-5a761fa24799")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/69a76064-578d-4a49-aad8-2873571f78bd/e36899a2-64d8-4258-8ac3-85750341e051")
-		(sheetname "/Inputs, 1-Wire, I2C and display headers/")
-		(sheetfile "io.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.48 -3.16)
-			(end 8.82 -3.16)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "17831f6d-d968-49a8-aaf5-0e47cf46272a")
-		)
-		(fp_rect
-			(start -3.48 -2.78)
-			(end 8.82 9.78)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "21bf7d66-8e63-48fc-9db3-6d6428941240")
-		)
-		(fp_rect
-			(start -3.61 -2.91)
-			(end 8.95 9.91)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "1dbe7c3e-00f4-4623-ac98-757a4c334317")
-		)
-		(fp_rect
-			(start -3.36 -2.66)
-			(end 8.7 9.66)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "f30376c8-8e1f-4ea9-abbd-e70f49827c2d")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 2.67 5 270)
-			(layer "F.Fab")
-			(uuid "9b5b0e1f-b9f8-4f8e-8988-f25a5bd62f36")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(fp_text user "wire entry"
-			(at 2.67 -1.76 270)
-			(layer "F.Fab")
-			(uuid "b0f52c3b-ffce-4983-917a-466071f6b4de")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0 270)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "GND")
-			(uuid "1d9d9bfe-7dc8-4ca7-ab36-3b6931e099b2")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5.1 270)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "GPIO4_1W")
-			(uuid "a37a4f8c-8a05-4684-ba13-210ee9f48e00")
-		)
-		(pad "3" thru_hole circle
-			(at 7 0 270)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "+3V3")
-			(uuid "e6bbc152-1622-4ff5-8162-b715cf6eda50")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
 	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "30100336-326b-4715-9292-b86403659ce5")
@@ -7020,6 +6683,197 @@
 			)
 		)
 	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "32bacf7b-646e-4f19-80f9-2eca11cd6bc4")
+		(at 277.305 77.745 -90)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454, pole 1 in the front row) and MAX MX250-3.5-02P-B (LCSC C7470116, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J14"
+			(at 1 11 270)
+			(layer "F.SilkS")
+			(uuid "865b6c51-7005-40f8-afde-a7cb168e657e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "SSR S4"
+			(at 1 12.5 270)
+			(layer "F.Fab")
+			(uuid "cb38014b-e0e0-4556-9709-a1c5658f906b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "49754b55-37fc-4adb-97fe-77050a5fe684")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3ea47212-421c-4d99-bbee-da6f142218c5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "1ec78b52-2998-4167-8d8c-e08fc08ecef3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8454"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "05764d38-2186-4639-af63-aaa4a019f9aa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/b36de559-7e9c-4c60-acb5-187afccc7a04/25f15236-d88a-4314-b681-29d319398abc")
+		(sheetname "/SSR / relay control outputs S1..S4/")
+		(sheetfile "ssr.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.37 -2.9)
+			(end 5.37 -2.9)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "8b9040fe-fb37-4281-911e-3c5b17590c1a")
+		)
+		(fp_rect
+			(start -3.37 -2.52)
+			(end 5.37 9.82)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "6d997140-4bbd-4583-8581-d2a34279924e")
+		)
+		(fp_rect
+			(start -3.5 -2.65)
+			(end 5.5 9.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "5feb5231-363b-44eb-8767-6a30d884d839")
+		)
+		(fp_rect
+			(start -3.25 -2.4)
+			(end 5.25 9.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "cea2193c-4b12-423d-8c9e-19f6f86b9bfb")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 1 5.15 270)
+			(layer "F.Fab")
+			(uuid "3787ae4d-0214-433b-ad01-55d97251bfc7")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(fp_text user "wire entry"
+			(at 1 -1.5 270)
+			(layer "F.Fab")
+			(uuid "abe8f3c7-0ad4-4039-a19b-4e5b24add2e3")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/SSR_V")
+			(uuid "ef782e18-0ccf-4e84-9450-4748368ca6a7")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.05 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/SSR_V")
+			(uuid "36180ebe-98f5-4113-9d03-7c99019e9652")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/S4_OUT")
+			(uuid "59d21153-75f8-45f7-bd0f-2b2cb2fb7867")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.05 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/S4_OUT")
+			(uuid "2f58f055-f407-4909-af47-6c9bdbc857bb")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "34c50827-266b-45ff-8c2e-60f1f9f7828f")
@@ -7402,179 +7256,6 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0805_2012Metric.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "39d154b4-2143-45e7-9d06-73595d9d50bc")
-		(at 277.305 68.345 -90)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J13"
-			(at 1 11 270)
-			(layer "F.SilkS")
-			(uuid "b9c246be-4709-4ee3-bea0-374ed5761236")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "SSR S3"
-			(at 1 12.5 270)
-			(layer "F.Fab")
-			(uuid "7a206fbc-f573-4f86-8db1-b6f40c58686a")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "33146d5b-9d67-4735-901e-49b1a5964796")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "43aaaba5-d79c-4486-8b4a-dc2ac79c6451")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 270)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "2f35d545-618f-458d-b0fb-56ebdba5f5f2")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8454"
-			(at 0 0 270)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "e57e81fb-a2ff-4643-8692-1dee1ef57633")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/b36de559-7e9c-4c60-acb5-187afccc7a04/24b6964d-ea59-4582-b068-cbf20f8f75a8")
-		(sheetname "/SSR / relay control outputs S1..S4/")
-		(sheetfile "ssr.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.37 -2.9)
-			(end 5.37 -2.9)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "6dfa59bf-d033-4815-8a44-0a0c6b3dcf2b")
-		)
-		(fp_rect
-			(start -3.37 -2.52)
-			(end 5.37 9.82)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "231c195e-8e74-4b2f-ad9f-3dbf1df7e855")
-		)
-		(fp_rect
-			(start -3.5 -2.65)
-			(end 5.5 9.95)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "4f93a671-2b22-4c8f-9632-2cc5046f55bd")
-		)
-		(fp_rect
-			(start -3.25 -2.4)
-			(end 5.25 9.7)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "c13ce43b-fa42-491b-9392-e834489cb69f")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 1 5.15 270)
-			(layer "F.Fab")
-			(uuid "d47025c6-4bf3-4cab-b829-c9c1d31f3aad")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(fp_text user "wire entry"
-			(at 1 -1.5 270)
-			(layer "F.Fab")
-			(uuid "6b82d4e8-6425-4779-89b5-20d2eb5cffe0")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0 270)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "/SSR {slash} relay control outputs S1..S4/SSR_V")
-			(uuid "3750a382-49e6-4bdd-aaef-182d60a910f0")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5 270)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "/SSR {slash} relay control outputs S1..S4/S3_OUT")
-			(uuid "c5807931-b475-4d08-869d-2cc93500ed77")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -9135,179 +8816,6 @@
 			)
 		)
 	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "4ab3a498-ca7c-4ed6-b5b4-d1d38a1842fa")
-		(at 206.875 122.305 180)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J4"
-			(at 1 11 180)
-			(layer "F.SilkS")
-			(uuid "7a56f37e-5fee-4405-bf63-a582da8cc1a2")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "OUT Q1"
-			(at 1 12.5 180)
-			(layer "F.Fab")
-			(uuid "8ce3cba1-2306-4563-9de9-014a9c688a7d")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 180)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "1b3aa6dc-06f5-4137-a5dc-a201eb73a87a")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 180)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "b9125e5e-701c-4ca6-b7d1-2a11ab94b710")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 180)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "ef82dd9e-0736-4b9d-9e88-ecd67e22f8d1")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8454"
-			(at 0 0 180)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "58a0c2a9-5d81-4962-b8a7-801ee44c9ff5")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/662aa388-f80b-440b-be99-bc584ab7592b/9ef7da5d-7f04-4cc6-b920-195277f0e497")
-		(sheetname "/Power outputs Q1..Q6/")
-		(sheetfile "outputs.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.37 -2.9)
-			(end 5.37 -2.9)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "6bf2127f-7951-4244-98fd-f9ae48c1fb1f")
-		)
-		(fp_rect
-			(start -3.37 -2.52)
-			(end 5.37 9.82)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "f7d54197-c561-4109-938a-f0acf452883c")
-		)
-		(fp_rect
-			(start -3.5 -2.65)
-			(end 5.5 9.95)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "ae93d810-055d-4858-ae59-daad5b2b6a20")
-		)
-		(fp_rect
-			(start -3.25 -2.4)
-			(end 5.25 9.7)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "295a309b-b839-46b8-9150-43e6239c8110")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 1 5.15 180)
-			(layer "F.Fab")
-			(uuid "66f4f929-1827-401c-8dbc-ae8492d5e4a8")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(fp_text user "wire entry"
-			(at 1 -1.5 180)
-			(layer "F.Fab")
-			(uuid "47173c42-3fbf-419b-92a3-790c05165c42")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0 180)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "VIN")
-			(uuid "a3913b0d-5858-4996-95dc-41cdd8ffa11f")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5 180)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "/Power outputs Q1..Q6/Q1_OUT")
-			(uuid "949986ae-8704-4dc9-a26d-a6c8d3bb86c2")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "4d9ef944-f200-4483-b0e5-f1e1a497a8d3")
@@ -9821,6 +9329,197 @@
 			)
 		)
 	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "50af8b45-de62-4fbe-9973-621c3d59299b")
+		(at 229.575 122.305 180)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454, pole 1 in the front row) and MAX MX250-3.5-02P-B (LCSC C7470116, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J6"
+			(at 1 11 180)
+			(layer "F.SilkS")
+			(uuid "0e5f0245-0da7-4a1e-9969-0307a92e4324")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "OUT Q3"
+			(at 1 12.5 180)
+			(layer "F.Fab")
+			(uuid "04978d8e-c256-4fec-b756-e1d116704a9f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0653f22d-8f1e-4f8a-a398-61d2903f01a3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a8ae0c9a-fab7-458c-812a-54ceaebb62e8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "f1d35112-9815-476e-9411-a0d8dd43e28f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8454"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "f4a05603-c912-4700-9867-79c18a953df0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/662aa388-f80b-440b-be99-bc584ab7592b/29f2294b-9276-4ede-986d-3cd1671f5d69")
+		(sheetname "/Power outputs Q1..Q6/")
+		(sheetfile "outputs.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.37 -2.9)
+			(end 5.37 -2.9)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "1ee39090-9810-4ed8-915f-c1a9a07320f1")
+		)
+		(fp_rect
+			(start -3.37 -2.52)
+			(end 5.37 9.82)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "ae3f90a8-162b-4e3b-868e-42e67365c928")
+		)
+		(fp_rect
+			(start -3.5 -2.65)
+			(end 5.5 9.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "de4d5e2a-8dac-438f-b64a-17bdda41d0b7")
+		)
+		(fp_rect
+			(start -3.25 -2.4)
+			(end 5.25 9.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "21298634-e413-4266-8095-f5d3980f2550")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 1 5.15 180)
+			(layer "F.Fab")
+			(uuid "13b3ce34-f0ce-4de5-beea-51ddbb03586a")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(fp_text user "wire entry"
+			(at 1 -1.5 180)
+			(layer "F.Fab")
+			(uuid "829318ce-9985-49af-a9a1-a4507ba0b7b9")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "VIN")
+			(uuid "8c6bd97d-f520-418e-b4ca-4dbda49437f7")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.05 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "VIN")
+			(uuid "1935784c-fa58-4bdb-8796-03988007b106")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/Power outputs Q1..Q6/Q3_OUT")
+			(uuid "ce2d1c7e-187e-411b-b997-5320b248d116")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.05 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/Power outputs Q1..Q6/Q3_OUT")
+			(uuid "16aab571-0cb7-48ba-87d8-875d4668084f")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "5143609a-a51c-4e09-bbed-f0b61014a6fa")
@@ -9981,6 +9680,197 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_0805_2012Metric.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "51a97d3d-5eb6-4314-88da-c08d55a36348")
+		(at 277.305 49.545 -90)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454, pole 1 in the front row) and MAX MX250-3.5-02P-B (LCSC C7470116, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J11"
+			(at 1 11 270)
+			(layer "F.SilkS")
+			(uuid "c26c803e-a855-4ed1-9a7d-c4bd11e89347")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "SSR S1"
+			(at 1 12.5 270)
+			(layer "F.Fab")
+			(uuid "ef19e8f3-450f-40aa-aa7b-57ceabf99923")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1418b34d-bfa6-467f-8065-8e8882b9bc64")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3a36be05-e554-4981-844b-8455be01b601")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "3afc8a42-209a-4663-b115-d8e1383c99e8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8454"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "7153d8f7-10f2-45c4-ba65-c3b95ea896cf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/b36de559-7e9c-4c60-acb5-187afccc7a04/1ee2f522-3273-4fe2-a610-aa87acdf47df")
+		(sheetname "/SSR / relay control outputs S1..S4/")
+		(sheetfile "ssr.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.37 -2.9)
+			(end 5.37 -2.9)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "42f590e8-68d6-4f6f-a11f-73baa6d637ff")
+		)
+		(fp_rect
+			(start -3.37 -2.52)
+			(end 5.37 9.82)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "50a60c7a-add7-474e-afef-90ddf7dddc57")
+		)
+		(fp_rect
+			(start -3.5 -2.65)
+			(end 5.5 9.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "fd68a290-d107-468a-8f26-37860fcb984c")
+		)
+		(fp_rect
+			(start -3.25 -2.4)
+			(end 5.25 9.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "2b73b3c9-2eed-495b-8d6a-4354e7af00d0")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 1 5.15 270)
+			(layer "F.Fab")
+			(uuid "4762aea4-346d-420d-9ac8-604dcbc44aa3")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(fp_text user "wire entry"
+			(at 1 -1.5 270)
+			(layer "F.Fab")
+			(uuid "30449736-8ffc-4863-ae9c-4c2794db2307")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/SSR_V")
+			(uuid "ff353efd-3820-41d5-a809-d2e977ec7ed2")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.05 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/SSR_V")
+			(uuid "ba41484f-3a95-49aa-983e-0776de8cd1f9")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/S1_OUT")
+			(uuid "a9b4acbc-70dc-4959-b3c1-0c482073dffb")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.05 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/S1_OUT")
+			(uuid "31485d3f-e328-4913-98a2-5236ea86a41c")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -10334,6 +10224,215 @@
 			)
 		)
 	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "5743a32b-c923-4094-9e18-cbe6501f6794")
+		(at 244.755 27.955)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420, pole 1 in the front row) and MAX MX250-3.5-03P-B (LCSC C7470117, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J18"
+			(at 2.67 10.96 0)
+			(layer "F.SilkS")
+			(uuid "d1e04c00-00fb-411c-a998-bab61b31e21d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "IN4"
+			(at 2.67 12.46 0)
+			(layer "F.Fab")
+			(uuid "7a817434-9ef7-481c-ac19-2024dbea8bf9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b3340945-cc85-4d98-90d0-b6c02a9c14ae")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0c7cee94-8d8f-4704-97b8-565417e8ac0a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "1f3ac031-82f8-480d-b5ab-e1b62dc5d7ba")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8420"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "4220cc44-aecb-491e-8293-633cfeba9a40")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/69a76064-578d-4a49-aad8-2873571f78bd/68bdca10-9156-400b-b7be-fe9c276c4c82")
+		(sheetname "/Inputs, 1-Wire, I2C and display headers/")
+		(sheetfile "io.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.48 -3.16)
+			(end 8.82 -3.16)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "4fddaaf5-2252-4b59-85ba-4cfd0640a1d7")
+		)
+		(fp_rect
+			(start -3.48 -2.78)
+			(end 8.82 9.78)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "4b72390f-a8c6-46c0-b06d-5b44bff8b472")
+		)
+		(fp_rect
+			(start -3.61 -2.91)
+			(end 8.95 9.91)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "8f6d280c-bda2-4e20-96c6-3597e16c62bb")
+		)
+		(fp_rect
+			(start -3.36 -2.66)
+			(end 8.7 9.66)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "6c7afbc7-7db4-4066-8fd2-338780b07031")
+		)
+		(fp_text user "wire entry"
+			(at 2.67 -1.76 0)
+			(layer "F.Fab")
+			(uuid "35f11f4e-2ec2-4df8-a1ef-aed0ac61a304")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(fp_text user "${REFERENCE}"
+			(at 2.67 5 0)
+			(layer "F.Fab")
+			(uuid "c28dc3f8-fc1a-4a93-a4e2-d9f02ef56544")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "+3V3")
+			(uuid "afa64972-a1b0-4bc7-b1d6-9cc490af9e6c")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.1)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "+3V3")
+			(uuid "a067a3bd-c8ab-4895-a63e-240b11370575")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(J18-Pin_2)")
+			(uuid "2b9b742c-a1cb-4cbf-904c-d8bb56522e6a")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.1)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(J18-Pin_2)")
+			(uuid "9bf1e31e-a1f6-4faf-ad11-5b8df7fcec54")
+		)
+		(pad "3" thru_hole circle
+			(at 7 0)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "aec279dc-d388-4686-9cb2-b718dbebd9f7")
+		)
+		(pad "3" thru_hole circle
+			(at 7 5.1)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "26206737-175b-4a18-be77-e758f119c130")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "57d3283a-13c6-4c33-a09c-c0a01ff7450a")
@@ -10494,6 +10593,197 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "5862c68e-98d9-4338-b27a-bc63980e0bba")
+		(at 240.924999 122.305 180)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454, pole 1 in the front row) and MAX MX250-3.5-02P-B (LCSC C7470116, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J7"
+			(at 1 11 180)
+			(layer "F.SilkS")
+			(uuid "79117b12-eb75-4d82-8da1-0f169c287fa4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "OUT Q4"
+			(at 1 12.5 180)
+			(layer "F.Fab")
+			(uuid "c55bd7bf-76e7-4da6-ad7e-492440766532")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "927c353c-d0e0-430a-8c10-fa626c467dfb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3dc8f149-5803-44fa-b73b-89cbe4cff08b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "5f318a52-f6b3-4d72-9e3e-526c34ff840a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8454"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "0f005458-c31e-42b2-a94b-9f7b3d1b2839")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/662aa388-f80b-440b-be99-bc584ab7592b/fbbaf8c6-53f3-46c7-a10e-26b1ccd10aaa")
+		(sheetname "/Power outputs Q1..Q6/")
+		(sheetfile "outputs.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.37 -2.9)
+			(end 5.37 -2.9)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "f5969f66-33a9-470b-8231-19e400dad349")
+		)
+		(fp_rect
+			(start -3.37 -2.52)
+			(end 5.37 9.82)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "59c650b5-7bfa-4860-8972-d2171ff01226")
+		)
+		(fp_rect
+			(start -3.5 -2.65)
+			(end 5.5 9.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "12e914d5-598f-40a9-9b31-ff64eb77f070")
+		)
+		(fp_rect
+			(start -3.25 -2.4)
+			(end 5.25 9.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "3b0207fb-2d44-43f7-a61f-82e1a2cad2f0")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 1 5.15 180)
+			(layer "F.Fab")
+			(uuid "e223c96a-ae15-4d89-a93d-e44b5a2f3911")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(fp_text user "wire entry"
+			(at 1 -1.5 180)
+			(layer "F.Fab")
+			(uuid "aaf7c991-a109-4ee1-addd-3c9f041858bf")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "VIN")
+			(uuid "564f89c4-7336-4c0f-bea4-fc218947d8a0")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.05 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "VIN")
+			(uuid "d6bcb54b-4928-4e7c-9b73-9e5e72521f7d")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/Power outputs Q1..Q6/Q4_OUT")
+			(uuid "d4d3abcd-c4b5-4651-af73-15e27f393240")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.05 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/Power outputs Q1..Q6/Q4_OUT")
+			(uuid "85947c35-1213-434a-93da-15f1dba3247e")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -11515,14 +11805,14 @@
 	)
 	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
 		(layer "F.Cu")
-		(uuid "5eb3f52b-218f-4743-9e44-abb99b81929f")
-		(at 277.305 77.745 -90)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J14"
-			(at 1 11 270)
+		(uuid "5f1502e1-0aa0-45e1-8534-f938890c145c")
+		(at 263.625 122.305 180)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454, pole 1 in the front row) and MAX MX250-3.5-02P-B (LCSC C7470116, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J9"
+			(at 1 11 180)
 			(layer "F.SilkS")
-			(uuid "c024410c-4abc-4ec0-954b-55d1a5afb710")
+			(uuid "d10276d0-d68f-4e41-bf48-cf43be6628db")
 			(effects
 				(font
 					(size 1 1)
@@ -11530,10 +11820,10 @@
 				)
 			)
 		)
-		(property "Value" "SSR S4"
-			(at 1 12.5 270)
+		(property "Value" "OUT Q6"
+			(at 1 12.5 180)
 			(layer "F.Fab")
-			(uuid "463f5731-9d7e-440e-92c8-981f99c747cb")
+			(uuid "98c74f71-0a96-477b-b53e-8d48e396e9ba")
 			(effects
 				(font
 					(size 1 1)
@@ -11542,10 +11832,10 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 270)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "69ec9536-a748-4b95-b4a9-00fd891e81da")
+			(uuid "934ed1b9-6204-4afb-af60-04a2d8bc63d2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11553,10 +11843,10 @@
 			)
 		)
 		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 270)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5f810f8b-ce22-4528-aca2-67ab9272d598")
+			(uuid "93f841cc-9bf1-44b4-8fad-55a126f1d6e2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11564,10 +11854,10 @@
 			)
 		)
 		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 270)
+			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "5ad2532c-0811-40a8-86ce-8f52b310c27c")
+			(uuid "232ff58e-cbdc-4a35-86c5-ad4919eb2762")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11575,19 +11865,19 @@
 			)
 		)
 		(property "LCSC" "C8454"
-			(at 0 0 270)
+			(at 0 0 180)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "10df79b7-50a2-478d-ba28-8e2a2beedbbf")
+			(uuid "2dc0f412-fe3b-4596-9a33-41ab720467af")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(path "/b36de559-7e9c-4c60-acb5-187afccc7a04/25f15236-d88a-4314-b681-29d319398abc")
-		(sheetname "/SSR / relay control outputs S1..S4/")
-		(sheetfile "ssr.kicad_sch")
+		(path "/662aa388-f80b-440b-be99-bc584ab7592b/0e84d324-8758-4e81-b816-bbcb408ca57f")
+		(sheetname "/Power outputs Q1..Q6/")
+		(sheetfile "outputs.kicad_sch")
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -11598,7 +11888,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "32b5d16d-1565-4e9b-8ede-713ef0df8daf")
+			(uuid "c8381a88-48ef-438a-b1a7-3a9c53455412")
 		)
 		(fp_rect
 			(start -3.37 -2.52)
@@ -11609,7 +11899,7 @@
 			)
 			(fill no)
 			(layer "F.SilkS")
-			(uuid "d00f3926-eeab-4035-bc74-9f6a53407785")
+			(uuid "5b31f1cc-34e2-4f9e-8d42-1b31c8a8210e")
 		)
 		(fp_rect
 			(start -3.5 -2.65)
@@ -11620,7 +11910,7 @@
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "62e47070-1749-4662-be00-a2cc00e3b589")
+			(uuid "e7441aed-d9d4-41ff-b73f-16262f5a26fa")
 		)
 		(fp_rect
 			(start -3.25 -2.4)
@@ -11631,12 +11921,12 @@
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "67691b23-7f08-4471-b51f-05d2c85908a1")
+			(uuid "5a859ab4-e2b0-45ea-8f0f-9943088df99f")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 1 5.15 270)
+			(at 1 5.15 180)
 			(layer "F.Fab")
-			(uuid "b9fdd702-4243-45dd-8228-68e3c8ce4a41")
+			(uuid "90a53a1b-fd47-4b8c-992e-747dd01fef37")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -11645,9 +11935,9 @@
 			)
 		)
 		(fp_text user "wire entry"
-			(at 1 -1.5 270)
+			(at 1 -1.5 180)
 			(layer "F.Fab")
-			(uuid "adb263d2-7092-4bb8-bfec-907cd0581426")
+			(uuid "30ac18a1-762c-4193-a94f-d8f469d2a3bb")
 			(effects
 				(font
 					(size 0.6 0.6)
@@ -11656,22 +11946,40 @@
 			)
 		)
 		(pad "1" thru_hole rect
-			(at 0 0 270)
+			(at 0 0 180)
 			(size 2 2)
-			(drill 1.1)
+			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "/SSR {slash} relay control outputs S1..S4/SSR_V")
-			(uuid "4b6ea2c8-5aa1-4025-8f01-b3a23ad40f5e")
+			(net "VIN")
+			(uuid "deb42c32-1b9e-4567-bc52-b8aed4c0fb14")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.05 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "VIN")
+			(uuid "98d20898-0564-4da4-8272-7e2732b6dba6")
 		)
 		(pad "2" thru_hole circle
-			(at 3.5 5 270)
+			(at 3.5 0 180)
 			(size 2 2)
-			(drill 1.1)
+			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "/SSR {slash} relay control outputs S1..S4/S4_OUT")
-			(uuid "83b86398-9df5-46b8-b54e-643a03f8a92f")
+			(net "/Power outputs Q1..Q6/Q6_OUT")
+			(uuid "e677eb96-dca6-40e4-b71e-dfca078deb78")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.05 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/Power outputs Q1..Q6/Q6_OUT")
+			(uuid "861c34ed-578a-4fe6-8cd3-6781deb311f8")
 		)
 		(embedded_fonts no)
 		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
@@ -13016,352 +13324,6 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "661d1861-d268-4179-b776-48cd70f3086a")
-		(at 240.924999 122.305 180)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J7"
-			(at 1 11 180)
-			(layer "F.SilkS")
-			(uuid "196c4bb4-04be-4895-9c56-f82b88e50ffe")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "OUT Q4"
-			(at 1 12.5 180)
-			(layer "F.Fab")
-			(uuid "acc1cae9-d540-4c3e-8575-037a1bf78a0c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 180)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "daef51f8-5e99-453e-a7bf-5c968e8bac32")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 180)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "5a8e6409-a853-4f66-8113-729583d5a37b")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 180)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "4f449626-b264-455e-bacd-48849845d15f")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8454"
-			(at 0 0 180)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "30d50969-4a33-4e7f-b275-0728855e1ad1")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/662aa388-f80b-440b-be99-bc584ab7592b/fbbaf8c6-53f3-46c7-a10e-26b1ccd10aaa")
-		(sheetname "/Power outputs Q1..Q6/")
-		(sheetfile "outputs.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.37 -2.9)
-			(end 5.37 -2.9)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "d9f71760-1810-4d6f-8df4-36b9e9340e4f")
-		)
-		(fp_rect
-			(start -3.37 -2.52)
-			(end 5.37 9.82)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "6d8996ef-5723-48f9-8e7d-652d5a00359b")
-		)
-		(fp_rect
-			(start -3.5 -2.65)
-			(end 5.5 9.95)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "c2496d14-1018-4c93-aed8-af304b974632")
-		)
-		(fp_rect
-			(start -3.25 -2.4)
-			(end 5.25 9.7)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "41954a60-b30e-463d-8e42-987c806cfc2d")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 1 5.15 180)
-			(layer "F.Fab")
-			(uuid "d865c835-9388-4bb2-9647-e727d1303136")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(fp_text user "wire entry"
-			(at 1 -1.5 180)
-			(layer "F.Fab")
-			(uuid "96626153-fe07-482d-a545-ee90e41fc712")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0 180)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "VIN")
-			(uuid "2ec220c8-7665-4774-bc50-2a18cbcb6487")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5 180)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "/Power outputs Q1..Q6/Q4_OUT")
-			(uuid "bc4d87eb-4693-4a96-89b3-0456c76d1a51")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "6673141a-f5c7-45c8-9277-65ffb42f9045")
-		(at 229.575 122.305 180)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J6"
-			(at 1 11 180)
-			(layer "F.SilkS")
-			(uuid "3eacb8fe-ae2f-41e0-9f00-794a1a35aee0")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "OUT Q3"
-			(at 1 12.5 180)
-			(layer "F.Fab")
-			(uuid "b91ac1a0-3a4b-42e0-b5bc-7e2436f9a3f6")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 180)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "5f508d87-d0c2-435c-8203-b3d85382cbff")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 180)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "043ee8b8-0347-4538-8d52-df0364c467f9")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 180)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "2610ce2d-79a3-4101-a540-08ad75dd7c3c")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8454"
-			(at 0 0 180)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "6ea1ebb8-dc18-4083-8fa2-4c458f66a882")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/662aa388-f80b-440b-be99-bc584ab7592b/29f2294b-9276-4ede-986d-3cd1671f5d69")
-		(sheetname "/Power outputs Q1..Q6/")
-		(sheetfile "outputs.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.37 -2.9)
-			(end 5.37 -2.9)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "89ac25e1-b605-4500-8d14-795801ba135e")
-		)
-		(fp_rect
-			(start -3.37 -2.52)
-			(end 5.37 9.82)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "c1996182-33f5-4a5c-8c84-ec0958468c18")
-		)
-		(fp_rect
-			(start -3.5 -2.65)
-			(end 5.5 9.95)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "0f064dcc-8581-44ef-bd45-154bfbaefea1")
-		)
-		(fp_rect
-			(start -3.25 -2.4)
-			(end 5.25 9.7)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "41887b3d-89d4-4b42-bc2c-f94f298aa4d3")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 1 5.15 180)
-			(layer "F.Fab")
-			(uuid "ccc301d9-3b1e-4b09-9d9a-f5db514bd8bc")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(fp_text user "wire entry"
-			(at 1 -1.5 180)
-			(layer "F.Fab")
-			(uuid "6650e35d-fd7b-4ef7-bba1-8b9ad8500312")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0 180)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "VIN")
-			(uuid "f1ac2a28-5adb-45b4-bca9-b08cf3b924f6")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5 180)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "/Power outputs Q1..Q6/Q3_OUT")
-			(uuid "99d70145-5f36-4eb5-9822-b9982ee3fc05")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -16745,6 +16707,197 @@
 			)
 		)
 	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "803c3bd9-a9af-4bf3-8fb3-9002171ff4eb")
+		(at 277.305 68.345 -90)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454, pole 1 in the front row) and MAX MX250-3.5-02P-B (LCSC C7470116, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J13"
+			(at 1 11 270)
+			(layer "F.SilkS")
+			(uuid "22af2232-52e3-4415-9834-6cd01855f31b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "SSR S3"
+			(at 1 12.5 270)
+			(layer "F.Fab")
+			(uuid "1ab04303-461b-41ea-8b82-b4c12c78b902")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a142931a-39cf-4e87-af3b-871f84202dee")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d37b612c-a63d-442d-a3f7-4d7330fe2db9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "f599bc28-7800-4eb8-9bad-4d4e718095f4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8454"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "444f8a71-c104-4e5c-9c67-109d09a52b8d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/b36de559-7e9c-4c60-acb5-187afccc7a04/24b6964d-ea59-4582-b068-cbf20f8f75a8")
+		(sheetname "/SSR / relay control outputs S1..S4/")
+		(sheetfile "ssr.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.37 -2.9)
+			(end 5.37 -2.9)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e19469ff-10f8-4ead-99f3-d30a445fe5e1")
+		)
+		(fp_rect
+			(start -3.37 -2.52)
+			(end 5.37 9.82)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "1feaf4d1-a94c-43e0-a1e2-74d52943b985")
+		)
+		(fp_rect
+			(start -3.5 -2.65)
+			(end 5.5 9.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "63247368-d162-4218-b689-9c303cce56aa")
+		)
+		(fp_rect
+			(start -3.25 -2.4)
+			(end 5.25 9.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "7f098763-d30e-4d7a-96f5-28bca52aa2fe")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 1 5.15 270)
+			(layer "F.Fab")
+			(uuid "489a934c-f2d8-4a45-bd90-16ff01222957")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(fp_text user "wire entry"
+			(at 1 -1.5 270)
+			(layer "F.Fab")
+			(uuid "31462422-eb1b-4618-a61d-25e7f6b0c736")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/SSR_V")
+			(uuid "24dd0629-d3e0-48c1-b977-78e597f53800")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.05 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/SSR_V")
+			(uuid "5ba09240-9e3c-4682-8970-6a91cd32250b")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/S3_OUT")
+			(uuid "2c63da5a-dfff-430d-b3e0-f903af16eb6b")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.05 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/S3_OUT")
+			(uuid "5c88b244-4fb1-4b3b-ac99-a04c063ffb11")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "861ccb6f-c036-435b-9bd5-889735625831")
@@ -16905,6 +17058,215 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "86e15271-ca42-48a1-9ae3-0297fed0d22e")
+		(at 277.044999 36.655 -90)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420, pole 1 in the front row) and MAX MX250-3.5-03P-B (LCSC C7470117, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J19"
+			(at 2.67 10.96 270)
+			(layer "F.SilkS")
+			(uuid "f48e8a30-3d0e-4c01-ba0c-c2fd171a5a02")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "1-Wire 1"
+			(at 2.67 12.46 270)
+			(layer "F.Fab")
+			(uuid "3c691d1e-fb39-4b49-9474-7129dde3141c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bb83d7a1-f5d3-4dba-a2b7-f751708dadf5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a1823cdb-fb7b-4a31-b6fd-5cfd2a9ec89e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "e30086e5-3507-474d-b75f-f3a44b894b5a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8420"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "2d1692da-e0ce-4a4e-8de1-ffa776cb0ce9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/69a76064-578d-4a49-aad8-2873571f78bd/e36899a2-64d8-4258-8ac3-85750341e051")
+		(sheetname "/Inputs, 1-Wire, I2C and display headers/")
+		(sheetfile "io.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.48 -3.16)
+			(end 8.82 -3.16)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "b3cdb39a-9330-409f-9317-bb5149f1b7be")
+		)
+		(fp_rect
+			(start -3.48 -2.78)
+			(end 8.82 9.78)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "9edeede0-20a3-464e-b3ab-dd9ab56f470f")
+		)
+		(fp_rect
+			(start -3.61 -2.91)
+			(end 8.95 9.91)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "3ad41fdf-c586-4e5b-872d-de7fb3293422")
+		)
+		(fp_rect
+			(start -3.36 -2.66)
+			(end 8.7 9.66)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "c7a89906-277a-4b18-9896-2ca4ef010403")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 2.67 5 270)
+			(layer "F.Fab")
+			(uuid "90e61389-ef8b-485f-a974-abdb635f5b72")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(fp_text user "wire entry"
+			(at 2.67 -1.76 270)
+			(layer "F.Fab")
+			(uuid "1d2493bb-4e7a-4b24-9bf3-833a54175a91")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "54ae1865-3406-4b00-acc1-c93fee2e0c49")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.1 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "a923ff0f-f848-4607-b25a-48b78da679b9")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GPIO4_1W")
+			(uuid "5b8ce4de-1902-4fca-9829-9a37e0c1e2e2")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.1 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GPIO4_1W")
+			(uuid "2972c855-f555-4082-b44c-bf11ad591a75")
+		)
+		(pad "3" thru_hole circle
+			(at 7 0 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "+3V3")
+			(uuid "a217afe9-7e73-4b21-913e-e6e17d6686a5")
+		)
+		(pad "3" thru_hole circle
+			(at 7 5.1 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "+3V3")
+			(uuid "8e4ad2eb-d691-4637-8469-126c19ddfcad")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -18677,6 +19039,215 @@
 			)
 		)
 	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "94eb2954-4a96-4c3a-b0a2-469dd1c023c6")
+		(at 218.355 27.955)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420, pole 1 in the front row) and MAX MX250-3.5-03P-B (LCSC C7470117, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J16"
+			(at 2.67 10.96 0)
+			(layer "F.SilkS")
+			(uuid "6ebad996-294f-40ab-a322-23814d36a373")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "IN2"
+			(at 2.67 12.46 0)
+			(layer "F.Fab")
+			(uuid "47a099f2-2e4a-4129-8189-9650b9f2858c")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4f3df849-8658-4f1c-8d70-0e96f4fa1e62")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5e1abf8e-5a5a-475b-beec-2d4d595d33f3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "57b1a98f-d20b-4b19-b509-58327c3da557")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8420"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "0ad2ebd0-550f-47ec-b643-991e43545d28")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/69a76064-578d-4a49-aad8-2873571f78bd/c59ab685-ccc8-4591-b043-7040e4660a38")
+		(sheetname "/Inputs, 1-Wire, I2C and display headers/")
+		(sheetfile "io.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.48 -3.16)
+			(end 8.82 -3.16)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "438a49fd-93ce-48ac-9d84-458460558808")
+		)
+		(fp_rect
+			(start -3.48 -2.78)
+			(end 8.82 9.78)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "e0d50bb3-5eec-425b-85fa-7459f6fa3870")
+		)
+		(fp_rect
+			(start -3.61 -2.91)
+			(end 8.95 9.91)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "bb5ecb93-64b3-4ccf-bc35-7dde6549a9cf")
+		)
+		(fp_rect
+			(start -3.36 -2.66)
+			(end 8.7 9.66)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "ee372462-a1d1-4f2e-bc8f-206dd19de886")
+		)
+		(fp_text user "wire entry"
+			(at 2.67 -1.76 0)
+			(layer "F.Fab")
+			(uuid "a03cd078-9156-40ed-9423-a95db8f3dd51")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(fp_text user "${REFERENCE}"
+			(at 2.67 5 0)
+			(layer "F.Fab")
+			(uuid "1b12f0db-b834-4181-b370-6def11a7629e")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "+3V3")
+			(uuid "d171bf50-8e93-4b7b-b427-d0162adf377b")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.1)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "+3V3")
+			(uuid "08aec975-cf32-447e-bb56-07367c2e8bab")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(J16-Pin_2)")
+			(uuid "a3de8689-55e7-491d-819c-700af7cfd0d3")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.1)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(J16-Pin_2)")
+			(uuid "a73bd90e-07e2-425d-a39b-ca4891759028")
+		)
+		(pad "3" thru_hole circle
+			(at 7 0)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "63f8d34e-8c9a-444b-9241-63fc33d6ed8e")
+		)
+		(pad "3" thru_hole circle
+			(at 7 5.1)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "ae3705a3-434a-49cb-aa25-414ef46b909a")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "9581fdba-966a-4dc2-8f25-7b6f7ca38144")
@@ -18837,188 +19408,6 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "99044ef8-cfa6-4249-957e-02970c8d14b4")
-		(at 218.355 27.955)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J16"
-			(at 2.67 10.96 0)
-			(layer "F.SilkS")
-			(uuid "54165acd-ecb4-43d0-91aa-8de7762341ce")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "IN2"
-			(at 2.67 12.46 0)
-			(layer "F.Fab")
-			(uuid "ddd05c03-268d-4dfc-b959-2cfeaeb6ecc0")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "019dda21-3f14-4668-a673-5f65b469cba3")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "edb865c1-9219-4776-93a3-0f005e8c8e4f")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "3a81fca1-cac1-4e41-960e-31fd4e8fcb7b")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8420"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "24e62b30-9c62-46f2-a84f-3437864e5169")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/69a76064-578d-4a49-aad8-2873571f78bd/c59ab685-ccc8-4591-b043-7040e4660a38")
-		(sheetname "/Inputs, 1-Wire, I2C and display headers/")
-		(sheetfile "io.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.48 -3.16)
-			(end 8.82 -3.16)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "8a72491d-0277-4c21-b246-84c711e4e48d")
-		)
-		(fp_rect
-			(start -3.48 -2.78)
-			(end 8.82 9.78)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "1c4447fe-34f5-4372-a6be-f4ef1823d69e")
-		)
-		(fp_rect
-			(start -3.61 -2.91)
-			(end 8.95 9.91)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "97b07c96-e149-448a-8141-99aded6f511a")
-		)
-		(fp_rect
-			(start -3.36 -2.66)
-			(end 8.7 9.66)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "ea47be9b-9566-4534-aeed-b455d37bdecf")
-		)
-		(fp_text user "wire entry"
-			(at 2.67 -1.76 0)
-			(layer "F.Fab")
-			(uuid "48920758-7032-414d-b41a-2f05577f7115")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(fp_text user "${REFERENCE}"
-			(at 2.67 5 0)
-			(layer "F.Fab")
-			(uuid "ed4fa9b0-1b65-49ce-b358-dffbdbeac028")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "+3V3")
-			(uuid "4c0eeb7f-c0d4-4fbb-91b0-f87386a96ef6")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5.1)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "Net-(J16-Pin_2)")
-			(uuid "3821b2a1-b601-4313-81d1-5c1debbe034f")
-		)
-		(pad "3" thru_hole circle
-			(at 7 0)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "GND")
-			(uuid "6e6413a5-80b5-4a78-89e4-a8e13ae60032")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -19636,6 +20025,215 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0805_2012Metric.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "9e2c2a02-ceb2-4587-a62e-30bbebe72e3c")
+		(at 191.955 27.955)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420, pole 1 in the front row) and MAX MX250-3.5-03P-B (LCSC C7470117, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J26"
+			(at 2.67 10.96 0)
+			(layer "F.SilkS")
+			(uuid "12665665-6a4c-42af-8b47-7f05d7e75036")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "Module"
+			(at 2.67 12.46 0)
+			(layer "F.Fab")
+			(uuid "98509e40-f522-4022-ab98-b325f071265a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6d6badcf-21dc-425a-81bf-5aae9d8e1a0e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "20125055-5367-4eb8-b9a1-0386b27a234f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "a1bec986-18db-4beb-b789-027ec5c1a414")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8420"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "f49df438-4e6c-4a8f-84ec-b0a12f349e9c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/7f54e82c-99a9-49f3-9f13-2c730539fa02/cd62cce5-48e2-438b-a269-eed822d2699d")
+		(sheetname "/ADS1115 ADC and pH amplifier/")
+		(sheetfile "analog.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.48 -3.16)
+			(end 8.82 -3.16)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "501f2cfd-1932-4b6d-9aa6-89c52d60590b")
+		)
+		(fp_rect
+			(start -3.48 -2.78)
+			(end 8.82 9.78)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "34c4b858-3488-4c86-8eea-db7277b39647")
+		)
+		(fp_rect
+			(start -3.61 -2.91)
+			(end 8.95 9.91)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "447f89bf-0d9c-4eb0-a305-cc7513c1a36d")
+		)
+		(fp_rect
+			(start -3.36 -2.66)
+			(end 8.7 9.66)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "c131eac5-b757-4b4a-b80b-110287b6dd4d")
+		)
+		(fp_text user "wire entry"
+			(at 2.67 -1.76 0)
+			(layer "F.Fab")
+			(uuid "caab4d11-0a1d-40a5-ad68-1530d5a96be1")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(fp_text user "${REFERENCE}"
+			(at 2.67 5 0)
+			(layer "F.Fab")
+			(uuid "586c92f5-d0c8-48cb-b5b4-0284de0faad6")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "+5V")
+			(uuid "62e7c8a8-8055-4976-86cd-d41104eff472")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.1)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "+5V")
+			(uuid "05755124-bbfd-441c-813b-ad3c3a3881bd")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(J26-Pin_2)")
+			(uuid "a9f8cc44-6882-4a0b-ab0b-ce05719c4bb3")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.1)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(J26-Pin_2)")
+			(uuid "16993ca6-8122-4804-9c5f-cdddc94b90a6")
+		)
+		(pad "3" thru_hole circle
+			(at 7 0)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "fdd796c9-28fe-40c4-8682-7bca041d0e09")
+		)
+		(pad "3" thru_hole circle
+			(at 7 5.1)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "4c76c127-b753-4600-a590-ef05eb416e5c")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -21838,6 +22436,197 @@
 			)
 		)
 	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "a8ddaa68-b916-4db0-9cde-f13978e82d13")
+		(at 218.225 122.305 180)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454, pole 1 in the front row) and MAX MX250-3.5-02P-B (LCSC C7470116, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J5"
+			(at 1 11 180)
+			(layer "F.SilkS")
+			(uuid "1cc638f9-0a32-499c-adf2-8cb7b1c71ec2")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "OUT Q2"
+			(at 1 12.5 180)
+			(layer "F.Fab")
+			(uuid "08df6262-e996-49e5-b311-31dfda51a4cf")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "36cf7adb-54d3-4b96-bc6d-a39acdeddb03")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "09ce4a4c-30d7-488a-a169-7edb7f9fefb8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "af20113d-ee38-452f-a1a4-e11ebb0266e5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8454"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "5cd0c579-5373-4d93-85f9-ee753e8efddd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/662aa388-f80b-440b-be99-bc584ab7592b/9a5ec6ca-ecd1-44bb-b57b-690483ef7ac2")
+		(sheetname "/Power outputs Q1..Q6/")
+		(sheetfile "outputs.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.37 -2.9)
+			(end 5.37 -2.9)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "9a700430-ca59-4f45-9ade-f3f7f9045c92")
+		)
+		(fp_rect
+			(start -3.37 -2.52)
+			(end 5.37 9.82)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "b3ea71ae-450e-4940-b31f-24eeb26c7659")
+		)
+		(fp_rect
+			(start -3.5 -2.65)
+			(end 5.5 9.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "65f79b2b-2fc8-4e0e-bb90-77722bb98819")
+		)
+		(fp_rect
+			(start -3.25 -2.4)
+			(end 5.25 9.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "297069cf-cfe3-493f-8f4d-049a0c7cb9f1")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 1 5.15 180)
+			(layer "F.Fab")
+			(uuid "f998efa0-7005-4143-827b-ae7f253166bd")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(fp_text user "wire entry"
+			(at 1 -1.5 180)
+			(layer "F.Fab")
+			(uuid "0d80149f-41f7-4358-82c5-2d9589d2e72e")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "VIN")
+			(uuid "d05754df-63f0-449e-81ca-d56f2126b653")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.05 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "VIN")
+			(uuid "8d0f80bb-19dc-4852-8ac8-48d497c15d78")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/Power outputs Q1..Q6/Q2_OUT")
+			(uuid "0a0313ea-bb86-426d-9957-fd542d41c64e")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.05 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/Power outputs Q1..Q6/Q2_OUT")
+			(uuid "d2e39932-9a2a-483d-bda8-adf9856d0094")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "a8f0ea22-4e5c-4d95-983f-9accb3d14fcd")
@@ -21998,6 +22787,215 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "ad6c8fc2-46c7-4a02-9449-a6fbfef72ec2")
+		(at 205.155 27.955)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420, pole 1 in the front row) and MAX MX250-3.5-03P-B (LCSC C7470117, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J15"
+			(at 2.67 10.96 0)
+			(layer "F.SilkS")
+			(uuid "39f6a83d-f5d0-40dc-af42-77119c837ed0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "IN1"
+			(at 2.67 12.46 0)
+			(layer "F.Fab")
+			(uuid "ef74fb1e-5290-4f9c-bf53-62f6ae295cb7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6396102d-e043-4c51-9b6f-6be8ca77f8a7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4eef65ae-f05c-4473-b3b7-73ff5bfcb929")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "3760d2bc-7fb4-4b8d-88b2-581373c3e90d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8420"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "ff88f7f7-e960-40e2-b078-69d8580aa6c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/69a76064-578d-4a49-aad8-2873571f78bd/16564aa4-caa4-4ad7-814d-b21a63b02d3a")
+		(sheetname "/Inputs, 1-Wire, I2C and display headers/")
+		(sheetfile "io.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.48 -3.16)
+			(end 8.82 -3.16)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "9b2cf3bf-fc75-420b-ac10-dca6d2975a1d")
+		)
+		(fp_rect
+			(start -3.48 -2.78)
+			(end 8.82 9.78)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "555cef9b-2a5d-4850-bcae-67cc1618e97b")
+		)
+		(fp_rect
+			(start -3.61 -2.91)
+			(end 8.95 9.91)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "cbe25e2b-01cb-409e-b982-31b55c461195")
+		)
+		(fp_rect
+			(start -3.36 -2.66)
+			(end 8.7 9.66)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "d0bd7b4f-f9f7-40dd-aec1-ebbf43f67a22")
+		)
+		(fp_text user "wire entry"
+			(at 2.67 -1.76 0)
+			(layer "F.Fab")
+			(uuid "4afed745-f5aa-4ba7-9125-d7b7ef7e2fba")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(fp_text user "${REFERENCE}"
+			(at 2.67 5 0)
+			(layer "F.Fab")
+			(uuid "512e3702-8032-4390-89f4-4e7f9b1ec8b1")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "+3V3")
+			(uuid "25121b03-8825-45cb-a08f-11a437414823")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.1)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "+3V3")
+			(uuid "71688662-207a-4558-bcfd-2cbec2dfd866")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(J15-Pin_2)")
+			(uuid "f1f683a1-3a14-43c3-b89f-e7bb6ada1d5a")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.1)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(J15-Pin_2)")
+			(uuid "4d5b8f9c-fbfc-47f0-9c0a-165d75b1b0da")
+		)
+		(pad "3" thru_hole circle
+			(at 7 0)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "db54c746-a57e-42fd-814c-d0c65490c7e9")
+		)
+		(pad "3" thru_hole circle
+			(at 7 5.1)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "9d0c77f1-8fa8-451a-bec1-797457313c38")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -24336,188 +25334,6 @@
 			)
 		)
 	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "b0c25ba7-0937-43d1-9c87-56d353157d92")
-		(at 205.155 27.955)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J15"
-			(at 2.67 10.96 0)
-			(layer "F.SilkS")
-			(uuid "f1e51823-9450-4a03-bf6b-1ddd12c62e77")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "IN1"
-			(at 2.67 12.46 0)
-			(layer "F.Fab")
-			(uuid "bc5345ac-0ae4-4235-b946-d864827824c8")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "a7ce5338-e45e-4845-869f-459cc12ec3fd")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "35f916d4-b06d-4742-9495-f7fb025cb212")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "1a126e33-9168-4c64-9997-8f8229def45a")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8420"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "653f1524-7964-460f-89b2-1e472cbc7eff")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/69a76064-578d-4a49-aad8-2873571f78bd/16564aa4-caa4-4ad7-814d-b21a63b02d3a")
-		(sheetname "/Inputs, 1-Wire, I2C and display headers/")
-		(sheetfile "io.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.48 -3.16)
-			(end 8.82 -3.16)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "db89c43b-7a03-46c2-aa7b-6499fc78a717")
-		)
-		(fp_rect
-			(start -3.48 -2.78)
-			(end 8.82 9.78)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "a806ba28-de1a-4d51-a7f5-b6df779b9f48")
-		)
-		(fp_rect
-			(start -3.61 -2.91)
-			(end 8.95 9.91)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "4547be36-47bf-4dd2-8f34-ac8118a461b5")
-		)
-		(fp_rect
-			(start -3.36 -2.66)
-			(end 8.7 9.66)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "1233b003-0cc4-43cb-b9f0-54f88d0954f8")
-		)
-		(fp_text user "wire entry"
-			(at 2.67 -1.76 0)
-			(layer "F.Fab")
-			(uuid "0fc15899-bbb2-4222-8fde-c463fbe746aa")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(fp_text user "${REFERENCE}"
-			(at 2.67 5 0)
-			(layer "F.Fab")
-			(uuid "1dad6bc2-8c53-436b-8ce0-c851300b53c9")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "+3V3")
-			(uuid "9f6411c7-3f8f-4caf-9dee-1e5ce7d5319c")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5.1)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "Net-(J15-Pin_2)")
-			(uuid "4cce09c1-96a2-498d-ad02-efc2b697c3da")
-		)
-		(pad "3" thru_hole circle
-			(at 7 0)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "GND")
-			(uuid "099e29de-6cd9-413e-bc22-7f63d385c535")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
 	(footprint "Capacitor_SMD:C_1206_3216Metric"
 		(layer "F.Cu")
 		(uuid "b271d47d-fc8c-4ab3-986b-9879a461faed")
@@ -26434,188 +27250,6 @@
 			)
 		)
 	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "c1090900-0852-4f2c-a52a-bfe1cf5b8430")
-		(at 231.554999 27.955)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J17"
-			(at 2.67 10.96 0)
-			(layer "F.SilkS")
-			(uuid "c7fc85d5-bbb3-4d14-9070-f019d3b494ff")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "IN3"
-			(at 2.67 12.46 0)
-			(layer "F.Fab")
-			(uuid "9424b5b1-e0a4-4d5a-a068-b3620fb438f1")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "b5a3697d-78c8-43a4-b9ce-0f727e190b7c")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "c496603e-923d-454c-bd6e-798cd085a245")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "cf426d5d-b91e-41d3-8f43-5fb8bfd163eb")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8420"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "3ee307c7-604b-4381-a16a-03ba68460909")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/69a76064-578d-4a49-aad8-2873571f78bd/1065cd0e-61a6-420e-b98f-32f50628d4d5")
-		(sheetname "/Inputs, 1-Wire, I2C and display headers/")
-		(sheetfile "io.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.48 -3.16)
-			(end 8.82 -3.16)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "44b41619-b429-4d61-92f5-09f2ef7ef6f7")
-		)
-		(fp_rect
-			(start -3.48 -2.78)
-			(end 8.82 9.78)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "45a65183-a078-4327-aa45-23ae6f953663")
-		)
-		(fp_rect
-			(start -3.61 -2.91)
-			(end 8.95 9.91)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "95c47352-f710-420a-bf89-62611740044c")
-		)
-		(fp_rect
-			(start -3.36 -2.66)
-			(end 8.7 9.66)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "321d4ed9-3a86-403a-b3e2-206e1c62a163")
-		)
-		(fp_text user "wire entry"
-			(at 2.67 -1.76 0)
-			(layer "F.Fab")
-			(uuid "2043fbe1-c40e-4638-8529-c56b82216235")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(fp_text user "${REFERENCE}"
-			(at 2.67 5 0)
-			(layer "F.Fab")
-			(uuid "738af756-fd81-4830-b679-91d483ffbc02")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "+3V3")
-			(uuid "837830f3-d593-4826-b146-9c47a8a4f81a")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5.1)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "Net-(J17-Pin_2)")
-			(uuid "a0bc1a7d-3cfb-4179-9d39-21f8727068bf")
-		)
-		(pad "3" thru_hole circle
-			(at 7 0)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "GND")
-			(uuid "2654aa7e-5b78-45b3-8524-3a7ece0b303d")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
 	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "c2108983-5c96-44fc-9cda-413b4b17e926")
@@ -26776,188 +27410,6 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "c3476496-1a00-40b3-92a8-54749dda7371")
-		(at 191.955 27.955)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J26"
-			(at 2.67 10.96 0)
-			(layer "F.SilkS")
-			(uuid "c2d1bfc0-a24d-4b03-bf8a-77193d519e5a")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "Module"
-			(at 2.67 12.46 0)
-			(layer "F.Fab")
-			(uuid "621d8ecc-8ad2-4342-b552-dd437298e3a4")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "9f73cf39-283f-483c-a8d2-b9ffa3cfa45e")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "8d436c1a-7287-4378-8631-9c9c345a46a9")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "bda89135-3842-4e7e-b074-6b1c384f490e")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8420"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "58a90e80-a46f-4ac3-96fc-63d6c30105f9")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/7f54e82c-99a9-49f3-9f13-2c730539fa02/cd62cce5-48e2-438b-a269-eed822d2699d")
-		(sheetname "/ADS1115 ADC and pH amplifier/")
-		(sheetfile "analog.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.48 -3.16)
-			(end 8.82 -3.16)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "d411d11a-055d-4e7c-9a94-fdee2056d59c")
-		)
-		(fp_rect
-			(start -3.48 -2.78)
-			(end 8.82 9.78)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "99b4e152-aa68-4251-be2b-0b0f7750b0db")
-		)
-		(fp_rect
-			(start -3.61 -2.91)
-			(end 8.95 9.91)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "ccdb6a6a-7abe-4a50-9d36-9c9ed825711b")
-		)
-		(fp_rect
-			(start -3.36 -2.66)
-			(end 8.7 9.66)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "ae8e6c13-3988-40eb-bf46-adcdb449a7eb")
-		)
-		(fp_text user "wire entry"
-			(at 2.67 -1.76 0)
-			(layer "F.Fab")
-			(uuid "695ff79d-aed7-4a70-a88f-6a1e99441ada")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(fp_text user "${REFERENCE}"
-			(at 2.67 5 0)
-			(layer "F.Fab")
-			(uuid "2903a226-36a7-42c0-8980-47663ed45e51")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "+5V")
-			(uuid "210b1b85-af08-46e5-b0df-e636cc11baf2")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5.1)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "Net-(J26-Pin_2)")
-			(uuid "ff902d3f-d65f-4c38-ad84-7691537994dc")
-		)
-		(pad "3" thru_hole circle
-			(at 7 0)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "GND")
-			(uuid "ece68ea1-7df0-494e-935e-a08729749d7e")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -27979,6 +28431,197 @@
 			)
 		)
 	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "cb54dbf2-6927-47a2-bb59-a99818a50122")
+		(at 182.695 106.745 90)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454, pole 1 in the front row) and MAX MX250-3.5-02P-B (LCSC C7470116, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J1"
+			(at 1 11 90)
+			(layer "F.SilkS")
+			(uuid "12bc1364-4818-4713-ac85-3a89f98f9188")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "12V IN"
+			(at 1 12.5 90)
+			(layer "F.Fab")
+			(uuid "48fa1812-e0bd-44cc-aed2-00938a15c071")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ed70a3f9-4cc3-450b-a974-f67ca59e10f7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d0d4d148-6787-45a0-b60b-9f3407d725d1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 90)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "a72da264-4d76-42f3-9cb3-724470393a49")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8454"
+			(at 0 0 90)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "1f5264f1-9d1e-43cc-966f-7a52175fbef2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/aa2c7084-723c-4840-87cc-7f7b779e0a57/5bc539e0-ea30-4858-8d33-34e3a44d0bcf")
+		(sheetname "/Power supply/")
+		(sheetfile "power.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.37 -2.9)
+			(end 5.37 -2.9)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "45349a3b-4f0e-44b4-9dd8-dad0f43af01d")
+		)
+		(fp_rect
+			(start -3.37 -2.52)
+			(end 5.37 9.82)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "5e5785db-b233-4b98-9d0b-47b5969962aa")
+		)
+		(fp_rect
+			(start -3.5 -2.65)
+			(end 5.5 9.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "af6af206-78d0-45f5-8a41-cfb1884d7b47")
+		)
+		(fp_rect
+			(start -3.25 -2.4)
+			(end 5.25 9.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "f705ac81-388f-46a2-b665-300547e9153c")
+		)
+		(fp_text user "wire entry"
+			(at 1 -1.5 90)
+			(layer "F.Fab")
+			(uuid "3289d804-0da6-45a0-87e6-abf6885bed99")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(fp_text user "${REFERENCE}"
+			(at 1 5.15 90)
+			(layer "F.Fab")
+			(uuid "92fd8e6f-5269-4021-b1d8-4ea6941fd441")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0 90)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/Power supply/VIN_RAW")
+			(uuid "eccae2c7-357b-46ec-9fc6-45e20b6f3816")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.05 90)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/Power supply/VIN_RAW")
+			(uuid "ea347ddd-3168-4ba5-af8e-a0fb5b7563b5")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0 90)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "b814014a-9104-4e80-98aa-72341e611bc4")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.05 90)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "2aac4d79-551b-4ca7-b849-78c832e5b2e0")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "Diode_SMD:D_SMA"
 		(layer "F.Cu")
 		(uuid "cc4dea68-010a-4a8f-b36e-3c1a365d1d1c")
@@ -28565,179 +29208,6 @@
 			)
 		)
 	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "cda5ea59-3ee6-4d30-a40c-1ca05cd496a2")
-		(at 277.305 49.545 -90)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J11"
-			(at 1 11 270)
-			(layer "F.SilkS")
-			(uuid "fdd68f79-473e-4db1-83aa-f595645071bc")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "SSR S1"
-			(at 1 12.5 270)
-			(layer "F.Fab")
-			(uuid "c0973b09-bf11-4c0b-a73f-4cc910b3d6f4")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "89d69ecc-2dd8-41fb-9c59-4f24006c879b")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 270)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "513417ee-6762-4a9f-84eb-da882e0eb0cd")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 270)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "da5c1cb6-5f4b-4e1c-be3c-9e15f78ec2d9")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8454"
-			(at 0 0 270)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "3aeb6fea-fa3b-43cc-8b7e-3279cceeb204")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/b36de559-7e9c-4c60-acb5-187afccc7a04/1ee2f522-3273-4fe2-a610-aa87acdf47df")
-		(sheetname "/SSR / relay control outputs S1..S4/")
-		(sheetfile "ssr.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.37 -2.9)
-			(end 5.37 -2.9)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "14a01b32-1fe7-457c-8541-a0ad696e8480")
-		)
-		(fp_rect
-			(start -3.37 -2.52)
-			(end 5.37 9.82)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "38213aae-45cb-4b74-bbbe-e0ee15af1c6b")
-		)
-		(fp_rect
-			(start -3.5 -2.65)
-			(end 5.5 9.95)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "ec14d415-6bd4-4892-9e8a-c648f60a1c6b")
-		)
-		(fp_rect
-			(start -3.25 -2.4)
-			(end 5.25 9.7)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "964eea2e-02a3-410b-bbf7-e50a52542737")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 1 5.15 270)
-			(layer "F.Fab")
-			(uuid "fd77062c-546b-4ffc-b2dd-c2adf527d6f3")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(fp_text user "wire entry"
-			(at 1 -1.5 270)
-			(layer "F.Fab")
-			(uuid "6a21e3df-5c3e-43f6-938f-166d48c8c41a")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0 270)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "/SSR {slash} relay control outputs S1..S4/SSR_V")
-			(uuid "3b334281-c6b5-4e94-9ee0-dd345c095920")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5 270)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "/SSR {slash} relay control outputs S1..S4/S1_OUT")
-			(uuid "ef136f0f-a7ba-4a4a-91c8-fe786eceb0e4")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "ce6db678-d774-47ae-8aa1-4a4430f087c5")
@@ -28909,16 +29379,16 @@
 			)
 		)
 	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered"
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
 		(layer "F.Cu")
-		(uuid "d3f06e85-8f5b-4afd-be59-0515ff012b23")
-		(at 244.755 27.955)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J18"
-			(at 2.67 10.96 0)
+		(uuid "d0731eaa-f11d-4642-a2ec-459b9283ce28")
+		(at 277.305 58.945 -90)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454, pole 1 in the front row) and MAX MX250-3.5-02P-B (LCSC C7470116, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J12"
+			(at 1 11 270)
 			(layer "F.SilkS")
-			(uuid "39ff0d7d-36f7-45f7-9312-0924530a2b09")
+			(uuid "6217d7f1-cef2-4eed-9161-e8c593d8b675")
 			(effects
 				(font
 					(size 1 1)
@@ -28926,10 +29396,201 @@
 				)
 			)
 		)
-		(property "Value" "IN4"
+		(property "Value" "SSR S2"
+			(at 1 12.5 270)
+			(layer "F.Fab")
+			(uuid "8c437678-7f30-44a2-898e-4831e3d5e10b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "04786b5a-0e54-4bdd-8ba3-84397828cb19")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 270)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d23fca46-f996-452b-9753-2caa339d3eac")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "dd1f4635-8a09-4d8c-9f9d-56ea850bf40b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8454"
+			(at 0 0 270)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "7148df4c-ce1f-4615-a265-f59a1a8b2a83")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/b36de559-7e9c-4c60-acb5-187afccc7a04/f49bc0ca-6bfe-478d-ba3d-f93804737d70")
+		(sheetname "/SSR / relay control outputs S1..S4/")
+		(sheetfile "ssr.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.37 -2.9)
+			(end 5.37 -2.9)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "fa1af9cb-e2b7-4b2c-b39b-0aa42952b767")
+		)
+		(fp_rect
+			(start -3.37 -2.52)
+			(end 5.37 9.82)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "9dd41d0e-7cf8-44c8-a71a-256d162975f0")
+		)
+		(fp_rect
+			(start -3.5 -2.65)
+			(end 5.5 9.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "d9d1d3a5-468a-4999-b547-1047ae716360")
+		)
+		(fp_rect
+			(start -3.25 -2.4)
+			(end 5.25 9.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "bb677851-9910-4fef-b689-230b1afb21e3")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 1 5.15 270)
+			(layer "F.Fab")
+			(uuid "b199b859-ef03-48da-a9e4-0ab210ae2731")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(fp_text user "wire entry"
+			(at 1 -1.5 270)
+			(layer "F.Fab")
+			(uuid "87c41425-980d-4236-86b2-caa6cfd2b847")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/SSR_V")
+			(uuid "799baec4-23e3-4637-ac83-afc8fa0a1e34")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.05 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/SSR_V")
+			(uuid "dc073cf0-6d5e-4eef-8a3b-9bf36347252f")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/S2_OUT")
+			(uuid "a17e6308-71b8-415a-ba04-b0cbfbe7c5ab")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.05 270)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/SSR {slash} relay control outputs S1..S4/S2_OUT")
+			(uuid "0c2c41f3-9e38-4bac-b0fa-308070c505b9")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "d3a0edce-cfad-4e83-9f79-95ca43738a81")
+		(at 231.554999 27.955)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420, pole 1 in the front row) and MAX MX250-3.5-03P-B (LCSC C7470117, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J17"
+			(at 2.67 10.96 0)
+			(layer "F.SilkS")
+			(uuid "2de6499e-7c8f-4a3e-be36-1776645d042f")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "IN3"
 			(at 2.67 12.46 0)
 			(layer "F.Fab")
-			(uuid "ac84cdf8-8527-4a10-ba8e-314a926ecab7")
+			(uuid "3986d05b-4e4d-43d8-9d4a-fa9750ba31f6")
 			(effects
 				(font
 					(size 1 1)
@@ -28941,7 +29602,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f4704d05-95c9-4a00-a5bd-0732948bc86b")
+			(uuid "6846c080-c594-4eb1-8d8d-6044f8c39c74")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28952,7 +29613,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4b8dccac-fb4d-44c5-80f5-4c0dbbfd5531")
+			(uuid "6a088986-8d93-44f6-8cc6-185ceb14280f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28963,7 +29624,7 @@
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "a452f945-1dcd-4deb-880c-08242f0093fc")
+			(uuid "f37a8486-0b50-41c1-ae3a-6a91ca3537ef")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28974,14 +29635,14 @@
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "fdec3a21-dd79-4267-93d4-407fabd405de")
+			(uuid "2294c3ab-5539-4f15-a704-4a3af05028a1")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(path "/69a76064-578d-4a49-aad8-2873571f78bd/68bdca10-9156-400b-b7be-fe9c276c4c82")
+		(path "/69a76064-578d-4a49-aad8-2873571f78bd/1065cd0e-61a6-420e-b98f-32f50628d4d5")
 		(sheetname "/Inputs, 1-Wire, I2C and display headers/")
 		(sheetfile "io.kicad_sch")
 		(attr through_hole)
@@ -28994,7 +29655,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "8b3ecbdf-e09a-4749-8cc4-60df8a68cadf")
+			(uuid "acedfc6d-b178-45cc-9483-c7f5be87e3db")
 		)
 		(fp_rect
 			(start -3.48 -2.78)
@@ -29005,7 +29666,7 @@
 			)
 			(fill no)
 			(layer "F.SilkS")
-			(uuid "aed98144-7aa3-4f55-86d2-79d97197a4b5")
+			(uuid "eb538023-1060-41da-8d73-b934e59c27e3")
 		)
 		(fp_rect
 			(start -3.61 -2.91)
@@ -29016,7 +29677,7 @@
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "f537c166-f365-48f6-ae4a-da8531cfc7e8")
+			(uuid "6086fcd4-60be-4e70-8709-6925c249aa3a")
 		)
 		(fp_rect
 			(start -3.36 -2.66)
@@ -29027,12 +29688,12 @@
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "ab99b50f-bd96-4919-92e1-cfe9fb4a535d")
+			(uuid "e77a7d86-8fbd-4c2b-8fb8-58cee53cc0ec")
 		)
 		(fp_text user "wire entry"
 			(at 2.67 -1.76 0)
 			(layer "F.Fab")
-			(uuid "3772add2-7fee-43f8-a02c-dfc18fe7e921")
+			(uuid "34574908-a958-4fe7-af38-06331a707787")
 			(effects
 				(font
 					(size 0.6 0.6)
@@ -29043,7 +29704,7 @@
 		(fp_text user "${REFERENCE}"
 			(at 2.67 5 0)
 			(layer "F.Fab")
-			(uuid "29c5b0b5-0f9a-464d-afbd-d173c67b3e5b")
+			(uuid "11a92166-0d75-405a-8200-59c89150a442")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -29054,29 +29715,56 @@
 		(pad "1" thru_hole rect
 			(at 0 0)
 			(size 2 2)
-			(drill 1.1)
+			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "+3V3")
-			(uuid "41a8a3ee-d3f9-4039-947b-df42d2215da2")
+			(uuid "627ddb9c-c2a0-4888-881d-332b9a37f618")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.1)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "+3V3")
+			(uuid "992627d1-52b9-4f8c-a648-95b84a0a8afa")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(J17-Pin_2)")
+			(uuid "62a18d73-4955-4d5e-b0a7-2bbad0b7ab59")
 		)
 		(pad "2" thru_hole circle
 			(at 3.5 5.1)
 			(size 2 2)
-			(drill 1.1)
+			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(J18-Pin_2)")
-			(uuid "98ac4937-c427-4a6a-b631-359ac854ad39")
+			(net "Net-(J17-Pin_2)")
+			(uuid "a8e3412a-9fa2-4d74-a98b-dbf44d7dc226")
 		)
 		(pad "3" thru_hole circle
 			(at 7 0)
 			(size 2 2)
-			(drill 1.1)
+			(drill 1.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "GND")
-			(uuid "ef3fb8da-d351-489e-bbc6-53e63186d952")
+			(uuid "de8c3d01-80cc-4425-b44c-c78a7e7e5d39")
+		)
+		(pad "3" thru_hole circle
+			(at 7 5.1)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "fe99e5d2-26f0-4a29-8fb4-d6ea613d0017")
 		)
 		(embedded_fonts no)
 		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered.wrl"
@@ -29302,179 +29990,6 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/LED_SMD.3dshapes/LED_0805_2012Metric.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "d55f0143-fbef-49ec-89e4-75ec427a74e1")
-		(at 218.225 122.305 180)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J5"
-			(at 1 11 180)
-			(layer "F.SilkS")
-			(uuid "eb4e0503-9906-4bbd-8d53-e146b55b48cd")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "OUT Q2"
-			(at 1 12.5 180)
-			(layer "F.Fab")
-			(uuid "392f66c4-1cf8-4665-b215-2e17edfc07a9")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 180)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "2b25bfe4-7aee-4e63-9226-f9b74bcbd155")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 180)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "4771bb42-ab9c-4b91-8eee-ebfa5bde9a3d")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 180)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "48bc46ea-9e6b-46db-ab4c-96e9a2f4aacf")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8454"
-			(at 0 0 180)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "ded7d81a-1e2c-4331-bf78-4d18037dbe1a")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/662aa388-f80b-440b-be99-bc584ab7592b/9a5ec6ca-ecd1-44bb-b57b-690483ef7ac2")
-		(sheetname "/Power outputs Q1..Q6/")
-		(sheetfile "outputs.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.37 -2.9)
-			(end 5.37 -2.9)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "4bf4d28b-0194-40b8-90e4-bfce34cdf117")
-		)
-		(fp_rect
-			(start -3.37 -2.52)
-			(end 5.37 9.82)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "e24d7de3-adae-4225-87ab-2e5f2bbc9847")
-		)
-		(fp_rect
-			(start -3.5 -2.65)
-			(end 5.5 9.95)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "b91480ba-2a54-4278-bb94-31d63de29cf3")
-		)
-		(fp_rect
-			(start -3.25 -2.4)
-			(end 5.25 9.7)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "871324c3-231b-4556-bd93-dc17cd8c3f98")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 1 5.15 180)
-			(layer "F.Fab")
-			(uuid "5b71b694-f246-4d5e-a857-db0b04665e39")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(fp_text user "wire entry"
-			(at 1 -1.5 180)
-			(layer "F.Fab")
-			(uuid "95a97a76-4fe3-4fd2-aad2-93c9e8e98ec4")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0 180)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "VIN")
-			(uuid "cf5b7f7e-7ef5-40a7-ac25-901376cce67a")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5 180)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "/Power outputs Q1..Q6/Q2_OUT")
-			(uuid "8406b4b0-e565-448e-8976-b225e662e8f3")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -31194,179 +31709,6 @@
 			)
 		)
 	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "e594616e-196d-49e3-b7db-1e04f087587a")
-		(at 263.625 122.305 180)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J9"
-			(at 1 11 180)
-			(layer "F.SilkS")
-			(uuid "3d8c5104-dc03-4e70-a373-34f55c2390bf")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "OUT Q6"
-			(at 1 12.5 180)
-			(layer "F.Fab")
-			(uuid "333c579e-72ce-4b02-b807-85dcfb97b228")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 180)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "641c8fb4-4690-4714-a25f-f78c91e06f7a")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 180)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "3846331c-6e62-47ed-b2ea-ac36aebe92b5")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 180)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "27e937d7-a658-4099-b13b-258ecba3ba2e")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8454"
-			(at 0 0 180)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "1886ecb2-7819-46e7-9359-4df9c7cadb3b")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/662aa388-f80b-440b-be99-bc584ab7592b/0e84d324-8758-4e81-b816-bbcb408ca57f")
-		(sheetname "/Power outputs Q1..Q6/")
-		(sheetfile "outputs.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.37 -2.9)
-			(end 5.37 -2.9)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "6531fa6c-25e6-4160-b20e-414655401d7d")
-		)
-		(fp_rect
-			(start -3.37 -2.52)
-			(end 5.37 9.82)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "287ab7d3-8daf-48de-a755-1564bed388e7")
-		)
-		(fp_rect
-			(start -3.5 -2.65)
-			(end 5.5 9.95)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "3416fef3-043f-4df4-9ad1-ccf743984519")
-		)
-		(fp_rect
-			(start -3.25 -2.4)
-			(end 5.25 9.7)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "f7a26e71-7fb1-45ec-bebc-e00c0617d48a")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 1 5.15 180)
-			(layer "F.Fab")
-			(uuid "d4e3a2d3-a430-4389-b0bc-48aba3f9f6de")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(fp_text user "wire entry"
-			(at 1 -1.5 180)
-			(layer "F.Fab")
-			(uuid "1770f36a-638f-4e81-a07c-ad5c5311471d")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0 180)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "VIN")
-			(uuid "1005efbf-d1bc-436c-8ebd-0a3e6faaca90")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5 180)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "/Power outputs Q1..Q6/Q6_OUT")
-			(uuid "c8f4955b-e024-4a0f-b53a-a90f28de0978")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
 	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "e69ddb60-93bc-4633-b130-65ad4e46f528")
@@ -31953,6 +32295,197 @@
 			)
 		)
 	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "e7160a55-aa9e-452d-b6ca-526dc97ff3ac")
+		(at 206.875 122.305 180)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454, pole 1 in the front row) and MAX MX250-3.5-02P-B (LCSC C7470116, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J4"
+			(at 1 11 180)
+			(layer "F.SilkS")
+			(uuid "3e120c68-73ab-4c94-8c66-793ba961cfdb")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "OUT Q1"
+			(at 1 12.5 180)
+			(layer "F.Fab")
+			(uuid "2c761eb2-921e-44a1-8e66-b84b1c211b70")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e22119ce-6d9e-4995-84a4-4c94ebe52970")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 180)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "078c2daa-633e-4554-a8a6-e4e0166cc741")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "68a068dc-3c14-40ca-a422-2d6a067229ab")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8454"
+			(at 0 0 180)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "32d52e03-dee3-46eb-9a36-aab471729f48")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/662aa388-f80b-440b-be99-bc584ab7592b/9ef7da5d-7f04-4cc6-b920-195277f0e497")
+		(sheetname "/Power outputs Q1..Q6/")
+		(sheetfile "outputs.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.37 -2.9)
+			(end 5.37 -2.9)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "dc674ce4-d69a-4710-a336-a2d0fae4a996")
+		)
+		(fp_rect
+			(start -3.37 -2.52)
+			(end 5.37 9.82)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "b54c64f2-c254-44ae-95c2-760f4e6fbacb")
+		)
+		(fp_rect
+			(start -3.5 -2.65)
+			(end 5.5 9.95)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "73db95ad-0f85-4705-b1fe-c1d6f93c8e59")
+		)
+		(fp_rect
+			(start -3.25 -2.4)
+			(end 5.25 9.7)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "c80ab1b0-887c-4669-8b0b-eda147c33cb1")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 1 5.15 180)
+			(layer "F.Fab")
+			(uuid "e11692d2-d918-49ac-ad9d-03d7bcd19114")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(fp_text user "wire entry"
+			(at 1 -1.5 180)
+			(layer "F.Fab")
+			(uuid "f979ab85-d630-46e8-8618-5933b0d02c22")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "VIN")
+			(uuid "097a8d6f-fb41-40af-acc6-c8535b7d13e9")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.05 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "VIN")
+			(uuid "5715a29e-21a7-4fbc-a5a4-f88f1e3c0152")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/Power outputs Q1..Q6/Q1_OUT")
+			(uuid "6646a604-08f2-45c3-8883-49a8392679bb")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.05 180)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "/Power outputs Q1..Q6/Q1_OUT")
+			(uuid "140a3d58-d288-488b-8fe2-d68dcb3617e0")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "aquaPCB:Littelfuse_OMNI-BLOK_154"
 		(layer "F.Cu")
 		(uuid "e947ffa0-3392-474d-95e7-a93cb25809ee")
@@ -32024,6 +32557,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -34049,6 +34583,215 @@
 			)
 		)
 	)
+	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered"
+		(layer "F.Cu")
+		(uuid "f6453acf-c8b1-409c-bd85-8a6ed79786c9")
+		(at 182.955 46.995 90)
+		(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420, pole 1 in the front row) and MAX MX250-3.5-03P-B (LCSC C7470117, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+		(property "Reference" "J27"
+			(at 2.67 10.96 90)
+			(layer "F.SilkS")
+			(uuid "b7360f72-c4f4-469d-856b-05dcf600962a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "AIN3"
+			(at 2.67 12.46 90)
+			(layer "F.Fab")
+			(uuid "b5494a88-320d-4c74-ad55-92f7f7c76420")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "596eb77c-c7ef-41bb-b91f-0011e53fbd5e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "47155ab5-b5e6-487a-990b-082545832856")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "terminal_block/Phoenix"
+			(at 0 0 90)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "01cf42bb-d8a3-497b-afb7-25b5a4fbb64f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C8420"
+			(at 0 0 90)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "1079676a-e9f0-4b95-8a3e-3f65d5496875")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/7f54e82c-99a9-49f3-9f13-2c730539fa02/5ff2b299-b40e-4835-9092-521e1075b774")
+		(sheetname "/ADS1115 ADC and pH amplifier/")
+		(sheetfile "analog.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -3.48 -3.16)
+			(end 8.82 -3.16)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "dd1ddbe9-52c1-449f-b66d-aeb736ce8a5f")
+		)
+		(fp_rect
+			(start -3.48 -2.78)
+			(end 8.82 9.78)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.SilkS")
+			(uuid "8d64cc7d-6232-4d14-a582-2136c62d0e3a")
+		)
+		(fp_rect
+			(start -3.61 -2.91)
+			(end 8.95 9.91)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "a5cfbb45-fb01-422d-a1c8-d5dcab374758")
+		)
+		(fp_rect
+			(start -3.36 -2.66)
+			(end 8.7 9.66)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "d0bdcd7f-1c20-4aef-8945-62f9eab8e63b")
+		)
+		(fp_text user "wire entry"
+			(at 2.67 -1.76 90)
+			(layer "F.Fab")
+			(uuid "9c0fb2d9-35d8-4bd9-ab0c-ae7e6b866068")
+			(effects
+				(font
+					(size 0.6 0.6)
+					(thickness 0.09)
+				)
+			)
+		)
+		(fp_text user "${REFERENCE}"
+			(at 2.67 5 90)
+			(layer "F.Fab")
+			(uuid "3fc27f07-5c28-482f-a709-da776538d216")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.12)
+				)
+			)
+		)
+		(pad "1" thru_hole rect
+			(at 0 0 90)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "+3V3")
+			(uuid "0fb4058c-96c8-49ed-9315-c1f7f881aebd")
+		)
+		(pad "1" thru_hole circle
+			(at 0 5.1 90)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "+3V3")
+			(uuid "f2d6fb54-cb61-449c-b733-5bc5bb605f49")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 0 90)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(J27-Pin_2)")
+			(uuid "07ba672b-771e-484c-904a-4b62b03d0b19")
+		)
+		(pad "2" thru_hole circle
+			(at 3.5 5.1 90)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(J27-Pin_2)")
+			(uuid "e9ea018e-30a7-491a-bf27-04b3e4653bf0")
+		)
+		(pad "3" thru_hole circle
+			(at 7 0 90)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "e3318940-1214-45ee-8765-ad0eb89ce092")
+		)
+		(pad "3" thru_hole circle
+			(at 7 5.1 90)
+			(size 2 2)
+			(drill 1.2)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "GND")
+			(uuid "d7efdc53-e433-440c-bf3d-323e53de4523")
+		)
+		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "f6f10348-a444-4a22-86b1-13cb33a7c274")
@@ -34209,179 +34952,6 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_0805_2012Metric.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "f6f6c411-10e4-4370-baa6-dcffa9d57672")
-		(at 182.695 106.745 90)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J1"
-			(at 1 11 90)
-			(layer "F.SilkS")
-			(uuid "71cbf369-0ae6-4662-b0d5-b09477dd9b3d")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "12V IN"
-			(at 1 12.5 90)
-			(layer "F.Fab")
-			(uuid "b4f692a9-cf16-45b4-a7ff-9834341627b9")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 90)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "1c172ac4-b7cf-4919-ba3b-6af545d18304")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 90)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "fc94083a-edea-4f6b-b4a0-9464232e4d54")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 90)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "49b85001-42f0-4b5c-b697-7a995a6b6f05")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8454"
-			(at 0 0 90)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "a5cfb2a3-383c-448a-9690-a5cf5ba7d770")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/aa2c7084-723c-4840-87cc-7f7b779e0a57/5bc539e0-ea30-4858-8d33-34e3a44d0bcf")
-		(sheetname "/Power supply/")
-		(sheetfile "power.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.37 -2.9)
-			(end 5.37 -2.9)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "9f9032c0-e319-432c-9c3a-818e0aa769fb")
-		)
-		(fp_rect
-			(start -3.37 -2.52)
-			(end 5.37 9.82)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "bfa2c538-388f-49be-99d7-17931c20924b")
-		)
-		(fp_rect
-			(start -3.5 -2.65)
-			(end 5.5 9.95)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "1109833d-416b-4668-b241-b9779e6a2a1a")
-		)
-		(fp_rect
-			(start -3.25 -2.4)
-			(end 5.25 9.7)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "41d74dce-1256-4047-b0ca-f65cf75dcc58")
-		)
-		(fp_text user "wire entry"
-			(at 1 -1.5 90)
-			(layer "F.Fab")
-			(uuid "3806242d-9dbc-42bf-a31f-e36d5f2b25ca")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(fp_text user "${REFERENCE}"
-			(at 1 5.15 90)
-			(layer "F.Fab")
-			(uuid "67deb901-6fe2-42ff-bbf1-e042ce7f838d")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0 90)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "/Power supply/VIN_RAW")
-			(uuid "fc7b1a91-2c0e-4497-b962-2c5aa68065bb")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5 90)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "GND")
-			(uuid "c26132ea-9afc-44b3-86c8-f603fecd65a4")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -34969,188 +35539,6 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x02_P2.54mm_Vertical.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered"
-		(layer "F.Cu")
-		(uuid "fdc246df-1e65-4640-9eae-f53f7c6c05d1")
-		(at 182.955 46.995 90)
-		(descr "Spring clamp (push-button) PCB terminal block, Ningbo Kangnex WJ250B-3.5-03P-11 (LCSC C8420), pitch 3.5 mm, staggered pins. Pads from the LCSC/EasyEDA footprint, drill 1.1 mm per maker drawing. Wire entry on the pin-1 side (-y at 0 deg). 1.5 mm2 / 16 AWG, 8 A (IEC), 7 A (UL).")
-		(tags "terminal block push-in spring WJ250 3.5mm")
-		(property "Reference" "J27"
-			(at 2.67 10.96 90)
-			(layer "F.SilkS")
-			(uuid "5556cfec-83da-4cd5-b756-b7e3dddaed5e")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "AIN3"
-			(at 2.67 12.46 90)
-			(layer "F.Fab")
-			(uuid "2dafcd87-1827-4b1a-b484-3204123b7b59")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 90)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "ccd5c3c1-5391-4c51-81cd-8901521dce38")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 0 0 90)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "0283d5c0-3067-404f-9b1c-d31bd2bfa503")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "terminal_block/Phoenix"
-			(at 0 0 90)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "1252ca69-dc46-4595-adcb-c14b75d743ca")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC" "C8420"
-			(at 0 0 90)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "a38c8cad-8f11-4011-b9e6-6314e3bfa389")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(path "/7f54e82c-99a9-49f3-9f13-2c730539fa02/5ff2b299-b40e-4835-9092-521e1075b774")
-		(sheetname "/ADS1115 ADC and pH amplifier/")
-		(sheetfile "analog.kicad_sch")
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -3.48 -3.16)
-			(end 8.82 -3.16)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "84056857-be7d-4b84-8290-98516f4af310")
-		)
-		(fp_rect
-			(start -3.48 -2.78)
-			(end 8.82 9.78)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.SilkS")
-			(uuid "d52cece8-5fab-4259-86bb-f3a848187684")
-		)
-		(fp_rect
-			(start -3.61 -2.91)
-			(end 8.95 9.91)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "398fa4da-2f16-41cd-ac73-82adfdcab1b6")
-		)
-		(fp_rect
-			(start -3.36 -2.66)
-			(end 8.7 9.66)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "f2d34907-8ab5-4b06-af8e-47e428c9ec99")
-		)
-		(fp_text user "wire entry"
-			(at 2.67 -1.76 90)
-			(layer "F.Fab")
-			(uuid "fd0044e5-5417-4417-8b3e-633e4b91cae4")
-			(effects
-				(font
-					(size 0.6 0.6)
-					(thickness 0.09)
-				)
-			)
-		)
-		(fp_text user "${REFERENCE}"
-			(at 2.67 5 90)
-			(layer "F.Fab")
-			(uuid "1983b763-07c8-449f-a7cb-43529087c50d")
-			(effects
-				(font
-					(size 0.8 0.8)
-					(thickness 0.12)
-				)
-			)
-		)
-		(pad "1" thru_hole rect
-			(at 0 0 90)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "+3V3")
-			(uuid "7a5c86ec-c9df-4a9d-8f4a-e9ba1685ca76")
-		)
-		(pad "2" thru_hole circle
-			(at 3.5 5.1 90)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "Net-(J27-Pin_2)")
-			(uuid "6cf0f27c-2c22-4450-aa85-022c73553f30")
-		)
-		(pad "3" thru_hole circle
-			(at 7 0 90)
-			(size 2 2)
-			(drill 1.1)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "GND")
-			(uuid "60f5abb6-0ce8-4e82-a570-52fbccfa7788")
-		)
-		(embedded_fonts no)
-		(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-03P_P3.50mm_Staggered.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
