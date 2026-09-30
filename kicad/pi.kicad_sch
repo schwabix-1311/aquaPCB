@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "f0c1c8fc-8568-4f5d-9855-244d71a8c5c4")
+	(uuid "35ca5318-be09-4b3f-b783-2c1ecd3edb9c")
 	(paper "A3")
 	(title_block
 		(title "aquaPCB – Raspberry Pi connector")
@@ -1674,17 +1674,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "40-pin Pi header, normal (not mirrored) numbering. Fit 2x20 socket (Pi Zero 2 W face-up, header\nsoldered on its underside) or 40-pin box header (Pi 3/4 via IDC ribbon)."
-		(exclude_from_sim no)
-		(at 25.4 30.48 0)
-		(effects
-			(font
-				(size 2 2)
-			)
-			(justify left top)
-		)
-		(uuid "2f62a138-d7ea-4dbe-b0bb-de5bc70aba03")
-	)
 	(text "Pins 1/17 (Pi 3V3) stay unconnected: this board has its own 3.3 V regulator.\nPins 27/28 (ID EEPROM) unused. GPIO 14/15 only go to the UART console header."
 		(exclude_from_sim no)
 		(at 25.4 96.52 0)
@@ -1694,313 +1683,34 @@
 			)
 			(justify left top)
 		)
-		(uuid "5689a0ac-e516-4bc6-b25a-d90d48d38291")
+		(uuid "03f848f5-6bae-40ab-8f14-65b31eca33ac")
+	)
+	(text "40-pin Pi header, normal (not mirrored) numbering. Fit 2x20 socket (Pi Zero 2 W face-up, header\nsoldered on its underside) or 40-pin box header (Pi 3/4 via IDC ribbon)."
+		(exclude_from_sim no)
+		(at 25.4 30.48 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left top)
+		)
+		(uuid "da5a8384-7ae8-4853-b28f-d1dda380272f")
 	)
 	(no_connect
 		(at 54.61 73.66)
-		(uuid "2c9250fc-2cad-42cf-8e71-676479bd8e36")
-	)
-	(no_connect
-		(at 41.91 73.66)
-		(uuid "521701a0-16e3-4d9b-9ab8-86f65035fe00")
-	)
-	(no_connect
-		(at 41.91 60.96)
-		(uuid "77d52a03-a6d6-43b3-ba23-b5fb76ec456a")
+		(uuid "2adfd472-44f7-4e9f-b2ca-7470c71add79")
 	)
 	(no_connect
 		(at 41.91 40.64)
-		(uuid "e926eebe-7d47-4c83-8fbb-a36864536d38")
+		(uuid "4e3282e5-5ab0-4914-971f-bf62b1b98162")
 	)
-	(wire
-		(pts
-			(xy 41.91 71.12) (xy 39.37 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "01ba8b0b-6673-4d77-b6f0-d2a65139a962")
+	(no_connect
+		(at 41.91 73.66)
+		(uuid "dcd77ea3-7d83-4ca5-9930-2f4b2c411a20")
 	)
-	(wire
-		(pts
-			(xy 54.61 71.12) (xy 57.15 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "053ba29a-be78-4c2d-9375-f5d3ba027ffd")
-	)
-	(wire
-		(pts
-			(xy 54.61 78.74) (xy 57.15 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "06e248df-a65b-4b15-9181-301a81c30e19")
-	)
-	(wire
-		(pts
-			(xy 54.61 45.72) (xy 57.15 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1acb27ac-60e7-4c28-bf77-72a14e9007f6")
-	)
-	(wire
-		(pts
-			(xy 54.61 53.34) (xy 57.15 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "240db543-89f4-4c12-9390-4eba2f394c90")
-	)
-	(wire
-		(pts
-			(xy 41.91 55.88) (xy 39.37 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "24670ef5-a086-4c79-9b6c-06cd391bc70f")
-	)
-	(wire
-		(pts
-			(xy 41.91 76.2) (xy 39.37 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "27b4acdc-fa84-450a-aeac-782dc90ecbea")
-	)
-	(wire
-		(pts
-			(xy 41.91 66.04) (xy 39.37 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "399b58d9-d8f2-418c-9b1f-dcf7f0d9ac13")
-	)
-	(wire
-		(pts
-			(xy 99.06 62.23) (xy 96.52 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3a0e77fe-694a-4344-bb42-d4382ccfd376")
-	)
-	(wire
-		(pts
-			(xy 99.06 67.31) (xy 96.52 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3cc9504d-2dd6-4c28-81ed-8ec726be1dcf")
-	)
-	(wire
-		(pts
-			(xy 54.61 83.82) (xy 57.15 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3eeeecd7-40b6-4f79-9cbe-86adf598e610")
-	)
-	(wire
-		(pts
-			(xy 41.91 53.34) (xy 39.37 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "426e251b-3b1a-42b7-b909-a6134cfab615")
-	)
-	(wire
-		(pts
-			(xy 54.61 88.9) (xy 57.15 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4da0fff8-29cc-4b30-b7d5-405396e66e5e")
-	)
-	(wire
-		(pts
-			(xy 41.91 78.74) (xy 39.37 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "51281d29-cee9-44ba-a80a-c71777b0e567")
-	)
-	(wire
-		(pts
-			(xy 54.61 58.42) (xy 57.15 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "56043596-b241-46e8-8a1b-ee4c794d41e2")
-	)
-	(wire
-		(pts
-			(xy 41.91 81.28) (xy 39.37 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c43ea63-1f9c-4a75-9e55-57c19c4e2789")
-	)
-	(wire
-		(pts
-			(xy 54.61 68.58) (xy 57.15 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "621d88ba-68e9-4d4d-8ae2-9fbabb0af1a6")
-	)
-	(wire
-		(pts
-			(xy 41.91 63.5) (xy 39.37 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6355da64-d709-4d84-8120-21d5d30e1973")
-	)
-	(wire
-		(pts
-			(xy 41.91 43.18) (xy 39.37 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6d61c1f5-55e1-43d9-9e44-ac98b1113d8c")
-	)
-	(wire
-		(pts
-			(xy 54.61 48.26) (xy 57.15 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "70ae29d5-176e-4eaf-9b92-0846d66c6396")
-	)
-	(wire
-		(pts
-			(xy 54.61 43.18) (xy 57.15 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "861553f3-1062-45fa-9c2f-f2c16621f942")
-	)
-	(wire
-		(pts
-			(xy 54.61 40.64) (xy 57.15 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8cc554cd-d884-4d6b-b9f8-f8b1da19d1d3")
-	)
-	(wire
-		(pts
-			(xy 41.91 45.72) (xy 39.37 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8e2b12a1-e9a3-467c-befb-5091d9da4bca")
-	)
-	(wire
-		(pts
-			(xy 41.91 86.36) (xy 39.37 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9a3753b2-8195-484c-8fdb-2c9e2ffac09e")
-	)
-	(wire
-		(pts
-			(xy 41.91 83.82) (xy 39.37 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a3074dd5-258f-4b45-ae9c-3591cdd68542")
-	)
-	(wire
-		(pts
-			(xy 41.91 48.26) (xy 39.37 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a4a17cbc-1e66-47fc-a155-76c933b79188")
-	)
-	(wire
-		(pts
-			(xy 54.61 66.04) (xy 57.15 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a5649d61-9732-4ba1-9627-1031b497d2dd")
-	)
-	(wire
-		(pts
-			(xy 54.61 76.2) (xy 57.15 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a94bb59b-d980-4b86-be06-a11b6b54c79c")
-	)
-	(wire
-		(pts
-			(xy 41.91 68.58) (xy 39.37 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a95bbd26-1df1-4778-a991-d62dd7584e2b")
+	(no_connect
+		(at 41.91 60.96)
+		(uuid "f1dcac81-1b52-4363-b2e8-8bd63f3e9eca")
 	)
 	(wire
 		(pts
@@ -2010,17 +1720,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "aa56332b-459b-418a-849f-5d4a8214ce9d")
-	)
-	(wire
-		(pts
-			(xy 54.61 60.96) (xy 57.15 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ae6eb9ae-75b6-485a-aaaa-2629260bcc79")
+		(uuid "0506b3cc-45fb-463c-b24c-4f597a04eca6")
 	)
 	(wire
 		(pts
@@ -2030,7 +1730,47 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b6feb8c5-0f24-4b63-85d1-2c7ab1d086ac")
+		(uuid "1048f48d-fafa-4038-bac5-2942a7fb0f9a")
+	)
+	(wire
+		(pts
+			(xy 54.61 48.26) (xy 57.15 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18669ee4-949c-4040-8445-2dd3ff2fadb3")
+	)
+	(wire
+		(pts
+			(xy 41.91 83.82) (xy 39.37 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a621a33-0e93-4bba-a7e8-c2dbf26cca8d")
+	)
+	(wire
+		(pts
+			(xy 54.61 88.9) (xy 57.15 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2011ac01-8d7c-4d35-bbdd-e678c8b274a1")
+	)
+	(wire
+		(pts
+			(xy 54.61 71.12) (xy 57.15 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2427010c-489a-42b6-be88-b7397cbc8146")
 	)
 	(wire
 		(pts
@@ -2040,47 +1780,17 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "cc7bc770-a1f3-4f0a-af7a-62e9ca9699dc")
+		(uuid "24338d21-bb4d-4fdb-a2f2-d6b9f3e10950")
 	)
 	(wire
 		(pts
-			(xy 54.61 81.28) (xy 57.15 81.28)
+			(xy 54.61 78.74) (xy 57.15 78.74)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d8d88f30-d4d8-49af-bada-dab564cebd75")
-	)
-	(wire
-		(pts
-			(xy 54.61 50.8) (xy 57.15 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "db2d0e98-df8b-4c39-9ed7-7b5d8b0f045e")
-	)
-	(wire
-		(pts
-			(xy 54.61 63.5) (xy 57.15 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e33878fe-4621-42bc-a690-8a1ea7218aa0")
-	)
-	(wire
-		(pts
-			(xy 54.61 86.36) (xy 57.15 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e3a2e9fb-8e67-4fb1-b285-3ed0fe40d56c")
+		(uuid "3594cd54-b0ac-4b6d-b4b3-c9f22845bb04")
 	)
 	(wire
 		(pts
@@ -2090,7 +1800,97 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e46cf96e-e427-4aae-9be2-f65da9bd7f76")
+		(uuid "35e1c601-c172-4812-9bdf-1734c02f6527")
+	)
+	(wire
+		(pts
+			(xy 99.06 62.23) (xy 96.52 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36a33efa-7569-4032-b6f4-b34291e767bd")
+	)
+	(wire
+		(pts
+			(xy 41.91 55.88) (xy 39.37 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4210e52d-e4dc-42e8-8726-83428629adea")
+	)
+	(wire
+		(pts
+			(xy 54.61 40.64) (xy 57.15 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a26fdff-d1db-4f13-8cb0-e0fb31cb5fb7")
+	)
+	(wire
+		(pts
+			(xy 41.91 78.74) (xy 39.37 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b54e58f-6f6c-4345-9344-f7a6c3f7d89e")
+	)
+	(wire
+		(pts
+			(xy 54.61 63.5) (xy 57.15 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58ce0017-3451-4cb8-b5c7-71ee0fe91a54")
+	)
+	(wire
+		(pts
+			(xy 41.91 81.28) (xy 39.37 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a7160e5-3af5-4e4e-a6f7-e029f3bdae73")
+	)
+	(wire
+		(pts
+			(xy 54.61 50.8) (xy 57.15 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b518a17-ba37-4d7c-b8a2-99fde03aaa19")
+	)
+	(wire
+		(pts
+			(xy 41.91 71.12) (xy 39.37 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7755a6fb-9fdd-4e55-a829-e56836f31f29")
+	)
+	(wire
+		(pts
+			(xy 54.61 68.58) (xy 57.15 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ad54705-5e67-41db-afb0-4b91c208dad8")
 	)
 	(wire
 		(pts
@@ -2100,27 +1900,207 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f01201a1-dc81-47c6-99b0-74548c53db8e")
+		(uuid "7db031f6-338d-415c-91d6-da9f75116e0c")
 	)
-	(label "GPIO15_RXD"
-		(at 96.52 67.31 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
+	(wire
+		(pts
+			(xy 41.91 63.5) (xy 39.37 63.5)
 		)
-		(uuid "08e82484-00f5-4ad1-a87e-0d1ff701d94c")
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e213820-9f18-41eb-bc20-cf9d3cb483ce")
 	)
-	(label "GPIO14_TXD"
-		(at 96.52 64.77 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
+	(wire
+		(pts
+			(xy 54.61 43.18) (xy 57.15 43.18)
 		)
-		(uuid "2b9982fd-b531-41e7-a561-abe6e61f96cd")
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d3582b9-7174-471b-b4b7-1c64f4311a50")
+	)
+	(wire
+		(pts
+			(xy 54.61 86.36) (xy 57.15 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "923956ce-ca19-4fdd-a24f-af1402603053")
+	)
+	(wire
+		(pts
+			(xy 41.91 48.26) (xy 39.37 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c4f4bdb-ec75-4380-a56a-1b9eb8f0e02e")
+	)
+	(wire
+		(pts
+			(xy 54.61 76.2) (xy 57.15 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7e59264-992c-4ecb-9f1a-fe0cf261fb4f")
+	)
+	(wire
+		(pts
+			(xy 54.61 81.28) (xy 57.15 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b602ccc0-ce19-40d1-9e2b-6766ac05e461")
+	)
+	(wire
+		(pts
+			(xy 99.06 67.31) (xy 96.52 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6e2f12d-e2ba-4ca6-b853-33b68d8a15ee")
+	)
+	(wire
+		(pts
+			(xy 54.61 66.04) (xy 57.15 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c81c29f3-898e-4ab5-93d0-97c1ca7069cb")
+	)
+	(wire
+		(pts
+			(xy 54.61 58.42) (xy 57.15 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb0b2197-20a4-4afb-ac56-029903c6ac25")
+	)
+	(wire
+		(pts
+			(xy 41.91 43.18) (xy 39.37 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd077bdc-55ed-43c8-99da-7db5ca01e4c1")
+	)
+	(wire
+		(pts
+			(xy 54.61 83.82) (xy 57.15 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0ba3e44-1233-4d40-ab03-a60b39d33198")
+	)
+	(wire
+		(pts
+			(xy 41.91 86.36) (xy 39.37 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d33e7147-9a38-4d9c-bea4-8568edfb043a")
+	)
+	(wire
+		(pts
+			(xy 54.61 53.34) (xy 57.15 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd5c383a-d381-4c2d-9eb7-eccb5c43ec2b")
+	)
+	(wire
+		(pts
+			(xy 41.91 45.72) (xy 39.37 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e09b75f1-c753-44ee-9f36-1143a9416031")
+	)
+	(wire
+		(pts
+			(xy 41.91 66.04) (xy 39.37 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4007b79-145e-4aaf-a003-f3f3fcebb865")
+	)
+	(wire
+		(pts
+			(xy 54.61 45.72) (xy 57.15 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec90b51c-7468-49c6-8cc7-d01eaa476f1f")
+	)
+	(wire
+		(pts
+			(xy 41.91 76.2) (xy 39.37 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef1bff53-ab6e-4c87-82bd-b4e50017747b")
+	)
+	(wire
+		(pts
+			(xy 41.91 68.58) (xy 39.37 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef7b673c-d49f-49c3-b27b-e6a5db863798")
+	)
+	(wire
+		(pts
+			(xy 41.91 53.34) (xy 39.37 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0e77a95-5e19-4616-884c-8f8c918e1ae1")
+	)
+	(wire
+		(pts
+			(xy 54.61 60.96) (xy 57.15 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9b93bee-2182-458d-ae05-20e5ee643bcd")
 	)
 	(label "GPIO14_TXD"
 		(at 57.15 48.26 0)
@@ -2130,7 +2110,27 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7b3a58db-7a5c-40c3-961a-3831bf1a8563")
+		(uuid "04e4f5b5-07d0-4dda-b07f-70b42c7e3ece")
+	)
+	(label "GPIO14_TXD"
+		(at 96.52 64.77 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "210826c0-b8e5-4557-bf13-ad4d45b3743a")
+	)
+	(label "GPIO15_RXD"
+		(at 96.52 67.31 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "2a46dbe1-e965-47cf-b1da-1a273da27856")
 	)
 	(label "GPIO15_RXD"
 		(at 57.15 50.8 0)
@@ -2140,7 +2140,30 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a03b07da-3338-4f5a-954b-a40ee899eb60")
+		(uuid "f4968a97-bd27-4411-a0bb-d039929add9d")
+	)
+	(global_label "GPIO22_S2"
+		(shape bidirectional)
+		(at 39.37 58.42 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "019bf91e-43fb-4977-b8ae-9273aa74d32b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 	)
 	(global_label "GPIO13_Q4"
 		(shape bidirectional)
@@ -2152,7 +2175,7 @@
 			)
 			(justify right)
 		)
-		(uuid "137e7967-4ec2-46c5-a8ef-533194e3f3ca")
+		(uuid "0e23915e-9c89-4b87-a252-e4f695318641")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 39.37 81.28 0)
 			(hide yes)
@@ -2165,9 +2188,9 @@
 			)
 		)
 	)
-	(global_label "5V_PI"
+	(global_label "GPIO7_CE1"
 		(shape bidirectional)
-		(at 57.15 40.64 0)
+		(at 57.15 71.12 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2175,170 +2198,9 @@
 			)
 			(justify left)
 		)
-		(uuid "14507fe0-4f22-4624-a7fc-250e6e5f39f5")
+		(uuid "18ff63c8-3ea1-445a-9baf-4e666f7faff2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 57.15 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO18_Q1"
-		(shape bidirectional)
-		(at 57.15 53.34 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "2c3913cd-3bc8-419c-851b-f15fa2a9a4e5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 57.15 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO5_IN1"
-		(shape bidirectional)
-		(at 39.37 76.2 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2dc7ed26-bfed-4b34-9fa8-93d9976f99c0")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.37 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO6_IN2"
-		(shape bidirectional)
-		(at 39.37 78.74 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "43bc650e-a625-45f2-8d3b-9d3612fc77db")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.37 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO9_MISO"
-		(shape bidirectional)
-		(at 39.37 66.04 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "62913c3f-8434-4577-a265-64aa0f9cc089")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.37 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO21_IN4"
-		(shape bidirectional)
-		(at 57.15 88.9 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "6fa0c70b-494d-4af5-97c3-29a5c24b073e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 57.15 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO27_S4"
-		(shape bidirectional)
-		(at 39.37 55.88 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7ac69a10-ad11-49c8-a675-cb1fbfeff3bc")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.37 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO10_MOSI"
-		(shape bidirectional)
-		(at 39.37 63.5 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "940a69a7-6f37-4e83-a519-472c0955d152")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.37 63.5 0)
+			(at 57.15 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2359,9 +2221,354 @@
 			)
 			(justify right)
 		)
-		(uuid "954f7d97-7cbb-439e-bac1-bb0a0dd33de1")
+		(uuid "20180f07-417f-4e2e-8e30-afbc473044e8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 39.37 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GPIO11_SCLK"
+		(shape bidirectional)
+		(at 39.37 68.58 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "25925fd3-044d-4c9d-a615-44c7d6c17b5a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GPIO9_MISO"
+		(shape bidirectional)
+		(at 39.37 66.04 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "30329286-b047-42d7-9dac-6fa3d3c80a14")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GPIO27_S4"
+		(shape bidirectional)
+		(at 39.37 55.88 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "471fd222-476d-44fb-be47-71d75663d1ff")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "5V_PI"
+		(shape bidirectional)
+		(at 57.15 43.18 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4b2bebab-4403-44fa-a757-7986752005c9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.15 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GPIO26_Q6"
+		(shape bidirectional)
+		(at 39.37 86.36 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "53ab4bfd-f362-4a46-950d-83d6fc5c95ad")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GPIO20_IN3"
+		(shape bidirectional)
+		(at 57.15 86.36 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "53e8d56b-21bc-4173-bdd9-7c3dcbf73053")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.15 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GPIO21_IN4"
+		(shape bidirectional)
+		(at 57.15 88.9 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6aa3959b-861d-481d-96e6-7699b174effa")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.15 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GPIO4_1W"
+		(shape bidirectional)
+		(at 39.37 48.26 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6f4ce681-7997-4b0c-ba83-e22c5b1b24e1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GPIO8_CE0"
+		(shape bidirectional)
+		(at 57.15 68.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "779712b5-3b89-4645-a09b-70295dfddd9e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.15 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GPIO10_MOSI"
+		(shape bidirectional)
+		(at 39.37 63.5 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "787cc486-102b-4dfa-8889-f97b62e9040e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GPIO16_Q5"
+		(shape bidirectional)
+		(at 57.15 83.82 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "96705755-54bc-4a83-88b4-acb767bccb1c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.15 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GPIO5_IN1"
+		(shape bidirectional)
+		(at 39.37 76.2 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9b43fb43-14a1-4a21-b375-5ee0ef6da7b2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GPIO17_S1"
+		(shape bidirectional)
+		(at 39.37 53.34 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a7584b0f-5ff6-4f5d-bdc9-caabff324ed1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GPIO6_IN2"
+		(shape bidirectional)
+		(at 39.37 78.74 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a8884e71-34b5-4a76-b2b6-beaa904abf65")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.37 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+	)
+	(global_label "GPIO24_DISP_RST"
+		(shape bidirectional)
+		(at 57.15 60.96 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b70f12fd-8d04-48cf-bcde-c60f0f560692")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.15 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2382,7 +2589,7 @@
 			)
 			(justify right)
 		)
-		(uuid "98cbcde9-5258-4304-bbb5-7a0ac5503580")
+		(uuid "bf307879-9009-4e0f-bdea-9f6c3781a318")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 39.37 45.72 0)
 			(hide yes)
@@ -2405,170 +2612,9 @@
 			)
 			(justify left)
 		)
-		(uuid "a967007c-a1a8-4241-83fc-1181c5fee430")
+		(uuid "c2f84b87-d815-4bbf-8bea-f812be059ab0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 57.15 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO8_CE0"
-		(shape bidirectional)
-		(at 57.15 68.58 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "acd34e69-7e82-4cbc-8e05-c4442ce2914d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 57.15 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO11_SCLK"
-		(shape bidirectional)
-		(at 39.37 68.58 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b5138d2a-190c-4758-bcc2-15caa75e8bae")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.37 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO26_Q6"
-		(shape bidirectional)
-		(at 39.37 86.36 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b6923732-629a-44b4-9f32-f1c90debae2d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.37 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO17_S1"
-		(shape bidirectional)
-		(at 39.37 53.34 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b867aaac-5a67-47a9-b731-d4aba4370ffc")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.37 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO24_DISP_RST"
-		(shape bidirectional)
-		(at 57.15 60.96 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c346ba73-24ed-4fc0-822a-98ce2dfc69bf")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 57.15 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO7_CE1"
-		(shape bidirectional)
-		(at 57.15 71.12 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c78b09da-2ce5-4c29-8afd-a78556f4e93e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 57.15 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO23_S3"
-		(shape bidirectional)
-		(at 57.15 58.42 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "cd7b8161-15b8-4cba-b1b3-f5ac564bcf84")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 57.15 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2589,7 +2635,7 @@
 			)
 			(justify left)
 		)
-		(uuid "d0667380-1432-4e1d-bae2-a8bc3faf1620")
+		(uuid "c9cd94c7-3865-4f48-b57e-66fbac931752")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 57.15 78.74 0)
 			(hide yes)
@@ -2602,9 +2648,9 @@
 			)
 		)
 	)
-	(global_label "5V_PI"
+	(global_label "GPIO18_Q1"
 		(shape bidirectional)
-		(at 57.15 43.18 0)
+		(at 57.15 53.34 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2612,101 +2658,9 @@
 			)
 			(justify left)
 		)
-		(uuid "d0ea58ba-a1c1-4413-b601-7cf91d52a6b7")
+		(uuid "e8cb6f8a-1fe3-42e5-b575-7827cf872d94")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 57.15 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO16_Q5"
-		(shape bidirectional)
-		(at 57.15 83.82 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "d23040b5-0611-44f9-b74c-8ebbda467424")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 57.15 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO20_IN3"
-		(shape bidirectional)
-		(at 57.15 86.36 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "d7e5f1af-3bc9-42c7-aa8e-3ecc4405f885")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 57.15 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO4_1W"
-		(shape bidirectional)
-		(at 39.37 48.26 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ea4dea88-dc1f-40a3-b251-22af63357ba3")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.37 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-	)
-	(global_label "GPIO22_S2"
-		(shape bidirectional)
-		(at 39.37 58.42 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f1a3cbb2-3975-434b-902b-7c97335028c6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.37 58.42 0)
+			(at 57.15 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2727,7 +2681,7 @@
 			)
 			(justify right)
 		)
-		(uuid "fc128fbb-4bae-43e5-8eaf-9e5900eabc89")
+		(uuid "eb448436-dd0e-4b55-aa2d-9d996826b7f9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 39.37 43.18 0)
 			(hide yes)
@@ -2740,302 +2694,48 @@
 			)
 		)
 	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 114.3 104.14 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0f883f80-d4a2-4eaa-81af-20d208b5bbdf")
-		(property "Reference" "H8"
-			(at 114.3 101.6 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "5V_PI"
+		(shape bidirectional)
+		(at 57.15 40.64 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left)
 		)
-		(property "Value" "M2.5 Pi Zero"
-			(at 114.3 106.68 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
-			(at 114.3 104.14 0)
+		(uuid "f5efca12-97db-4d87-b541-bef785ed7340")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.15 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 114.3 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Mounting Hole without connection"
-			(at 114.3 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
-					(reference "H8")
-					(unit 1)
 				)
 			)
 		)
 	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 88.9 104.14 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "20a33b33-d77b-4425-a6cb-a5d84cdb4686")
-		(property "Reference" "H6"
-			(at 88.9 101.6 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
+	(global_label "GPIO23_S3"
+		(shape bidirectional)
+		(at 57.15 58.42 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify left)
 		)
-		(property "Value" "M2.5 Pi Zero"
-			(at 88.9 106.68 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
-			(at 88.9 104.14 0)
+		(uuid "f7fa3629-87af-45bd-9988-e2dacd6c372f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 57.15 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 88.9 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Mounting Hole without connection"
-			(at 88.9 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
-					(reference "H6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 57.15 63.5 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "25fbb10b-aefd-4c6a-b422-42f6a33afb9d")
-		(property "Reference" "#PWR050"
-			(at 57.15 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 57.15 66.04 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 57.15 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 57.15 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 57.15 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3886f9ac-0bca-400d-ab8c-d57019c88b7d")
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
-					(reference "#PWR050")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 39.37 71.12 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "2d2f7c8e-7b65-42cf-9a6b-d15e155e5bda")
-		(property "Reference" "#PWR051"
-			(at 39.37 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 39.37 73.66 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 39.37 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 39.37 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 39.37 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3fc07470-9d8f-423b-8622-ffecd07b6114")
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
-					(reference "#PWR051")
-					(unit 1)
 				)
 			)
 		)
@@ -3050,7 +2750,7 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "34c01d5b-744e-4b35-9be6-1865760a9682")
+		(uuid "0657cb2a-071b-4701-879a-7efc4a20a1ec")
 		(property "Reference" "J3"
 			(at 99.06 59.69 0)
 			(show_name no)
@@ -3116,545 +2816,18 @@
 			)
 		)
 		(pin "1"
-			(uuid "327b644f-6191-4d81-9283-3f459877c895")
+			(uuid "0620ac84-2c9d-4c12-bef6-b0b23a8fe801")
 		)
 		(pin "2"
-			(uuid "02050668-67c4-4c3b-a296-4136f70cce5e")
+			(uuid "82d0166b-b228-42cc-8301-d201ace63dec")
 		)
 		(pin "3"
-			(uuid "cb9e353e-5556-4492-8287-e6cddef93664")
+			(uuid "e80003e1-49ef-4ea5-b173-bf16191052fc")
 		)
 		(instances
 			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
 					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 96.52 62.23 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "45f7616d-e4ee-451b-a989-5a91322faa3e")
-		(property "Reference" "#PWR055"
-			(at 96.52 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 96.52 64.77 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 96.52 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 96.52 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 96.52 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f7890dea-be0b-43bb-9890-90fc26d92a23")
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
-					(reference "#PWR055")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 38.1 104.14 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4cbc75d2-4023-477f-aea1-ca1f8214b68e")
-		(property "Reference" "H2"
-			(at 38.1 101.6 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "M3"
-			(at 38.1 106.68 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 38.1 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Mounting Hole without connection"
-			(at 38.1 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
-					(reference "H2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 57.15 76.2 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "67733f69-aea4-44ed-9ddf-5c90283dd5ae")
-		(property "Reference" "#PWR052"
-			(at 57.15 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 57.15 78.74 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 57.15 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 57.15 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 57.15 76.2 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "022a3318-2946-4d1a-9b96-43234a8b4f25")
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
-					(reference "#PWR052")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 39.37 88.9 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "68f1a844-5426-468c-9fc6-4c674b870e59")
-		(property "Reference" "#PWR054"
-			(at 39.37 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 39.37 91.44 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 39.37 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 39.37 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 39.37 88.9 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "740401b6-2e61-4f84-837d-946202024510")
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
-					(reference "#PWR054")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 63.5 104.14 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "7a19d6c1-6743-4ba3-ba43-c60dc4028c0c")
-		(property "Reference" "H4"
-			(at 63.5 101.6 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "M3"
-			(at 63.5 106.68 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 63.5 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 63.5 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Mounting Hole without connection"
-			(at 63.5 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
-					(reference "H4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 57.15 81.28 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "8e98dcb1-8c3b-4163-9960-b198be7ea1f1")
-		(property "Reference" "#PWR053"
-			(at 57.15 78.74 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 57.15 83.82 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 57.15 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 57.15 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 57.15 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "bb3faef2-fdf2-49d6-b229-42a3e4f3a601")
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
-					(reference "#PWR053")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 25.4 104.14 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "959c4b9b-000f-4a3f-8590-4a5d415029e2")
-		(property "Reference" "H1"
-			(at 25.4 101.6 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "M3"
-			(at 25.4 106.68 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 25.4 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 25.4 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Mounting Hole without connection"
-			(at 25.4 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
-					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -3670,7 +2843,7 @@
 		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "97e3608c-91be-4fbb-8e97-3f32e6daea90")
+		(uuid "21147205-aaed-477e-9556-4d33ba213b27")
 		(property "Reference" "#PWR048"
 			(at 39.37 48.26 0)
 			(hide yes)
@@ -3726,11 +2899,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "93a5a12a-c0fb-43e9-b1e7-7f2c49469267")
+			(uuid "c849cec5-cd2f-440d-9de8-9746fba52d0a")
 		)
 		(instances
 			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
 					(reference "#PWR048")
 					(unit 1)
 				)
@@ -3739,7 +2912,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 50.8 104.14 0)
+		(at 63.5 104.14 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3747,9 +2920,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "a4417867-3ae3-42c3-8aba-f232f40824b3")
-		(property "Reference" "H3"
-			(at 50.8 101.6 0)
+		(uuid "23ccebe3-12ae-42ff-ab67-b9bc902a7751")
+		(property "Reference" "H4"
+			(at 63.5 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3759,7 +2932,7 @@
 			)
 		)
 		(property "Value" "M3"
-			(at 50.8 106.68 0)
+			(at 63.5 106.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3769,7 +2942,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 50.8 104.14 0)
+			(at 63.5 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3780,7 +2953,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 104.14 0)
+			(at 63.5 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3791,7 +2964,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 50.8 104.14 0)
+			(at 63.5 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3803,8 +2976,8 @@
 		)
 		(instances
 			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
-					(reference "H3")
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
+					(reference "H4")
 					(unit 1)
 				)
 			)
@@ -3820,7 +2993,7 @@
 		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "a6faa19c-8493-4845-b1a5-1c24d3b0725d")
+		(uuid "3a68c495-3ebd-46db-9525-43bbe70bf719")
 		(property "Reference" "#PWR047"
 			(at 57.15 43.18 0)
 			(hide yes)
@@ -3876,12 +3049,243 @@
 			)
 		)
 		(pin "1"
-			(uuid "6b7a849c-25b0-4d34-8d9e-e25b7e1aba9d")
+			(uuid "634a10f5-6cda-4b13-b9ab-f4319e02569c")
 		)
 		(instances
 			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
 					(reference "#PWR047")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 57.15 81.28 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "40f49181-6787-42c1-b03c-92616eac8358")
+		(property "Reference" "#PWR053"
+			(at 57.15 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 57.15 83.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 57.15 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 57.15 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0964a723-44a8-485c-beb8-d506fdc820f9")
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
+					(reference "#PWR053")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 57.15 55.88 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5976fdc1-38d9-474f-89f1-39d1d86110eb")
+		(property "Reference" "#PWR049"
+			(at 57.15 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 57.15 58.42 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 57.15 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 57.15 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9c864081-3c4b-4796-b413-eda30e842c93")
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
+					(reference "#PWR049")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 39.37 88.9 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5b98a5ad-67b2-4b7a-944f-f2121bccd10d")
+		(property "Reference" "#PWR054"
+			(at 39.37 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 39.37 91.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 39.37 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1a25f592-68b1-4385-a1f6-5af67abebc49")
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
@@ -3897,7 +3301,7 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "b675d185-1b4d-4f07-8f2d-d833332a570b")
+		(uuid "63691170-a9ff-4a23-bb83-2c5558f4f207")
 		(property "Reference" "H5"
 			(at 76.2 101.6 0)
 			(show_name no)
@@ -3953,7 +3357,7 @@
 		)
 		(instances
 			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
 					(reference "H5")
 					(unit 1)
 				)
@@ -3962,7 +3366,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
-		(at 101.6 104.14 0)
+		(at 38.1 104.14 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3970,9 +3374,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "c2771e49-96fa-4957-84d0-4248854dbee5")
-		(property "Reference" "H7"
-			(at 101.6 101.6 0)
+		(uuid "6e3372f1-44ce-4bc2-a296-3e265e1e3b0e")
+		(property "Reference" "H2"
+			(at 38.1 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3981,8 +3385,8 @@
 				)
 			)
 		)
-		(property "Value" "M2.5 Pi Zero"
-			(at 101.6 106.68 0)
+		(property "Value" "M3"
+			(at 38.1 106.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3991,8 +3395,8 @@
 				)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
-			(at 101.6 104.14 0)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 38.1 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4003,7 +3407,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 101.6 104.14 0)
+			(at 38.1 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4014,7 +3418,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
-			(at 101.6 104.14 0)
+			(at 38.1 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4026,8 +3430,8 @@
 		)
 		(instances
 			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
-					(reference "H7")
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -4043,7 +3447,7 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "c489daf2-e8a4-4a14-9c67-369220be31db")
+		(uuid "6ed5acae-54c4-4bd6-936d-2da9ab36ea6f")
 		(property "Reference" "J2"
 			(at 48.26 38.1 0)
 			(show_name no)
@@ -4109,128 +3513,128 @@
 			)
 		)
 		(pin "1"
-			(uuid "baf8da94-e31b-4501-b6a3-52cfd8de93fe")
+			(uuid "aea258bb-bc66-4c51-96fa-18830184a2a6")
 		)
 		(pin "2"
-			(uuid "6370d5c0-665a-4cc1-a9ed-c4ec32ecf0cf")
+			(uuid "eb7ee6c4-b11d-4eba-a9f3-3c6b347b6ad3")
 		)
 		(pin "3"
-			(uuid "b9adba7f-a5a8-4ff8-9d6b-727b64dc8904")
+			(uuid "19100aac-64c0-4a89-b64b-31aabbab7405")
 		)
 		(pin "4"
-			(uuid "27c82771-4625-46a0-8d1f-0e294890b93a")
+			(uuid "485fdd2f-a972-4061-9044-21508260592b")
 		)
 		(pin "5"
-			(uuid "e3d8d687-c5d7-4725-bf6a-415a7b479277")
+			(uuid "4be3984d-9e3b-436f-bc73-1c3d04dcc34f")
 		)
 		(pin "6"
-			(uuid "db227308-8816-4985-9232-eb897ccdcf9f")
+			(uuid "04af1f8b-29f5-479e-aed3-b09951326a31")
 		)
 		(pin "7"
-			(uuid "185df736-38c9-4676-9ecc-f7ac50a15f76")
+			(uuid "5c99c03a-118e-4e32-93ad-67c48cccae1a")
 		)
 		(pin "8"
-			(uuid "d31a5b74-c324-4897-8941-175530ab2f7d")
+			(uuid "061a02b3-f63c-4276-9c16-93f72babbddf")
 		)
 		(pin "9"
-			(uuid "25e88b33-c821-41de-8c89-97ea45b00fa5")
+			(uuid "e946839c-0c97-457f-aebe-662ffbf841c5")
 		)
 		(pin "10"
-			(uuid "2570cccb-5594-4f17-9e92-7a078b587a83")
+			(uuid "cca1c84d-87d0-48fb-a62c-3263b4b0c72d")
 		)
 		(pin "11"
-			(uuid "6c17ae54-4d1c-472b-9ccf-b168d247d9a5")
+			(uuid "ff453e34-317d-4e0a-8d0a-97e50ef2998e")
 		)
 		(pin "12"
-			(uuid "212e6695-f42a-4036-9d3a-6054fbb4d723")
+			(uuid "802c9ae3-2e28-4d87-abaf-7aaddf4719a7")
 		)
 		(pin "13"
-			(uuid "f1712939-4d81-4d4b-9d9c-95544c340385")
+			(uuid "532941ed-fae7-4830-9891-698cba83fa55")
 		)
 		(pin "14"
-			(uuid "791b96f9-026b-473e-9765-f0370f4fff9f")
+			(uuid "29442a71-b4f2-43c3-a2b0-a960c41fd1f2")
 		)
 		(pin "15"
-			(uuid "1d121720-b83f-4bc9-80b8-ce0774273269")
+			(uuid "f85d1100-5686-4ecd-a42c-b678b95c5916")
 		)
 		(pin "16"
-			(uuid "aa8d2218-6f8b-4c41-b3e4-40bc942b477b")
+			(uuid "45cee12a-a6dc-42af-81f9-02c39af0734d")
 		)
 		(pin "17"
-			(uuid "c41daabc-81c4-4fae-b17f-302ae351ef03")
+			(uuid "e14b2be4-4af4-4649-93bb-f769b42f04eb")
 		)
 		(pin "18"
-			(uuid "e4f4dc01-532f-424b-bd61-04756274d7a6")
+			(uuid "5a60270e-ed41-468e-b971-1dcdb02503df")
 		)
 		(pin "19"
-			(uuid "a61e6457-ceea-4ced-870e-e99b2a768582")
+			(uuid "c1b5e080-75fc-4f72-91bb-80cb5b6fce42")
 		)
 		(pin "20"
-			(uuid "f78546f7-4c8a-428a-b767-d5bae826b360")
+			(uuid "e5a09838-e535-4b11-b83e-1ee1ee4f5d4c")
 		)
 		(pin "21"
-			(uuid "7691c391-f6c7-441d-86e3-3088af5429ef")
+			(uuid "62621e4f-77dd-4d00-8106-53deffc3980e")
 		)
 		(pin "22"
-			(uuid "f8ffea56-7f7f-4989-b82b-d7b3191a6ca2")
+			(uuid "c9203a96-0fcd-4a21-85ab-52a71b06c9a9")
 		)
 		(pin "23"
-			(uuid "8254d8c8-6b75-42ef-862f-dbc5daa98c00")
+			(uuid "a30bdc21-7fc1-4be9-a76b-ce996167db27")
 		)
 		(pin "24"
-			(uuid "ad064789-ab75-45ed-ae3e-fd29ef86d649")
+			(uuid "7d5645d9-8eb0-4e25-9bee-d30b719c8309")
 		)
 		(pin "25"
-			(uuid "0a116655-ae55-4d47-99dc-20c5c38a86cf")
+			(uuid "1327e398-d29b-4506-b35b-6e2e2358d0df")
 		)
 		(pin "26"
-			(uuid "54f50edd-f302-4404-9425-d375110dba47")
+			(uuid "33f11eb9-8f3a-4275-96dc-334b900ed02d")
 		)
 		(pin "27"
-			(uuid "27e4cb9b-4a7a-45e6-91bb-470c9a2a8123")
+			(uuid "8fbd4eb0-202a-4ce8-87a7-f0d90874cdea")
 		)
 		(pin "28"
-			(uuid "c49cddc0-2e06-44a1-b649-ab6ea6c9afca")
+			(uuid "dce3f4bb-7258-4c65-8297-3b037b5d326b")
 		)
 		(pin "29"
-			(uuid "3c83f9db-baac-4605-93b5-ab57ceb88a79")
+			(uuid "ec7f49e0-c61b-4cf3-ae34-4f7339828577")
 		)
 		(pin "30"
-			(uuid "4dce7dd8-aa24-4e4f-a15b-742a664d8733")
+			(uuid "7f03e530-a44f-4599-8d6b-5c8a6114d5ff")
 		)
 		(pin "31"
-			(uuid "60cef1d9-47aa-41d5-9ed1-d86922ef9153")
+			(uuid "7ec8695e-e62b-43f8-823f-105c57d8f7b2")
 		)
 		(pin "32"
-			(uuid "d30a4077-173c-4639-a6f8-e49c35fe536d")
+			(uuid "73f113d1-8641-4348-8f73-f81d82bdf247")
 		)
 		(pin "33"
-			(uuid "db6f29a6-8e10-43b9-8cab-3bc93f94fde7")
+			(uuid "31a577a4-2287-4fd1-8e54-643bbc645602")
 		)
 		(pin "34"
-			(uuid "68bb9c66-9a57-4e83-8328-219ffc649f43")
+			(uuid "dbbbb13d-07a3-45cc-9485-c29e65eabbbb")
 		)
 		(pin "35"
-			(uuid "dbde4018-a8c7-46c6-845c-f15f78ac3d42")
+			(uuid "d366a6b3-29e2-43bc-bdd7-f1176d295f21")
 		)
 		(pin "36"
-			(uuid "e7cb1524-8e3b-46b5-960f-963bfca19b77")
+			(uuid "56e646ce-2fa6-48cb-9a04-456c70a20f5e")
 		)
 		(pin "37"
-			(uuid "a5ac5aed-1568-4288-9374-5da3b7689abc")
+			(uuid "bdc30911-3fa3-4d7f-a5b3-d682777f7b89")
 		)
 		(pin "38"
-			(uuid "a18eeee9-7794-4f9e-aa03-08f50614876c")
+			(uuid "2d158758-db71-4de0-ab26-aa2ce716e69d")
 		)
 		(pin "39"
-			(uuid "671b34a2-07b2-4895-a141-693e27031c0b")
+			(uuid "80a4eaf3-251d-4be2-94a6-fcf5f1c557c2")
 		)
 		(pin "40"
-			(uuid "15419391-b3f0-4fee-a182-7e0af78d252a")
+			(uuid "4ec17976-f102-423a-9d7e-ec37f45dcd29")
 		)
 		(instances
 			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
 					(reference "J2")
 					(unit 1)
 				)
@@ -4238,19 +3642,18 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 57.15 55.88 90)
+		(lib_id "Mechanical:MountingHole")
+		(at 88.9 104.14 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
+		(in_bom yes)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "ee3d58dc-2633-4d23-b53b-3079f3b851b6")
-		(property "Reference" "#PWR049"
-			(at 57.15 53.34 0)
-			(hide yes)
+		(uuid "79e04e29-cc5e-4321-bcff-af2120bb52fd")
+		(property "Reference" "H6"
+			(at 88.9 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4259,8 +3662,8 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 57.15 58.42 0)
+		(property "Value" "M2.5 Pi Zero"
+			(at 88.9 106.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4269,8 +3672,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 57.15 55.88 0)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
+			(at 88.9 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4281,7 +3684,227 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 57.15 55.88 0)
+			(at 88.9 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 88.9 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
+					(reference "H6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 25.4 104.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7ca76249-7196-4437-8f3e-9c16645cbadf")
+		(property "Reference" "H1"
+			(at 25.4 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M3"
+			(at 25.4 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 25.4 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 25.4 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 50.8 104.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9b2344a2-ba90-43d4-a246-3407582c5737")
+		(property "Reference" "H3"
+			(at 50.8 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M3"
+			(at 50.8 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 50.8 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 50.8 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
+					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 39.37 71.12 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9da02b06-3282-461c-8f1a-264d752f2bc5")
+		(property "Reference" "#PWR051"
+			(at 39.37 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 39.37 73.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 39.37 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4292,7 +3915,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 57.15 55.88 0)
+			(at 39.37 71.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4303,12 +3926,389 @@
 			)
 		)
 		(pin "1"
-			(uuid "19237ff7-92d6-4f91-87b2-094120a9dd21")
+			(uuid "4451cb73-f2d3-472e-9934-8f8a4fdafaff")
 		)
 		(instances
 			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
-					(reference "#PWR049")
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
+					(reference "#PWR051")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 57.15 76.2 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "aba9add8-499b-49b5-aaab-52da63f00a79")
+		(property "Reference" "#PWR052"
+			(at 57.15 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 57.15 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 57.15 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 57.15 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5645dda1-19f0-4c06-8214-199d37595f61")
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
+					(reference "#PWR052")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 57.15 63.5 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bbdfcc01-1f59-451b-9cb6-c047320f02eb")
+		(property "Reference" "#PWR050"
+			(at 57.15 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 57.15 66.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 57.15 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 57.15 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ae727b00-7340-4241-962c-5e235b7df740")
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
+					(reference "#PWR050")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 96.52 62.23 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c4d89519-d74c-41bf-95ad-8502402c1cc9")
+		(property "Reference" "#PWR055"
+			(at 96.52 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 96.52 64.77 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 96.52 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 96.52 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 96.52 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bd6a5fbd-d901-48f0-a7a4-f7a372cfa249")
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
+					(reference "#PWR055")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 114.3 104.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c5a37f8b-7509-467e-94b7-be4577acfb69")
+		(property "Reference" "H8"
+			(at 114.3 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M2.5 Pi Zero"
+			(at 114.3 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
+			(at 114.3 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 114.3 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 114.3 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
+					(reference "H8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 101.6 104.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "edf55d5b-9b6a-48a0-af71-0bc59e430228")
+		(property "Reference" "H7"
+			(at 101.6 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "M2.5 Pi Zero"
+			(at 101.6 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
+			(at 101.6 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.6 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 101.6 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/68076db1-ccdc-4d29-80d4-f7029952f558/b5c99813-71f6-43c2-b3f7-a42332e4af2e"
+					(reference "H7")
 					(unit 1)
 				)
 			)

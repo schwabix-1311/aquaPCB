@@ -226,7 +226,7 @@ for n, g in enumerate(['GPIO5_IN1', 'GPIO6_IN2', 'GPIO20_IN3', 'GPIO21_IN4'], 1)
     sh.row([t, rs, rp, clamp(sh, g)])
 sh.note('1-Wire (DS18B20), GPIO4, 4.7k pull-up. Terminal: GND / DQ / 3V3; parasitic sensors use GND + DQ.', 2)
 r1w = R(sh, '4k7', '+3V3', 'GPIO4_1W')
-terms = [term(sh, ['GND', 'GPIO4_1W', '+3V3'], f'1-Wire {i}') for i in range(1, 4)]
+terms = [term(sh, ['GND', 'GPIO4_1W', '+3V3'], f'1-Wire {i}') for i in range(1, 3)]
 sh.row([r1w, clamp(sh, 'GPIO4_1W')] + terms)
 sh.note('I2C expansion (OLED, PCA9685, ...), SSD1306 pin order. Pull-ups are on the Pi (1.8k).', 2)
 i2c = [header(sh, ['GND', '+3V3', 'GPIO3_SCL', 'GPIO2_SDA'], f'I2C {i}') for i in (1, 2)]

@@ -240,7 +240,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "v1 draft"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -658,13 +658,42 @@
       {
         "filename": "aquaPCB.kicad_sch",
         "name": "aquaPCB",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "80232f81-1179-4777-a7f0-674a974d53cc"
       }
     ],
     "used_designators": "",
     "variants": []
   },
-  "sheets": [],
+  "sheets": [
+    [
+      "80232f81-1179-4777-a7f0-674a974d53cc",
+      "aquaPCB"
+    ],
+    [
+      "aa2c7084-723c-4840-87cc-7f7b779e0a57",
+      "Power supply"
+    ],
+    [
+      "e3ace633-3876-405f-ba12-2ddf57f90ffe",
+      "Raspberry Pi connector"
+    ],
+    [
+      "662aa388-f80b-440b-be99-bc584ab7592b",
+      "Power outputs Q1..Q6"
+    ],
+    [
+      "b36de559-7e9c-4c60-acb5-187afccc7a04",
+      "SSR / relay control outputs S1..S4"
+    ],
+    [
+      "69a76064-578d-4a49-aad8-2873571f78bd",
+      "Inputs, 1-Wire, I2C and display headers"
+    ],
+    [
+      "7f54e82c-99a9-49f3-9f13-2c730539fa02",
+      "ADS1115 ADC and pH amplifier"
+    ]
+  ],
   "text_variables": {},
   "tuning_profiles": {
     "meta": {
