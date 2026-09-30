@@ -89,7 +89,6 @@
 		)
 		(capping no)
 		(filling no)
-		(zone_defaults)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -37495,6 +37494,194 @@
 		(uuid "bd413ce5-9c57-4fa5-bdc5-9a871708842a")
 	)
 	(zone
+		(layer "F.Cu")
+		(uuid "4eca3ffd-f015-43f5-b7c6-0ec7e296fd61")
+		(name "Pi Zero standoff H7")
+		(hatch edge 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(keepout
+			(tracks not_allowed)
+			(vias not_allowed)
+			(pads allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 0)
+		)
+		(polygon
+			(pts
+				(xy 203.771638 65.64805) (xy 202.14805 67.271638) (xy 199.851949 67.271638) (xy 198.228361 65.64805)
+				(xy 198.228361 63.351949) (xy 199.851949 61.728361) (xy 202.14805 61.728361) (xy 203.771638 63.351949)
+			)
+		)
+	)
+	(zone
+		(layer "F.Cu")
+		(uuid "83f189d5-395c-4fe3-9d8a-5a5ffb8d3830")
+		(name "Pi Zero standoff H8")
+		(hatch edge 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(keepout
+			(tracks not_allowed)
+			(vias not_allowed)
+			(pads allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 0)
+		)
+		(polygon
+			(pts
+				(xy 261.771638 65.64805) (xy 260.14805 67.271638) (xy 257.851949 67.271638) (xy 256.228361 65.64805)
+				(xy 256.228361 63.351949) (xy 257.851949 61.728361) (xy 260.14805 61.728361) (xy 261.771638 63.351949)
+			)
+		)
+	)
+	(zone
+		(layer "F.Cu")
+		(uuid "a6377cd0-5445-4305-8808-2a9e3a92ad60")
+		(name "Pi Zero standoff H6")
+		(hatch edge 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(keepout
+			(tracks not_allowed)
+			(vias not_allowed)
+			(pads allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 0)
+		)
+		(polygon
+			(pts
+				(xy 261.771638 42.64805) (xy 260.14805 44.271638) (xy 257.851949 44.271638) (xy 256.228361 42.64805)
+				(xy 256.228361 40.351949) (xy 257.851949 38.728361) (xy 260.14805 38.728361) (xy 261.771638 40.351949)
+			)
+		)
+	)
+	(zone
+		(layer "F.Cu")
+		(uuid "af3d3e6c-3cf3-4b68-8696-1c1ea6ca57b4")
+		(name "Pi Zero standoff H5")
+		(hatch edge 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(keepout
+			(tracks not_allowed)
+			(vias not_allowed)
+			(pads allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 0)
+		)
+		(polygon
+			(pts
+				(xy 203.771638 42.64805) (xy 202.14805 44.271638) (xy 199.851949 44.271638) (xy 198.228361 42.64805)
+				(xy 198.228361 40.351949) (xy 199.851949 38.728361) (xy 202.14805 38.728361) (xy 203.771638 40.351949)
+			)
+		)
+	)
+	(zone
+		(layers "F.Cu" "B.Cu")
+		(uuid "20cbca4b-0430-460b-a4c3-fee2df45cd25")
+		(hatch edge 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(keepout
+			(tracks not_allowed)
+			(vias not_allowed)
+			(pads allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "/ADS1115 ADC and pH amplifier/")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 0)
+		)
+		(polygon
+			(pts
+				(xy 181 124) (xy 181 118) (xy 187 118) (xy 187 124)
+			)
+		)
+	)
+	(zone
+		(layers "F.Cu" "B.Cu")
+		(uuid "6f1dc099-9a3e-4a39-8844-5ce15d06d469")
+		(hatch edge 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(keepout
+			(tracks not_allowed)
+			(vias not_allowed)
+			(pads allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "/ADS1115 ADC and pH amplifier/")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 0)
+		)
+		(polygon
+			(pts
+				(xy 279 124) (xy 279 118) (xy 273 118) (xy 273 124)
+			)
+		)
+	)
+	(zone
 		(layers "F.Cu" "B.Cu")
 		(uuid "71bf82fb-1385-4614-9b7c-8d09df9d018a")
 		(hatch edge 0.5)
@@ -37505,7 +37692,7 @@
 		(keepout
 			(tracks not_allowed)
 			(vias not_allowed)
-			(pads not_allowed)
+			(pads allowed)
 			(copperpour not_allowed)
 			(footprints allowed)
 		)
@@ -37535,7 +37722,7 @@
 		(keepout
 			(tracks not_allowed)
 			(vias not_allowed)
-			(pads not_allowed)
+			(pads allowed)
 			(copperpour not_allowed)
 			(footprints allowed)
 		)
@@ -37551,66 +37738,6 @@
 		(polygon
 			(pts
 				(xy 181 26) (xy 187 26) (xy 187 32) (xy 181 32)
-			)
-		)
-	)
-	(zone
-		(layer "B.Cu")
-		(uuid "20cbca4b-0430-460b-a4c3-fee2df45cd25")
-		(hatch edge 0.5)
-		(connect_pads
-			(clearance 0)
-		)
-		(min_thickness 0.25)
-		(keepout
-			(tracks not_allowed)
-			(vias not_allowed)
-			(pads not_allowed)
-			(copperpour not_allowed)
-			(footprints allowed)
-		)
-		(placement
-			(enabled no)
-			(sheetname "/ADS1115 ADC and pH amplifier/")
-		)
-		(fill
-			(thermal_gap 0.5)
-			(thermal_bridge_width 0.5)
-			(island_removal_mode 0)
-		)
-		(polygon
-			(pts
-				(xy 181 124) (xy 181 118) (xy 187 118) (xy 187 124)
-			)
-		)
-	)
-	(zone
-		(layer "B.Cu")
-		(uuid "6f1dc099-9a3e-4a39-8844-5ce15d06d469")
-		(hatch edge 0.5)
-		(connect_pads
-			(clearance 0)
-		)
-		(min_thickness 0.25)
-		(keepout
-			(tracks not_allowed)
-			(vias not_allowed)
-			(pads not_allowed)
-			(copperpour not_allowed)
-			(footprints allowed)
-		)
-		(placement
-			(enabled no)
-			(sheetname "/ADS1115 ADC and pH amplifier/")
-		)
-		(fill
-			(thermal_gap 0.5)
-			(thermal_bridge_width 0.5)
-			(island_removal_mode 0)
-		)
-		(polygon
-			(pts
-				(xy 279 124) (xy 279 118) (xy 273 118) (xy 273 124)
 			)
 		)
 	)
@@ -37639,36 +37766,6 @@
 	)
 	(zone
 		(layer "B.Cu")
-		(uuid "aabe7c4c-9f9c-4fcd-ae3a-7937ea64f4a6")
-		(hatch edge 0.5)
-		(connect_pads
-			(clearance 0)
-		)
-		(min_thickness 0.25)
-		(keepout
-			(tracks not_allowed)
-			(vias not_allowed)
-			(pads not_allowed)
-			(copperpour allowed)
-			(footprints allowed)
-		)
-		(placement
-			(enabled no)
-			(sheetname "/ADS1115 ADC and pH amplifier/")
-		)
-		(fill
-			(thermal_gap 0.5)
-			(thermal_bridge_width 0.5)
-			(island_removal_mode 0)
-		)
-		(polygon
-			(pts
-				(xy 181 26) (xy 187 26) (xy 187 32) (xy 181 32)
-			)
-		)
-	)
-	(zone
-		(layer "B.Cu")
 		(uuid "f6fc9736-27d8-4394-a454-10f4c1a6076f")
 		(hatch edge 0.5)
 		(connect_pads
@@ -37676,9 +37773,9 @@
 		)
 		(min_thickness 0.25)
 		(keepout
-			(tracks not_allowed)
-			(vias not_allowed)
-			(pads not_allowed)
+			(tracks allowed)
+			(vias allowed)
+			(pads allowed)
 			(copperpour not_allowed)
 			(footprints allowed)
 		)
