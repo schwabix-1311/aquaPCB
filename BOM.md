@@ -80,6 +80,8 @@ available at LCSC, so the Reichelt order could be dropped entirely.
 | 7 | IN1–4, 1-Wire, module input, AIN3 terminals: push-in spring, 3-pole | Ningbo Kangnex WJ250B-3.5-03P-11-00A | C8420 | 1 953 | 0.17 |
 | (11) | alternative 2-pole, same footprint | MAX MX250-3.5-02P-B-GY01-Cu-A | C7470116 | 4 797 | 0.10 |
 | (7) | alternative 3-pole, same footprint | MAX MX250-3.5-03P-B-GY01-Cu-A | C7470117 | 3 181 | 0.17 |
+| (11) | alternative 2-pole, fits the holes (2 legs per pole); body 0.75 mm offset, **wire entry side unverified** | DORABO DB250S-3.5-2P-GY | C48689469 | 830 | 0.16 |
+| (7) | alternative 3-pole, as above, **entry side unverified**, low stock | DORABO DB250S-3.5-3P-GY | C48689470 | 15 | 0.42 |
 | 1 | input fuse, OMNI-BLOK holder incl. 8 A Nano2 fuse (large SMD) | Littelfuse 0154008.DR | C206919 | 1 479 | 2.11 |
 | 1 | pH probe connector, BNC right angle at the board edge | HanElectricity BNC-Q9-50KWE | C49352232 | 272 | 0.68 |
 
