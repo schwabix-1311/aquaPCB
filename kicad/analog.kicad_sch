@@ -5605,7 +5605,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Coaxial:BNC_Amphenol_031-5539_Vertical"
+		(property "Footprint" "aquaPCB:BNC_HanElectricity_BNC-Q9-50KWE_Horizontal"
 			(at 35.56 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -5638,7 +5638,7 @@
 				)
 			)
 		)
-		(property "Reichelt" "UG 1094PL"
+		(property "LCSC" "C49352232"
 			(at 35.56 110.49 0)
 			(hide yes)
 			(show_name no)

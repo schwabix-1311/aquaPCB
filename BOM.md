@@ -61,7 +61,6 @@ SMD parts ≈ **$9 per board**. Extended parts: **11 unique** → ≈ $33 loadin
 | 1 | input fuse, holder incl. 10 A fuse | LITT 0154010.DR | Littelfuse OMNI-BLOK SMD holder + 10 A Nano2 fuse, 125 V (large SMD, hand-soldered) | 2.99 |
 | 1 | bulk capacitor 470 µF 50 V | RAD FR 470/50 | Panasonic FR, low ESR, 105 °C | 0.60 |
 | 1 | pH input filter across the probe, low leakage | STYROFLEX 6,8N | polystyrene 6.8 nF 2 % 160 V, axial (47 pF..6.8 nF available, no 4.7 nF) | 0.57 |
-| 1 | pH probe connector | UG 1094PL | BNC PCB jack, straight, 50 Ω | 1.99 |
 | 1 | Pi connector, variant Zero (plug-on) | MPE 094-2-040 | female header 2×20, 2.54 mm | 1.10 |
 | (1) | Pi connector, variant Pi 3/4 (ribbon) | WSL 40G | box header 40-pole, straight | 0.23 |
 | 1 | I²C ×2, display, ULN spare, JP1–3 (35 pins) | ECON SL40G1 | pin header 1×40, 2.54 mm (cut to length) | 0.75 |
@@ -70,6 +69,15 @@ SMD parts ≈ **$9 per board**. Extended parts: **11 unique** → ≈ $33 loadin
 
 THT parts ≈ **€13.50 per board**. Reichelt shipping within Germany: €5.95 (shown on
 reichelt.de at the time of the check).
+
+**THT from LCSC** (order with the JLC board, JLC can fit it or ship it loose):
+
+| Qty | Function | Part | LCSC | Stock | $/pc |
+|---:|---|---|---|---:|---:|
+| 1 | pH probe connector, BNC right angle at the board edge | HanElectricity BNC-Q9-50KWE | C49352232 | 272 | 0.68 |
+
+Footprint `aquaPCB:BNC_HanElectricity_BNC-Q9-50KWE_Horizontal` (from the LCSC/EasyEDA pad data and
+the maker drawing). Insulation resistance only specified ≥ 5 GΩ (POM insulator), see README.
 
 LCSC fallback: the OMNI-BLOK holder 0154010.DR is also stocked at LCSC (C206921), so JLC
 could place it instead of hand-soldering.
@@ -89,3 +97,5 @@ could place it instead of hand-soldering.
 - LMC6482 / LMP7702: little or no stock, $2–7.
 - 5×20 mm PCB fuse holders at Reichelt (MTA 501100, ESKA 503400, Stelvio): rated 6.3 A only.
 - MTA 370000 blade-fuse holder: 20 A, but panel snap-in with spade tabs, not PCB.
+- BNC UG 1094PL (Reichelt, €1.99): upright jack, probe plugs in from above. Replaced by a right-angle
+  jack at the board edge; Reichelt's only right-angle PCB BNC (BKL 0401109) costs €6.50.

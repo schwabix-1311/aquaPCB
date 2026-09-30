@@ -138,7 +138,8 @@ GPIO4 with 4.7 kΩ pull-up to 3.3 V; one 3-pin terminal (GND / DQ / 3V3), so bot
   aquaPi's ScaleAux calibration removes offset and slope. Derived from the hand-built
   controller (PH-4502C amplifier with 10 MΩ / 4.7 nF styroflex input filter, probe life > 2
   years).
-- AIN0: on-board pH amplifier, like the PH-4502C but with a low-leakage input. BNC jack,
+- AIN0: on-board pH amplifier, like the PH-4502C but with a low-leakage input. Right-angle BNC
+  jack at the left board edge (see Mechanical),
   10 MΩ in series, styroflex capacitor to the probe reference, TLV9062 CMOS buffer on 3.3 V
   (0.5 pA input bias). The probe reference (BNC shell) sits at PH_REF = 1.65 V (3.3 V / 2,
   buffered by the second op-amp half), so AIN0 reads 1.65 V ± 59 mV/pH.
@@ -193,8 +194,8 @@ for f in kicad/*.kicad_sch; do kicad-cli sch upgrade "$f"; done
 kicad-cli sch erc --severity-all kicad/aquaPCB.kicad_sch
 ```
 
-Placeholder footprints to check at layout time: BNC jack (Amphenol 031-5539 used for
-the Reichelt UG 1094PL), 470 µF capacitor diameter (D10 assumed).
+Placeholder footprint to check at layout time: 470 µF capacitor diameter (D10 assumed).
+The BNC footprint (`aquaPCB.pretty`) is made from the LCSC/EasyEDA pad data and the maker drawing.
 
 ## Mechanical
 
@@ -206,6 +207,13 @@ the Reichelt UG 1094PL), 470 µF capacitor diameter (D10 assumed).
     holes (58 x 23 mm). Face-up keeps SoC cooling, SD card and LED accessible; or
   - a 40-pin box header: Pi 3/4 connect through a standard IDC ribbon cable.
   A face-down Zero would need a mirrored footprint and could not share it with the ribbon.
+- pH BNC: right-angle jack HanElectricity BNC-Q9-50KWE at the left board edge. Its body front face is
+  flush with the edge; nut and barrel (d 9.5 mm, thread 1/2-28UNEF) protrude 21.4 mm, enclosure cutout
+  d 12.9 mm. The whole shell (pin and both legs) is the probe reference PH_SHELL, not GND: in a metal
+  enclosure it must be insulated from the wall (plastic enclosure or insulating bushing). Its insulation
+  resistance is only specified at ≥ 5 GΩ (POM insulator); with a 1 GΩ electrode that is a worst-case
+  gain error of ~17 % (typical parts are far better and ScaleAux calibrates the slope), but humidity can
+  change it - a PTFE-insulated BNC would be the upgrade if readings drift.
 - All terminals on the board edges; power path along one edge; the analog/pH corner away
   from the switching outputs.
 
@@ -232,16 +240,16 @@ per board                                     batch 5    batch 10
   PCB 100x100, 2 layers                         ~ €2       ~ €1.5
   SMD parts (LCSC, checked)                     ~ €8       ~ €7.5
   PCBA setup + 11 extended-part fees, share     ~ €7.5     ~ €3.75
-  THT parts (Reichelt, checked, incl. VAT)      ~ €13.8    ~ €13.8
+  THT parts (Reichelt + BNC from LCSC)          ~ €12.4    ~ €12.4
   shipping JLC + Reichelt, share                ~ €5       ~ €2.5
   EU import VAT 19 % + €3 duty/category (JLC)   ~ €4       ~ €3.5
   -----------------------------------------------------------------
-                                                ~ €40      ~ €32
+                                                ~ €39      ~ €31
 ```
 
-Target limit **≤ €40 per board** at batch 5 is just met (about €40.10) after dropping the UART
-header and two of the three 1-Wire terminals. The on-board pH amplifier costs about €3 (BNC,
-TLV9062, styroflex). Levers: order 10 boards (~€32 each); cheaper terminals for signal lines
+Target limit **≤ €40 per board** at batch 5 is met (about €39) after dropping the UART header
+and two of the three 1-Wire terminals and moving the BNC to LCSC. The on-board pH amplifier costs
+about €1.50 (BNC, TLV9062, styroflex). Levers: order 10 boards (~€31 each); cheaper terminals for signal lines
 (~€5 of the THT share); or leave the on-board pH amplifier unpopulated when an external
 amplifier board is used on AIN2.
 

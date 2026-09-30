@@ -18517,6 +18517,216 @@
 			)
 		)
 	)
+	(footprint "aquaPCB:BNC_HanElectricity_BNC-Q9-50KWE_Horizontal"
+		(layer "F.Cu")
+		(uuid "7da3d4d0-4f7c-4a59-b396-ebe020399d30")
+		(at 192 64.3 90)
+		(descr "BNC jack, right angle, PCB mount, HanElectricity BNC-Q9-50KWE (LCSC C49352232). Pad layout from the LCSC/EasyEDA footprint and the maker drawing: mounting legs 10 mm apart, centre pin on the axis 4.6 mm behind the legs, shell pin 2.6 mm beside it. Body front face = board edge (7.4 mm in front of the legs); nut and barrel (d 9.5 mm) protrude 21.4 mm beyond the edge; panel cutout d 12.9 mm. Pad 1 = centre contact, pad 2 = shell (pin and both legs).")
+		(tags "BNC coax right angle horizontal Q9")
+		(property "Reference" "J25"
+			(at 0 3.2 90)
+			(layer "F.SilkS")
+			(uuid "f02f3466-e14d-47cf-962d-8fdba06ea93a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "pH probe"
+			(at 0 -14 90)
+			(layer "F.Fab")
+			(uuid "d33abb03-cd3c-461d-a6b1-a9ea34d5c5b5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7e8c6957-4c61-4837-80d6-e3158c8dbf51")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 0 0 90)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a57d3fa7-4a11-4979-b134-b614d26d3193")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C49352232"
+			(at 0 0 90)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "a2296835-19fe-4b78-bd57-f7be16951da1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/7f54e82c-99a9-49f3-9f13-2c730539fa02/81724eb8-5249-4db2-903e-8bd6ffc0fa4b")
+		(sheetname "/ADS1115 ADC and pH amplifier/")
+		(sheetfile "analog.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start 7.37 -11.5)
+			(end 7.37 1.52)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "1e70d825-3081-45c0-b0a9-d34fb624fc69")
+		)
+		(fp_line
+			(start -7.37 -11.5)
+			(end -7.37 1.52)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "e9633b1a-6fa1-417f-b2b9-18ef42df6418")
+		)
+		(fp_line
+			(start -7.37 1.52)
+			(end 7.37 1.52)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "b2881bf2-b3b3-44d2-8703-963e58f4dc67")
+		)
+		(fp_line
+			(start -8 -12)
+			(end 8 -12)
+			(stroke
+				(width 0.1)
+				(type dash)
+			)
+			(layer "Dwgs.User")
+			(uuid "9734dbd9-e6eb-4a39-ab8c-6f683764414a")
+		)
+		(fp_rect
+			(start -7.75 -12)
+			(end 7.75 1.9)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "f11a1b14-5629-456e-943b-dadbbc8c91eb")
+		)
+		(fp_rect
+			(start -4.75 -33.4)
+			(end 4.75 -21.4)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "3ee00a5c-98d8-431f-9382-289f17e35016")
+		)
+		(fp_rect
+			(start -5.65 -21.4)
+			(end 5.65 -12)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "146a3978-05fc-40dc-a7c7-c73e0ee29e89")
+		)
+		(fp_rect
+			(start -7.25 -12)
+			(end 7.25 1.4)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "ea1e4c96-d8a6-4986-8a8d-f4b333f0e7f7")
+		)
+		(fp_text user "board edge"
+			(at 0 -12.6 90)
+			(layer "Dwgs.User")
+			(uuid "57b87f27-0d44-4747-a7c9-ce25e13bad71")
+			(effects
+				(font
+					(size 0.8 0.8)
+					(thickness 0.1)
+				)
+			)
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -6 90)
+			(layer "F.Fab")
+			(uuid "7f4713fd-902f-47d9-a707-7547258e3f54")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0 90)
+			(size 1.5 1.5)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(J25-In)")
+			(uuid "37e2c945-1a6c-49d7-948e-de671822d2ce")
+		)
+		(pad "2" thru_hole circle
+			(at -5 -4.6 90)
+			(size 3.42 3.42)
+			(drill 2.1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(J25-Ext)")
+			(uuid "d4cf74e2-26f6-4b3e-bb8b-26c31b6cb312")
+		)
+		(pad "2" thru_hole circle
+			(at -2.6 0 90)
+			(size 1.5 1.5)
+			(drill 0.9)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(J25-Ext)")
+			(uuid "1742ea27-4fef-4ddb-9b56-9bad78d2f0d9")
+		)
+		(pad "2" thru_hole circle
+			(at 5 -4.6 90)
+			(size 3.42 3.42)
+			(drill 2.1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net "Net-(J25-Ext)")
+			(uuid "ce552fab-4711-4773-a90f-946d60656b82")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
 		(layer "F.Cu")
 		(uuid "80234757-f880-4b4a-aac4-408e061031d8")
@@ -29965,293 +30175,6 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD10_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1206_3216Metric.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
-	)
-	(footprint "Connector_Coaxial:BNC_Amphenol_031-5539_Vertical"
-		(layer "F.Cu")
-		(uuid "c5110c1e-8159-445d-98d4-e2c65a110a05")
-		(at 188.295 63.965)
-		(descr "BNC coaxial connector vertical, Amphenol 031-71059, https://www.amphenolrf.com/library/download/link/link_id/594427/parent/031-5539/")
-		(tags "BNC Amphenol Vertical")
-		(property "Reference" "J25"
-			(at 0 9.25 180)
-			(layer "F.SilkS")
-			(uuid "62cc0dfb-f681-4772-a7a0-b4c540848f5c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Value" "pH probe"
-			(at 0 10.49 180)
-			(layer "F.Fab")
-			(uuid "2ee36375-9fbd-484d-aa6b-9cb8711867c7")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "1f9d1531-51f2-4f8c-8615-bad578c78290")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "78c7ae31-1cbb-4fe0-944f-1676bb3a5850")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Reichelt" "UG 1094PL"
-			(at 0 0 0)
-			(unlocked yes)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "7ccaf12f-03d9-4e40-8c9b-a1b7e52bc7fe")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property ki_fp_filters "*BNC* *SMA* *SMB* *SMC* *Cinch* *LEMO* *UMRF* *MCX* *U.FL*")
-		(path "/7f54e82c-99a9-49f3-9f13-2c730539fa02/81724eb8-5249-4db2-903e-8bd6ffc0fa4b")
-		(sheetname "/ADS1115 ADC and pH amplifier/")
-		(sheetfile "analog.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
-		(attr through_hole)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -7.5 -7.67)
-			(end 7.5 -7.67)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "e41a728a-6b06-4e19-8d01-833cb65f3465")
-		)
-		(fp_line
-			(start -7.5 8.43)
-			(end -7.5 -7.67)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "a182e994-9a38-4f8d-bd0d-3acbb5f825e7")
-		)
-		(fp_line
-			(start -4.35 7.67)
-			(end -4.35 8.43)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "c0d04ffc-a1fa-46eb-8672-e14ce24b2c7d")
-		)
-		(fp_line
-			(start -4.35 8.43)
-			(end -7.5 8.43)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "3710246e-859f-437e-bbd4-405848cc8443")
-		)
-		(fp_line
-			(start 4.35 7.67)
-			(end -4.35 7.67)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "36202344-2c8f-4fd2-8824-875c40c9166f")
-		)
-		(fp_line
-			(start 4.35 8.43)
-			(end 4.35 7.67)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "1291dfc9-d4e1-4f91-a91c-b942b1696398")
-		)
-		(fp_line
-			(start 7.5 -7.67)
-			(end 7.5 8.43)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "efdfa311-c418-4fe9-b039-219076904480")
-		)
-		(fp_line
-			(start 7.5 8.43)
-			(end 4.35 8.43)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "f3262777-aae1-497a-bf3b-9f662f808ba7")
-		)
-		(fp_rect
-			(start 7.75 8.68)
-			(end -7.75 -7.92)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "cb080c19-4348-40f5-ae79-df06154a34f8")
-		)
-		(fp_line
-			(start -3.636 -5.285)
-			(end 3.636 -5.285)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "7cd1eb0b-1c6d-48b1-b2a8-63e1f534637b")
-		)
-		(fp_rect
-			(start -4.6 7.42)
-			(end -7.25 8.18)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "88089193-acbd-4320-8614-a44838503d8f")
-		)
-		(fp_rect
-			(start 7.25 7.42)
-			(end -7.25 -7.42)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "f686df45-7c01-427d-baf6-2bc4da78ce39")
-		)
-		(fp_rect
-			(start 7.25 7.42)
-			(end 4.6 8.18)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "e09762f8-1a79-422d-b3c4-02a46315462a")
-		)
-		(fp_circle
-			(center 0 0)
-			(end 6.415 0)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.Fab")
-			(uuid "8628865d-a461-4111-b920-22c3795f3b39")
-		)
-		(fp_text user "${REFERENCE}"
-			(at 0 0 180)
-			(layer "F.Fab")
-			(uuid "220791f5-e8a2-463b-a69a-86b679c5391f")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(pad "" thru_hole circle
-			(at -5.08 5.08 180)
-			(size 4 4)
-			(drill 2)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(uuid "f9fa27bc-4243-46c8-a656-3642e2813b57")
-		)
-		(pad "" thru_hole circle
-			(at 5.08 -5.08 180)
-			(size 4 4)
-			(drill 2)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(uuid "4b20225f-e6f9-4cba-9f4c-71f43a7922d8")
-		)
-		(pad "1" thru_hole roundrect
-			(at 0 0 180)
-			(size 1.6 1.6)
-			(drill 0.9)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(roundrect_rratio 0.25)
-			(net "Net-(J25-In)")
-			(pinfunction "In_1")
-			(pintype "passive")
-			(uuid "46f2f818-6241-4fc3-a744-1538d03700ff")
-		)
-		(pad "2" thru_hole circle
-			(at 2.54 0 180)
-			(size 1.6 1.6)
-			(drill 0.9)
-			(layers "*.Cu" "*.Mask")
-			(remove_unused_layers no)
-			(net "Net-(J25-Ext)")
-			(pinfunction "Ext_2")
-			(pintype "passive")
-			(uuid "c94fc279-c571-4c8d-a285-c5fe87b13fd7")
-		)
-		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Connector_Coaxial.3dshapes/BNC_Amphenol_031-5539_Vertical.step"
 			(offset
 				(xyz 0 0 0)
 			)
