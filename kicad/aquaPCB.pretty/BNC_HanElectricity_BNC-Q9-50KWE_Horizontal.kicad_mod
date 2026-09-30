@@ -190,4 +190,15 @@
 		(uuid "3df0d126-c2de-4fb3-a246-3a4abca2a034")
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/aquaPCB.3dshapes/BNC_HanElectricity_BNC-Q9-50KWE_Horizontal.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )

@@ -18575,6 +18575,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -18726,6 +18727,17 @@
 			(uuid "ce552fab-4711-4773-a90f-946d60656b82")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/aquaPCB.3dshapes/BNC_HanElectricity_BNC-Q9-50KWE_Horizontal.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
 		(layer "F.Cu")
