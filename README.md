@@ -23,7 +23,7 @@ Inputs          4x protected 3.3 V digital inputs (IN1..IN4)
 1-Wire          GPIO4, 1 sensor terminal (bus: several sensors per terminal), parasitic power supported
 Analog          ADS1115, 16 bit, 4 channels single-ended: on-board pH amplifier (BNC),
                 module input 0..5 V (e.g. PH-4502C, ORP board), general 0..3.3 V input
-Expansion       2x I2C header (OLED, PCA9685, ...), SPI display header
+Expansion       I2C header (OLED, PCA9685, ...); optional: 2nd I2C header, SPI display header
 Board           100 x 100 mm, 2 layers, 1 oz Cu, 4x M3
 ```
 
@@ -120,7 +120,7 @@ The buffer costs about €0.60 per board.
 - ULN2803A (SOIC-18), open-collector sink with built-in flyback diodes.
 - Terminal pair per channel: supply (+5 V or +V_IN, selected by jumper) and OUT.
 - Drives SSRs with 3..32 V DC control input or relay modules.
-- The four unused ULN2803A channels are routed to a spare header.
+- The four unused ULN2803A channels are routed to a spare header (J10, optional / DNP).
 
 ### Digital inputs IN1..IN4
 3-pin terminal 3V3 / IN / GND for float switches, level sensors, push buttons.
@@ -196,6 +196,24 @@ kicad-cli sch erc --severity-all kicad/aquaPCB.kicad_sch
 
 Placeholder footprint to check at layout time: 470 µF capacitor diameter (D10 assumed).
 The BNC footprint (`aquaPCB.pretty`) is made from the LCSC/EasyEDA pad data and the maker drawing.
+
+## Build options
+
+Optional parts carry KiCad's **DNP** (Do Not Populate) flag: their footprints stay on the board,
+but they are left out of the BOM and the pick-and-place file. They are all through-hole pin
+headers, so they can be soldered in later if needed.
+
+```
+J10   ULN2803 spare header (4 unused driver channels)
+J23   second I2C header
+J24   SPI display header
+JP3   display backlight jumper
+```
+
+Export for JLCPCB without them: `kicad-cli sch export bom --exclude-dnp ...` and
+`kicad-cli pcb export pos --exclude-dnp ...`. Further options (e.g. on-board pH amplifier vs.
+external amplifier board on AIN2, Pi Zero socket vs. Pi 3/4 box header) can become KiCad 10
+design variants once they are needed.
 
 ## Mechanical
 

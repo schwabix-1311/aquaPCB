@@ -4447,7 +4447,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "5b98c552-eace-4200-936f-8ce7fd4c9c5f")
 		(property "Reference" "J24"
 			(at 36.322 233.172 0)
@@ -4561,7 +4561,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "5e93dd89-0d9a-4426-9cdb-664c0cbc0262")
 		(property "Reference" "J23"
 			(at 34.036 179.07 0)
@@ -6580,7 +6580,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "dd6ea1b0-9a60-430e-81de-4a1eaa777ecc")
 		(property "Reference" "JP3"
 			(at 45.212 232.664 0)

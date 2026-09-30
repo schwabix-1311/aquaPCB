@@ -63,8 +63,12 @@ SMD parts ≈ **$9 per board**. Extended parts: **11 unique** → ≈ $33 loadin
 | 1 | pH input filter across the probe, low leakage | STYROFLEX 6,8N | polystyrene 6.8 nF 2 % 160 V, axial (47 pF..6.8 nF available, no 4.7 nF) | 0.57 |
 | 1 | Pi connector, variant Zero (plug-on) | MPE 094-2-040 | female header 2×20, 2.54 mm | 1.10 |
 | (1) | Pi connector, variant Pi 3/4 (ribbon) | WSL 40G | box header 40-pole, straight | 0.23 |
-| 1 | I²C ×2, display, ULN spare, JP1–3 (35 pins) | ECON SL40G1 | pin header 1×40, 2.54 mm (cut to length) | 0.75 |
-| 3 | JP1 5V→Pi, JP2 SSR supply, JP3 backlight | JUMPER 2,54 SW | shunt, 2.54 mm | 0.02 |
+| 1 | I²C 1, JP1, JP2 (9 pins; +26 for the optional headers below) | ECON SL40G1 | pin header 1×40, 2.54 mm (cut to length) | 0.75 |
+| 2 | JP1 5V→Pi, JP2 SSR supply (+1 for optional JP3) | JUMPER 2,54 SW | shunt, 2.54 mm | 0.02 |
+
+Optional, marked DNP (not in the exported BOM / placement file; pads are on the board):
+J10 ULN spare header (10 pins), J23 second I²C header (4), J24 display header (10), JP3 backlight
+jumper (2 + shunt) – all from the same pin header strip.
 | 4 | Pi Zero standoffs | – | M2.5 × 11 mm, any Pi mounting kit | – |
 
 THT parts ≈ **€13.50 per board**. Reichelt shipping within Germany: €5.95 (shown on
