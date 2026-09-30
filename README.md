@@ -20,7 +20,7 @@ Pi              Zero 2 W plugged on face-up; Pi 3/4 via 40-pin ribbon (Pi 5: own
 Power outputs   6x low-side MOSFET, 5 A each, 2 with hardware PWM (Q1..Q6)
 SSR outputs     4x open-collector sink, ULN2803A, for SSR / relay modules (S1..S4)
 Inputs          4x protected 3.3 V digital inputs (IN1..IN4)
-1-Wire          GPIO4, 2 sensor terminals (bus, more sensors per terminal), parasitic power supported
+1-Wire          GPIO4, 1 sensor terminal (bus: several sensors per terminal), parasitic power supported
 Analog          ADS1115, 16 bit, 4 channels single-ended: on-board pH amplifier (BNC),
                 module input 0..5 V (e.g. PH-4502C, ORP board), general 0..3.3 V input
 Expansion       2x I2C header (OLED, PCA9685, ...), SPI display header
@@ -56,8 +56,8 @@ buses only.
 
 ```
 GPIO  function            GPIO  function
- 0    reserved (ID EEPROM) 14    reserved (UART console)
- 1    reserved (ID EEPROM) 15    reserved (UART console)
+ 0    reserved (ID EEPROM) 14    unused (not connected)
+ 1    reserved (ID EEPROM) 15    unused (not connected)
  2    I2C SDA              16    Q5  power out
  3    I2C SCL              17    S1  SSR out
  4    1-Wire               18    Q1  power out, PWM0 (light)
@@ -72,7 +72,8 @@ GPIO  function            GPIO  function
 13    Q4  power out        27    S4  SSR out
 ```
 
-Every GPIO is in use. Further expansion goes over I²C (e.g. PCA9685 PWM breakout,
+All GPIOs except 14/15 are in use (14/15 stay free: no UART console, customers rarely
+have a USB-serial adapter). Further expansion goes over I²C (e.g. PCA9685 PWM breakout,
 MCP23017 IO expander).
 
 Raspberry Pi OS settings: `dtoverlay=pwm-2chan,pin=18,func=2,pin2=19,func2=2`,
@@ -126,7 +127,7 @@ The buffer costs about €0.60 per board.
 1 kΩ series resistor, 10 kΩ pull-up to 3.3 V, BAT54S clamp to 3.3 V and GND.
 
 ### 1-Wire
-GPIO4 with 4.7 kΩ pull-up to 3.3 V; two 3-pin terminals (GND / DQ / 3V3), so both
+GPIO4 with 4.7 kΩ pull-up to 3.3 V; one 3-pin terminal (GND / DQ / 3V3), so both
 3-wire and parasitic-powered (GND / DQ only) DS18B20 sensors work. ESD protection diode.
 
 ### ADS1115 and pH
@@ -231,17 +232,18 @@ per board                                     batch 5    batch 10
   PCB 100x100, 2 layers                         ~ €2       ~ €1.5
   SMD parts (LCSC, checked)                     ~ €8       ~ €7.5
   PCBA setup + 11 extended-part fees, share     ~ €7.5     ~ €3.75
-  THT parts (Reichelt, checked, incl. VAT)      ~ €14.2    ~ €14.2
+  THT parts (Reichelt, checked, incl. VAT)      ~ €13.8    ~ €13.8
   shipping JLC + Reichelt, share                ~ €5       ~ €2.5
   EU import VAT 19 % + €3 duty/category (JLC)   ~ €4       ~ €3.5
   -----------------------------------------------------------------
-                                                ~ €40.5    ~ €32.5
+                                                ~ €40      ~ €32
 ```
 
-Target limit **≤ €40 per board** at batch 5 is exceeded by about €0.50, mostly by the on-board pH
-amplifier (~€3: BNC, TLV9062, styroflex). Levers: order 10 boards (~€33 each); cheaper
-terminals for signal lines (~€6 of the THT share); or leave the on-board pH amplifier
-unpopulated when an external amplifier board is used on AIN2.
+Target limit **≤ €40 per board** at batch 5 is just met (about €40.10) after dropping the UART
+header and two of the three 1-Wire terminals. The on-board pH amplifier costs about €3 (BNC,
+TLV9062, styroflex). Levers: order 10 boards (~€32 each); cheaper terminals for signal lines
+(~€5 of the THT share); or leave the on-board pH amplifier unpopulated when an external
+amplifier board is used on AIN2.
 
 ## Not on v1
 

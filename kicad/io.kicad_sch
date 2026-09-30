@@ -2314,16 +2314,6 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 139.7) (xy 46.99 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6036a307-35f2-43b8-ac29-4a00b7eb5c66")
-	)
-	(wire
-		(pts
 			(xy 41.91 74.93) (xy 41.91 69.85)
 		)
 		(stroke
@@ -2404,16 +2394,6 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 134.62) (xy 41.91 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "748f21c0-eede-42b7-ad76-112da2342a7a")
-	)
-	(wire
-		(pts
 			(xy 41.91 118.11) (xy 38.1 118.11)
 		)
 		(stroke
@@ -2421,16 +2401,6 @@
 			(type default)
 		)
 		(uuid "77bc5925-4e3b-44de-89ce-4ebd4a92ae7a")
-	)
-	(wire
-		(pts
-			(xy 41.91 137.16) (xy 38.1 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7c4893a3-0238-4111-97d2-83af72fb76db")
 	)
 	(wire
 		(pts
@@ -2501,16 +2471,6 @@
 			(type default)
 		)
 		(uuid "8b0f872f-a501-4c2d-a353-70377b30636c")
-	)
-	(wire
-		(pts
-			(xy 41.91 143.51) (xy 41.91 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8e32d384-6218-43bd-a87d-2a38302c5300")
 	)
 	(wire
 		(pts
@@ -2694,16 +2654,6 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 139.7) (xy 46.99 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c274cd76-8d08-44c6-b2d2-638fe88697bd")
-	)
-	(wire
-		(pts
 			(xy 58.42 74.93) (xy 60.96 74.93)
 		)
 		(stroke
@@ -2841,16 +2791,6 @@
 			(type default)
 		)
 		(uuid "e6088344-1242-4a9d-b10d-0498d217a972")
-	)
-	(wire
-		(pts
-			(xy 41.91 142.24) (xy 38.1 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e6b72456-b127-463a-9215-ffda46fbc875")
 	)
 	(wire
 		(pts
@@ -5282,83 +5222,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 41.91 134.62 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "9548416c-2462-4644-938a-8aaab16b3307")
-		(property "Reference" "#PWR130"
-			(at 44.45 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 39.37 134.62 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 41.91 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 41.91 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 41.91 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e166d030-4e38-41e5-b772-a9255fbefd52")
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/69a76064-578d-4a49-aad8-2873571f78bd"
-					(reference "#PWR130")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 111.76 57.15 0)
 		(mirror y)
@@ -5599,84 +5462,6 @@
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/69a76064-578d-4a49-aad8-2873571f78bd"
 					(reference "R39")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 41.91 143.51 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "b00b1a3c-0910-427d-9871-388f9c126e88")
-		(property "Reference" "#PWR129"
-			(at 39.37 143.51 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 44.45 143.51 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 41.91 143.51 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 41.91 143.51 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 41.91 143.51 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "5c47d5ce-475b-4937-b323-20535670d2e3")
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/69a76064-578d-4a49-aad8-2873571f78bd"
-					(reference "#PWR129")
 					(unit 1)
 				)
 			)
@@ -7057,99 +6842,6 @@
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/69a76064-578d-4a49-aad8-2873571f78bd"
 					(reference "J19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Screw_Terminal_01x03")
-		(at 33.02 139.7 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ed4c429b-662e-4c6e-bfac-8b20e12d3543")
-		(property "Reference" "J20"
-			(at 33.782 134.366 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1-Wire 2"
-			(at 33.528 145.288 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal"
-			(at 33.02 139.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 33.02 139.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 33.02 139.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Reichelt" "AKL 101-03"
-			(at 33.02 139.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a0e2c226-7daf-47e2-a2b2-774779367d51")
-		)
-		(pin "2"
-			(uuid "92030601-9439-4fb4-9370-87a24fdd1f95")
-		)
-		(pin "3"
-			(uuid "8bc961c2-5ccd-41ef-911d-630d6a7e521a")
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/69a76064-578d-4a49-aad8-2873571f78bd"
-					(reference "J20")
 					(unit 1)
 				)
 			)
