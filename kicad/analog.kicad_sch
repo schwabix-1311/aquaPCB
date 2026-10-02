@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "51cd6c5e-ac6a-4f37-b570-d7d5d8e287e8")
-	(paper "A3")
+	(paper "A4" portrait)
 	(title_block
 		(title "aquaPCB – ADS1115 ADC and pH amplifier")
 		(date "2026-09-29")
@@ -2352,12 +2352,6 @@
 		(uuid "d8ebef51-48ba-4f7d-9406-dd78662e5a74")
 	)
 	(junction
-		(at 55.88 246.38)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "04670c31-b69f-486e-a2bb-17d7f97b3ac6")
-	)
-	(junction
 		(at 48.26 143.51)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2382,10 +2376,10 @@
 		(uuid "4fe271f2-f5b4-4e07-a672-2cc37864b7be")
 	)
 	(junction
-		(at 64.77 205.74)
+		(at 55.88 246.38)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7a764317-fb1e-4117-a031-c9051a50f7ef")
+		(uuid "53850078-17cd-42ca-af36-0a21f8128e84")
 	)
 	(junction
 		(at 76.2 146.05)
@@ -2418,10 +2412,28 @@
 		(uuid "af8adb29-1c9e-466e-a155-4351731ef3e6")
 	)
 	(junction
+		(at 83.82 208.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bbadb289-a314-46ca-9dc2-9071d8c3c560")
+	)
+	(junction
+		(at 73.66 247.65)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d8e83635-b74b-48a7-ad65-9cb6dbb88abc")
+	)
+	(junction
 		(at 44.45 238.76)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fbadbb14-ee9e-4100-a822-ab01ffdf9f30")
+	)
+	(junction
+		(at 64.77 205.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ff4b00f0-d5a4-4aca-8749-41f69eab5d11")
 	)
 	(junction
 		(at 100.33 113.03)
@@ -2545,6 +2557,16 @@
 	)
 	(wire
 		(pts
+			(xy 72.39 208.28) (xy 83.82 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36334167-cf05-482e-930e-1f2036e760cc")
+	)
+	(wire
+		(pts
 			(xy 60.96 66.04) (xy 58.42 66.04)
 		)
 		(stroke
@@ -2582,6 +2604,16 @@
 			(type default)
 		)
 		(uuid "478cce11-a4c2-4f53-b4c5-e637495ef3a8")
+	)
+	(wire
+		(pts
+			(xy 63.5 247.65) (xy 73.66 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50d2a753-fdf3-4632-8118-eb4e8617d2f9")
 	)
 	(wire
 		(pts
@@ -2795,16 +2827,6 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 246.38) (xy 55.88 245.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "87e24d02-6e38-44d0-be34-706a59ba2d9e")
-	)
-	(wire
-		(pts
 			(xy 44.45 203.2) (xy 44.45 199.39)
 		)
 		(stroke
@@ -2812,6 +2834,16 @@
 			(type default)
 		)
 		(uuid "8b18aca5-27b1-4309-a88f-d213eb85e6d0")
+	)
+	(wire
+		(pts
+			(xy 72.39 205.74) (xy 64.77 205.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ea4ca73-3b07-4fea-a29b-a3d217f7b395")
 	)
 	(wire
 		(pts
@@ -2845,6 +2877,16 @@
 	)
 	(wire
 		(pts
+			(xy 83.82 208.28) (xy 86.36 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97bdcfea-1265-439b-b98d-a81a706c9525")
+	)
+	(wire
+		(pts
 			(xy 100.33 121.92) (xy 100.33 113.03)
 		)
 		(stroke
@@ -2865,6 +2907,26 @@
 	)
 	(wire
 		(pts
+			(xy 63.5 246.38) (xy 55.88 246.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c9fa5b9-4cdd-456d-b2f7-06f0f5634d1e")
+	)
+	(wire
+		(pts
+			(xy 63.5 247.65) (xy 63.5 246.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d5df7d9-7e34-421b-a612-a57e80566258")
+	)
+	(wire
+		(pts
 			(xy 55.88 121.92) (xy 55.88 124.46)
 		)
 		(stroke
@@ -2872,16 +2934,6 @@
 			(type default)
 		)
 		(uuid "9e4bb6fd-0813-4a5a-a9a4-dc6096f04275")
-	)
-	(wire
-		(pts
-			(xy 73.66 247.65) (xy 76.2 247.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9fef80bc-8979-49a3-94dd-3fa0399c1e56")
 	)
 	(wire
 		(pts
@@ -2912,6 +2964,16 @@
 			(type default)
 		)
 		(uuid "a1ad23eb-1388-494d-8745-b179fdd57a78")
+	)
+	(wire
+		(pts
+			(xy 72.39 208.28) (xy 72.39 205.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a47206d8-72ca-4f0c-aa44-092bec95ac00")
 	)
 	(wire
 		(pts
@@ -3105,16 +3167,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 205.74) (xy 64.77 205.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d86bf88a-7c65-4d2e-b2e5-de8cc15bb5fe")
-	)
-	(wire
-		(pts
 			(xy 55.88 132.08) (xy 55.88 124.46)
 		)
 		(stroke
@@ -3125,16 +3177,6 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 208.28) (xy 86.36 208.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dc04b6cf-7f59-4d0a-b832-8442dc07eeee")
-	)
-	(wire
-		(pts
 			(xy 53.34 246.38) (xy 55.88 246.38)
 		)
 		(stroke
@@ -3142,6 +3184,16 @@
 			(type default)
 		)
 		(uuid "dc0917e0-3a2e-489a-8aaf-3db928fa22b0")
+	)
+	(wire
+		(pts
+			(xy 73.66 247.65) (xy 76.2 247.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dcd88583-d56a-48cf-9691-b2169ef9cb28")
 	)
 	(wire
 		(pts
@@ -3252,6 +3304,16 @@
 			(type default)
 		)
 		(uuid "fec26ae5-b3e8-423f-9470-3be5128d1b27")
+	)
+	(label "PH_REF"
+		(at 76.2 139.7 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "114258f3-733b-4d8b-b3a3-2a564e590212")
 	)
 	(label "PH_REF"
 		(at 58.42 60.96 180)
@@ -7351,35 +7413,5 @@
 				)
 			)
 		)
-	)
-	(label "PH_REF"
-		(at 76.2 139.7 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "114258f3-733b-4d8b-b3a3-2a564e590212")
-	)
-	(label "AIN2"
-		(at 73.66 205.74 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d78a155f-fdcd-40c1-a3b4-6cbc57340ab7")
-	)
-	(label "AIN3"
-		(at 55.88 245.11 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8327cfb6-2343-4276-bdef-e5bfd6f01dcf")
 	)
 )

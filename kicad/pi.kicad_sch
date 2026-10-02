@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "f0c1c8fc-8568-4f5d-9855-244d71a8c5c4")
-	(paper "A3")
+	(paper "A4" portrait)
 	(title_block
 		(title "aquaPCB – Raspberry Pi connector")
 		(date "2026-09-29")
@@ -1701,8 +1701,16 @@
 		(uuid "2c9250fc-2cad-42cf-8e71-676479bd8e36")
 	)
 	(no_connect
+		(at 54.61 50.8)
+		(uuid "33258403-b59f-4808-9925-18dba3a1bd37")
+	)
+	(no_connect
 		(at 41.91 73.66)
 		(uuid "521701a0-16e3-4d9b-9ab8-86f65035fe00")
+	)
+	(no_connect
+		(at 54.61 48.26)
+		(uuid "584af716-e936-483a-9158-6ef42062c2b4")
 	)
 	(no_connect
 		(at 41.91 60.96)
@@ -4053,13 +4061,5 @@
 				)
 			)
 		)
-	)
-	(no_connect
-		(at 54.61 48.26)
-		(uuid "584af716-e936-483a-9158-6ef42062c2b4")
-	)
-	(no_connect
-		(at 54.61 50.8)
-		(uuid "33258403-b59f-4808-9925-18dba3a1bd37")
 	)
 )

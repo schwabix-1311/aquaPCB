@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "642bae93-34eb-4bf5-af4c-d99a61db92c7")
-	(paper "A3")
+	(paper "A4" portrait)
 	(title_block
 		(title "aquaPCB – Inputs, 1-Wire, I2C and display headers")
 		(date "2026-09-29")
@@ -1923,12 +1923,6 @@
 		(uuid "ae2f2cfa-c4fe-4213-8311-df17ebc75b32")
 	)
 	(junction
-		(at 46.99 120.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "af90a3c2-96b1-4bc1-8941-6b6b5cbcb182")
-	)
-	(junction
 		(at 142.24 80.01)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2244,7 +2238,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 120.65) (xy 46.99 120.65)
+			(xy 38.1 120.65) (xy 57.15 120.65)
 		)
 		(stroke
 			(width 0)
@@ -2591,16 +2585,6 @@
 			(type default)
 		)
 		(uuid "b8d65daf-70e7-4ff4-b59b-911b80cfa1cc")
-	)
-	(wire
-		(pts
-			(xy 46.99 120.65) (xy 57.15 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bc55d13e-4c0d-4ea0-a5ce-64818816f3b0")
 	)
 	(wire
 		(pts
