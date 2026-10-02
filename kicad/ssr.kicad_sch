@@ -4385,4 +4385,94 @@
 		(at 63.5 92.71)
 		(uuid "61752c6d-923d-4ba1-94fa-266b9a04b83b")
 	)
+	(label "S1_OUT"
+		(at 72.39 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9094f3d0-27e3-460e-92ad-f93161d46381")
+	)
+	(label "S1_LED"
+		(at 72.39 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6841f8f3-74a6-4889-9f5d-0b6508304f4d")
+	)
+	(label "S2_OUT"
+		(at 81.28 77.47 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "38a04309-aa67-44d9-860e-121bdac42335")
+	)
+	(label "S2_LED"
+		(at 81.28 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a4d47b84-c70d-4c9d-b3ee-eced96b01003")
+	)
+	(label "S3_OUT"
+		(at 91.44 80.01 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "765424ae-e1bc-47c5-afba-a35973c9b1a8")
+	)
+	(label "S3_LED"
+		(at 91.44 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8acafcf3-974d-4470-80a7-b43df02ba542")
+	)
+	(label "S4_OUT"
+		(at 101.6 82.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4013ac69-e565-4b29-a14e-f6c738cbbe8b")
+	)
+	(label "S4_LED"
+		(at 101.6 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "660f7bd3-e592-468d-924f-c568a78d8eec")
+	)
+	(label "SSR_V"
+		(at 67.31 49.53 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1401a8ff-ca8c-471c-82f8-3b91d61ca593")
+	)
 )
