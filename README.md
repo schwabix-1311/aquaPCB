@@ -122,7 +122,8 @@ The buffer costs about €0.60 per board.
 - ULN2803A (SOIC-18), open-collector sink with built-in flyback diodes.
 - Terminal pair per channel: supply (+5 V or +V_IN, selected by jumper) and OUT.
 - Drives SSRs with 3..32 V DC control input or relay modules.
-- The four unused ULN2803A channels are routed to a spare header (J10, optional / DNP).
+- The four unused ULN2803A channels stay unconnected (inputs open; the internal resistors keep
+  them off).
 
 ### Digital inputs IN1..IN4
 3-pin terminal 3V3 / IN / GND for float switches, level sensors, push buttons.
@@ -206,7 +207,6 @@ but they are left out of the BOM and the pick-and-place file. They are all throu
 headers, so they can be soldered in later if needed.
 
 ```
-J10   ULN2803 spare header (4 unused driver channels)
 J23   second I2C header
 J24   SPI display header
 JP3   display backlight jumper
