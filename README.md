@@ -61,15 +61,15 @@ GPIO  function            GPIO  function
  2    I2C SDA              16    Q5  power out
  3    I2C SCL              17    S1  SSR out
  4    1-Wire               18    Q1  power out, PWM0 (light)
- 5    IN1                  19    Q2  power out, PWM1 (fan)
+ 5    IN1                  19    Q4  power out, PWM1 (fan)
  6    IN2                  20    IN3
  7    SPI CE1              21    IN4
  8    SPI CE0              22    S2  SSR out
  9    SPI MISO             23    S3  SSR out
 10    SPI MOSI             24    display RST
 11    SPI SCLK             25    display DC
-12    Q3  power out        26    Q6  power out
-13    Q4  power out        27    S4  SSR out
+12    Q2  power out        26    Q6  power out
+13    Q3  power out        27    S4  SSR out
 ```
 
 All GPIOs except 14/15 are in use (14/15 stay free: no UART console, customers rarely
@@ -109,8 +109,9 @@ for the whole board).
   booting), logic-level N-MOSFET, 40 V, DPAK (e.g. AOD4184A, ~9 mΩ at V_GS 4.5 V).
 - SS54 Schottky freewheel diode OUT → +V_IN for fans, pumps, solenoids.
 - Status LED per channel.
-- Q1/Q2 on hardware PWM for dimming LED lamps and 2-wire fans. 4-wire PC-fan PWM input
-  is not supported.
+- Q1/Q4 on hardware PWM (GPIO18/19) for dimming LED lamps and 2-wire fans. 4-wire PC-fan
+  PWM input is not supported. The GPIO order Q1 18, Q2 12, Q3 13, Q4 19 follows the Pi
+  header, so the GPIO → 74HCT244 → gate lines route without crossings.
 
 Why not drive the MOSFET directly from the GPIO (e.g. IRLB8721)? It works with typical
 parts, but R_DS(on) is only specified from V_GS 4.5 V while V_th may reach 2.35 V, so a

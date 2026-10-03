@@ -2056,7 +2056,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Per channel: 100R gate resistor, 10k gate pull-down (off while the Pi boots or is absent),\nAOD4184A 40 V low-side switch, SS54 freewheel diode to VIN, status LED on the 5 V drive signal.\nQ1/Q2 = hardware PWM (light, fan). Terminal: pin 1 = +VIN, pin 2 = switched OUT (load between)."
+	(text "Per channel: 100R gate resistor, 10k gate pull-down (off while the Pi boots or is absent),\nAOD4184A 40 V low-side switch, SS54 freewheel diode to VIN, status LED on the 5 V drive signal.\nQ1/Q4 = hardware PWM (GPIO18/19: light, fan). Terminal: pin 1 = +VIN, pin 2 = switched OUT (load between)."
 		(exclude_from_sim no)
 		(at 25.4 109.22 0)
 		(effects
@@ -2193,12 +2193,6 @@
 		(uuid "9db9991d-2055-4d80-afe9-625f0c626847")
 	)
 	(junction
-		(at 38.1 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b86cff28-5230-423d-8d7f-89a2b012b2ab")
-	)
-	(junction
 		(at 101.6 210.82)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2251,7 +2245,7 @@
 		(uuid "36df58a1-ab0a-4887-860e-9899bb29f061")
 	)
 	(no_connect
-		(at 66.04 68.58)
+		(at 66.04 60.96)
 		(uuid "cadfd0aa-ecb0-489a-9501-71bad5ae0a7e")
 	)
 	(wire
@@ -2806,7 +2800,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 60.96) (xy 68.58 60.96)
+			(xy 66.04 68.58) (xy 68.58 68.58)
 		)
 		(stroke
 			(width 0)
@@ -3436,16 +3430,6 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 68.58) (xy 38.1 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c2e4ff68-6e1a-47d2-9f60-c827b829925c")
-	)
-	(wire
-		(pts
 			(xy 46.99 134.62) (xy 53.34 134.62)
 		)
 		(stroke
@@ -3764,7 +3748,7 @@
 		)
 		(uuid "fd86531c-7a1f-433c-8ee9-295e13dce5c6")
 	)
-	(label "Q6_DRV"
+	(label "Q2_DRV"
 		(at 68.58 66.04 0)
 		(effects
 			(font
@@ -3774,8 +3758,8 @@
 		)
 		(uuid "08813f89-84fb-4178-aaaa-fc85e3215b2d")
 	)
-	(label "Q4_DRV"
-		(at 68.58 60.96 0)
+	(label "Q1_DRV"
+		(at 68.58 68.58 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3784,7 +3768,7 @@
 		)
 		(uuid "2630d033-e5be-4c62-8dde-8953ee7bbea5")
 	)
-	(label "Q2_DRV"
+	(label "Q5_DRV"
 		(at 68.58 55.88 0)
 		(effects
 			(font
@@ -3794,7 +3778,7 @@
 		)
 		(uuid "35dfa529-5ed1-4a3c-b4ab-1ebfa2fe7ffe")
 	)
-	(label "Q5_DRV"
+	(label "Q3_DRV"
 		(at 68.58 63.5 0)
 		(effects
 			(font
@@ -3854,7 +3838,7 @@
 		)
 		(uuid "c1e0ea46-e0d8-44ce-a2f9-358f7c7a336c")
 	)
-	(label "Q1_DRV"
+	(label "Q4_DRV"
 		(at 68.58 53.34 0)
 		(effects
 			(font
@@ -3864,7 +3848,7 @@
 		)
 		(uuid "cbeb432e-8d22-4097-a081-760f6d8966d5")
 	)
-	(label "Q3_DRV"
+	(label "Q6_DRV"
 		(at 68.58 58.42 0)
 		(effects
 			(font
@@ -3884,7 +3868,7 @@
 		)
 		(uuid "fa0172e6-14f7-4306-8b3d-1fc968ad80a8")
 	)
-	(global_label "GPIO26_Q6"
+	(global_label "GPIO18_Q1"
 		(shape bidirectional)
 		(at 153.67 59.69 90)
 		(fields_autoplaced yes)
@@ -3908,7 +3892,7 @@
 			)
 		)
 	)
-	(global_label "GPIO12_Q3"
+	(global_label "GPIO26_Q6"
 		(shape bidirectional)
 		(at 123.19 59.69 90)
 		(fields_autoplaced yes)
@@ -3932,7 +3916,7 @@
 			)
 		)
 	)
-	(global_label "GPIO16_Q5"
+	(global_label "GPIO13_Q3"
 		(shape bidirectional)
 		(at 38.1 63.5 180)
 		(fields_autoplaced yes)
@@ -3955,7 +3939,7 @@
 			)
 		)
 	)
-	(global_label "GPIO19_Q2"
+	(global_label "GPIO16_Q5"
 		(shape bidirectional)
 		(at 111.76 59.69 90)
 		(fields_autoplaced yes)
@@ -3979,9 +3963,9 @@
 			)
 		)
 	)
-	(global_label "GPIO13_Q4"
+	(global_label "GPIO18_Q1"
 		(shape bidirectional)
-		(at 38.1 60.96 180)
+		(at 38.1 68.58 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3991,7 +3975,7 @@
 		)
 		(uuid "a8287676-aa52-40ea-b110-2f8291e5c7d1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 38.1 60.96 0)
+			(at 38.1 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4002,7 +3986,7 @@
 			)
 		)
 	)
-	(global_label "GPIO12_Q3"
+	(global_label "GPIO26_Q6"
 		(shape bidirectional)
 		(at 38.1 58.42 180)
 		(fields_autoplaced yes)
@@ -4025,7 +4009,7 @@
 			)
 		)
 	)
-	(global_label "GPIO26_Q6"
+	(global_label "GPIO12_Q2"
 		(shape bidirectional)
 		(at 38.1 66.04 180)
 		(fields_autoplaced yes)
@@ -4048,7 +4032,7 @@
 			)
 		)
 	)
-	(global_label "GPIO19_Q2"
+	(global_label "GPIO16_Q5"
 		(shape bidirectional)
 		(at 38.1 55.88 180)
 		(fields_autoplaced yes)
@@ -4071,7 +4055,7 @@
 			)
 		)
 	)
-	(global_label "GPIO18_Q1"
+	(global_label "GPIO19_Q4"
 		(shape bidirectional)
 		(at 100.33 59.69 90)
 		(fields_autoplaced yes)
@@ -4095,7 +4079,7 @@
 			)
 		)
 	)
-	(global_label "GPIO13_Q4"
+	(global_label "GPIO13_Q3"
 		(shape bidirectional)
 		(at 133.35 59.69 90)
 		(fields_autoplaced yes)
@@ -4119,7 +4103,7 @@
 			)
 		)
 	)
-	(global_label "GPIO16_Q5"
+	(global_label "GPIO12_Q2"
 		(shape bidirectional)
 		(at 143.51 59.69 90)
 		(fields_autoplaced yes)
@@ -4143,7 +4127,7 @@
 			)
 		)
 	)
-	(global_label "GPIO18_Q1"
+	(global_label "GPIO19_Q4"
 		(shape bidirectional)
 		(at 38.1 53.34 180)
 		(fields_autoplaced yes)
@@ -7665,6 +7649,84 @@
 			)
 		)
 	)
+		(symbol
+		(lib_id "power:GND")
+		(at 38.1 60.96 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1633bde0-20f0-487a-aaf5-3520eeca0530")
+		(property "Reference" "#PWR164"
+			(at 31.75 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 34.29 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 38.1 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 38.1 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 38.1 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c8b26661-0a19-4bc4-a621-122d1693761c")
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/80232f81-1179-4777-a7f0-674a974d53cc/662aa388-f80b-440b-be99-bc584ab7592b"
+					(reference "#PWR164")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(symbol
 		(lib_id "Device:R")
 		(at 93.98 123.19 90)
@@ -8382,7 +8444,7 @@
 				)
 			)
 		)
-		(property "Value" "GPIO19"
+		(property "Value" "GPIO12"
 			(at 94.234 145.542 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10461,7 +10523,7 @@
 				)
 			)
 		)
-		(property "Value" "GPIO13"
+		(property "Value" "GPIO19"
 			(at 94.361 182.499 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10551,7 +10613,7 @@
 				)
 			)
 		)
-		(property "Value" "GPIO12"
+		(property "Value" "GPIO13"
 			(at 39.878 182.372 90)
 			(show_name no)
 			(do_not_autoplace no)
