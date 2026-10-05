@@ -2584,7 +2584,7 @@
 			)
 		)
 		(property "Value" "GPIO 16"
-			(at -4.375 0.98 90)
+			(at 3.125 21.98 180)
 			(layer "F.SilkS")
 			(uuid "1dc18ca3-a817-4718-aa90-aae883fdf506")
 			(effects
@@ -9151,7 +9151,7 @@
 			)
 		)
 		(property "Value" "GPIO 13"
-			(at -4.299999 0.98 90)
+			(at 2.925 21.98 180)
 			(layer "F.SilkS")
 			(uuid "04978d8e-c256-4fec-b756-e1d116704a9f")
 			(effects
@@ -10481,7 +10481,7 @@
 			)
 		)
 		(property "Value" "PWM 1"
-			(at -4.225001 0.48 90)
+			(at 2.774999 21.98 180)
 			(layer "F.SilkS")
 			(uuid "c55bd7bf-76e7-4da6-ad7e-492440766532")
 			(effects
@@ -11697,7 +11697,7 @@
 			)
 		)
 		(property "Value" "GPIO 26"
-			(at -4.025 0.98 90)
+			(at 2.475 21.98 180)
 			(layer "F.SilkS")
 			(uuid "e78affb7-0117-40a7-b7a4-034b315220c0")
 			(effects
@@ -22091,7 +22091,7 @@
 		(property "Reference" "J5"
 			(at -4.425 4.48 180)
 			(layer "F.Fab")
-			(uuid "1cc638f9-0a32-499c-adf2-8cb7b1c71ec2")
+			(uuid "0f1418b8-9488-447e-b3b7-fc9f4e0fbfac")
 			(effects
 				(font
 					(size 1 1)
@@ -22100,9 +22100,9 @@
 			)
 		)
 		(property "Value" "GPIO 12"
-			(at -4.299999 0.98 90)
+			(at 2.575 21.98 180)
 			(layer "F.SilkS")
-			(uuid "08df6262-e996-49e5-b311-31dfda51a4cf")
+			(uuid "f60f18e7-6097-4c86-a55b-222f3cb40234")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -22114,7 +22114,7 @@
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "36cf7adb-54d3-4b96-bc6d-a39acdeddb03")
+			(uuid "3a71c556-9181-4cf0-9401-983dcfc68b95")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22125,7 +22125,7 @@
 			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "09ce4a4c-30d7-488a-a169-7edb7f9fefb8")
+			(uuid "52c86dec-9f31-46c7-bae9-a31d74b75378")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32052,7 +32052,7 @@
 			)
 		)
 		(property "Value" "PWM 0"
-			(at -4.299999 0.48 90)
+			(at 2.725 21.98 180)
 			(layer "F.SilkS")
 			(uuid "2c761eb2-921e-44a1-8e66-b84b1c211b70")
 			(effects
@@ -35348,7 +35348,7 @@
 		(uuid "61cd9889-b195-4c30-824c-e36889438c89")
 	)
 	(gr_line
-		(start 169.5 133)
+		(start 169.5 134.5)
 		(end 169.5 122.75)
 		(stroke
 			(width 0.3)
@@ -35390,7 +35390,7 @@
 		)
 	)
 	(gr_text "LOAD OUT max 5A"
-		(at 168.5 128 90)
+		(at 168.5 129 90)
 		(layer "F.SilkS")
 		(uuid "50d8c25a-b64e-4c76-b1cb-ac88770aca51")
 		(effects
@@ -35483,7 +35483,7 @@
 		)
 	)
 	(gr_text "ADC #1 in 0"
-		(at 89.05 81.125 90)
+		(at 82.5 78 90)
 		(layer "B.SilkS")
 		(uuid "8745e848-2f25-40db-bd66-4ad58f33f4dc")
 		(effects
@@ -35556,7 +35556,7 @@
 	)
 	(gr_text "PWM 0"
 		(at 103.975 130.455 0)
-		(layer "B.SilkS")
+		(layer "B.SilkS" knockout)
 		(uuid "6cd67617-327e-4231-992d-7f14cd845dac")
 		(effects
 			(font
@@ -35604,7 +35604,7 @@
 	)
 	(gr_text "PWM 1"
 		(at 138.024999 130.455 0)
-		(layer "B.SilkS")
+		(layer "B.SilkS" knockout)
 		(uuid "77da2db9-b84e-4337-ac95-a533308ce18a")
 		(effects
 			(font
@@ -35687,7 +35687,7 @@
 		)
 	)
 	(gr_text "1-wire DS1820"
-		(at 173.344999 50.83 90)
+		(at 168.5 50 90)
 		(layer "B.SilkS")
 		(uuid "b39421e7-3235-4953-b3a5-87ab440d208e")
 		(effects
