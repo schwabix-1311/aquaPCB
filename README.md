@@ -224,8 +224,10 @@ design variants once they are needed.
 - One 2x20 footprint with normal (not mirrored) pin numbering, fitted with either
   - a 2x20 female socket: Pi Zero 2 W sits **face-up** on it, with its 2x20 pin header
     soldered on the Zero's underside (pins pointing down; use a Zero 2 W without
-    pre-soldered header, not the WH). Held by M2.5 x 11 mm standoffs in the Zero's mounting
-    holes (58 x 23 mm). Face-up keeps SoC cooling, SD card and LED accessible; or
+    pre-soldered header, not the WH). The header side is held by the plug connection, the
+    opposite side by two M2.5 x 11 mm standoffs in the Zero's outer mounting holes (H5/H6,
+    58 mm apart). No holes next to the header, so the larger box header fits as well.
+    Face-up keeps SoC cooling, SD card and LED accessible; or
   - a 40-pin box header: Pi 3/4 connect through a standard IDC ribbon cable.
   A face-down Zero would need a mirrored footprint and could not share it with the ribbon.
 - pH BNC: right-angle jack HanElectricity BNC-Q9-50KWE at the left board edge. Its body front face is

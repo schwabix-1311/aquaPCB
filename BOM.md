@@ -62,7 +62,7 @@ SMD parts ≈ **$9 per board**. Extended parts: **11 unique** → ≈ $33 loadin
 | (1) | Pi connector, variant Pi 3/4 (ribbon) | WSL 40G | box header 40-pole, straight | 0.23 |
 | 1 | I²C 1, JP1, JP2 (9 pins; +16 for the optional headers below) | ECON SL40G1 | pin header 1×40, 2.54 mm (cut to length) | 0.75 |
 | 2 | JP1 5V→Pi, JP2 SSR supply (+1 for optional JP3) | JUMPER 2,54 SW | shunt, 2.54 mm | 0.02 |
-| 4 | Pi Zero standoffs | – | M2.5 × 11 mm, any Pi mounting kit | – |
+| 2 | Pi Zero standoffs (H5/H6, Zero variant only) | – | M2.5 × 11 mm, any Pi mounting kit | – |
 
 Optional, marked DNP (not in the exported BOM / placement file; pads are on the board):
 J23 second I²C header (4), J24 display header (10), JP3 backlight

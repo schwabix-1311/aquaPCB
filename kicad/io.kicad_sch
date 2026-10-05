@@ -6759,7 +6759,7 @@
 				)
 			)
 		)
-		(property "Value" "DS1820"
+		(property "Value" "1-wire\nDS1820"
 			(at 33.528 126.492 0)
 			(show_name no)
 			(do_not_autoplace no)
