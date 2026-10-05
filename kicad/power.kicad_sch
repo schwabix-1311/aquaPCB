@@ -6136,8 +6136,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Screw_Terminal_01x02")
-		(at 48.26 72.39 0)
-		(mirror y)
+		(at 48.26 74.93 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
