@@ -8,7 +8,8 @@ an on-board ADS1115 with pH front end, and headers for a small display and I²C 
 aquaPi needs no special support: every channel is a plain GPIO, hardware PWM, 1-Wire or
 I²C port that aquaPi discovers by itself and offers in its Wiring editor.
 
-> Status: **schematic draft (v1)**, ERC clean. No layout yet.
+> Status: **v1 layout complete**: schematic ERC clean, board fully routed, DRC clean.
+> Next: fab outputs and a 1:1 print check; no prototypes built yet.
 > Not a beginner kit: SMD parts are assembled by the PCB fab (JLCPCB economic PCBA);
 > only through-hole connectors are hand-soldered.
 
@@ -198,7 +199,7 @@ for f in kicad/*.kicad_sch; do kicad-cli sch upgrade "$f"; done
 kicad-cli sch erc --severity-all kicad/aquaPCB.kicad_sch
 ```
 
-Placeholder footprint to check at layout time: 470 µF capacitor diameter (D10 assumed).
+Footprint to confirm on the 1:1 print: 470 µF capacitor C1 diameter (D10 assumed).
 The BNC footprint (`aquaPCB.pretty`) is made from the LCSC/EasyEDA pad data and the maker drawing.
 
 ## Build options
@@ -295,9 +296,9 @@ used on AIN2.
 ## Roadmap
 
 1. Specification (this file), BOM with LCSC / Reichelt part numbers ([BOM.md](BOM.md)) – done
-2. Schematic in KiCad, ERC clean – draft done, needs review
-3. Layout, DRC clean
-4. Gerbers, JLC BOM/CPL, order 5 prototypes
+2. Schematic in KiCad, ERC clean – done
+3. Layout, DRC clean – done
+4. Gerbers, JLC BOM/CPL, 1:1 print check (terminals, BNC, Pi header), order 5 prototypes
 5. Bring-up at 12 V: rails without Pi, then with Pi Zero 2 W, boot with loads attached
    (no output may toggle), all channels from the aquaPi dashboard, 5 A thermal test
 6. Validate 24 V operation
