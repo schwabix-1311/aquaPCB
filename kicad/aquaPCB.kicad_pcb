@@ -2699,7 +2699,7 @@
 			)
 		)
 		(property "Value" "GPIO 16"
-			(at -4.299999 7.050001 90)
+			(at -4.375 0.98 90)
 			(layer "F.SilkS")
 			(uuid "1dc18ca3-a817-4718-aa90-aae883fdf506")
 			(effects
@@ -3022,7 +3022,7 @@
 			)
 		)
 		(property "Value" "6n8 styroflex"
-			(at 7.5 4.37 0)
+			(at 7.5 -2.325 0)
 			(layer "F.Fab")
 			(uuid "2a4308d6-fc3a-4e6e-9908-f496c5d621c1")
 			(effects
@@ -9381,7 +9381,7 @@
 			)
 		)
 		(property "Value" "GPIO 13"
-			(at -4.299999 7.050001 90)
+			(at -4.299999 0.98 90)
 			(layer "F.SilkS")
 			(uuid "04978d8e-c256-4fec-b756-e1d116704a9f")
 			(effects
@@ -10310,7 +10310,7 @@
 			)
 		)
 		(property "Value" "GPIO 21"
-			(at 16.689999 17.69 90)
+			(at -3.855 6.87 90)
 			(layer "F.Fab")
 			(uuid "7a817434-9ef7-481c-ac19-2024dbea8bf9")
 			(effects
@@ -10711,7 +10711,7 @@
 			)
 		)
 		(property "Value" "PWM 1"
-			(at -4.299999 7.550001 90)
+			(at -4.225001 0.48 90)
 			(layer "F.SilkS")
 			(uuid "c55bd7bf-76e7-4da6-ad7e-492440766532")
 			(effects
@@ -11927,7 +11927,7 @@
 			)
 		)
 		(property "Value" "GPIO 26"
-			(at -4.299999 7.050001 90)
+			(at -4.025 0.98 90)
 			(layer "F.SilkS")
 			(uuid "e78affb7-0117-40a7-b7a4-034b315220c0")
 			(effects
@@ -12135,7 +12135,7 @@
 			)
 		)
 		(property "Value" "SSR supply"
-			(at 0 7.46 0)
+			(at 5.435001 5.81 0)
 			(layer "F.Fab")
 			(uuid "3ce5ae66-9d8e-41d3-b3f5-b9fa0a0d3e54")
 			(effects
@@ -16008,7 +16008,7 @@
 			)
 		)
 		(property "Value" "ADC #1 in 0"
-			(at -5.499999 5.649999 0)
+			(at -8.325 -2.45 180)
 			(layer "F.SilkS")
 			(uuid "7c91431b-b4ee-4965-8d9f-6d5fd9758c57")
 			(effects
@@ -17352,7 +17352,7 @@
 			)
 		)
 		(property "Value" "Display"
-			(at 1.1 25.31 0)
+			(at 2 2.12 90)
 			(layer "F.Fab")
 			(uuid "4fcd02aa-4668-42f2-8884-db3c4c206666")
 			(effects
@@ -18882,7 +18882,7 @@
 		(property "Reference" "J16"
 			(at 2.67 10.96 0)
 			(layer "F.SilkS")
-			(uuid "6ebad996-294f-40ab-a322-23814d36a373")
+			(uuid "154f57cb-2de0-4936-8431-ff87a2fec000")
 			(effects
 				(font
 					(size 1 1)
@@ -18891,9 +18891,9 @@
 			)
 		)
 		(property "Value" "GPIO 6"
-			(at 16.689999 17.69 90)
+			(at -3.955 7.37 90)
 			(layer "F.Fab")
-			(uuid "47a099f2-2e4a-4129-8189-9650b9f2858c")
+			(uuid "3e359ee2-88d1-44ad-aad8-474e63cf607b")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -18905,7 +18905,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4f3df849-8658-4f1c-8d70-0e96f4fa1e62")
+			(uuid "3942c73b-a497-48b6-be47-f4fde0c40139")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18916,7 +18916,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5e1abf8e-5a5a-475b-beec-2d4d595d33f3")
+			(uuid "9d554d26-510d-4de9-8443-59faffb24395")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19909,7 +19909,7 @@
 			)
 		)
 		(property "Value" "ADC #1 in 2"
-			(at 16.689999 17.69 90)
+			(at -3.805 5.87 90)
 			(layer "F.Fab")
 			(uuid "98509e40-f522-4022-ab98-b325f071265a")
 			(effects
@@ -22330,7 +22330,7 @@
 			)
 		)
 		(property "Value" "GPIO 12"
-			(at -4.299999 7.050001 90)
+			(at -4.299999 0.98 90)
 			(layer "F.SilkS")
 			(uuid "08df6262-e996-49e5-b311-31dfda51a4cf")
 			(effects
@@ -22709,7 +22709,7 @@
 			)
 		)
 		(property "Value" "GPIO 5"
-			(at 16.689999 17.69 90)
+			(at -3.755 7.37 90)
 			(layer "F.Fab")
 			(uuid "b842e3d7-2d93-41ee-87d8-9a589d526f4a")
 			(effects
@@ -29536,7 +29536,7 @@
 			)
 		)
 		(property "Value" "GPIO 20"
-			(at 16.689999 17.69 90)
+			(at -3.904999 6.87 90)
 			(layer "F.Fab")
 			(uuid "3986d05b-4e4d-43d8-9d4a-fa9750ba31f6")
 			(effects
@@ -32282,7 +32282,7 @@
 			)
 		)
 		(property "Value" "PWM 0"
-			(at -4.299999 7.550001 90)
+			(at -4.299999 0.48 90)
 			(layer "F.SilkS")
 			(uuid "2c761eb2-921e-44a1-8e66-b84b1c211b70")
 			(effects
@@ -33212,7 +33212,7 @@
 			)
 		)
 		(property "Value" "Backlight"
-			(at -1.415 5.15 0)
+			(at -2.065 2.04 90)
 			(layer "F.Fab")
 			(uuid "3b3cf6f4-19d4-4636-8297-f9f7b4a3b719")
 			(effects
@@ -33570,7 +33570,7 @@
 		(descr "SMD Solder 3-pad Jumper, 1x1.5mm rounded Pads, 0.3mm gap, pads 1-2 bridged with 1 copper strip")
 		(tags "net tie solder jumper bridged")
 		(property "Reference" "JP4"
-			(at 0 -1.8 0)
+			(at 3.65 -0.675 0)
 			(layer "F.SilkS")
 			(uuid "a2ede963-e318-4271-820a-251c3f610994")
 			(effects
@@ -33581,7 +33581,7 @@
 			)
 		)
 		(property "Value" "ADDR"
-			(at 0 1.9 0)
+			(at 4.15 0.325 0)
 			(layer "F.Fab")
 			(uuid "226a4a1e-61b6-4ada-86b6-0c4894c68490")
 			(effects
@@ -34578,7 +34578,7 @@
 		(property "Reference" "J27"
 			(at 10.17 1.195 90)
 			(layer "F.SilkS")
-			(uuid "b7360f72-c4f4-469d-856b-05dcf600962a")
+			(uuid "22dd88d7-cc20-4bf2-95cd-0c18cbdc7780")
 			(effects
 				(font
 					(size 1 1)
@@ -34587,9 +34587,9 @@
 			)
 		)
 		(property "Value" "ADC #1 in 3"
-			(at -11.35 17.689999 90)
+			(at -4.33 5.695 180)
 			(layer "F.Fab")
-			(uuid "b5494a88-320d-4c74-ad55-92f7f7c76420")
+			(uuid "cd063a69-1a49-4931-98d2-41c9e04f7a94")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -34601,7 +34601,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "596eb77c-c7ef-41bb-b91f-0011e53fbd5e")
+			(uuid "7287ecc9-ae42-46ab-ad24-55e39c43274b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34612,7 +34612,7 @@
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "47155ab5-b5e6-487a-990b-082545832856")
+			(uuid "9404c2b1-9a14-4215-8b05-321e883f672d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35310,7 +35310,7 @@
 		(descr "Through hole straight pin header, 1x02, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x02 2.54mm single row")
 		(property "Reference" "JP1"
-			(at -3 -2.38 0)
+			(at -0.15 4.95 0)
 			(layer "F.SilkS")
 			(uuid "ae94cb03-af82-4941-a020-21014cc3fd73")
 			(effects
@@ -35321,7 +35321,7 @@
 			)
 		)
 		(property "Value" "5V→Pi"
-			(at -0.5 5.275 0)
+			(at -4.15 -0.55 0)
 			(layer "F.Fab")
 			(uuid "57e9c4d7-fe54-4e90-99cc-c043d92f2fc7")
 			(effects
@@ -35580,7 +35580,7 @@
 		)
 	)
 	(gr_text "GND"
-		(at 81.2 126.55 0)
+		(at 81.5 126 0)
 		(layer "F.SilkS")
 		(uuid "fc50a23b-afaf-424d-b88b-d413f9707061")
 		(effects
