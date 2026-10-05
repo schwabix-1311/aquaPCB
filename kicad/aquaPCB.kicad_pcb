@@ -19686,7 +19686,7 @@
 				)
 			)
 		)
-		(property "Value" "PWR, red"
+		(property "Value" "PWR"
 			(at 0 1.65 0)
 			(layer "F.Fab")
 			(uuid "e2c9e437-0770-4d84-9feb-459e1e051b7b")
@@ -30263,7 +30263,7 @@
 				)
 			)
 		)
-		(property "Value" "3V3, green"
+		(property "Value" "3V3"
 			(at 0 1.65 90)
 			(layer "F.Fab")
 			(uuid "f29d4e36-6f89-43ce-b0b9-752cd4b9d415")
