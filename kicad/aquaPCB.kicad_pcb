@@ -35458,10 +35458,58 @@
 			(justify mirror)
 		)
 	)
+	(gr_text "+3V3"
+		(at 104.005 45.73 0)
+		(layer "B.SilkS")
+		(uuid "66a2c4eb-7156-48ed-839b-9a552cbb371d")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GND"
+		(at 111.005 45.73 0)
+		(layer "B.SilkS")
+		(uuid "647c0509-642d-4021-bc59-87e78d477e56")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
 	(gr_text "GPIO 12"
 		(at 115.325 130.455 0)
 		(layer "B.SilkS")
 		(uuid "b6f54789-934b-4899-ae52-33b5a0597e00")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "+3V3"
+		(at 117.205 45.73 0)
+		(layer "B.SilkS")
+		(uuid "9415d6f5-71c7-461f-a8b5-97882c0c91cc")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GND"
+		(at 124.205 45.73 0)
+		(layer "B.SilkS")
+		(uuid "76738676-a9db-426f-97e9-976cbab72471")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -35482,10 +35530,58 @@
 			(justify mirror)
 		)
 	)
+	(gr_text "+3V3"
+		(at 130.404999 45.73 0)
+		(layer "B.SilkS")
+		(uuid "675ec2fe-f01c-4879-a3ff-b3f93962360d")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GND"
+		(at 137.404999 45.73 0)
+		(layer "B.SilkS")
+		(uuid "497de2bd-2957-40ef-b6b5-e7237a591fd1")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "+3V3"
+		(at 143.605 45.73 0)
+		(layer "B.SilkS")
+		(uuid "7c198a8a-40c9-49ca-82fa-c2160b175a6a")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
 	(gr_text "GPIO 16"
 		(at 149.375 130.455 0)
 		(layer "B.SilkS")
 		(uuid "8b96d869-765f-4bb8-ab42-e7f7fc3312f1")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GND"
+		(at 150.605 45.73 0)
+		(layer "B.SilkS")
+		(uuid "7a115e57-d13a-4e63-9d45-868767a38f48")
 		(effects
 			(font
 				(size 0.8 0.8)
