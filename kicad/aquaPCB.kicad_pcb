@@ -35664,6 +35664,270 @@
 			(justify right bottom)
 		)
 	)
+	(gr_text "GPIO 12"
+		(at 115.325 130.455 0)
+		(layer "B.SilkS")
+		(uuid "b6f54789-934b-4899-ae52-33b5a0597e00")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GPIO 13"
+		(at 126.675 130.455 0)
+		(layer "B.SilkS")
+		(uuid "53d713a8-0dcc-43ad-b93f-6acf3e2465ec")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GPIO 16"
+		(at 149.375 130.455 0)
+		(layer "B.SilkS")
+		(uuid "8b96d869-765f-4bb8-ab42-e7f7fc3312f1")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GPIO 26"
+		(at 160.725 130.455 0)
+		(layer "B.SilkS")
+		(uuid "35f5a6a6-cfaa-4f68-99aa-3a4e166c4732")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "ADC #1 in 0"
+		(at 89.05 81.125 90)
+		(layer "B.SilkS")
+		(uuid "8745e848-2f25-40db-bd66-4ad58f33f4dc")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GPIO 17"
+		(at 173.63 62.07 90)
+		(layer "B.SilkS")
+		(uuid "4c773e85-a9d1-41ac-ba49-905da1a05b35")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GPIO 22"
+		(at 173.63 71.47 90)
+		(layer "B.SilkS")
+		(uuid "218b7a22-008c-4e5f-874d-c3f8b7ea7327")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GPIO 23"
+		(at 173.63 80.869999 90)
+		(layer "B.SilkS")
+		(uuid "1f2a0f7b-2ecb-430e-b1c7-91375c6aab2b")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GPIO 27"
+		(at 173.63 90.27 90)
+		(layer "B.SilkS")
+		(uuid "224a9c1f-fe65-4821-ba21-11a97e55c8b1")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "ADC #1 in 2"
+		(at 94.305 41.18 0)
+		(layer "B.SilkS")
+		(uuid "02c64587-fc50-4a79-ba3f-010ba77cf5db")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "PWM 0"
+		(at 103.975 130.455 0)
+		(layer "B.SilkS")
+		(uuid "6cd67617-327e-4231-992d-7f14cd845dac")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GPIO 5"
+		(at 107.505 41.18 0)
+		(layer "B.SilkS")
+		(uuid "c80a3e58-b8a4-4f45-9cea-979650d1ec3f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GPIO 6"
+		(at 120.705 41.18 0)
+		(layer "B.SilkS")
+		(uuid "f970eaab-647b-42f3-b860-08bb1a6af319")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GPIO 20"
+		(at 133.904999 41.18 0)
+		(layer "B.SilkS")
+		(uuid "c2244148-1903-4ad6-88b4-2beb55d9a834")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "PWM 1"
+		(at 138.024999 130.455 0)
+		(layer "B.SilkS")
+		(uuid "77da2db9-b84e-4337-ac95-a533308ce18a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "GPIO 21"
+		(at 147.105 41.18 0)
+		(layer "B.SilkS")
+		(uuid "9054c015-648f-4966-bc4d-47f0888dfa7e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "Display"
+		(at 82.9 101.31 90)
+		(layer "B.SilkS")
+		(uuid "e4149e71-c8a6-4adc-8206-589a04569ee1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "12V IN"
+		(at 84.07 120.125 90)
+		(layer "B.SilkS")
+		(uuid "77d96ac3-2762-47e1-8bcc-2dda31f2d94e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "ADC #1 in 3"
+		(at 84.355 54.17 90)
+		(layer "B.SilkS")
+		(uuid "c943359d-31ca-4628-baaf-9317cb8a08fd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "I2C 1"
+		(at 153.45 41.405 90)
+		(layer "B.SilkS")
+		(uuid "9d53df03-50e1-454b-966a-449ff4466889")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "I2C 2"
+		(at 161.25 41.405 90)
+		(layer "B.SilkS")
+		(uuid "bc90666d-1708-4191-991b-b7485cc43124")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(gr_text "1-wire DS1820"
+		(at 173.344999 50.83 90)
+		(layer "B.SilkS")
+		(uuid "b39421e7-3235-4953-b3a5-87ab440d208e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
 	(gr_text "+"
 		(at 84.07 116.175 0)
 		(layer "B.SilkS")
