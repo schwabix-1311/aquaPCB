@@ -4926,7 +4926,7 @@
 				)
 			)
 		)
-		(property "Value" "AIN3"
+		(property "Value" "ADC #1 in 3"
 			(at 36.576 253.238 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5657,7 +5657,7 @@
 				)
 			)
 		)
-		(property "Value" "pH probe"
+		(property "Value" "ADC #1 in 0"
 			(at 29.464 108.204 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6807,7 +6807,7 @@
 				)
 			)
 		)
-		(property "Value" "Module"
+		(property "Value" "ADC #1 in 2"
 			(at 38.354 211.328 0)
 			(show_name no)
 			(do_not_autoplace no)

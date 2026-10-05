@@ -2698,7 +2698,7 @@
 				)
 			)
 		)
-		(property "Value" "OUT G16"
+		(property "Value" "GPIO 16"
 			(at 1.275 8.305 180)
 			(layer "F.Fab")
 			(uuid "1dc18ca3-a817-4718-aa90-aae883fdf506")
@@ -6717,7 +6717,7 @@
 				)
 			)
 		)
-		(property "Value" "SSR G27"
+		(property "Value" "GPIO 27"
 			(at 1 8.305 270)
 			(layer "F.Fab")
 			(uuid "cb38014b-e0e0-4556-9709-a1c5658f906b")
@@ -9380,7 +9380,7 @@
 				)
 			)
 		)
-		(property "Value" "OUT G12"
+		(property "Value" "GPIO 13"
 			(at 1 8.305 180)
 			(layer "F.Fab")
 			(uuid "04978d8e-c256-4fec-b756-e1d116704a9f")
@@ -9759,7 +9759,7 @@
 				)
 			)
 		)
-		(property "Value" "SSR G17"
+		(property "Value" "GPIO 17"
 			(at 1 8.305 270)
 			(layer "F.Fab")
 			(uuid "ef19e8f3-450f-40aa-aa7b-57ceabf99923")
@@ -10309,7 +10309,7 @@
 				)
 			)
 		)
-		(property "Value" "IN4"
+		(property "Value" "GPIO 21"
 			(at 2.67 3.3575 0)
 			(layer "F.Fab")
 			(uuid "7a817434-9ef7-481c-ac19-2024dbea8bf9")
@@ -10710,7 +10710,7 @@
 				)
 			)
 		)
-		(property "Value" "OUT G13"
+		(property "Value" "PWM 1"
 			(at 1.424999 8.305 180)
 			(layer "F.Fab")
 			(uuid "c55bd7bf-76e7-4da6-ad7e-492440766532")
@@ -11926,7 +11926,7 @@
 				)
 			)
 		)
-		(property "Value" "OUT G26"
+		(property "Value" "GPIO 26"
 			(at 1.125 8.305 180)
 			(layer "F.Fab")
 			(uuid "e78affb7-0117-40a7-b7a4-034b315220c0")
@@ -16007,7 +16007,7 @@
 				)
 			)
 		)
-		(property "Value" "pH probe"
+		(property "Value" "ADC #1 in 0"
 			(at 0 -14 90)
 			(layer "F.Fab")
 			(uuid "7c91431b-b4ee-4965-8d9f-6d5fd9758c57")
@@ -16520,7 +16520,7 @@
 				)
 			)
 		)
-		(property "Value" "SSR G23"
+		(property "Value" "GPIO 23"
 			(at 1.155 8.305 270)
 			(layer "F.Fab")
 			(uuid "1ab04303-461b-41ea-8b82-b4c12c78b902")
@@ -16899,7 +16899,7 @@
 				)
 			)
 		)
-		(property "Value" "1-Wire 1"
+		(property "Value" "DS1820"
 			(at 3.345 8.044999 270)
 			(layer "F.Fab")
 			(uuid "3c691d1e-fb39-4b49-9474-7129dde3141c")
@@ -18890,7 +18890,7 @@
 				)
 			)
 		)
-		(property "Value" "IN2"
+		(property "Value" "GPIO 6"
 			(at 2.67 3.3575 0)
 			(layer "F.Fab")
 			(uuid "47a099f2-2e4a-4129-8189-9650b9f2858c")
@@ -19908,7 +19908,7 @@
 				)
 			)
 		)
-		(property "Value" "Module"
+		(property "Value" "ADC #1 in 2"
 			(at 2.67 3.3575 0)
 			(layer "F.Fab")
 			(uuid "98509e40-f522-4022-ab98-b325f071265a")
@@ -22329,7 +22329,7 @@
 				)
 			)
 		)
-		(property "Value" "OUT G19"
+		(property "Value" "GPIO 12"
 			(at 1 8.305 180)
 			(layer "F.Fab")
 			(uuid "08df6262-e996-49e5-b311-31dfda51a4cf")
@@ -22708,7 +22708,7 @@
 				)
 			)
 		)
-		(property "Value" "IN1"
+		(property "Value" "GPIO 5"
 			(at 2.67 3.3575 0)
 			(layer "F.Fab")
 			(uuid "b842e3d7-2d93-41ee-87d8-9a589d526f4a")
@@ -29327,7 +29327,7 @@
 				)
 			)
 		)
-		(property "Value" "SSR G22"
+		(property "Value" "GPIO 22"
 			(at 1 8.305 270)
 			(layer "F.Fab")
 			(uuid "8c437678-7f30-44a2-898e-4831e3d5e10b")
@@ -29535,7 +29535,7 @@
 				)
 			)
 		)
-		(property "Value" "IN3"
+		(property "Value" "GPIO 20"
 			(at 2.67 3.3575 0)
 			(layer "F.Fab")
 			(uuid "3986d05b-4e4d-43d8-9d4a-fa9750ba31f6")
@@ -32281,7 +32281,7 @@
 				)
 			)
 		)
-		(property "Value" "OUT G18"
+		(property "Value" "PWM 0"
 			(at 1 8.305 180)
 			(layer "F.Fab")
 			(uuid "2c761eb2-921e-44a1-8e66-b84b1c211b70")
@@ -34586,7 +34586,7 @@
 				)
 			)
 		)
-		(property "Value" "AIN3"
+		(property "Value" "ADC #1 in 3"
 			(at 2.67 2.045 90)
 			(layer "F.Fab")
 			(uuid "b5494a88-320d-4c74-ad55-92f7f7c76420")
@@ -35567,6 +35567,28 @@
 		(fill no)
 		(layer "Edge.Cuts")
 		(uuid "90193c38-4e53-423b-b803-ad7f7ce7e42a")
+	)
+	(gr_text "+12V"
+		(at 81.2 115.35 0)
+		(layer "F.SilkS")
+		(uuid "e4412f32-ed53-40fb-b9f0-f2e8eeb35ee4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.16)
+			)
+		)
+	)
+	(gr_text "GND"
+		(at 81.2 126.55 0)
+		(layer "F.SilkS")
+		(uuid "fc50a23b-afaf-424d-b88b-d413f9707061")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.16)
+			)
+		)
 	)
 	(segment
 		(start 102.605 110.5)

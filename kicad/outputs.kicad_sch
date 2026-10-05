@@ -4575,7 +4575,7 @@
 				)
 			)
 		)
-		(property "Value" "OUT G26"
+		(property "Value" "GPIO 26"
 			(at 129.794 208.534 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4935,7 +4935,7 @@
 				)
 			)
 		)
-		(property "Value" "OUT G16"
+		(property "Value" "GPIO 16"
 			(at 74.676 208.788 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5025,7 +5025,7 @@
 				)
 			)
 		)
-		(property "Value" "OUT G12"
+		(property "Value" "GPIO 13"
 			(at 76.454 171.958 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7928,7 +7928,7 @@
 				)
 			)
 		)
-		(property "Value" "OUT G19"
+		(property "Value" "GPIO 12"
 			(at 130.048 135.128 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8108,7 +8108,7 @@
 				)
 			)
 		)
-		(property "Value" "OUT G18"
+		(property "Value" "PWM 0"
 			(at 75.692 135.128 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11141,7 +11141,7 @@
 				)
 			)
 		)
-		(property "Value" "OUT G13"
+		(property "Value" "PWM 1"
 			(at 129.286 171.704 0)
 			(show_name no)
 			(do_not_autoplace no)

@@ -2921,7 +2921,7 @@
 				)
 			)
 		)
-		(property "Value" "SSR G17"
+		(property "Value" "GPIO 17"
 			(at 118.618 69.85 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3011,7 +3011,7 @@
 				)
 			)
 		)
-		(property "Value" "SSR G23"
+		(property "Value" "GPIO 23"
 			(at 146.558 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3101,7 +3101,7 @@
 				)
 			)
 		)
-		(property "Value" "SSR G27"
+		(property "Value" "GPIO 27"
 			(at 160.274 77.47 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4284,7 +4284,7 @@
 				)
 			)
 		)
-		(property "Value" "SSR G22"
+		(property "Value" "GPIO 22"
 			(at 132.334 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)

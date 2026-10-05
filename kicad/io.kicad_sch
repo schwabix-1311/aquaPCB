@@ -3494,7 +3494,7 @@
 				)
 			)
 		)
-		(property "Value" "IN3"
+		(property "Value" "GPIO 20"
 			(at 102.616 54.864 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3684,7 +3684,7 @@
 				)
 			)
 		)
-		(property "Value" "IN1"
+		(property "Value" "GPIO 5"
 			(at 32.258 55.626 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4654,7 +4654,7 @@
 				)
 			)
 		)
-		(property "Value" "IN4"
+		(property "Value" "GPIO 21"
 			(at 102.362 85.598 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5977,7 +5977,7 @@
 				)
 			)
 		)
-		(property "Value" "IN2"
+		(property "Value" "GPIO 6"
 			(at 32.512 85.598 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6759,7 +6759,7 @@
 				)
 			)
 		)
-		(property "Value" "1-Wire 1"
+		(property "Value" "DS1820"
 			(at 33.528 126.492 0)
 			(show_name no)
 			(do_not_autoplace no)
