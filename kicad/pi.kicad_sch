@@ -2722,6 +2722,17 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
+			(at 88.9 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
@@ -2939,6 +2950,17 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
+			(at 38.1 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
 			(at 38.1 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -3176,6 +3198,17 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
+			(at 63.5 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
@@ -3316,6 +3349,17 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
+			(at 25.4 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
 			(at 25.4 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -3476,6 +3520,17 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
+			(at 50.8 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
@@ -3626,6 +3681,17 @@
 				)
 			)
 		)
+		(property "KiLib_Generator" "mounting_hardware/mounting_hole"
+			(at 76.2 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/e3ace633-3876-405f-ba12-2ddf57f90ffe"
@@ -3700,6 +3766,17 @@
 			)
 		)
 		(property "Reichelt" "MPE 094-2-040 (socket) or WSL 40G (box header)"
+			(at 46.99 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "KiLib_Generator" "connector/pin_header_socket"
 			(at 46.99 63.5 0)
 			(hide yes)
 			(show_name no)
