@@ -12124,7 +12124,7 @@
 		(descr "Through hole straight pin header, 1x03, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x03 2.54mm single row")
 		(property "Reference" "JP2"
-			(at 0 -2.38 0)
+			(at 2.935001 7.31 0)
 			(layer "F.SilkS")
 			(uuid "f7aef65d-2304-4288-ad17-a42adfd11a92")
 			(effects
@@ -12135,7 +12135,7 @@
 			)
 		)
 		(property "Value" "SSR supply"
-			(at 5.435001 5.81 0)
+			(at 5.935001 5.81 0)
 			(layer "F.Fab")
 			(uuid "3ce5ae66-9d8e-41d3-b3f5-b9fa0a0d3e54")
 			(effects
@@ -16899,8 +16899,8 @@
 				)
 			)
 		)
-		(property "Value" "DS1820"
-			(at 4.59 12.410001 0)
+		(property "Value" "1-wire\nDS1820"
+			(at 6.67 11.394999 90)
 			(layer "F.SilkS")
 			(uuid "3c691d1e-fb39-4b49-9474-7129dde3141c")
 			(effects
@@ -35310,7 +35310,7 @@
 		(descr "Through hole straight pin header, 1x02, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x02 2.54mm single row")
 		(property "Reference" "JP1"
-			(at -0.15 4.95 0)
+			(at -3.15 -2.05 0)
 			(layer "F.SilkS")
 			(uuid "ae94cb03-af82-4941-a020-21014cc3fd73")
 			(effects
@@ -35557,6 +35557,46 @@
 			)
 		)
 	)
+	(gr_line
+		(start 100.355 122.75)
+		(end 169.5 122.75)
+		(stroke
+			(width 0.3)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "11c9905c-abc9-4ce9-a20b-14930592dd50")
+	)
+	(gr_line
+		(start 164.5 95)
+		(end 164 57)
+		(stroke
+			(width 0.3)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "61cd9889-b195-4c30-824c-e36889438c89")
+	)
+	(gr_line
+		(start 169.5 133)
+		(end 169.5 122.75)
+		(stroke
+			(width 0.3)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "40693a72-ee73-4657-9e56-58dc0b9bcaee")
+	)
+	(gr_line
+		(start 178 95)
+		(end 164.5 95)
+		(stroke
+			(width 0.3)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "61602352-3519-47da-8aec-7dd311a66b25")
+	)
 	(gr_rect
 		(start 78.85 35.675)
 		(end 178.85 135.675)
@@ -35568,10 +35608,10 @@
 		(layer "Edge.Cuts")
 		(uuid "90193c38-4e53-423b-b803-ad7f7ce7e42a")
 	)
-	(gr_text "LOAD OUT max 5A"
-		(at 167.9 117.6 90)
+	(gr_text "SSR CTRL max 0.5A"
+		(at 172.5 94.5 0)
 		(layer "F.SilkS")
-		(uuid "50d8c25a-b64e-4c76-b1cb-ac88770aca51")
+		(uuid "7f5bc814-e914-48f3-a2ff-1b4d8943786a")
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -35579,10 +35619,10 @@
 			)
 		)
 	)
-	(gr_text "SSR CTRL max 0.5A"
-		(at 171.5 100.4 90)
+	(gr_text "LOAD OUT max 5A"
+		(at 168.5 128 90)
 		(layer "F.SilkS")
-		(uuid "7f5bc814-e914-48f3-a2ff-1b4d8943786a")
+		(uuid "50d8c25a-b64e-4c76-b1cb-ac88770aca51")
 		(effects
 			(font
 				(size 0.8 0.8)
