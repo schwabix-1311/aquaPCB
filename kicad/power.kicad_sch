@@ -7507,7 +7507,7 @@
 				)
 			)
 		)
-		(property "Value" "3V3, green"
+		(property "Value" "3V3"
 			(at 143.51 223.266 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8942,7 +8942,7 @@
 				)
 			)
 		)
-		(property "Value" "PWR, red"
+		(property "Value" "PWR"
 			(at 138.43 81.534 90)
 			(show_name no)
 			(do_not_autoplace no)
