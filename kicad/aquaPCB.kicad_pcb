@@ -2689,7 +2689,7 @@
 		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
 		(property "Reference" "J8"
 			(at -4.375 4.48 180)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "6e55a584-fdb5-4661-9087-4b470ff778ab")
 			(effects
 				(font
@@ -2699,12 +2699,12 @@
 			)
 		)
 		(property "Value" "GPIO 16"
-			(at 1.275 8.305 180)
-			(layer "F.Fab")
+			(at -4.299999 7.050001 90)
+			(layer "F.SilkS")
 			(uuid "1dc18ca3-a817-4718-aa90-aae883fdf506")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -6708,7 +6708,7 @@
 		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
 		(property "Reference" "J14"
 			(at 1 11 270)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "865b6c51-7005-40f8-afde-a7cb168e657e")
 			(effects
 				(font
@@ -6718,12 +6718,12 @@
 			)
 		)
 		(property "Value" "GPIO 27"
-			(at 1 8.305 270)
-			(layer "F.Fab")
+			(at -0.200001 10.750001 90)
+			(layer "F.SilkS")
 			(uuid "cb38014b-e0e0-4556-9709-a1c5658f906b")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -9371,7 +9371,7 @@
 		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
 		(property "Reference" "J6"
 			(at -4.075 4.48 180)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "0e5f0245-0da7-4a1e-9969-0307a92e4324")
 			(effects
 				(font
@@ -9381,12 +9381,12 @@
 			)
 		)
 		(property "Value" "GPIO 13"
-			(at 1 8.305 180)
-			(layer "F.Fab")
+			(at -4.299999 7.050001 90)
+			(layer "F.SilkS")
 			(uuid "04978d8e-c256-4fec-b756-e1d116704a9f")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -9750,7 +9750,7 @@
 		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
 		(property "Reference" "J11"
 			(at 1 11 270)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "c26c803e-a855-4ed1-9a7d-c4bd11e89347")
 			(effects
 				(font
@@ -9760,12 +9760,12 @@
 			)
 		)
 		(property "Value" "GPIO 17"
-			(at 1 8.305 270)
-			(layer "F.Fab")
+			(at -0.2 10.750001 90)
+			(layer "F.SilkS")
 			(uuid "ef19e8f3-450f-40aa-aa7b-57ceabf99923")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -10310,12 +10310,12 @@
 			)
 		)
 		(property "Value" "GPIO 21"
-			(at 2.67 3.3575 0)
+			(at 16.689999 17.69 90)
 			(layer "F.Fab")
 			(uuid "7a817434-9ef7-481c-ac19-2024dbea8bf9")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -10701,7 +10701,7 @@
 		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
 		(property "Reference" "J7"
 			(at -4.225001 4.48 180)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "79117b12-eb75-4d82-8da1-0f169c287fa4")
 			(effects
 				(font
@@ -10711,12 +10711,12 @@
 			)
 		)
 		(property "Value" "PWM 1"
-			(at 1.424999 8.305 180)
-			(layer "F.Fab")
+			(at -4.299999 7.550001 90)
+			(layer "F.SilkS")
 			(uuid "c55bd7bf-76e7-4da6-ad7e-492440766532")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -11917,7 +11917,7 @@
 		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
 		(property "Reference" "J9"
 			(at -4.525 4.48 180)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "ac1525cc-b99f-4a07-a87e-f560183f4d40")
 			(effects
 				(font
@@ -11927,12 +11927,12 @@
 			)
 		)
 		(property "Value" "GPIO 26"
-			(at 1.125 8.305 180)
-			(layer "F.Fab")
+			(at -4.299999 7.050001 90)
+			(layer "F.SilkS")
 			(uuid "e78affb7-0117-40a7-b7a4-034b315220c0")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -15998,7 +15998,7 @@
 		(tags "BNC coax right angle horizontal Q9")
 		(property "Reference" "J25"
 			(at -6.325 2.55 90)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "c70a92a3-4dae-42b1-8170-e93e76ede381")
 			(effects
 				(font
@@ -16008,12 +16008,12 @@
 			)
 		)
 		(property "Value" "ADC #1 in 0"
-			(at 0 -14 90)
-			(layer "F.Fab")
+			(at -5.499999 5.649999 0)
+			(layer "F.SilkS")
 			(uuid "7c91431b-b4ee-4965-8d9f-6d5fd9758c57")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -16511,7 +16511,7 @@
 		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
 		(property "Reference" "J13"
 			(at 1 11 270)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "22af2232-52e3-4415-9834-6cd01855f31b")
 			(effects
 				(font
@@ -16521,12 +16521,12 @@
 			)
 		)
 		(property "Value" "GPIO 23"
-			(at 1.155 8.305 270)
-			(layer "F.Fab")
+			(at -0.200001 10.750001 90)
+			(layer "F.SilkS")
 			(uuid "1ab04303-461b-41ea-8b82-b4c12c78b902")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -16890,7 +16890,7 @@
 		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
 		(property "Reference" "J19"
 			(at 2.67 10.96 270)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "f48e8a30-3d0e-4c01-ba0c-c2fd171a5a02")
 			(effects
 				(font
@@ -16900,12 +16900,12 @@
 			)
 		)
 		(property "Value" "DS1820"
-			(at 3.345 8.044999 270)
-			(layer "F.Fab")
+			(at 4.59 12.410001 0)
+			(layer "F.SilkS")
 			(uuid "3c691d1e-fb39-4b49-9474-7129dde3141c")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -18891,12 +18891,12 @@
 			)
 		)
 		(property "Value" "GPIO 6"
-			(at 2.67 3.3575 0)
+			(at 16.689999 17.69 90)
 			(layer "F.Fab")
 			(uuid "47a099f2-2e4a-4129-8189-9650b9f2858c")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -19909,12 +19909,12 @@
 			)
 		)
 		(property "Value" "ADC #1 in 2"
-			(at 2.67 3.3575 0)
+			(at 16.689999 17.69 90)
 			(layer "F.Fab")
 			(uuid "98509e40-f522-4022-ab98-b325f071265a")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -22320,7 +22320,7 @@
 		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
 		(property "Reference" "J5"
 			(at -4.425 4.48 180)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "1cc638f9-0a32-499c-adf2-8cb7b1c71ec2")
 			(effects
 				(font
@@ -22330,12 +22330,12 @@
 			)
 		)
 		(property "Value" "GPIO 12"
-			(at 1 8.305 180)
-			(layer "F.Fab")
+			(at -4.299999 7.050001 90)
+			(layer "F.SilkS")
 			(uuid "08df6262-e996-49e5-b311-31dfda51a4cf")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -22709,12 +22709,12 @@
 			)
 		)
 		(property "Value" "GPIO 5"
-			(at 2.67 3.3575 0)
+			(at 16.689999 17.69 90)
 			(layer "F.Fab")
 			(uuid "b842e3d7-2d93-41ee-87d8-9a589d526f4a")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -29318,7 +29318,7 @@
 		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
 		(property "Reference" "J12"
 			(at 1 11 270)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "6217d7f1-cef2-4eed-9161-e8c593d8b675")
 			(effects
 				(font
@@ -29328,12 +29328,12 @@
 			)
 		)
 		(property "Value" "GPIO 22"
-			(at 1 8.305 270)
-			(layer "F.Fab")
+			(at -0.200001 10.750001 90)
+			(layer "F.SilkS")
 			(uuid "8c437678-7f30-44a2-898e-4831e3d5e10b")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -29536,12 +29536,12 @@
 			)
 		)
 		(property "Value" "GPIO 20"
-			(at 2.67 3.3575 0)
+			(at 16.689999 17.69 90)
 			(layer "F.Fab")
 			(uuid "3986d05b-4e4d-43d8-9d4a-fa9750ba31f6")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -32272,7 +32272,7 @@
 		(tags "terminal block push-in spring WJ250 MX250 3.5mm")
 		(property "Reference" "J4"
 			(at -4.275 3.98 180)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "3e120c68-73ab-4c94-8c66-793ba961cfdb")
 			(effects
 				(font
@@ -32282,12 +32282,12 @@
 			)
 		)
 		(property "Value" "PWM 0"
-			(at 1 8.305 180)
-			(layer "F.Fab")
+			(at -4.299999 7.550001 90)
+			(layer "F.SilkS")
 			(uuid "2c761eb2-921e-44a1-8e66-b84b1c211b70")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
@@ -34587,12 +34587,12 @@
 			)
 		)
 		(property "Value" "ADC #1 in 3"
-			(at 2.67 2.045 90)
+			(at -11.35 17.689999 90)
 			(layer "F.Fab")
 			(uuid "b5494a88-320d-4c74-ad55-92f7f7c76420")
 			(effects
 				(font
-					(size 1 1)
+					(size 0.8 0.8)
 					(thickness 0.15)
 				)
 			)
