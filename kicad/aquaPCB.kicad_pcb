@@ -35590,6 +35590,18 @@
 			)
 		)
 	)
+	(gr_text "aquaPCB v1.0\n(c) 2026 Markus Kuhn"
+		(at 177.575 106.899999 90)
+		(layer "F.SilkS")
+		(uuid "b54bf570-89da-4fe0-b190-e8b83acc9153")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.18)
+			)
+			(justify right bottom)
+		)
+	)
 	(segment
 		(start 102.605 110.5)
 		(end 104.975 112.87)
