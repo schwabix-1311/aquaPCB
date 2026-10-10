@@ -1,4 +1,4 @@
-# aquaPCB – Bill of Materials (v1 draft)
+# aquaPCB – Bill of Materials (v1)
 
 Prices and stock checked 2026-09-29 (LCSC/JLCPCB parts API, reichelt.de product pages).
 Quantities per board, taken from the schematic (`kicad-cli sch export bom`).

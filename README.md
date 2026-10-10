@@ -461,6 +461,6 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACT
 QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN-OHL-S v2 for applicable
 conditions.
 
-Source location: to be added once the GitHub repository exists. As per CERN-OHL-S v2
+Source location: https://github.com/schwabix-1311/aquaPCB. As per CERN-OHL-S v2
 section 4, should you produce hardware based on this source, you must where practicable
 maintain the Source Location visible on the external case or other product you make.
