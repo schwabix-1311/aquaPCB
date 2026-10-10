@@ -440,21 +440,15 @@ EC (conductivity)            -              not covered by these modules, see be
   leakage current, where a ground loop disturbs the reading - details below. Its input side
   floats, so no DC loop current can flow through the reference electrode; the 1 MΩ is not
   needed there.
-- **ORP uses the same modules, with a different bias.** An ORP electrode is also a
-  high-impedance voltage source, but its signal is not centred on 0 mV like pH (0 mV at
-  pH 7, ±59 mV/pH, so ±414 mV for pH 0..14): the mV value is the measured quantity itself,
-  and aquarium ORP is mostly positive, typically +150..+450 mV. With the AMC3311's
-  −0.1..2 V input and a bias b, the module measures (−0.1 − b)..(2 − b):
-
-  ```
-  bias b    measurable range     use
-  1.2 V     -1.3 .. +0.8 V       pH (LM4040-1.2, centred)
-  0.6-0.8 V -0.9 .. +1.4 V       ORP (LM4041-ADJ or a divider after the reference)
-  ```
-
-  So the bias option per module is "pH 1.2 V / ORP ~0.7 V". Calibration differs too: pH
-  needs 2 points (offset and slope), ORP only an offset from one test solution (e.g.
-  225 mV or 470 mV), no temperature compensation. aquaPi's ScaleAux handles both.
+- **ORP uses the same modules, unchanged.** An ORP electrode is also a high-impedance
+  voltage source. Unlike pH (centred on 0 mV: 0 mV at pH 7, ±59 mV/pH), aquarium ORP is
+  mostly positive, typically +150..+450 mV - but one bias fits both: with the AMC3311's
+  −0.1..2 V input and the pH bias of 1.2 V the isolated module measures −1.3..+0.8 V
+  (the non-isolated one, biased at 1.65 V, about ±1.65 V). Only ORP above +800 mV is out
+  of range, which doesn't occur in an aquarium. No bias option, no second variant; only the
+  calibration differs: pH needs 2 points (offset and slope), ORP only an offset from one
+  test solution (e.g. 225 mV or 470 mV), no temperature compensation. aquaPi's ScaleAux
+  handles both.
 - **EC is a different circuit.** A conductivity cell is not a voltage source: it needs AC
   excitation (DC polarises the electrodes), a measuring/rectifying stage, temperature
   compensation and a cell constant. Use a bought EC module; isolating its output (like
