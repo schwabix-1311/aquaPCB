@@ -8,8 +8,10 @@ an on-board ADS1115 with pH front end, and headers for a small display and I²C 
 aquaPi needs no special support: every channel is a plain GPIO, hardware PWM, 1-Wire or
 I²C port that aquaPi discovers by itself and offers in its Wiring editor.
 
-> Status: **v1 layout complete**: schematic ERC clean, board fully routed, DRC clean.
-> Next: fab outputs and a 1:1 print check; no prototypes built yet.
+> Status: **v1 layout complete** (tag `v1.0.1`, branch `release/v1`): schematic ERC clean,
+> board fully routed, DRC clean; no prototypes built yet. Fabrication is on hold while
+> the [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit) is checked for budget and
+> sense - if v2 is dropped, v1 continues with fab outputs and a 1:1 print check.
 > Not a beginner kit: SMD parts are assembled by the PCB fab (JLCPCB economic PCBA);
 > only through-hole connectors are hand-soldered.
 
@@ -287,7 +289,8 @@ used on AIN2.
 ## Not on v1
 
 - **PCA9685 PWM expander**: plug a breakout into an I²C header once aquaPi has a
-  driver for it (see aquaPi's ROADMAP.md).
+  driver for it (see aquaPi's ROADMAP.md). v2 puts two PCA9685s on the board, see
+  [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
 - **Robo-Tank compatibility and 0..10 V lamp dimming**: planned for v2, see
   [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
 - **Mains switching**: stays in external SSRs / relay modules by design.
@@ -302,7 +305,7 @@ selection:
   connector labels instead of GPIO numbers in its port dropdown (aquaPi ROADMAP,
   "Board support"). aquaPCB can be the first profile because its pin map is already
   documented; keep the silk labels (Q1..Q6, S1..S4, IN1..IN4, ...) and the profile names
-  identical.
+  identical. (v2 replaces S1..S4 with power bar outputs, see [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).)
 - **ID EEPROM on GPIO 0/1.** The pins are already reserved. With an EEPROM fitted, aquaPi
   could recognise the board and pick its profile without asking.
 - **Real-time clock** (e.g. DS3231 on I²C, coin cell). Without internet the Pi has no
@@ -320,8 +323,9 @@ selection:
 
 ## v2 plan: Robo-Tank v3 compatible head unit
 
-*Decided 2026-10-10. Spec only - no schematic yet. v1 (tag `v1`) stays the restart point
-if v2 is abandoned.*
+*Decided 2026-10-10. Spec only - no schematic yet. v1 (tag `v1.0.1`, branch `release/v1`)
+stays the restart point if v2 is abandoned; v1-only fixes go to `release/v1` and are merged
+into `main`.*
 
 ### Goal
 
@@ -444,9 +448,19 @@ Power in (barrel plug)  J1 push-in terminal     barrel-to-terminal adapter (<€
 2. Schematic in KiCad, ERC clean – done
 3. Layout, DRC clean – done
 4. Gerbers, JLC BOM/CPL, 1:1 print check (terminals, BNC, Pi header), order 5 prototypes
+   – on hold until the v2 go/no-go below
 5. Bring-up at 12 V: rails without Pi, then with Pi Zero 2 W, boot with loads attached
    (no output may toggle), all channels from the aquaPi dashboard, 5 A thermal test
 6. Validate 24 V operation
+
+v2 ([Robo-Tank v3 compatible head unit](#v2-plan-robo-tank-v3-compatible-head-unit)):
+
+1. Spec – done
+2. Answers from Robo-Tank, or measure a v3 module and cable (open questions in the v2 plan)
+3. Budget and sense check → go/no-go; on no-go, continue with v1 step 4
+4. aquaPi PCA9685 driver (needed for the DC/LED ports and power bars)
+5. Schematic and layout, starting from the v1 design
+6. 0-10 V add-on module
 
 ## Licence
 
