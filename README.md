@@ -293,6 +293,32 @@ used on AIN2.
   estimated €12..15. Needs the Robo-Tank RJ45 pinouts from their manuals first.
 - **Mains switching**: stays in external SSRs / relay modules by design.
 
+## Recommended improvements (v2 candidates)
+
+From the comparison with Robo-Tank and Leviathan ([COMPARISON.md](COMPARISON.md)) and
+the most frequent complaint about Pi aquarium controllers - hard wiring and port
+selection:
+
+- **Silkscreen labels = aquaPi board profile.** aquaPi plans board profiles that show
+  connector labels instead of GPIO numbers in its port dropdown (aquaPi ROADMAP,
+  "Board support"). aquaPCB can be the first profile because its pin map is already
+  documented; keep the silk labels (Q1..Q6, S1..S4, IN1..IN4, ...) and the profile names
+  identical.
+- **ID EEPROM on GPIO 0/1.** The pins are already reserved. With an EEPROM fitted, aquaPi
+  could recognise the board and pick its profile without asking.
+- **Real-time clock** (e.g. DS3231 on I²C, coin cell). Without internet the Pi has no
+  correct time after a reboot, and light/feeding schedules run wrong; Robo-Tank has one
+  on board. Cheap, and aquaPi's installer can enable the overlay from the profile.
+- **Pluggable wiring.** Pluggable terminal blocks, or RJ45 for sensor/light cables like
+  Robo-Tank, so a controller can be swapped without rewiring.
+- **0-10 V / PCA9685 add-on** (already under "Not on v1"): also the path to
+  Robo-Tank-compatible lamp dimming.
+- **Isolated pH as a build option.** Not needed for the proven hand-built setup, but a
+  point buyers compare (Robo-Tank sells one for $54.95); a footprint option for an
+  isolated module would answer it.
+- **Ready-to-use offer.** Assembled boards and a wiring guide with photos make more
+  difference for beginners than extra channels.
+
 ## Roadmap
 
 1. Specification (this file), BOM with LCSC / Reichelt part numbers ([BOM.md](BOM.md)) – done
