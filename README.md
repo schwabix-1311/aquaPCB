@@ -420,6 +420,11 @@ Design rules behind this table:
   close to the power path and the analog sockets away from the switching outputs, as on
   v1. The freed edge length is what should let v2 stay at 100 x 100 mm despite the RJ45
   jacks and box headers.
+- **Top-entry RJ45 allowed too** (decided 2026-10-11), under the same rule: outside the Pi
+  area, cable and latch reachable from above. Price checked 2026-10-11: plain side-entry
+  RJ45 ~$0.40 at LCSC; vertical/top-entry ~€0.60..0.95 (HSM 260E-8P8C) up to $1.72..2.67
+  (TE 5556416-1) - so about €0.50..2 more per jack, €1.50..6 for all three. Use them only
+  where an edge position doesn't fit; mixing both kinds is fine.
 - **24 V** must be validated (parts are rated 40 V, v1 was only specified at 12 V).
 - **S1..S4 and the ULN2803 are dropped** (decided 2026-10-10). The 74HCT244 can't replace
   the ULN2803 (±6 mA specified, ±35 mA abs. max per pin, ±70 mA per package, 5 V push-pull,
