@@ -313,8 +313,9 @@ selection:
 - **0-10 V / PCA9685**: PCA9685s on board, 0-10 V as an optional add-on module - see
   [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
 - **Isolated pH as a build option.** Not needed for the proven hand-built setup, but a
-  point buyers compare (Robo-Tank sells one for $54.95) - planned as an optional add-on,
-  see [Isolated pH: optional add-on module](#isolated-ph-optional-add-on-module).
+  point buyers compare (Robo-Tank sells one for $54.95) - decided: pH/ORP amplifiers move to
+  add-on modules, one of them isolated, see
+  [pH / ORP amplifiers: add-on modules](#ph--orp-amplifiers-add-on-modules).
 - **Ready-to-use offer.** Assembled boards and a wiring guide with photos make more
   difference for beginners than extra channels.
 
@@ -366,7 +367,8 @@ Backup floats   2x 2-pole terminal     in series with bar 1 outlets 1/2, pull-do
 Feeder          3-pole terminal        PCA #1 ch 0 -> small low-side MOSFET
 Temp            2x 3-pole terminal     1-Wire, +5 V / Data / GND order as v3
 I2C             3.3 V header (as v1)   + optional 5 V header behind a PCA9306 level shifter
-pH              BNC                    unchanged from v1
+pH / ORP        3-pole add-on sockets  +5 V / SIG / GND to ADS1115 inputs; the amplifier
+                (+5 V / SIG / GND)     with its BNC sits on an add-on module (see below)
 Power in        push-in terminal (J1)  12-24 V, 8 A as v1 - no barrel socket (rated for
                                        far less current than the board's 8 A)
 Power outputs   push-in terminals      Q1..Q6 as v1: Q1/Q4 on the Pi's hardware PWM0/1,
@@ -415,19 +417,49 @@ and puts 0-10 V on a **separate, optional module** for new users whose lamps nee
   €2.50..3.50 per board plus about 6 cm² and 16 mm of edge; selectable outputs on the LED
   RJ45 itself could damage a v3 extension if set to 10 V.
 
-### Isolated pH: optional add-on module
+### pH / ORP amplifiers: add-on modules
 
-For tanks with several probes in the same water (pH + ORP/EC) or equipment with leakage
-current, where a ground loop can disturb the reading. The main board keeps its
-non-isolated pH input (proven setup); the module plugs into the existing module input
-(AIN2 terminal, +5 V / SIG / GND, like a PH-4502C), so the main board and aquaPi need no
-change.
+**Decided 2026-10-10:** the v2 main board has **no pH front end**. It keeps the ADS1115 and
+offers 3-pole add-on sockets (+5 V / SIG / GND) on its inputs; the electrode amplifier,
+with BNC, buffer, bias and the guarded high-impedance layout, lives on a small add-on
+module. Only the buffered, low-impedance signal crosses the connector. Everyone picks the
+variant they need, and the main board gets simpler and cheaper.
+
+```
+add-on                       measures       isolation   1 MΩ ground-loop resistor
+pH/ORP, non-isolated         pH, ORP        no          yes (moved here from v1's board)
+pH/ORP, isolated (AMC3311)   pH, ORP        yes         no - not needed
+EC (conductivity)            -              not covered by these modules, see below
+```
+
+- **Non-isolated variant** = the proven v1 front end moved onto a module: TLV9062 buffer,
+  biased reference ("biased ground"), 10 MΩ / styroflex input RC, guard ring, and the 1 MΩ
+  between PH_REF and the BNC shell that limits a ground-loop current to ~µA. A cheap
+  PH-4502C-type board still works on the same socket, but has no such protection.
+- **Isolated variant** for several probes in the same water (pH + ORP/EC) or equipment with
+  leakage current, where a ground loop disturbs the reading - details below. Its input side
+  floats, so no DC loop current can flow through the reference electrode; the 1 MΩ is not
+  needed there.
+- **ORP uses the same modules.** An ORP electrode is also a high-impedance voltage source
+  without temperature compensation; only the span is larger (±1000 mV vs. ±414 mV for
+  pH 0..14). A bias option per module: ~1.2 V covers −1.3..+0.8 V (aquarium ORP is
+  typically +150..+450 mV), ~1.0 V covers the full ±1 V. aquaPi's 2-point calibration
+  (ScaleAux) works unchanged.
+- **EC is a different circuit.** A conductivity cell is not a voltage source: it needs AC
+  excitation (DC polarises the electrodes), a measuring/rectifying stage, temperature
+  compensation and a cell constant. Use a bought EC module; isolating its output (like
+  DFRobot's Gravity isolator) would exceed the AMC3311's 4 mA high-side budget and needs
+  its own isolated DC/DC.
+- Open detail: how many add-on sockets and on which ADS1115 inputs (two pH/ORP probes plus
+  the general 0..3.3 V input fit on one ADS1115).
+
+#### Isolated variant (AMC3311)
 
 ```
 isolated side (AMC3311 HLDO_OUT, 3.2 V)       | low side (main board +5 V)
 BNC -> 10M / styroflex RC -> TLV9062 buffer   | AMC3311 OUTP/OUTN
        -> AMC3311 IN                          |   -> difference amp (op-amp, 4x 0.1 % R)
-BNC shell <- LM4040-1.2 bias                  |   -> SIG -> main board AIN2
+BNC shell <- LM4040-1.2 bias                  |   -> SIG -> main board add-on socket
 ```
 
 Based on the AMC3311 data sheet (TI SBASAQ5A) and TLV9062 data sheet, checked 2026-10-10:
@@ -454,7 +486,7 @@ Based on the AMC3311 data sheet (TI SBASAQ5A) and TLV9062 data sheet, checked 20
   committing to the design.
 - **Alternative later:** once aquaPi supports differential ADC ports, OUTP/OUTN could go
   straight into an ADS1115 input pair - no difference amp, but two inputs per probe.
-- Cost: AMC3311 price still to check (the AMC1311, without integrated DC/DC, is about $1.20
+- Cost (isolated variant): AMC3311 price still to check (the AMC1311, without integrated DC/DC, is about $1.20
   at LCSC); BNC, TLV9062, LM4040, op-amp, 0.1 % resistors about €3 more. Compare: DFRobot
   Gravity isolator ~$20, Atlas EZO pH + isolated carrier ~$79, Robo-Tank isolated pH $54.95.
 
@@ -470,6 +502,7 @@ AC1/AC2 backup floats   float terminals         hardware only
 Feeder                  Feeder terminal         PCA9685 ch 0
 Temp 1/2                Temp terminals          1-Wire, GPIO TBD
 I2C                     5 V I2C header          bus 1
+pH BNC                  pH/ORP add-on module    ADS1115 input (aquaPi; reef-pi: TBD)
 Power in (barrel plug)  J1 push-in terminal     barrel-to-terminal adapter (<€1)
 ```
 
