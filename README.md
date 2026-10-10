@@ -410,6 +410,16 @@ Design rules behind this table:
 - **No jumpers on inputs.** Sensor inputs must be safe for optical, non-contact and float
   sensors without configuration - on Robo-Tank a wrong jumper permanently damages an
   optical sensor.
+- **Push-in terminals anywhere on the board** (decided 2026-10-11; replaces v1's "all
+  terminals on the board edges"), except in the Raspberry Pi area: the Zero's footprint
+  plus room for its SD card and cooling, or the Pi 3/4 box header plus its ribbon exit.
+  Edge positions can keep v1's side-entry WJ250B; inside the board the wire has to come
+  from above, so those positions need **top-entry (vertical) push-in terminals** - part
+  still to choose, ideally the same 3.5 mm pitch and the same 8 A rating for the power
+  terminals. Wires must not run across the Pi area. Keep V_IN and the Q1..Q6 terminals
+  close to the power path and the analog sockets away from the switching outputs, as on
+  v1. The freed edge length is what should let v2 stay at 100 x 100 mm despite the RJ45
+  jacks and box headers.
 - **24 V** must be validated (parts are rated 40 V, v1 was only specified at 12 V).
 - **S1..S4 and the ULN2803 are dropped** (decided 2026-10-10). The 74HCT244 can't replace
   the ULN2803 (±6 mA specified, ±35 mA abs. max per pin, ±70 mA per package, 5 V push-pull,
