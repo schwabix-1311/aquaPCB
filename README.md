@@ -308,9 +308,6 @@ selection:
   identical. (v2 replaces S1..S4 with power bar outputs, see [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).)
 - **ID EEPROM on GPIO 0/1.** The pins are already reserved. With an EEPROM fitted, aquaPi
   could recognise the board and pick its profile without asking.
-- **Real-time clock** (e.g. DS3231 on I²C, coin cell). Without internet the Pi has no
-  correct time after a reboot, and light/feeding schedules run wrong; Robo-Tank has one
-  on board. Cheap, and aquaPi's installer can enable the overlay from the profile.
 - **Pluggable wiring.** RJ45 for module cables like Robo-Tank v3, so a controller can be
   swapped without rewiring - see [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
 - **0-10 V / PCA9685**: PCA9685s on board, 0-10 V as an optional add-on module - see

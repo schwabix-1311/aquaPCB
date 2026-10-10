@@ -34,7 +34,7 @@ for scale.
 Robo-Tank and Leviathan are plain GPIO/I²C/1-Wire hardware, so aquaPi detects
 most of it already: outlets, sensor inputs and DS18B20 work today. What's
 missing is a **PCA9685 driver**; without it the lights and DC pumps on both
-boards can't be driven. Robo-Tank's pH circuit and RTC still need checking.
+boards can't be driven. Robo-Tank's pH circuit still needs checking.
 Neither manufacturer publishes a pinout - get it from their manuals or by
 measuring a board, never by guessing.
 
