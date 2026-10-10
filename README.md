@@ -365,7 +365,8 @@ Power Bar 1, 2  2x5 box header each    PCA #2 ch 0..15, push-pull at 3.3 V like 
                 + adapter cable        10-wire ribbon with crimped IDC DB9 female
 Backup floats   2x 2-pole terminal     in series with bar 1 outlets 1/2, pull-down -> OFF
 Feeder          3-pole terminal        PCA #1 ch 0 -> small low-side MOSFET
-Temp            2x 3-pole terminal     1-Wire, +5 V / Data / GND order as v3
+Temp            1x 3-pole terminal     1-Wire on GPIO 4, +5 V / Data / GND order as v3;
+                                       one bus, both probes into the same terminal
 I2C             3.3 V header (as v1)   + optional 5 V header behind a PCA9306 level shifter
 Analog / pH     4x 3-pole socket       one per ADS1115 input AIN0..AIN3, all identical,
                 (+5 V / SIG / GND)     0-5 V each; pH/ORP amplifiers sit on add-on
@@ -545,7 +546,7 @@ Sensors RJ45            Sensors RJ45            GPIO 5,6,20,21,22,23 (suggested)
 Power Bar 1/2 (DB9)     header + DB9 adapter    PCA9685 #2 ch 0..7 / 8..15
 AC1/AC2 backup floats   float terminals         hardware only
 Feeder                  Feeder terminal         PCA9685 ch 0
-Temp 1/2                Temp terminals          1-Wire, both on GPIO 4 (suggested)
+Temp 1/2                one Temp terminal       1-Wire GPIO 4, both probes on one bus
 I2C                     5 V I2C header          bus 1
 pH BNC                  pH/ORP add-on module    ADS1115 input (aquaPi; reef-pi: TBD)
 Power in (barrel plug)  J1 push-in terminal     barrel-to-terminal adapter (<€1)
@@ -567,8 +568,8 @@ Q2,Q3,Q5,Q6       GPIO 12,13,16,26 -> "GPIO n out"   PCA9685 #1 ch 15,14,13,12, 
 S1..S4 SSR out    GPIO 17,22,23,27 -> "GPIO n out"   dropped (SSRs go on Q outputs)
 IN1..IN4          GPIO 5,6,20,21 -> "GPIO n in"      replaced by sensor RJ45 (6 inputs):
                                                      [S] GPIO 5,6,20,21,22,23 -> "GPIO n in"
-1-Wire temp       1 terminal, GPIO 4 -> "DS1820 #n"  2 terminals, [S] both on GPIO 4 (one bus,
-                                                     no 2nd overlay) -> "DS1820 #n"
+1-Wire temp       1 terminal, GPIO 4 -> "DS1820 #n"  unchanged: 1 terminal, GPIO 4, one bus for
+                                                     all probes -> "DS1820 #n"
 DC ports (7)      -                                  PCA9685 #1 ch 1,2,3,4,6,7,9 (0-5 V PWM)
                                                      -> [S] "PCA9685 #1 ch n"
 LED ports (7)     -                                  PCA9685 #1 ch 8,10..15 -> [S] same pattern
