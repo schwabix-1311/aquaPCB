@@ -313,8 +313,8 @@ selection:
 - **0-10 V / PCA9685**: PCA9685s on board, 0-10 V as an optional add-on module - see
   [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
 - **Isolated pH as a build option.** Not needed for the proven hand-built setup, but a
-  point buyers compare (Robo-Tank sells one for $54.95); a footprint option for an
-  isolated module would answer it.
+  point buyers compare (Robo-Tank sells one for $54.95) - planned as an optional add-on,
+  see [Isolated pH: optional add-on module](#isolated-ph-optional-add-on-module).
 - **Ready-to-use offer.** Assembled boards and a wiring guide with photos make more
   difference for beginners than extra channels.
 
@@ -414,6 +414,49 @@ and puts 0-10 V on a **separate, optional module** for new users whose lamps nee
 - Chosen over on-board alternatives (2026-10-10): a separate on-board RJ45 would cost about
   €2.50..3.50 per board plus about 6 cm² and 16 mm of edge; selectable outputs on the LED
   RJ45 itself could damage a v3 extension if set to 10 V.
+
+### Isolated pH: optional add-on module
+
+For tanks with several probes in the same water (pH + ORP/EC) or equipment with leakage
+current, where a ground loop can disturb the reading. The main board keeps its
+non-isolated pH input (proven setup); the module plugs into the existing module input
+(AIN2 terminal, +5 V / SIG / GND, like a PH-4502C), so the main board and aquaPi need no
+change.
+
+```
+isolated side (AMC3311 HLDO_OUT, 3.2 V)       | low side (main board +5 V)
+BNC -> 10M / styroflex RC -> TLV9062 buffer   | AMC3311 OUTP/OUTN
+       -> AMC3311 IN                          |   -> difference amp (op-amp, 4x 0.1 % R)
+BNC shell <- LM4040-1.2 bias                  |   -> SIG -> main board AIN2
+```
+
+Based on the AMC3311 data sheet (TI SBASAQ5A) and TLV9062 data sheet, checked 2026-10-10:
+
+- **The AMC3311's integrated isolated DC/DC powers the whole isolated side** via HLDO_OUT
+  (3.0..3.4 V): max 4 mA external, non-switching load with VDD 3.6..5.5 V, but only 1 mA
+  with VDD below 3.6 V - so run the AMC3311 from **+5 V**. Load: TLV9062 dual 538 µA typ /
+  800 µA max per amplifier (up to 1.6 mA) plus the LM4040 (~0.1 mA) - well inside 4 mA.
+- **The buffer is mandatory.** AMC3311 input: 1 GΩ, bias current 3.5 nA typ / ±15 nA max -
+  directly on a 100 MΩ..1 GΩ electrode that would be volts of error. The TLV9062 (pA bias)
+  stays in front, with the v1 input RC and guard layout.
+- **Bias from a reference, not a divider.** Linear input range is −0.1..2 V, so the BNC
+  shell sits at ~1.2 V (LM4040-1.2); pH 0..14 then spans about 0.8..1.6 V. A divider from
+  HLDO_OUT would carry its ±0.2 V tolerance and drift into the reading.
+- **The difference amplifier sits on the low side** (AMC3311 outputs are referenced to the
+  main board's ground, common mode 1.39..1.49 V) and is powered from +5 V, not from the
+  isolated supply. Gain 1 gives a single-ended 0.8..1.6 V on one ADS1115 input.
+- **Accuracy is plenty for ~0.1 pH:** offset ±1 mV and gain ±0.2 % are removed by aquaPi's
+  2-point calibration; nonlinearity ±0.02 %; drift ±10 µV/°C offset, ±40 ppm/°C gain
+  (about 0.004 pH over 25 °C); output noise 250 µVrms in 100 kHz, far less behind the RC
+  filter and the ADS1115's slow sampling.
+- **Risk to measure on the prototype:** the AMC3311's DC/DC switches inside the package next
+  to a 1 GΩ source - check the reading's noise with the probe in buffer solution before
+  committing to the design.
+- **Alternative later:** once aquaPi supports differential ADC ports, OUTP/OUTN could go
+  straight into an ADS1115 input pair - no difference amp, but two inputs per probe.
+- Cost: AMC3311 price still to check (the AMC1311, without integrated DC/DC, is about $1.20
+  at LCSC); BNC, TLV9062, LM4040, op-amp, 0.1 % resistors about €3 more. Compare: DFRobot
+  Gravity isolator ~$20, Atlas EZO pH + isolated carrier ~$79, Robo-Tank isolated pH $54.95.
 
 ### Robo-Tank v3 -> aquaPCB v2 mapping
 
