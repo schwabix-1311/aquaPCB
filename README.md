@@ -288,9 +288,8 @@ used on AIN2.
 
 - **PCA9685 PWM expander**: plug a breakout into an I²C header once aquaPi has a
   driver for it (see aquaPi's ROADMAP.md).
-- **Robo-Tank / Leviathan compatibility and 0..10 V lamp dimming**: possible later add-on
-  board on the I²C header (PCA9685 + op-amp outputs 0..5 V / 0..10 V + RJ45 jacks),
-  estimated €12..15. Needs the Robo-Tank RJ45 pinouts from their manuals first.
+- **Robo-Tank compatibility and 0..10 V lamp dimming**: planned for v2, see
+  [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
 - **Mains switching**: stays in external SSRs / relay modules by design.
 
 ## Recommended improvements (v2 candidates)
@@ -309,15 +308,135 @@ selection:
 - **Real-time clock** (e.g. DS3231 on I²C, coin cell). Without internet the Pi has no
   correct time after a reboot, and light/feeding schedules run wrong; Robo-Tank has one
   on board. Cheap, and aquaPi's installer can enable the overlay from the profile.
-- **Pluggable wiring.** Pluggable terminal blocks, or RJ45 for sensor/light cables like
-  Robo-Tank, so a controller can be swapped without rewiring.
-- **0-10 V / PCA9685 add-on** (already under "Not on v1"): also the path to
-  Robo-Tank-compatible lamp dimming.
+- **Pluggable wiring.** RJ45 for module cables like Robo-Tank v3, so a controller can be
+  swapped without rewiring - see [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
+- **0-10 V / PCA9685**: PCA9685s on board, 0-10 V as an optional add-on module - see
+  [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
 - **Isolated pH as a build option.** Not needed for the proven hand-built setup, but a
   point buyers compare (Robo-Tank sells one for $54.95); a footprint option for an
   isolated module would answer it.
 - **Ready-to-use offer.** Assembled boards and a wiring guide with photos make more
   difference for beginners than extra channels.
+
+## v2 plan: Robo-Tank v3 compatible head unit
+
+*Decided 2026-10-10. Spec only - no schematic yet. v1 (tag `v1`) stays the restart point
+if v2 is abandoned.*
+
+### Goal
+
+A Robo-Tank v3 owner replaces only the head unit with aquaPCB v2 and keeps every module,
+cable and power bar. Compatibility is **cables only**: plugs and pinouts match, while
+the GPIO numbers and the software configuration may differ and are explained by the
+mapping table below. The board runs reef-pi or aquaPi. Owners of older Robo-Tank
+controllers (v1 Rev A/B+, about 10 v2 boards) get the mapping table only.
+
+Reference: Robo-Tank manual "Controller and its ports" (v3, last updated 2021-12-28),
+linked from robo-tank.ca/reef-pi_Related_User_Manuals. Pin positions below are read from
+its photos - verify with a meter on a real v3 module or cable before layout.
+
+### Robo-Tank v3 ports to match
+
+```
+Port            Connector       Pins (as documented)                      Driven by (v3)
+DC Ports        RJ45            1 GND, 2..8 = 0-5 V PWM 9,6,7,4,3,2,1     PCA9685 ch 9,6,7,4,3,2,1
+LED Ports       RJ45            1 GND, 2..8 = 0-5 V PWM 15,14,13,12,11,10,8   PCA9685 ch 15..10, 8
+Sensors         RJ45            1 GND, 2..7 = inputs 6..1, 8 = +5 V       GPIO 23,27,18,17,15,14
+Power Bar 1, 2  DB9 female      1..4 = Ch1..4, 5 = GND, 6..9 = Ch8..5     GPIO direct (3.3 V)
+                (straight-through cable to the bar's DB9 male; a null-modem cable shorts Ch1)
+Backup floats   2x 2-pole       float in series with bar 1 outlet 2 (AC1) and outlet 1 (AC2)
+Feeder          3-pole          +3.3 V / Signal (switched GND) / GND, < 500 mA   PCA9685 ch 0
+Temp 1, 2       3-pole each     +5 V / Data / GND                         GPIO 4, GPIO 22
+I2C             4-pin header    +5 V / SCL / SDA / GND (5 V side of a level converter)
+pH              BNC
+Power in        5.5/2.1 barrel  centre +, 12-24 V, >= 1 A; powers the Pi
+```
+
+### aquaPCB v2 connectors
+
+```
+Port            Connector              Source on aquaPCB v2
+DC              RJ45, v3 pinout        PCA #1 ch 1,2,3,4,6,7,9 -> 5 V buffer (0-5 V PWM)
+LED             RJ45, v3 pinout        PCA #1 ch 8,10..15      -> 5 V buffer (0-5 V PWM)
+Sensors         RJ45, v3 pinout        6 GPIO inputs, 5 V tolerant, +5 V supply pin (fused)
+Power Bar 1, 2  2x5 box header each    PCA #2 ch 0..15, push-pull at 3.3 V like Pi GPIO
+                + adapter cable        10-wire ribbon with crimped IDC DB9 female
+Backup floats   2x 2-pole terminal     in series with bar 1 outlets 1/2, pull-down -> OFF
+Feeder          3-pole terminal        PCA #1 ch 0 -> small low-side MOSFET
+Temp            2x 3-pole terminal     1-Wire, +5 V / Data / GND order as v3
+I2C             3.3 V header (as v1)   + optional 5 V header behind a PCA9306 level shifter
+pH              BNC                    unchanged from v1
+Power in        push-in terminal (J1)  12-24 V, 8 A as v1 - no barrel socket (rated for
+                                       far less current than the board's 8 A)
+Power outputs   push-in terminals      Q1..Q6 as v1: Q1/Q4 on the Pi's hardware PWM0/1,
+                                       Q2/Q3/Q5/Q6 on/off GPIO
+```
+
+Design rules behind this table:
+
+- **PCA #1 uses Robo-Tank's channel numbers** (feeder 0, DC 1..4/6/7/9, LED 8/10..15,
+  ch 5 spare). A reef-pi DC/LED configuration then carries over unchanged, provided the
+  I²C address matches - still to confirm.
+- **Q1/Q4 stay on the Pi's hardware PWM.** It is much smoother than the PCA9685
+  (about 1.5 kHz, 12 bit), which matters when dimming lamps at low levels. Q2/Q3/Q5/Q6
+  stay on/off.
+- **PCA #2 drives the 16 power bar outputs.** They start up off, and /OE holds them off until
+  software takes over, so nothing switches while the Pi boots - unlike v3, where the bar pins
+  are raw GPIOs including boot-time pull-ups. Second address (e.g. 0x41); keep the PCA9685
+  All-Call address (0x70) in mind for other I²C devices.
+- **Power bar adapter.** A crimped IDC DB9 maps ribbon wires 1..9 to DB9 pins
+  1,6,2,7,3,8,4,9,5; wire 10 stays unconnected. Box header pinout:
+  `1 Ch1, 2 Ch8, 3 Ch2, 4 Ch7, 5 Ch3, 6 Ch6, 7 Ch4, 8 Ch5, 9 GND, 10 spare` - verify on
+  the first sample.
+- **Logic levels.** The PCA9685s run on 3.3 V like the Pi's I²C bus, so no level shifter
+  is needed; the DC/LED channels reach 5 V through 74HCT buffers (the v1 gate-driver
+  approach).
+- **No jumpers on inputs.** Sensor inputs must be safe for optical, non-contact and float
+  sensors without configuration - on Robo-Tank a wrong jumper permanently damages an
+  optical sensor.
+- **24 V** must be validated (parts are rated 40 V, v1 was only specified at 12 V).
+- **S1..S4 (ULN2803 SSR outputs)** are superseded by the power bar outputs - drop them or
+  keep them only if board space allows.
+
+### 0-10 V dimming: optional add-on module
+
+The v3 LED port carries plain 0-5 V PWM into Robo-Tank's own extension modules, which make
+0-10 V. v3 owners already have that, so aquaPCB v2 keeps the LED RJ45 at exactly 0-5 V PWM
+and puts 0-10 V on a **separate, optional module** for new users whose lamps need it:
+
+- RJ45 input from the LED port (7 channels + GND), own 12-24 V input (the v3 LED RJ45 has
+  no supply pin).
+- Per channel, DIP-switch selected: 0-5 V PWM, 0-10 V PWM, 0-5 V analog, 0-10 V analog
+  (one rail-to-rail op-amp half, bypassable 2-pole filter, gain 1 or 2, protected output).
+- Main board: no extra cost or area. Module: estimated €6..10 at batch 5 including PCB and
+  assembly setup, enclosure extra.
+- Chosen over on-board alternatives (2026-10-10): a separate on-board RJ45 would cost about
+  €2.50..3.50 per board plus about 6 cm² and 16 mm of edge; selectable outputs on the LED
+  RJ45 itself could damage a v3 extension if set to 10 V.
+
+### Robo-Tank v3 -> aquaPCB v2 mapping
+
+```
+Robo-Tank v3            aquaPCB v2              reef-pi setting on aquaPCB v2
+DC Ports RJ45           DC RJ45                 PCA9685 ch as on v3 (address TBD)
+LED Ports RJ45          LED RJ45                PCA9685 ch as on v3 (address TBD)
+Sensors RJ45            Sensors RJ45            GPIO TBD (pin assignment pending)
+Power Bar 1/2 (DB9)     header + DB9 adapter    PCA9685 #2 ch 0..7 / 8..15
+AC1/AC2 backup floats   float terminals         hardware only
+Feeder                  Feeder terminal         PCA9685 ch 0
+Temp 1/2                Temp terminals          1-Wire, GPIO TBD
+I2C                     5 V I2C header          bus 1
+Power in (barrel plug)  J1 push-in terminal     barrel-to-terminal adapter (<€1)
+```
+
+### Open questions (asked to Robo-Tank, or measure)
+
+- Does the 2021-12-28 manual still match the kit sold today (product code FullDv3Ra)?
+- Power bar input: current per channel, active high/low, state with the line open; which
+  DB9 pin carries the optional +5 V / +12 V mentioned on the product page?
+- PCA9685 I²C address and PWM frequency on the v3 controller; input type of the DC and
+  LED modules (accepted PWM frequency range, input current).
+- Sensor module: does it need pull-ups/pull-downs from the controller?
 
 ## Roadmap
 
