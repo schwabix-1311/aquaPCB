@@ -457,6 +457,7 @@ v2 ([Robo-Tank v3 compatible head unit](#v2-plan-robo-tank-v3-compatible-head-un
 
 1. Spec – done
 2. Answers from Robo-Tank, or measure a v3 module and cable (open questions in the v2 plan)
+   – questions sent to info@robo-tank.ca 2026-10-10, waiting for the reply
 3. Budget and sense check → go/no-go; on no-go, continue with v1 step 4
 4. aquaPi PCA9685 driver (needed for the DC/LED ports and power bars)
 5. Schematic and layout, starting from the v1 design
