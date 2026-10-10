@@ -367,8 +367,9 @@ Backup floats   2x 2-pole terminal     in series with bar 1 outlets 1/2, pull-do
 Feeder          3-pole terminal        PCA #1 ch 0 -> small low-side MOSFET
 Temp            2x 3-pole terminal     1-Wire, +5 V / Data / GND order as v3
 I2C             3.3 V header (as v1)   + optional 5 V header behind a PCA9306 level shifter
-pH / ORP        3-pole add-on sockets  +5 V / SIG / GND to ADS1115 inputs; the amplifier
-                (+5 V / SIG / GND)     with its BNC sits on an add-on module (see below)
+Analog / pH     4x 3-pole socket       one per ADS1115 input AIN0..AIN3, all identical,
+                (+5 V / SIG / GND)     0-5 V each; pH/ORP amplifiers sit on add-on
+                                       modules (see below), no reference input
 Power in        push-in terminal (J1)  12-24 V, 8 A as v1 - no barrel socket (rated for
                                        far less current than the board's 8 A)
 Power outputs   push-in terminals      Q1..Q6 as v1: Q1/Q4 on the Pi's hardware PWM0/1,
@@ -454,8 +455,31 @@ EC (conductivity)            -              not covered by these modules, see be
   compensation and a cell constant. Use a bought EC module; isolating its output (like
   DFRobot's Gravity isolator) would exceed the AMC3311's 4 mA high-side budget and needs
   its own isolated DC/DC.
-- Open detail: how many add-on sockets and on which ADS1115 inputs (two pH/ORP probes plus
-  the general 0..3.3 V input fit on one ADS1115).
+- **Four identical analog sockets, no reference input** (decided 2026-10-10). v1's AIN1
+  measured PH_REF, the bias of the on-board amplifier, as a monitor and as the second half
+  of a later AIN0−AIN1 differential reading. On v2 the reference lives on the add-on (the
+  isolated module's is not even visible to the main board), and the ADS1115 has its own
+  internal reference, so that input has no purpose any more. Instead every input gets the
+  same socket:
+
+  ```
+  pin  signal  path
+  1    +5 V    for the module; one shared PTC/fuse for all four sockets
+  2    SIG     10k/20k divider -> 1k/100nF -> clamp -> AINx
+  3    GND
+  ```
+
+  The divider is needed on every socket: the ADS1115 runs on 3.3 V (to match the Pi's I²C
+  bus) and its inputs must stay below ~3.6 V, so each socket accepts 0..5 V - a PH-4502C,
+  other 5 V modules, and the pH/ORP add-ons (0.8..2 V) alike. It costs a factor 1.5 in
+  resolution, still ~0.003 pH per step, below the noise. Any sensor can go on any socket;
+  v1's split into pH input, module input and 0..3.3 V input disappears. About
+  €0.30..0.50 per socket, against ~€1.50 for v1's on-board pH amplifier.
+- A later differential add-on uses two adjacent sockets as a pair (AIN0-1 or AIN2-3, the
+  pairs the ADS1115 supports).
+- The sockets' +5 V and GND are the main board's, so only the add-ons decide about
+  isolation: the non-isolated module carries the 1 MΩ ground-loop resistor, a bought
+  PH-4502C has none.
 
 #### Isolated variant (AMC3311)
 
