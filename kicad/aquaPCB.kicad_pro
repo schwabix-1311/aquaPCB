@@ -592,14 +592,6 @@
       {
         "netclass": "5V",
         "pattern": "*/SW"
-      },
-      {
-        "netclass": "Analog",
-        "pattern": "Net-(U6A-+)"
-      },
-      {
-        "netclass": "Analog",
-        "pattern": "Net-(J25-*)"
       }
     ]
   },
@@ -787,10 +779,6 @@
     [
       "662aa388-f80b-440b-be99-bc584ab7592b",
       "Power outputs Q1..Q6"
-    ],
-    [
-      "b36de559-7e9c-4c60-acb5-187afccc7a04",
-      "SSR / relay control outputs S1..S4"
     ],
     [
       "69a76064-578d-4a49-aad8-2873571f78bd",

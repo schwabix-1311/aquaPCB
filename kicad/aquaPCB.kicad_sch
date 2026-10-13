@@ -110,7 +110,7 @@
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc"
-					(page "6")
+					(page "5")
 				)
 			)
 		)
@@ -156,7 +156,7 @@
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc"
-					(page "7")
+					(page "6")
 				)
 			)
 		)
@@ -203,52 +203,6 @@
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc"
 					(page "2")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 106.68 76.2)
-		(size 55.88 17.78)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "b36de559-7e9c-4c60-acb5-187afccc7a04")
-		(property "Sheetname" "SSR / relay control outputs S1..S4"
-			(at 106.68 75.4884 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "ssr.kicad_sch"
-			(at 106.68 94.5684 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc"
-					(page "5")
 				)
 			)
 		)
