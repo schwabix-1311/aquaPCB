@@ -1,0 +1,163 @@
+(footprint "TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Spring clamp (push-button) PCB terminal block, 3.5 mm pitch, staggered pins, 8 A. Holes in both pin rows for every pole, so both stagger phases fit: Ningbo Kangnex WJ250B-3.5-02P-11 (LCSC C8454, pole 1 in the front row) and MAX MX250-3.5-02P-B (LCSC C7470116, pole 1 in the back row); same body, wire entry on the -y face at 0 deg. Pads from LCSC/EasyEDA data and maker drawings, drill 1.2 mm.")
+	(tags "terminal block push-in spring WJ250 MX250 3.5mm")
+	(property "Reference" "REF**"
+		(at 1 11 0)
+		(layer "F.SilkS")
+		(uuid "2cac9974-1d1a-4261-8e1d-de8f76dd6e10")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered"
+		(at 1 12.5 0)
+		(layer "F.Fab")
+		(uuid "6c4dbeba-69c1-408e-b7e4-b2133b316fed")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6187c6e1-d875-4f7b-8905-20a2487f0336")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c8ae2232-00b1-4437-8602-eccdeae58999")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -3.37 -2.9)
+		(end 5.37 -2.9)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "51de7fdb-7995-4630-b3bf-00947335cf24")
+	)
+	(fp_rect
+		(start -3.37 -2.52)
+		(end 5.37 9.82)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "043f0925-60c7-431e-9474-6f4259295cc3")
+	)
+	(fp_rect
+		(start -3.5 -2.65)
+		(end 5.5 9.95)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "601fc06f-b280-4091-a711-b99ce0ec532e")
+	)
+	(fp_rect
+		(start -3.25 -2.4)
+		(end 5.25 9.7)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "dba1e4c3-acec-4656-929a-08b72d7e2b82")
+	)
+	(fp_text user "wire entry"
+		(at 1 -1.5 0)
+		(layer "F.Fab")
+		(uuid "d48f9c48-c5d5-4d5e-b2cb-e847eafac7ae")
+		(effects
+			(font
+				(size 0.6 0.6)
+				(thickness 0.09)
+			)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 1 5.15 0)
+		(layer "F.Fab")
+		(uuid "84486454-89c9-4359-bf6f-dc137da77a9e")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "a035e492-7396-4cc8-a9a4-1267c452f572")
+	)
+	(pad "1" thru_hole circle
+		(at 0 5.05)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "936fc90e-4b88-42a8-ad10-3704a4d28afa")
+	)
+	(pad "2" thru_hole circle
+		(at 3.5 0)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "f57d2f2a-a080-4ab5-943a-3ffe11d7dae4")
+	)
+	(pad "2" thru_hole circle
+		(at 3.5 5.05)
+		(size 2 2)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "a8ba0861-f871-4c9d-b272-06fe6f73542a")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/aquaPCB.3dshapes/TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

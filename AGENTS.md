@@ -10,6 +10,8 @@ pin map, design decisions and roadmap. [BOM.md](BOM.md) lists the parts and
 [COMPARISON.md](COMPARISON.md) compares the board with Robo-Tank and Leviathan.
 
 - `kicad/` - KiCad project (schematic sheets, `aquaPCB.kicad_pcb`, project footprint and 3D libraries).
+- `kicad-v1/` - read-only copy of the v1 KiCad project (tag `v1.0.1`) for side-by-side viewing
+  while v2 is developed in `kicad/`. Never edit it; see `kicad-v1/README.md`.
 - `tools/` - the retired schematic generator. Don't run it: the schematic is hand-edited now.
 
 ## Hardware vs. software sessions

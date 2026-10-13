@@ -1,0 +1,120 @@
+(footprint "Littelfuse_OMNI-BLOK_154"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Littelfuse 154 series OMNI-BLOK SMD fuse holder for NANO2 fuses, body 9.73x5.03 mm, recommended pad layout per Littelfuse datasheet (154 Series, p. 94)")
+	(tags "fuse holder OMNI-BLOK 154 NANO2")
+	(property "Reference" "REF**"
+		(at 0 -3.6 0)
+		(layer "F.SilkS")
+		(uuid "4816775b-ad99-430a-9b19-cc2f12959af8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Littelfuse_OMNI-BLOK_154"
+		(at 0 3.6 0)
+		(layer "F.Fab")
+		(uuid "592ba3a4-0f22-4f65-a385-20a642584898")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a137e40c-d9b2-4f61-b0b2-2d4833955d61")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "fae77afb-6126-49d3-96eb-3d3e2863242d")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1 -2.625)
+		(end 1 -2.625)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "70b9db65-451e-494e-a2a2-32be3439e4f6")
+	)
+	(fp_line
+		(start -1 2.625)
+		(end 1 2.625)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "23f92379-8df6-4794-ae1b-33ea2ff8e2fb")
+	)
+	(fp_rect
+		(start -5.56 -2.77)
+		(end 5.56 2.77)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "e253fdba-f48b-43a5-8665-1f43ae57819d")
+	)
+	(fp_rect
+		(start -4.865 -2.515)
+		(end 4.865 2.515)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "3100e76f-d892-4918-ad0b-906897cb354a")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "169e2718-c103-41fb-927e-d5bbd0e9edf8")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -3.185 0)
+		(size 4.24 3.81)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "0520ade4-7124-4317-ab9e-f6853b5adefc")
+	)
+	(pad "2" smd rect
+		(at 3.185 0)
+		(size 4.24 3.81)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "bf61f213-036a-42d5-a8c9-d3d3788ffcae")
+	)
+	(embedded_fonts no)
+)
