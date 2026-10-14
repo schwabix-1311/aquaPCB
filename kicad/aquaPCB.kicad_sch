@@ -131,7 +131,7 @@
 			(color 0 0 0 0)
 		)
 		(uuid "7f54e82c-99a9-49f3-9f13-2c730539fa02")
-		(property "Sheetname" "ADS1115 ADC and pH amplifier"
+		(property "Sheetname" "ADS1115 ADC and analog sockets"
 			(at 106.68 112.3184 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -249,6 +249,144 @@
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc"
 					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 30.48 152.4)
+		(size 55.88 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "7cd1c5ee-fb48-47c9-9457-0fa1df00371a")
+		(property "Sheetname" "PWM outputs: PCA9685 #1, DC + LED ports, feeder"
+			(at 30.48 151.688 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "pwm.kicad_sch"
+			(at 30.48 170.768 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/80232f81-1179-4777-a7f0-674a974d53cc"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 106.68 152.4)
+		(size 55.88 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "b125e8cb-6ae7-4bae-8377-4e8cad8b1b83")
+		(property "Sheetname" "Power bars: PCA9685 #2, float backups"
+			(at 106.68 151.688 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "powerbar.kicad_sch"
+			(at 106.68 170.768 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/80232f81-1179-4777-a7f0-674a974d53cc"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 182.88 152.4)
+		(size 55.88 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "1d33e4e5-9d82-4897-8268-920839532bcd")
+		(property "Sheetname" "Sensor inputs, +5V_EXT, 5 V I2C"
+			(at 182.88 151.688 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sensors.kicad_sch"
+			(at 182.88 170.768 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/80232f81-1179-4777-a7f0-674a974d53cc"
+					(page "9")
 				)
 			)
 		)

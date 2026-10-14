@@ -308,8 +308,8 @@ selection:
   identical. (v2 replaces S1..S4 with power bar outputs, see [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).)
 - **ID EEPROM on GPIO 0/1.** The pins are already reserved. With an EEPROM fitted, aquaPi
   could recognise the board and pick its profile without asking.
-- **Pluggable wiring.** RJ45 for module cables like Robo-Tank v3, so a controller can be
-  swapped without rewiring - see [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
+- **Pluggable wiring.** Box headers for module cables (Robo-Tank v3 modules via RJ45 adapter
+  cables), so a controller can be swapped without rewiring - see [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
 - **0-10 V / PCA9685**: PCA9685s on board, 0-10 V as an optional add-on module - see
   [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
 - **Isolated pH as a build option.** Not needed for the proven hand-built setup, but a
@@ -358,9 +358,10 @@ Power in        5.5/2.1 barrel  centre +, 12-24 V, >= 1 A; powers the Pi
 
 ```
 Port            Connector              Source on aquaPCB v2
-DC              RJ45, v3 pinout        PCA #1 ch 1,2,3,4,6,7,9 -> 5 V buffer (0-5 V PWM)
-LED             RJ45, v3 pinout        PCA #1 ch 8,10..15      -> 5 V buffer (0-5 V PWM)
-Sensors         RJ45, v3 pinout        6 GPIO inputs, 5 V tolerant, +5 V supply pin (fused)
+DC              2x4 box header         PCA #1 ch 1,2,3,4,6,7,9 -> 5 V buffer (0-5 V PWM)
+LED             2x4 box header         PCA #1 ch 8,10..15      -> 5 V buffer (0-5 V PWM)
+Sensors         2x4 box header         6 GPIO inputs (5,6,20,21,22,23), 5 V tolerant, +5 V pin (fused)
+                (pin n = v3 RJ45 pin n; Robo-Tank modules via an RJ45 adapter cable wired 1:1)
 Power Bar 1, 2  2x5 box header each    PCA #2 ch 0..15, push-pull at 3.3 V like Pi GPIO
                 + adapter cable        10-wire ribbon with crimped IDC DB9 female
 Backup floats   2x 2-pole terminal     in series with bar 1 outlets 1/2, pull-down -> OFF
@@ -388,18 +389,22 @@ Design rules behind this table:
 - **Q1/Q4 stay on the Pi's hardware PWM.** It is much smoother than the PCA9685
   (about 1.5 kHz, 12 bit), which matters when dimming lamps at low levels.
 - **Q2/Q3/Q5/Q6 share PCA #1's LED channels 15, 14, 13, 12** (decided 2026-10-10). The
-  Q outputs are a power stage (they switch V_IN to ground), the LED RJ45 pins are 0-5 V logic
-  signals, so a Q output can't stand in for an RJ45 pin - but it can share its PCA channel:
-  the same signal drives the RJ45 pin and, through the 74HCT244 gate buffer, the MOSFET.
+  Q outputs are a power stage (they switch V_IN to ground), the LED port pins are 0-5 V logic
+  signals, so a Q output can't stand in for a LED port pin - but it can share its PCA channel:
+  the same signal drives the LED port pin and, through the 74HCT244 gate buffer, the MOSFET.
   A new user gets four dimmable 12-24 V / 5 A outputs (LED strips, DC pumps), a Robo-Tank
-  owner keeps the LED RJ45. Caveat: a shared pair always switches together - whoever uses
+  owner keeps the LED port. Caveat: a shared pair always switches together - whoever uses
   LED port 1..4 for a Robo-Tank module leaves Q2/Q3/Q5/Q6 unconnected. This frees GPIO 12,
-  13, 16, 26. Boot safety unchanged: the PCA9685 starts with all outputs off, /OE holds
-  them off until software takes over, the gate buffer's pull-downs stay.
-- **PCA #2 drives the 16 power bar outputs.** They start up off, and /OE holds them off until
-  software takes over, so nothing switches while the Pi boots - unlike v3, where the bar pins
-  are raw GPIOs including boot-time pull-ups. Second address (e.g. 0x41); keep the PCA9685
-  All-Call address (0x70) in mind for other I²C devices.
+  13, 16, 26. Boot safety: the PCA9685 starts with all outputs off; the gate buffer's pull-downs stay.
+- **PCA #2 drives the 16 power bar outputs.** They start up off, so nothing switches while the
+  Pi boots - unlike v3, where the bar pins are raw GPIOs including boot-time pull-ups.
+  Addresses fixed: PCA #1 0x40, PCA #2 0x41 (decided 2026-10-13); keep the PCA9685 All-Call
+  address (0x70) in mind for other I²C devices.
+- **/OE of both PCA9685 tied to GND** (decided 2026-10-13, after the NXP datasheet Rev. 4):
+  power-on reset sets every output "full OFF" (LOW), so a cold start is safe. The chip is only
+  reset when VDD drops below 0.2 V or by the I²C software reset - a Pi reboot or crash does
+  **not** reset it, outputs keep their last state until software re-initialises them. Accepted
+  in favour of reef-pi compatibility (its PCA9685 driver doesn't drive /OE).
 - **Power bar adapter.** A crimped IDC DB9 maps ribbon wires 1..9 to DB9 pins
   1,6,2,7,3,8,4,9,5; wire 10 stays unconnected. Box header pinout:
   `1 Ch1, 2 Ch8, 3 Ch2, 4 Ch7, 5 Ch3, 6 Ch6, 7 Ch4, 8 Ch5, 9 GND, 10 spare` - verify on
@@ -418,13 +423,13 @@ Design rules behind this table:
   still to choose, ideally the same 3.5 mm pitch and the same 8 A rating for the power
   terminals. Wires must not run across the Pi area. Keep V_IN and the Q1..Q6 terminals
   close to the power path and the analog sockets away from the switching outputs, as on
-  v1. The freed edge length is what should let v2 stay at 100 x 100 mm despite the RJ45
-  jacks and box headers.
-- **Top-entry RJ45 allowed too** (decided 2026-10-11), under the same rule: outside the Pi
-  area, cable and latch reachable from above. Price checked 2026-10-11: plain side-entry
-  RJ45 ~$0.40 at LCSC; vertical/top-entry ~€0.60..0.95 (HSM 260E-8P8C) up to $1.72..2.67
-  (TE 5556416-1) - so about €0.50..2 more per jack, €1.50..6 for all three. Use them only
-  where an edge position doesn't fit; mixing both kinds is fine.
+  v1. The freed edge length is what should let v2 stay at 100 x 100 mm despite the box
+  headers.
+- **DuPont box headers instead of RJ45** (decided 2026-10-14; replaces the RJ45 jacks of
+  2026-10-10/11): DC, LED and sensor ports are 2x4 box headers (keyed, 2.54 mm), the power bars
+  2x5 box headers. They may sit anywhere on the board except the Raspberry Pi area. Pin n of
+  each 2x4 header = pin n of the Robo-Tank v3 RJ45, so a Robo-Tank module connects through a
+  1:1 adapter cable (RJ45 jack to IDC ribbon).
 - **24 V** must be validated (parts are rated 40 V, v1 was only specified at 12 V).
 - **S1..S4 and the ULN2803 are dropped** (decided 2026-10-10). The 74HCT244 can't replace
   the ULN2803 (±6 mA specified, ±35 mA abs. max per pin, ±70 mA per package, 5 V push-pull,
@@ -437,18 +442,18 @@ Design rules behind this table:
 ### 0-10 V dimming: optional add-on module
 
 The v3 LED port carries plain 0-5 V PWM into Robo-Tank's own extension modules, which make
-0-10 V. v3 owners already have that, so aquaPCB v2 keeps the LED RJ45 at exactly 0-5 V PWM
+0-10 V. v3 owners already have that, so aquaPCB v2 keeps the LED port at exactly 0-5 V PWM
 and puts 0-10 V on a **separate, optional module** for new users whose lamps need it:
 
-- RJ45 input from the LED port (7 channels + GND), own 12-24 V input (the v3 LED RJ45 has
-  no supply pin).
+- Input from the LED port (2x4 box header: 7 channels + GND), own 12-24 V input (the LED
+  port has no supply pin).
 - Per channel, DIP-switch selected: 0-5 V PWM, 0-10 V PWM, 0-5 V analog, 0-10 V analog
   (one rail-to-rail op-amp half, bypassable 2-pole filter, gain 1 or 2, protected output).
 - Main board: no extra cost or area. Module: estimated €6..10 at batch 5 including PCB and
   assembly setup, enclosure extra.
-- Chosen over on-board alternatives (2026-10-10): a separate on-board RJ45 would cost about
+- Chosen over on-board alternatives (2026-10-10): a separate on-board 0-10 V connector would cost about
   €2.50..3.50 per board plus about 6 cm² and 16 mm of edge; selectable outputs on the LED
-  RJ45 itself could damage a v3 extension if set to 10 V.
+  port itself could damage a v3 extension if set to 10 V.
 
 ### pH / ORP amplifiers: add-on modules
 
@@ -554,10 +559,10 @@ Based on the AMC3311 data sheet (TI SBASAQ5A) and TLV9062 data sheet, checked 20
 
 ```
 Robo-Tank v3            aquaPCB v2              reef-pi setting on aquaPCB v2
-DC Ports RJ45           DC RJ45                 PCA9685 ch as on v3 (address TBD)
-LED Ports RJ45          LED RJ45                PCA9685 ch as on v3 (address TBD);
+DC Ports RJ45           DC header + adapter     PCA9685 ch as on v3, address 0x40
+LED Ports RJ45          LED header + adapter    PCA9685 ch as on v3, address 0x40;
                                                 LED 1..4 also drive Q2/Q3/Q5/Q6
-Sensors RJ45            Sensors RJ45            GPIO 5,6,20,21,22,23 (suggested)
+Sensors RJ45            Sensor header + adapter GPIO 5,6,20,21,22,23 (sensor 1..6)
 Power Bar 1/2 (DB9)     header + DB9 adapter    PCA9685 #2 ch 0..7 / 8..15
 AC1/AC2 backup floats   float terminals         hardware only
 Feeder                  Feeder terminal         PCA9685 ch 0
@@ -581,8 +586,8 @@ Q4 power out      GPIO 19, PWM1 -> "PWM 1"           unchanged
 Q2,Q3,Q5,Q6       GPIO 12,13,16,26 -> "GPIO n out"   PCA9685 #1 ch 15,14,13,12, shared with
                                                      LED ports 1..4 -> [S] "PCA9685 #1 ch n"
 S1..S4 SSR out    GPIO 17,22,23,27 -> "GPIO n out"   dropped (SSRs go on Q outputs)
-IN1..IN4          GPIO 5,6,20,21 -> "GPIO n in"      replaced by sensor RJ45 (6 inputs):
-                                                     [S] GPIO 5,6,20,21,22,23 -> "GPIO n in"
+IN1..IN4          GPIO 5,6,20,21 -> "GPIO n in"      replaced by sensor header (6 inputs):
+                                                     GPIO 5,6,20,21,22,23 -> "GPIO n in"
 1-Wire temp       1 terminal, GPIO 4 -> "DS1820 #n"  unchanged: 1 terminal, GPIO 4, one bus for
                                                      all probes -> "DS1820 #n"
 DC ports (7)      -                                  PCA9685 #1 ch 1,2,3,4,6,7,9 (0-5 V PWM)
@@ -599,8 +604,8 @@ AIN2              module input 0-5 V                 socket 3, 0-5 V -> "ADC #1 
 AIN3              general 0-3.3 V                    socket 4, 0-5 V -> "ADC #1 in 3"
 (later)           -                                  differential pairs [S] "ADC #1 in 0-1"/"2-3"
 I2C               3.3 V header, GPIO 2/3             + optional 5 V header (PCA9306)
-I2C addresses     ADS1115 0x48                       + PCA9685 #1 0x40 (TBD: match Robo-Tank),
-                                                     #2 [S] 0x41; keep 0x70 (All-Call) free
+I2C addresses     ADS1115 0x48                       + PCA9685 #1 0x40, #2 0x41 (fixed);
+                                                     keep 0x70 (All-Call) free
 display SPI       GPIO 7..11, 24, 25                 open: not decided for v2
 GPIO 0/1, 14/15   ID EEPROM reserved / unused        unchanged
 free GPIOs        -                                  12,13,16,17,26,27 (after [S] sensor pins)
@@ -617,12 +622,12 @@ DROPPED
 
 ADDED
   2x PCA9685 (16 ch, 12 bit PWM, I²C)   #1 DC/LED/feeder + Q2/Q3/Q5/Q6, #2 power bars
-  74HCT buffers for 14x 0-5 V PWM       DC + LED RJ45 -> [S] 2x 74HCT244
+  74HCT buffers for 14x 0-5 V PWM       DC + LED ports -> 2x 74HCT244
   PCA9306 (I²C level shifter)           optional 5 V I²C header
-  small N-MOSFET (feeder, low side)     [S] e.g. AO3400, SOT-23
-  sensor-input protection, 6 inputs     5 V tolerant, no jumpers -> [S] series R + BAT54S
+  small N-MOSFET (feeder, low side)     AO3400A, SOT-23
+  sensor-input protection, 6 inputs     5 V tolerant, no jumpers -> 1k series + BAT54S
   BAT54S clamps, 4 analog sockets       after the 10k/20k divider + RC
-  PTC/fuse for +5 V                     sensor RJ45 and analog sockets
+  PTC/fuse for +5 V (+5V_EXT)           sensor header, analog sockets, 1-Wire terminal
 
 UNCHANGED
   TPS54360B 5 V buck (check the budget: sensors, add-ons, 2x PCA9685 now on 5 V/3.3 V),

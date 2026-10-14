@@ -4066,7 +4066,7 @@
 			)
 		)
 	)
-	(global_label "GPIO26_Q6"
+	(global_label "PCA1_CH12"
 		(shape bidirectional)
 		(at 123.19 59.69 90)
 		(fields_autoplaced yes)
@@ -4090,7 +4090,7 @@
 			)
 		)
 	)
-	(global_label "GPIO13_Q3"
+	(global_label "PCA1_CH14"
 		(shape bidirectional)
 		(at 38.1 63.5 180)
 		(fields_autoplaced yes)
@@ -4113,7 +4113,7 @@
 			)
 		)
 	)
-	(global_label "GPIO16_Q5"
+	(global_label "PCA1_CH13"
 		(shape bidirectional)
 		(at 111.76 59.69 90)
 		(fields_autoplaced yes)
@@ -4160,7 +4160,7 @@
 			)
 		)
 	)
-	(global_label "GPIO26_Q6"
+	(global_label "PCA1_CH12"
 		(shape bidirectional)
 		(at 38.1 58.42 180)
 		(fields_autoplaced yes)
@@ -4183,7 +4183,7 @@
 			)
 		)
 	)
-	(global_label "GPIO12_Q2"
+	(global_label "PCA1_CH15"
 		(shape bidirectional)
 		(at 38.1 66.04 180)
 		(fields_autoplaced yes)
@@ -4206,7 +4206,7 @@
 			)
 		)
 	)
-	(global_label "GPIO16_Q5"
+	(global_label "PCA1_CH13"
 		(shape bidirectional)
 		(at 38.1 55.88 180)
 		(fields_autoplaced yes)
@@ -4253,7 +4253,7 @@
 			)
 		)
 	)
-	(global_label "GPIO13_Q3"
+	(global_label "PCA1_CH14"
 		(shape bidirectional)
 		(at 133.35 59.69 90)
 		(fields_autoplaced yes)
@@ -4277,7 +4277,7 @@
 			)
 		)
 	)
-	(global_label "GPIO12_Q2"
+	(global_label "PCA1_CH15"
 		(shape bidirectional)
 		(at 143.51 59.69 90)
 		(fields_autoplaced yes)

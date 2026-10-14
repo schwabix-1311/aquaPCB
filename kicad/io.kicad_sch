@@ -1833,12 +1833,6 @@
 		(uuid "4abee9d0-6547-4487-8747-f10b7a27af27")
 	)
 	(junction
-		(at 41.91 113.03)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "964b3d0b-ec75-4a09-b2d4-f93c25fd2d7a")
-	)
-	(junction
 		(at 52.07 236.22)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2002,26 +1996,6 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 124.46) (xy 41.91 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6f57c613-1e56-4db7-aa98-5b6ff3424616")
-	)
-	(wire
-		(pts
-			(xy 41.91 118.11) (xy 38.1 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "77bc5925-4e3b-44de-89ce-4ebd4a92ae7a")
-	)
-	(wire
-		(pts
 			(xy 86.36 193.04) (xy 86.36 190.5)
 		)
 		(stroke
@@ -2149,26 +2123,6 @@
 			(type default)
 		)
 		(uuid "e6088344-1242-4a9d-b10d-0498d217a972")
-	)
-	(wire
-		(pts
-			(xy 41.91 123.19) (xy 38.1 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e7ed5130-cbf3-453e-a2f5-7d3c4731b56b")
-	)
-	(wire
-		(pts
-			(xy 41.91 113.03) (xy 41.91 118.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e9347ce9-8d34-4f61-ab40-5f0144720b0a")
 	)
 	(wire
 		(pts
@@ -3001,84 +2955,6 @@
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/69a76064-578d-4a49-aad8-2873571f78bd"
 					(reference "#PWR128")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 41.91 124.46 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "895e3ad8-2d8f-48cd-beb8-c364d0e22f8e")
-		(property "Reference" "#PWR127"
-			(at 39.37 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 44.45 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 41.91 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 41.91 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 41.91 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a1388ea5-3898-4205-b367-6f49af3d4541")
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc/69a76064-578d-4a49-aad8-2873571f78bd"
-					(reference "#PWR127")
 					(unit 1)
 				)
 			)
@@ -3955,6 +3831,125 @@
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/69a76064-578d-4a49-aad8-2873571f78bd"
 					(reference "R44")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 38.1 123.19) (xy 40.64 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "812343c1-ba82-460c-93d5-26a9fa182f77")
+	)
+	(global_label "+5V_EXT"
+		(shape bidirectional)
+		(at 40.64 123.19 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "794941d8-9d54-471f-ba6a-e34bc2767bb7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 40.64 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 38.1 118.11) (xy 40.64 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9f82a07-9ddc-478a-94b4-6459bf695875")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 40.64 118.11 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b19e277b-b683-4477-b86b-d36a55925c5f")
+		(property "Reference" "#PWR900"
+			(at 38.1 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 43.18 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 40.64 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 40.64 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 40.64 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b9487e72-80a2-45f3-814d-8d5421c3cfcb")
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/80232f81-1179-4777-a7f0-674a974d53cc/69a76064-578d-4a49-aad8-2873571f78bd"
+					(reference "#PWR900")
 					(unit 1)
 				)
 			)

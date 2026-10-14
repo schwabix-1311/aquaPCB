@@ -786,7 +786,19 @@
     ],
     [
       "7f54e82c-99a9-49f3-9f13-2c730539fa02",
-      "ADS1115 ADC and pH amplifier"
+      "ADS1115 ADC and analog sockets"
+    ],
+    [
+      "7cd1c5ee-fb48-47c9-9457-0fa1df00371a",
+      "PWM outputs: PCA9685 #1, DC + LED ports, feeder"
+    ],
+    [
+      "b125e8cb-6ae7-4bae-8377-4e8cad8b1b83",
+      "Power bars: PCA9685 #2, float backups"
+    ],
+    [
+      "1d33e4e5-9d82-4897-8268-920839532bcd",
+      "Sensor inputs, +5V_EXT, 5 V I2C"
     ]
   ],
   "text_variables": {},
