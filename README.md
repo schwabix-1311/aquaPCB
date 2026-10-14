@@ -362,10 +362,10 @@ DC              2x4 box header         PCA #1 ch 1,2,3,4,6,7,9 -> 5 V buffer (0-
 LED             2x4 box header         PCA #1 ch 8,10..15      -> 5 V buffer (0-5 V PWM)
 Sensors         2x4 box header         6 GPIO inputs (5,6,20,21,22,23), 5 V tolerant, +5 V pin (fused)
                 (pin n = v3 RJ45 pin n; Robo-Tank modules via an RJ45 adapter cable wired 1:1)
-Power Bar 1, 2  2x5 box header each    PCA #2 ch 0..15, push-pull at 3.3 V like Pi GPIO
-                + adapter cable        10-wire ribbon with crimped IDC DB9 female
+Power Bar 1, 2  2x5 box header each    PCA #2 ch 0..15, push-pull at 3.3 V like Pi GPIO;
+                + adapter cable        pin 9 GND, pin 10 +3V3_EXT (not wired by the IDC DB9)
 Backup floats   2x 2-pole terminal     in series with bar 1 outlets 1/2, pull-down -> OFF
-Feeder          3-pole terminal        PCA #1 ch 0 -> small low-side MOSFET
+Feeder          power bar header       no own port: pins 10 (+3V3_EXT) / any channel / 9 (GND)
 Temp            1x 3-pole terminal     1-Wire on GPIO 4, +5 V / Data / GND order as v3;
                                        one bus, both probes into the same terminal
 I2C             3.3 V header (as v1)   + optional 5 V header behind a PCA9306 level shifter
@@ -383,8 +383,8 @@ SSR outputs     -                      S1..S4 and the ULN2803 dropped: SSRs and 
 
 Design rules behind this table:
 
-- **PCA #1 uses Robo-Tank's channel numbers** (feeder 0, DC 1..4/6/7/9, LED 8/10..15,
-  ch 5 spare). A reef-pi DC/LED configuration then carries over unchanged, provided the
+- **PCA #1 uses Robo-Tank's channel numbers** (DC 1..4/6/7/9, LED 8/10..15; ch 0 = Robo-Tank's
+  feeder channel and ch 5 stay spare). A reef-pi DC/LED configuration then carries over unchanged, provided the
   I²C address matches - still to confirm.
 - **Q1/Q4 stay on the Pi's hardware PWM.** It is much smoother than the PCA9685
   (about 1.5 kHz, 12 bit), which matters when dimming lamps at low levels.
@@ -430,6 +430,20 @@ Design rules behind this table:
   2x5 box headers. They may sit anywhere on the board except the Raspberry Pi area. Pin n of
   each 2x4 header = pin n of the Robo-Tank v3 RJ45, so a Robo-Tank module connects through a
   1:1 adapter cable (RJ45 jack to IDC ribbon).
+- **Feeder on the power bar header** (decided 2026-10-14, replaces the dedicated 3-pole feeder
+  port). The Robo-Tank Eheim mod powers the feeder's whole electronics (MCU, LCD, motor) from
+  +3.3 V in place of its batteries and pulls a Signal pad to GND to feed - so it needs a steady
+  3.3 V, never a PWM-dimmed 5 V. Pin 10 of both power bar headers carries **+3V3_EXT** (own
+  AMS1117 from +5V_EXT, keeps motor noise off the ADS1115 / PCA9685 rail), pin 9 is GND, and any
+  bar channel (3.3 V push-pull, about 10 mA) drives the Signal pad. That channel then can't
+  switch an outlet; it needs PCA #2. Small DC loads up to 5 A go on a Q output instead.
+- **Space** (area study 2026-10-14, courtyard sums, same method for v1 and v2): v1 uses 61 % of
+  the usable area (routed, DRC clean). To reach that with v2: the 30 series resistors are 8
+  **4x 0603 arrays**, all new passives are **0603**, the two new 74HCT244 are **TSSOP-20**, and
+  **flat parts may sit under the Pi** (limit: the Zero sits on 11 mm standoffs, so about 9.5 mm;
+  no connectors or tall parts there - longer standoffs would raise the limit). Connectors may sit
+  anywhere else, also mid-board, where that saves tracks and vias. Result about 63 % (box
+  headers kept); plain pin headers instead of box headers would bring it to about 57 %.
 - **24 V** must be validated (parts are rated 40 V, v1 was only specified at 12 V).
 - **S1..S4 and the ULN2803 are dropped** (decided 2026-10-10). The 74HCT244 can't replace
   the ULN2803 (±6 mA specified, ±35 mA abs. max per pin, ±70 mA per package, 5 V push-pull,
@@ -565,7 +579,7 @@ LED Ports RJ45          LED header + adapter    PCA9685 ch as on v3, address 0x4
 Sensors RJ45            Sensor header + adapter GPIO 5,6,20,21,22,23 (sensor 1..6)
 Power Bar 1/2 (DB9)     header + DB9 adapter    PCA9685 #2 ch 0..7 / 8..15
 AC1/AC2 backup floats   float terminals         hardware only
-Feeder                  Feeder terminal         PCA9685 ch 0
+Feeder (+3.3V/Sig/GND)  power bar hdr 10/ch/9   PCA9685 #2 channel of the chosen bar pin
 Temp 1/2                one Temp terminal       1-Wire GPIO 4, both probes on one bus
 I2C                     5 V I2C header          bus 1
 pH BNC                  pH/ORP add-on module    ADS1115 input (aquaPi; reef-pi: TBD)
@@ -593,8 +607,8 @@ IN1..IN4          GPIO 5,6,20,21 -> "GPIO n in"      replaced by sensor header (
 DC ports (7)      -                                  PCA9685 #1 ch 1,2,3,4,6,7,9 (0-5 V PWM)
                                                      -> [S] "PCA9685 #1 ch n"
 LED ports (7)     -                                  PCA9685 #1 ch 8,10..15 -> [S] same pattern
-feeder            -                                  PCA9685 #1 ch 0 -> small MOSFET
-spare             -                                  PCA9685 #1 ch 5
+feeder            -                                  power bar header: +3V3_EXT pin 10, any PCA #2 ch
+spare             -                                  PCA9685 #1 ch 0, ch 5
 power bar 1, 2    -                                  PCA9685 #2 ch 0..7, 8..15, 3.3 V logic
                                                      -> [S] "PCA9685 #2 ch n"
 backup floats     -                                  hardware only, no port
@@ -621,10 +635,11 @@ DROPPED
   (passives, for completeness: BNC, styroflex 6.8n, 10 MΩ, 1 MΩ -> add-ons)
 
 ADDED
-  2x PCA9685 (16 ch, 12 bit PWM, I²C)   #1 DC/LED/feeder + Q2/Q3/Q5/Q6, #2 power bars
-  74HCT buffers for 14x 0-5 V PWM       DC + LED ports -> 2x 74HCT244
+  2x PCA9685 (16 ch, 12 bit PWM, I²C)   #1 DC/LED + Q2/Q3/Q5/Q6, #2 power bars (+ feeder)
+  74HCT buffers for 14x 0-5 V PWM       DC + LED ports -> 2x 74HCT244PW (TSSOP-20)
+  8x 4x100R arrays (0603x4)             series resistors of the 14 PWM + 16 power bar lines
+  AMS1117-3.3                           +3V3_EXT for the feeder (power bar header pin 10)
   PCA9306 (I²C level shifter)           optional 5 V I²C header
-  small N-MOSFET (feeder, low side)     AO3400A, SOT-23
   sensor-input protection, 6 inputs     5 V tolerant, no jumpers -> 1k series + BAT54S
   BAT54S clamps, 4 analog sockets       after the 10k/20k divider + RC
   PTC/fuse for +5 V (+5V_EXT)           sensor header, analog sockets, 1-Wire terminal

@@ -5124,7 +5124,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a658f3bb-cbb1-4a36-83d0-d5661c3b1799")
+		(uuid "7d93153c-94b2-43df-a70b-1f936a0a7924")
 	)
 	(global_label "+5V_EXT"
 		(shape bidirectional)
@@ -5136,7 +5136,7 @@
 			)
 			(justify left)
 		)
-		(uuid "8a06a648-3682-4146-94ca-ac022f131e7d")
+		(uuid "d5241574-ccca-45a9-8f7d-98631aaf2dde")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 43.18 203.2 0)
 			(effects
@@ -5155,7 +5155,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1bb3a7f3-df2a-4fcb-8d1a-9cbdc2c23de5")
+		(uuid "8383ce2c-24bc-45a2-8c41-17b5b5e36eec")
 	)
 	(global_label "+5V_EXT"
 		(shape bidirectional)
@@ -5167,7 +5167,7 @@
 			)
 			(justify left)
 		)
-		(uuid "86ac140b-f4ff-42e8-abfd-f6f7a31df333")
+		(uuid "372caf65-2017-4404-ac5a-5007dc75db92")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 43.18 243.84 0)
 			(effects
@@ -5186,7 +5186,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a53c0e0f-6057-4730-bf43-c38785b8bb61")
+		(uuid "9a3326cb-892b-46a3-9919-7886fbbc6ae9")
 	)
 	(label "AIN0"
 		(at 58.42 58.42 180)
@@ -5197,7 +5197,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "cb6e660c-53d2-4b75-9de8-f45d99282b61")
+		(uuid "88598980-d417-4a14-80ad-4d87c5861381")
 	)
 	(wire
 		(pts
@@ -5207,7 +5207,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "91fe5338-e6e6-47f2-8b55-0fad44d25de6")
+		(uuid "28c4aa6d-dde3-41f3-af42-8fd6ff633be3")
 	)
 	(label "AIN1"
 		(at 58.42 60.96 180)
@@ -5218,7 +5218,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "a579f75c-3e77-4210-8fff-ba0992d6b72b")
+		(uuid "e90b73bf-f029-4ae5-80a6-b6c04c2337d1")
 	)
 	(symbol
 		(lib_id "Connector:Screw_Terminal_01x03")
@@ -5228,8 +5228,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6ee495a5-10b0-4aeb-b056-a1257e328aab")
-		(property "Reference" "J37"
+		(uuid "85fd650a-5688-483d-a716-7d7497e28322")
+		(property "Reference" "J36"
 			(at 38.1 96.52 0)
 			(effects
 				(font
@@ -5264,15 +5264,15 @@
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "31dda4a2-ea23-4ee0-8a6a-894c2743f3c6"))
+			(uuid "369901d0-5f26-489e-b63c-8d5acd29a62f"))
 		(pin "2"
-			(uuid "c2423aa8-d936-467a-a00c-c121e1bb0d84"))
+			(uuid "c7c97b86-dd9a-4b5c-9544-b9cc0d611284"))
 		(pin "3"
-			(uuid "4e1fb95f-37e7-464c-b55b-89d3f57eb222"))
+			(uuid "5f734f09-3d67-4c4a-925d-7eb9f66b9441"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "J37")
+					(reference "J36")
 					(unit 1)))))
 	(wire
 		(pts
@@ -5281,7 +5281,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "ae6d193a-c92b-4c0a-a33a-7b82cdacad54"))
+		(uuid "94ba040e-9b05-4d63-ace7-7b18e85c4e6a"))
 	(global_label "+5V_EXT"
 		(shape bidirectional)
 		(at 35.56 99.06 180)
@@ -5290,7 +5290,7 @@
 			(font
 				(size 1.27 1.27))
 			(justify right))
-		(uuid "607ff26a-f004-43f8-8ac2-8258517ac8f0")
+		(uuid "1aa45dbc-b900-42f7-9cb6-20c6bb164ca9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 35.56 99.06 0)
 			(effects
@@ -5304,7 +5304,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "81566c70-acf7-42e0-b3aa-bf52aa45391f"))
+		(uuid "a46e5d31-339b-4f0f-9af1-2a9e7935c6ab"))
 	(label "AIN0_IN"
 		(at 35.56 101.6 180)
 		(fields_autoplaced yes)
@@ -5312,7 +5312,7 @@
 			(font
 				(size 1.27 1.27))
 			(justify right bottom))
-		(uuid "4217763e-91c8-4284-8704-88cfca642fb7"))
+		(uuid "a394010f-fec6-4f37-8a36-af9e53ebf5bf"))
 	(wire
 		(pts
 			(xy 38.1 104.14)
@@ -5320,7 +5320,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "5a373bfa-0482-4391-8cc8-340355077d9b"))
+		(uuid "1b9db106-a074-4ef9-98c8-0cc389c0c326"))
 	(symbol
 		(lib_id "power:GND")
 		(at 35.56 104.14 270)
@@ -5329,8 +5329,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "3e1b082f-6522-4e60-b501-be75968c9a52")
-		(property "Reference" "#PWR234"
+		(uuid "de8791fa-60a5-415e-98ce-290fbc14c8c0")
+		(property "Reference" "#PWR232"
 			(at 35.56 101.6 0)
 			(effects
 				(font
@@ -5360,11 +5360,11 @@
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "df5733c7-c52c-44cf-93cd-4793dd2eae4d"))
+			(uuid "7fe07008-5c10-499f-b283-1fa4bac34962"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "#PWR234")
+					(reference "#PWR232")
 					(unit 1)))))
 	(symbol
 		(lib_id "Device:R")
@@ -5374,8 +5374,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "82b3e4eb-e998-41b7-bc17-f05a3bc56758")
-		(property "Reference" "R96"
+		(uuid "8fb1c662-e3c5-4473-a767-879e9c026c58")
+		(property "Reference" "R64"
 			(at 68.58 99.06 0)
 			(effects
 				(font
@@ -5385,7 +5385,7 @@
 			(effects
 				(font
 					(size 1.27 1.27))))
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 68.58 101.6 0)
 			(effects
 				(font
@@ -5403,20 +5403,20 @@
 				(font
 					(size 1.27 1.27))
 				(hide yes)))
-		(property "LCSC" "C17414"
+		(property "LCSC" "C25804"
 			(at 68.58 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "23efc43c-6a99-40fb-97fd-a1c13139fc90"))
+			(uuid "aa154c34-9c5a-4c04-868d-32c7364c6ada"))
 		(pin "2"
-			(uuid "efba3d9b-19ba-4a61-9952-6dce57340420"))
+			(uuid "1576ed6c-758c-413a-b116-88eec5b82cd4"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "R96")
+					(reference "R64")
 					(unit 1)))))
 	(wire
 		(pts
@@ -5425,7 +5425,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "872134d0-dd97-4179-8865-0d547e1fab3a"))
+		(uuid "abe00939-340e-40f6-acb3-682d622528fa"))
 	(label "AIN0_IN"
 		(at 62.23 101.6 180)
 		(fields_autoplaced yes)
@@ -5433,7 +5433,7 @@
 			(font
 				(size 1.27 1.27))
 			(justify right bottom))
-		(uuid "be373d28-b0f1-4627-80c9-a9e29209110b"))
+		(uuid "3b35997b-93a1-4022-ae3d-450fbffcb9b1"))
 	(wire
 		(pts
 			(xy 72.39 101.6)
@@ -5441,7 +5441,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "f3267aff-069e-46e2-8e89-45731526823f"))
+		(uuid "dcd516f9-3581-44c1-a032-c2b8787903ae"))
 	(label "AIN0"
 		(at 74.93 101.6 0)
 		(fields_autoplaced yes)
@@ -5449,7 +5449,7 @@
 			(font
 				(size 1.27 1.27))
 			(justify left bottom))
-		(uuid "cacb53dc-9817-4c6c-b04c-4a2cb865b5ba"))
+		(uuid "b4f6ead1-b6e0-4766-ab2a-2fce4fce22e1"))
 	(symbol
 		(lib_id "Device:R")
 		(at 102.87 101.6 90)
@@ -5458,8 +5458,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7c63e18d-0536-4a64-ab8e-11da0725b482")
-		(property "Reference" "R97"
+		(uuid "1581b269-5afe-4d78-a5b9-dba2489b6aff")
+		(property "Reference" "R65"
 			(at 102.87 99.06 0)
 			(effects
 				(font
@@ -5469,7 +5469,7 @@
 			(effects
 				(font
 					(size 1.27 1.27))))
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 102.87 101.6 0)
 			(effects
 				(font
@@ -5487,20 +5487,20 @@
 				(font
 					(size 1.27 1.27))
 				(hide yes)))
-		(property "LCSC" "C4328"
+		(property "LCSC" "C4184"
 			(at 102.87 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "f2adebf7-e8ba-4900-8748-48dfb24192e3"))
+			(uuid "16572c54-c563-485a-936b-99a68281bfad"))
 		(pin "2"
-			(uuid "890476b2-5c37-49d7-84f5-edf8bdf37b71"))
+			(uuid "d0b2f054-273c-4621-9281-437e89791634"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "R97")
+					(reference "R65")
 					(unit 1)))))
 	(wire
 		(pts
@@ -5509,7 +5509,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "55cad2b1-21f2-42bf-bc37-e2d29c5d8a20"))
+		(uuid "856e56b5-515b-423b-ba45-d11f5030b7e5"))
 	(label "AIN0"
 		(at 96.52 101.6 180)
 		(fields_autoplaced yes)
@@ -5517,7 +5517,7 @@
 			(font
 				(size 1.27 1.27))
 			(justify right bottom))
-		(uuid "b0f8ebb0-6c81-4132-8840-60e9795c1a84"))
+		(uuid "837b9e02-714e-4a0a-bdf1-5252557f3b7d"))
 	(wire
 		(pts
 			(xy 106.68 101.6)
@@ -5525,7 +5525,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "9141cdd8-538c-4315-ade3-21f844ab3a54"))
+		(uuid "9da7bea0-518d-4b6d-9416-21b53f256044"))
 	(symbol
 		(lib_id "power:GND")
 		(at 109.22 101.6 90)
@@ -5534,8 +5534,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "ba0e11ad-4db8-40e9-bf48-b70c0275c893")
-		(property "Reference" "#PWR235"
+		(uuid "c1baae92-e837-47e6-b9c2-0787ec6d0cf2")
+		(property "Reference" "#PWR233"
 			(at 109.22 99.06 0)
 			(effects
 				(font
@@ -5565,11 +5565,11 @@
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "7c1dbcdc-6cf4-4173-a8d2-a0abeb29a0ab"))
+			(uuid "3c82f5e3-ab88-493f-b88c-394ed9e70f1a"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "#PWR235")
+					(reference "#PWR233")
 					(unit 1)))))
 	(symbol
 		(lib_id "Device:C")
@@ -5579,8 +5579,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7be6f5de-0184-4d78-9e64-40eb0157a22c")
-		(property "Reference" "C25"
+		(uuid "5736cd28-5be3-4c57-826f-76dd81939713")
+		(property "Reference" "C27"
 			(at 121.92 95.25 0)
 			(effects
 				(font
@@ -5590,7 +5590,7 @@
 			(effects
 				(font
 					(size 1.27 1.27))))
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 121.92 101.6 0)
 			(effects
 				(font
@@ -5608,20 +5608,20 @@
 				(font
 					(size 1.27 1.27))
 				(hide yes)))
-		(property "LCSC" "C15850"
+		(property "LCSC" "C19702"
 			(at 121.92 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "9ff91d5f-1d46-425a-b0c1-0691a867b1b4"))
+			(uuid "58268475-2372-48c1-a9b1-a4f4364be560"))
 		(pin "2"
-			(uuid "907fb472-a842-4a66-9fd2-864f66cc8539"))
+			(uuid "04fbdb80-df6b-48ef-9051-dbacaf13eeed"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "C25")
+					(reference "C27")
 					(unit 1)))))
 	(wire
 		(pts
@@ -5630,7 +5630,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "10c31fd6-62ac-444b-9d5a-736fb7aff4a3"))
+		(uuid "cdc2d122-3067-4acf-b510-7b759462077f"))
 	(label "AIN0"
 		(at 121.92 95.25 90)
 		(fields_autoplaced yes)
@@ -5638,7 +5638,7 @@
 			(font
 				(size 1.27 1.27))
 			(justify left bottom))
-		(uuid "efc2f788-9371-44ae-b716-d8d940c61ca4"))
+		(uuid "8e95a116-fd33-4c8e-b529-7e7cb261c939"))
 	(wire
 		(pts
 			(xy 121.92 105.41)
@@ -5646,7 +5646,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "ff6b2846-844b-4ef8-93f0-9bd9fe9b28de"))
+		(uuid "53a64ecc-5764-4675-a6f3-30afa3ac537f"))
 	(symbol
 		(lib_id "power:GND")
 		(at 121.92 107.95 0)
@@ -5655,8 +5655,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "6dccfdc5-84fd-4806-b6b0-bdc1a433e21b")
-		(property "Reference" "#PWR236"
+		(uuid "47438987-f67f-415a-871c-b7ea6af942af")
+		(property "Reference" "#PWR234"
 			(at 121.92 105.41 0)
 			(effects
 				(font
@@ -5686,11 +5686,11 @@
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "00ed344e-6ba9-47c0-aeb3-0d682a12f23f"))
+			(uuid "0f8b76e1-330b-4a57-b26a-3a95f6837ed6"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "#PWR236")
+					(reference "#PWR234")
 					(unit 1)))))
 	(symbol
 		(lib_id "Diode:BAT54S")
@@ -5700,8 +5700,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "0d1dbe4a-32b7-4752-9c0e-cae036ae8059")
-		(property "Reference" "D36"
+		(uuid "7a487991-5a92-4da8-b44e-38e711d656f1")
+		(property "Reference" "D35"
 			(at 144.78 92.71 0)
 			(effects
 				(font
@@ -5736,15 +5736,15 @@
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "21265a84-a5f6-41c8-8496-f6cdca448273"))
+			(uuid "6c3d5f2a-6af3-43d1-b893-06dc2bd41370"))
 		(pin "2"
-			(uuid "cc84f94b-8d67-483f-ac14-d52a6c8d076b"))
+			(uuid "dddbe69f-fd7b-4a6c-beaa-9b8f7ea445f9"))
 		(pin "3"
-			(uuid "b7767cd0-3b57-49cb-a2b0-9ff503e34f4a"))
+			(uuid "630b5474-0a92-4e75-b7ac-d003913bfd14"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "D36")
+					(reference "D35")
 					(unit 1)))))
 	(wire
 		(pts
@@ -5753,7 +5753,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "e4e341dd-4f69-472e-9661-453fc3990462"))
+		(uuid "607b09b1-7275-48c4-b8e1-ea3f923b48e6"))
 	(symbol
 		(lib_id "power:GND")
 		(at 134.62 95.25 270)
@@ -5762,8 +5762,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "da2367fd-67cd-4db8-b39c-a0b771746c70")
-		(property "Reference" "#PWR237"
+		(uuid "05b7dd34-6d62-4353-b1c5-7ea70dfa26b0")
+		(property "Reference" "#PWR235"
 			(at 134.62 92.71 0)
 			(effects
 				(font
@@ -5793,11 +5793,11 @@
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "670b26bc-4ea8-488b-bf02-8e0f09f43a4a"))
+			(uuid "e71fd14a-ba92-4a6e-8710-a33906a965db"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "#PWR237")
+					(reference "#PWR235")
 					(unit 1)))))
 	(wire
 		(pts
@@ -5806,7 +5806,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "1f15f981-b4f7-4a9b-9889-3956a47a0c2d"))
+		(uuid "ad423d16-88e4-4787-8a06-e4ff24de36f5"))
 	(symbol
 		(lib_id "power:+3V3")
 		(at 154.94 95.25 270)
@@ -5815,8 +5815,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "883440c0-aaf3-45a4-a5d1-07c052a50bfc")
-		(property "Reference" "#PWR238"
+		(uuid "cdbde84b-6ed9-4bc0-a044-96040f6ea98e")
+		(property "Reference" "#PWR236"
 			(at 154.94 92.71 0)
 			(effects
 				(font
@@ -5846,11 +5846,11 @@
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "76101d83-3361-4190-9b80-7b17aeecb69e"))
+			(uuid "e81696ac-e3b8-4fdc-a707-a376b48e3f15"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "#PWR238")
+					(reference "#PWR236")
 					(unit 1)))))
 	(wire
 		(pts
@@ -5859,7 +5859,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "eaea3990-e45b-432d-b895-e2f9d4f354fd"))
+		(uuid "f2c1baca-291a-426e-8249-945f0faf72f6"))
 	(label "AIN0"
 		(at 144.78 102.87 270)
 		(fields_autoplaced yes)
@@ -5867,7 +5867,7 @@
 			(font
 				(size 1.27 1.27))
 			(justify right bottom))
-		(uuid "b46ad8da-a551-4dbc-84cc-eeeee048ecd2"))
+		(uuid "f8cd6334-5651-4e7c-a765-b338f4e5fca9"))
 	(symbol
 		(lib_id "Connector:Screw_Terminal_01x03")
 		(at 43.18 133.35 0)
@@ -5876,8 +5876,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "26357d00-d1d5-4c79-add5-b3af6b9b6905")
-		(property "Reference" "J38"
+		(uuid "f6817a6e-d242-4228-a57f-9564ffbd9d7d")
+		(property "Reference" "J37"
 			(at 38.1 128.27 0)
 			(effects
 				(font
@@ -5912,15 +5912,15 @@
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "4ebd530d-6c0c-4be4-8687-e220b4519953"))
+			(uuid "fd5c4fe9-8007-438b-bbe3-3a42a73e39c2"))
 		(pin "2"
-			(uuid "2fb51d59-cc2b-4946-bb8a-da93993e0a73"))
+			(uuid "90bc56ad-194a-4d0f-99fd-2d8b0d12841d"))
 		(pin "3"
-			(uuid "5197ab92-1957-41f5-877a-1b841a38fc41"))
+			(uuid "f88307af-5cc5-4d1e-b9df-33f67d99af89"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "J38")
+					(reference "J37")
 					(unit 1)))))
 	(wire
 		(pts
@@ -5929,7 +5929,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "677ece0b-9fd0-4bb4-92ba-cd7416e915c5"))
+		(uuid "7c743398-6f09-47dd-a32b-ac82aafaf4e8"))
 	(global_label "+5V_EXT"
 		(shape bidirectional)
 		(at 35.56 130.81 180)
@@ -5938,7 +5938,7 @@
 			(font
 				(size 1.27 1.27))
 			(justify right))
-		(uuid "17ef5ec8-1c22-4c84-acef-cbcc920abf6e")
+		(uuid "23b239e6-8770-4bf2-8da2-1ead383ba6bc")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 35.56 130.81 0)
 			(effects
@@ -5952,7 +5952,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "cd777798-572c-4f57-939b-8a9260fd121b"))
+		(uuid "a1200a33-d130-4ca2-afd6-01851801e954"))
 	(label "AIN1_IN"
 		(at 35.56 133.35 180)
 		(fields_autoplaced yes)
@@ -5960,7 +5960,7 @@
 			(font
 				(size 1.27 1.27))
 			(justify right bottom))
-		(uuid "ca979bed-7e89-4ca9-aaba-6ba0dd2eb12c"))
+		(uuid "ee2d76f3-9ce7-498b-b934-37bc21e149d0"))
 	(wire
 		(pts
 			(xy 38.1 135.89)
@@ -5968,7 +5968,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "368eed89-22b6-4788-82fb-0bd1eb6f19aa"))
+		(uuid "5de78ee9-cd8c-4f8e-a2c7-52e81a715e83"))
 	(symbol
 		(lib_id "power:GND")
 		(at 35.56 135.89 270)
@@ -5977,8 +5977,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "93aa643b-f773-4124-88d6-a3f5f838075c")
-		(property "Reference" "#PWR239"
+		(uuid "54d2e827-9177-4850-a113-7540fe6dbb6b")
+		(property "Reference" "#PWR237"
 			(at 35.56 133.35 0)
 			(effects
 				(font
@@ -6008,11 +6008,11 @@
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "d6469d07-9325-4587-a9b7-d958e31046b8"))
+			(uuid "bfc0b37c-b20f-4275-8519-b136987305e0"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "#PWR239")
+					(reference "#PWR237")
 					(unit 1)))))
 	(symbol
 		(lib_id "Device:R")
@@ -6022,8 +6022,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "29df2406-8635-466d-80b9-b1fb0b9ac18d")
-		(property "Reference" "R98"
+		(uuid "b6719bd8-a6db-4d79-a3cb-f0899b707e69")
+		(property "Reference" "R66"
 			(at 68.58 130.81 0)
 			(effects
 				(font
@@ -6033,7 +6033,7 @@
 			(effects
 				(font
 					(size 1.27 1.27))))
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 68.58 133.35 0)
 			(effects
 				(font
@@ -6051,20 +6051,20 @@
 				(font
 					(size 1.27 1.27))
 				(hide yes)))
-		(property "LCSC" "C17414"
+		(property "LCSC" "C25804"
 			(at 68.58 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "324e6266-1168-427f-847d-50b48c1f551b"))
+			(uuid "f9909560-e59d-4608-9b73-3ace8e8289bb"))
 		(pin "2"
-			(uuid "b94a1978-926b-41e8-b531-8898c74ac99b"))
+			(uuid "deb04f6e-e30f-45c8-a721-70ab3d0d8f8b"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "R98")
+					(reference "R66")
 					(unit 1)))))
 	(wire
 		(pts
@@ -6073,7 +6073,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "9714b516-00b6-42e6-bfcf-5456a2024c10"))
+		(uuid "4ad4c455-fe47-46d0-9687-72d1870a752d"))
 	(label "AIN1_IN"
 		(at 62.23 133.35 180)
 		(fields_autoplaced yes)
@@ -6081,7 +6081,7 @@
 			(font
 				(size 1.27 1.27))
 			(justify right bottom))
-		(uuid "9a165794-1863-481e-8146-fdaea8d11973"))
+		(uuid "6a15b734-aaba-4374-b935-546787f716fb"))
 	(wire
 		(pts
 			(xy 72.39 133.35)
@@ -6089,7 +6089,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "eda4033e-5c06-4d7d-9915-a5f9dc0dadd5"))
+		(uuid "4eae1fbe-6b9d-46f1-9f23-bda4686a3882"))
 	(label "AIN1"
 		(at 74.93 133.35 0)
 		(fields_autoplaced yes)
@@ -6097,7 +6097,7 @@
 			(font
 				(size 1.27 1.27))
 			(justify left bottom))
-		(uuid "c6f01d39-928a-42c7-8511-830629584881"))
+		(uuid "c9201136-bb55-4dae-ba79-b405d70492c9"))
 	(symbol
 		(lib_id "Device:R")
 		(at 102.87 133.35 90)
@@ -6106,8 +6106,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "85c288c3-90b2-44ec-a1a2-f90a695c4117")
-		(property "Reference" "R99"
+		(uuid "03d12d9a-23a8-42b5-af77-f29db9f1e454")
+		(property "Reference" "R67"
 			(at 102.87 130.81 0)
 			(effects
 				(font
@@ -6117,7 +6117,7 @@
 			(effects
 				(font
 					(size 1.27 1.27))))
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 102.87 133.35 0)
 			(effects
 				(font
@@ -6135,20 +6135,20 @@
 				(font
 					(size 1.27 1.27))
 				(hide yes)))
-		(property "LCSC" "C4328"
+		(property "LCSC" "C4184"
 			(at 102.87 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "6af5cf62-14de-4566-9024-ca728b5da2e3"))
+			(uuid "849557e3-2654-4138-b0ca-6efb676b9915"))
 		(pin "2"
-			(uuid "dc3fc53a-06b7-496b-a556-7438e660e09d"))
+			(uuid "c5fa31c4-9302-4949-af4b-9fc854b6c302"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "R99")
+					(reference "R67")
 					(unit 1)))))
 	(wire
 		(pts
@@ -6157,7 +6157,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "325dc050-ed6e-4a78-a54c-853af34d2008"))
+		(uuid "c525f14a-fc1f-48a9-b383-ff013e8682f5"))
 	(label "AIN1"
 		(at 96.52 133.35 180)
 		(fields_autoplaced yes)
@@ -6165,7 +6165,7 @@
 			(font
 				(size 1.27 1.27))
 			(justify right bottom))
-		(uuid "80bd58c1-3d4a-4430-bb03-eae290b83bc1"))
+		(uuid "c4230b7c-dafb-4b3b-9d2a-5077434616bd"))
 	(wire
 		(pts
 			(xy 106.68 133.35)
@@ -6173,7 +6173,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "d573c25b-a3d1-40dc-ab6f-f7ff30fbf61e"))
+		(uuid "79678260-b737-45b9-be43-4f628597d03c"))
 	(symbol
 		(lib_id "power:GND")
 		(at 109.22 133.35 90)
@@ -6182,8 +6182,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "2980950f-9953-4430-96e1-dd24c64c5456")
-		(property "Reference" "#PWR240"
+		(uuid "fa152799-ca7d-48bf-9197-254ed786cc9f")
+		(property "Reference" "#PWR238"
 			(at 109.22 130.81 0)
 			(effects
 				(font
@@ -6213,11 +6213,11 @@
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "6530fba9-f7ef-47e9-b2da-3c5ae654f9a4"))
+			(uuid "d97f847f-6d8f-43aa-b45a-8b74fa6cc6d1"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "#PWR240")
+					(reference "#PWR238")
 					(unit 1)))))
 	(symbol
 		(lib_id "Device:C")
@@ -6227,8 +6227,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a19a3404-16dd-4dff-9fd9-b91d51df95f9")
-		(property "Reference" "C26"
+		(uuid "d1420b80-b72a-44ad-80ce-a1d72ef9e0b1")
+		(property "Reference" "C28"
 			(at 121.92 127 0)
 			(effects
 				(font
@@ -6238,7 +6238,7 @@
 			(effects
 				(font
 					(size 1.27 1.27))))
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 121.92 133.35 0)
 			(effects
 				(font
@@ -6256,20 +6256,20 @@
 				(font
 					(size 1.27 1.27))
 				(hide yes)))
-		(property "LCSC" "C15850"
+		(property "LCSC" "C19702"
 			(at 121.92 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "ccec4236-6ada-41ec-acf4-7cebd71f469a"))
+			(uuid "a0d5d727-e2b2-44cf-9cdc-610acf123b6f"))
 		(pin "2"
-			(uuid "6aaafef1-705c-497e-bda9-9b394ec48b90"))
+			(uuid "3af59a26-e5f1-4704-b9f8-59e449736c75"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "C26")
+					(reference "C28")
 					(unit 1)))))
 	(wire
 		(pts
@@ -6278,7 +6278,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "0066f889-4019-4f8e-98ce-9796d3ab88a7"))
+		(uuid "6c4cb7d5-f96a-4d0a-8667-c44a4c83c6d5"))
 	(label "AIN1"
 		(at 121.92 127 90)
 		(fields_autoplaced yes)
@@ -6286,7 +6286,7 @@
 			(font
 				(size 1.27 1.27))
 			(justify left bottom))
-		(uuid "904a96c4-ca12-4509-a4bb-bebee7b75e53"))
+		(uuid "78d709ea-92da-4760-85e4-ed969278c0e8"))
 	(wire
 		(pts
 			(xy 121.92 137.16)
@@ -6294,7 +6294,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "74402de6-67df-46c3-9d87-ee36d9a59b00"))
+		(uuid "5e8f1157-e8b3-492f-a9bb-5849809835e6"))
 	(symbol
 		(lib_id "power:GND")
 		(at 121.92 139.7 0)
@@ -6303,8 +6303,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "d358c728-ac9c-4d1a-8d14-0dea7453d1a4")
-		(property "Reference" "#PWR241"
+		(uuid "29d32043-235c-4a8d-84d4-8dc5955cb3c1")
+		(property "Reference" "#PWR239"
 			(at 121.92 137.16 0)
 			(effects
 				(font
@@ -6334,11 +6334,11 @@
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "30e5804f-7de2-4b9e-87fb-64736094a764"))
+			(uuid "7c91923d-d691-4738-b95e-be8a8e94a359"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "#PWR241")
+					(reference "#PWR239")
 					(unit 1)))))
 	(symbol
 		(lib_id "Diode:BAT54S")
@@ -6348,8 +6348,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6270ed2a-fdc2-462b-b313-4c87730af68b")
-		(property "Reference" "D37"
+		(uuid "71fd31f3-2e97-4d43-b806-0f2735e09c6c")
+		(property "Reference" "D36"
 			(at 144.78 124.46 0)
 			(effects
 				(font
@@ -6384,15 +6384,15 @@
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "f5fc3022-93fc-4a24-ab31-34c66ec39cbc"))
+			(uuid "a12d4e45-b83a-441b-b90f-277fc2d56414"))
 		(pin "2"
-			(uuid "4bde8670-1197-4bab-8adc-e70e9e19902c"))
+			(uuid "47ae6f99-b519-4b8d-98f3-6c9b8b8a2f7a"))
 		(pin "3"
-			(uuid "e55debb5-6214-4317-b488-c598a7ba9247"))
+			(uuid "b8f7218c-67f2-4e1c-b4b5-07fd89de33b3"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "D37")
+					(reference "D36")
 					(unit 1)))))
 	(wire
 		(pts
@@ -6401,7 +6401,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "b4878395-2080-4908-946b-a3a75b41d9e3"))
+		(uuid "87bba10b-7d67-4e1e-a7f2-355ee93b4043"))
 	(symbol
 		(lib_id "power:GND")
 		(at 134.62 127 270)
@@ -6410,8 +6410,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "bc60472e-5ea6-4083-8dde-bc7cd4cb9a00")
-		(property "Reference" "#PWR242"
+		(uuid "297f8200-62cf-4b37-a1de-b82b4037c333")
+		(property "Reference" "#PWR240"
 			(at 134.62 124.46 0)
 			(effects
 				(font
@@ -6441,11 +6441,11 @@
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "fd01f3cd-6460-41d8-b7ad-f9605811bbc9"))
+			(uuid "d7624de8-ed37-42cb-8cac-3667fbb21fd8"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "#PWR242")
+					(reference "#PWR240")
 					(unit 1)))))
 	(wire
 		(pts
@@ -6454,7 +6454,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "d8b48121-0534-443e-a5b1-900d42a9a894"))
+		(uuid "ab84aabe-f515-4cc6-9d3f-644eaf6f11e2"))
 	(symbol
 		(lib_id "power:+3V3")
 		(at 154.94 127 270)
@@ -6463,8 +6463,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "a6ab2d33-b06a-448c-aa5c-6a163a835476")
-		(property "Reference" "#PWR243"
+		(uuid "6c6f8d75-4371-481e-8e99-516001321c60")
+		(property "Reference" "#PWR241"
 			(at 154.94 124.46 0)
 			(effects
 				(font
@@ -6494,11 +6494,11 @@
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "e830f35a-d133-4911-8e99-f0ea3cc65b48"))
+			(uuid "f0b43eff-52e4-4692-abde-adb923b5d3f3"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "#PWR243")
+					(reference "#PWR241")
 					(unit 1)))))
 	(wire
 		(pts
@@ -6507,7 +6507,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "43bc8d5d-066c-4020-ab0a-94c4d1f4f430"))
+		(uuid "fd3dfaea-1612-47be-91c0-6fa1a4bc078d"))
 	(label "AIN1"
 		(at 144.78 134.62 270)
 		(fields_autoplaced yes)
@@ -6515,7 +6515,7 @@
 			(font
 				(size 1.27 1.27))
 			(justify right bottom))
-		(uuid "819ee357-e6ab-42ab-ba71-162f15f410b8"))
+		(uuid "e87e9717-9716-4180-ba22-095a159db570"))
 	(symbol
 		(lib_id "Device:R")
 		(at 38.1 158.75 90)
@@ -6524,8 +6524,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c753872f-e639-4edd-be62-4cbac0c177d5")
-		(property "Reference" "R100"
+		(uuid "d0e2991b-10ed-4034-ac9c-659d021a399f")
+		(property "Reference" "R68"
 			(at 38.1 156.21 0)
 			(effects
 				(font
@@ -6535,7 +6535,7 @@
 			(effects
 				(font
 					(size 1.27 1.27))))
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 38.1 158.75 0)
 			(effects
 				(font
@@ -6553,20 +6553,20 @@
 				(font
 					(size 1.27 1.27))
 				(hide yes)))
-		(property "LCSC" "C4328"
+		(property "LCSC" "C4184"
 			(at 38.1 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "7636dac5-3426-41cb-9d0a-d6fab6388a2f"))
+			(uuid "affb7d7b-cdbc-4aee-8acc-8aa6da3a1700"))
 		(pin "2"
-			(uuid "90fab9c6-f443-4eb6-ac91-2fb1b1d36577"))
+			(uuid "6fe0bb1a-af87-4cd0-bd1f-417834c41e2e"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "R100")
+					(reference "R68")
 					(unit 1)))))
 	(wire
 		(pts
@@ -6575,7 +6575,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "4fef49b3-f998-4d36-a08e-ccedb234da2c"))
+		(uuid "584c76c4-e65f-4ab3-bb33-d9d17911f809"))
 	(label "AIN3"
 		(at 31.75 158.75 180)
 		(fields_autoplaced yes)
@@ -6583,7 +6583,7 @@
 			(font
 				(size 1.27 1.27))
 			(justify right bottom))
-		(uuid "30b2ce3e-8b46-4afd-add5-7acbab9517cd"))
+		(uuid "f4ed2985-7b76-443f-833b-95027bc2b356"))
 	(wire
 		(pts
 			(xy 41.91 158.75)
@@ -6591,7 +6591,7 @@
 		(stroke
 			(width 0)
 			(type default))
-		(uuid "55fc3cf0-b82a-4689-91af-7a2fcce37b85"))
+		(uuid "c94c1a43-a55b-4deb-b2c5-877bdac79652"))
 	(symbol
 		(lib_id "power:GND")
 		(at 44.45 158.75 90)
@@ -6600,8 +6600,8 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(uuid "826af072-103d-40b8-bcc7-f3e32dbf617e")
-		(property "Reference" "#PWR244"
+		(uuid "8c9ec4f9-80c2-44b1-a7d0-67dc1b72b13c")
+		(property "Reference" "#PWR242"
 			(at 44.45 156.21 0)
 			(effects
 				(font
@@ -6631,11 +6631,11 @@
 					(size 1.27 1.27))
 				(hide yes)))
 		(pin "1"
-			(uuid "6ed93ee8-0b28-4d79-b693-c085f7215ba4"))
+			(uuid "4040e782-7763-437f-a8bc-de9d0e44702b"))
 		(instances
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc/7f54e82c-99a9-49f3-9f13-2c730539fa02"
-					(reference "#PWR244")
+					(reference "#PWR242")
 					(unit 1)))))
 	(text "AIN3 divider (completes 10k/20k like AIN0..2)"
 		(exclude_from_sim no)
@@ -6644,5 +6644,5 @@
 			(font
 				(size 1.8 1.8))
 			(justify left top))
-		(uuid "01006d7c-b9ce-4332-aad3-e4853d87c7f5"))
+		(uuid "0cab0e92-529a-4977-8463-c2cf0d057a69"))
 )

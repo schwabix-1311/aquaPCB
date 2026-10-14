@@ -268,7 +268,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "7cd1c5ee-fb48-47c9-9457-0fa1df00371a")
+		(uuid "3e226b70-7cad-4095-9d7a-492528e6c9bf")
 		(property "Sheetname" "PWM outputs: PCA9685 #1, DC + LED ports, feeder"
 			(at 30.48 151.688 0)
 			(show_name no)
@@ -314,7 +314,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "b125e8cb-6ae7-4bae-8377-4e8cad8b1b83")
+		(uuid "0b0bf2b2-0b99-45c8-a304-16c1872e7674")
 		(property "Sheetname" "Power bars: PCA9685 #2, float backups"
 			(at 106.68 151.688 0)
 			(show_name no)
@@ -360,7 +360,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "1d33e4e5-9d82-4897-8268-920839532bcd")
+		(uuid "b66217c8-ed95-4c5f-bdfd-7bc5947cd560")
 		(property "Sheetname" "Sensor inputs, +5V_EXT, 5 V I2C"
 			(at 182.88 151.688 0)
 			(show_name no)
