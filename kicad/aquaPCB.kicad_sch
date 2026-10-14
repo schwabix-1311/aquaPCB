@@ -24,6 +24,98 @@
 		(uuid "12e826b9-4fed-4c01-9caa-8e795e9e8659")
 	)
 	(sheet
+		(at 106.68 152.4)
+		(size 55.88 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "0b0bf2b2-0b99-45c8-a304-16c1872e7674")
+		(property "Sheetname" "Power bars: PCA9685 #2, float backups"
+			(at 106.68 151.688 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "powerbar.kicad_sch"
+			(at 106.68 170.768 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/80232f81-1179-4777-a7f0-674a974d53cc"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 30.48 152.4)
+		(size 55.88 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "3e226b70-7cad-4095-9d7a-492528e6c9bf")
+		(property "Sheetname" "PWM outputs: PCA9685 #1, DC + LED ports, feeder"
+			(at 30.48 151.688 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "pwm.kicad_sch"
+			(at 30.48 170.768 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/80232f81-1179-4777-a7f0-674a974d53cc"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 30.48 76.2)
 		(size 55.88 17.78)
 		(exclude_from_sim no)
@@ -208,6 +300,52 @@
 		)
 	)
 	(sheet
+		(at 106.68 76.2)
+		(size 55.88 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "b66217c8-ed95-4c5f-bdfd-7bc5947cd560")
+		(property "Sheetname" "Sensor inputs, +5V_EXT, 5 V I2C"
+			(at 106.68 75.488 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sensors.kicad_sch"
+			(at 106.68 94.568 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "aquaPCB"
+				(path "/80232f81-1179-4777-a7f0-674a974d53cc"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 106.68 38.1)
 		(size 55.88 17.78)
 		(exclude_from_sim no)
@@ -249,144 +387,6 @@
 			(project "aquaPCB"
 				(path "/80232f81-1179-4777-a7f0-674a974d53cc"
 					(page "3")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 30.48 152.4)
-		(size 55.88 17.78)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "3e226b70-7cad-4095-9d7a-492528e6c9bf")
-		(property "Sheetname" "PWM outputs: PCA9685 #1, DC + LED ports, feeder"
-			(at 30.48 151.688 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "pwm.kicad_sch"
-			(at 30.48 170.768 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc"
-					(page "7")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 106.68 152.4)
-		(size 55.88 17.78)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "0b0bf2b2-0b99-45c8-a304-16c1872e7674")
-		(property "Sheetname" "Power bars: PCA9685 #2, float backups"
-			(at 106.68 151.688 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "powerbar.kicad_sch"
-			(at 106.68 170.768 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc"
-					(page "8")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 182.88 152.4)
-		(size 55.88 17.78)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "b66217c8-ed95-4c5f-bdfd-7bc5947cd560")
-		(property "Sheetname" "Sensor inputs, +5V_EXT, 5 V I2C"
-			(at 182.88 151.688 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "sensors.kicad_sch"
-			(at 182.88 170.768 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "aquaPCB"
-				(path "/80232f81-1179-4777-a7f0-674a974d53cc"
-					(page "9")
 				)
 			)
 		)
