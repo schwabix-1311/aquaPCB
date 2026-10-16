@@ -368,7 +368,8 @@ Backup floats   2x 2-pole terminal     in series with bar 1 outlets 1/2, pull-do
 Feeder          power bar header       no own port: pins 10 (+3V3_EXT) / any channel / 9 (GND)
 Temp            1x 3-pole terminal     1-Wire on GPIO 4, +5 V / Data / GND order as v3;
                                        one bus, both probes into the same terminal
-I2C             3.3 V header (as v1)   + optional 5 V header behind a PCA9306 level shifter
+I2C             3.3 V headers (as v1)  3.3 V only (decided 2026-10-15): 5 V-only modules via an
+                                       external level-shifter breakout
 Analog / pH     4x 3-pole socket       one per ADS1115 input AIN0..AIN3, all identical,
                 (+5 V / SIG / GND)     0-5 V each; pH/ORP amplifiers sit on add-on
                                        modules (see below), no reference input
@@ -400,6 +401,10 @@ Design rules behind this table:
   Pi boots - unlike v3, where the bar pins are raw GPIOs including boot-time pull-ups.
   Addresses fixed: PCA #1 0x40, PCA #2 0x41 (decided 2026-10-13); keep the PCA9685 All-Call
   address (0x70) in mind for other I²C devices.
+- **PCA #2 channel -> outlet** (decided 2026-10-17): outlet n of bar 1 = ch n-1, of bar 2 =
+  ch n+7, so the port order needs no explanation. Both power bar headers (J32, J33) are placed
+  rotated by 180° on the board; their pinout is unchanged, only the key and the ribbon point
+  the other way.
 - **/OE of both PCA9685 tied to GND** (decided 2026-10-13, after the NXP datasheet Rev. 4):
   power-on reset sets every output "full OFF" (LOW), so a cold start is safe. The chip is only
   reset when VDD drops below 0.2 V or by the I²C software reset - a Pi reboot or crash does
@@ -581,7 +586,7 @@ Power Bar 1/2 (DB9)     header + DB9 adapter    PCA9685 #2 ch 0..7 / 8..15
 AC1/AC2 backup floats   float terminals         hardware only
 Feeder (+3.3V/Sig/GND)  power bar hdr 10/ch/9   PCA9685 #2 channel of the chosen bar pin
 Temp 1/2                one Temp terminal       1-Wire GPIO 4, both probes on one bus
-I2C                     5 V I2C header          bus 1
+I2C (+5 V)              3.3 V I2C header        bus 1; 5 V add-ons via external level shifter
 pH BNC                  pH/ORP add-on module    ADS1115 input (aquaPi; reef-pi: TBD)
 Power in (barrel plug)  J1 push-in terminal     barrel-to-terminal adapter (<€1)
 ```
@@ -617,7 +622,7 @@ AIN1              PH_REF monitor -> "ADC #1 in 1"    socket 2, 0-5 V -> "ADC #1 
 AIN2              module input 0-5 V                 socket 3, 0-5 V -> "ADC #1 in 2"
 AIN3              general 0-3.3 V                    socket 4, 0-5 V -> "ADC #1 in 3"
 (later)           -                                  differential pairs [S] "ADC #1 in 0-1"/"2-3"
-I2C               3.3 V header, GPIO 2/3             + optional 5 V header (PCA9306)
+I2C               3.3 V header, GPIO 2/3             unchanged, 3.3 V only (no 5 V variant)
 I2C addresses     ADS1115 0x48                       + PCA9685 #1 0x40, #2 0x41 (fixed);
                                                      keep 0x70 (All-Call) free
 display SPI       GPIO 7..11, 24, 25                 open: not decided for v2
@@ -639,7 +644,6 @@ ADDED
   74HCT buffers for 14x 0-5 V PWM       DC + LED ports -> 2x 74HCT244PW (TSSOP-20)
   8x 4x100R arrays (0603x4)             series resistors of the 14 PWM + 16 power bar lines
   AMS1117-3.3                           +3V3_EXT for the feeder (power bar header pin 10)
-  PCA9306 (I²C level shifter)           optional 5 V I²C header
   sensor-input protection, 6 inputs     5 V tolerant, no jumpers -> 1k series + BAT54S
   BAT54S clamps, 4 analog sockets       after the 10k/20k divider + RC
   PTC/fuse for +5 V (+5V_EXT)           sensor header, analog sockets, 1-Wire terminal

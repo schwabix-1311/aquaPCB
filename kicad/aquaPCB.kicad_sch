@@ -315,7 +315,7 @@
 			(color 0 0 0 0)
 		)
 		(uuid "b66217c8-ed95-4c5f-bdfd-7bc5947cd560")
-		(property "Sheetname" "Sensor inputs, +5V_EXT, 5 V I2C"
+		(property "Sheetname" "Sensor inputs, +5V_EXT"
 			(at 106.68 75.488 0)
 			(show_name no)
 			(do_not_autoplace no)

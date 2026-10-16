@@ -798,7 +798,7 @@
     ],
     [
       "b66217c8-ed95-4c5f-bdfd-7bc5947cd560",
-      "Sensor inputs, +5V_EXT, 5 V I2C"
+      "Sensor inputs, +5V_EXT"
     ]
   ],
   "text_variables": {},
