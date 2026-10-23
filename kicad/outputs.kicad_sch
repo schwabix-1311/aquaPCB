@@ -7356,7 +7356,7 @@
 				)
 			)
 		)
-		(property "Value" "GPIO16"
+		(property "Value" "PCA#1 ch13"
 			(at 39.37 221.742 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8915,7 +8915,7 @@
 				)
 			)
 		)
-		(property "Value" "GPIO12"
+		(property "Value" "PCA#1 ch15"
 			(at 94.234 145.542 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10489,7 +10489,7 @@
 				)
 			)
 		)
-		(property "Value" "GPIO26"
+		(property "Value" "PCA#1 ch12"
 			(at 94.361 221.869 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11205,7 +11205,7 @@
 				)
 			)
 		)
-		(property "Value" "GPIO13"
+		(property "Value" "PCA#1 ch14"
 			(at 39.878 182.372 90)
 			(show_name no)
 			(do_not_autoplace no)

@@ -4832,6 +4832,17 @@
 				)
 			)
 		)
+		(property "LCSC" "C69688"
+			(at 25.4 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "7a9f3551-7708-45b8-a9af-aaecfa41de37")
 		)
