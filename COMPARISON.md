@@ -1,7 +1,8 @@
 # aquaPCB compared to other Raspberry Pi aquarium boards
 
 *As of October 2026. Prices are shop listings found at that time and change;
-aquaPCB has no prototype yet, so its figures are design values.*
+aquaPCB has no prototype yet, so its figures are design values. The table compares v1;
+v2 adds Robo-Tank v3 compatibility, see the README's v2 plan.*
 
 aquaPCB is a base board for running [aquaPi](https://github.com/schwabix-1311/aquaPI)
 on a Raspberry Pi. The closest alternatives are boards made for

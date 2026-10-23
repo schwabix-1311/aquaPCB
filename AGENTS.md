@@ -32,12 +32,14 @@ files and don't run git commands there. Reading aquaPi for context is fine.
   and `kicad/.history`. Make minimal, surgical edits, or ask the user to make the change in
   KiCad.
 - After schematic changes, compare the connectivity (netlist) with the last verified state, and
-  run ERC/DRC with `kicad-cli` (`sch erc`, `pcb drc`). Both are clean on v1.
+  run ERC/DRC with `kicad-cli` (`sch erc`, `pcb drc`). v1: both clean. v2 (`kicad/`): ERC clean,
+  DRC without errors - the deliberate ADC socket courtyard overlap is waived by a custom rule in
+  `kicad/aquaPCB.kicad_dru`; the remaining warnings are silkscreen only.
 - Read the board origin from `Edge.Cuts`; don't assume coordinates.
 
 ## Branches and versions
 
-- `main` - current work, including the v2 plan (Robo-Tank v3 compatible head unit).
+- `main` - current work: v2 (Robo-Tank v3 compatible head unit), layout complete 2026-10-23.
 - `release/v1` - v1 as a restart point if v2 is dropped. Tags: `v1` (finished layout),
   `v1.0.1` (doc fixes). Fixes that are valid for v1 are committed on `release/v1`, tagged
   there, and merged into `main` with a real merge. v2-only changes go to `main` only.

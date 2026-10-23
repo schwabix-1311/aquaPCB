@@ -1,39 +1,51 @@
 # aquaPCB
 
 Raspberry Pi base board for [aquaPi](https://github.com/schwabix-1311/aquaPI), the
-modular aquarium controller. One board with a 12 V supply input, power outputs for
-LED lamps and fans, control outputs for external SSRs/relays, digital inputs, 1-Wire,
-an on-board ADS1115 with pH front end, and headers for a small display and I²C add-ons.
+modular aquarium controller. v2 is a head unit that also fits Robo-Tank v3 modules, cables
+and power bars (through adapter cables): one board with a 12-24 V supply input, six 5 A
+power outputs, DC and LED ports with 7 PWM channels each, two power bar ports, six sensor
+inputs, 1-Wire, four 0-5 V analog sockets on an ADS1115, and headers for a small display
+and I²C add-ons.
 
-aquaPi needs no special support: every channel is a plain GPIO, hardware PWM, 1-Wire or
-I²C port that aquaPi discovers by itself and offers in its Wiring editor.
+Most channels are plain GPIO, hardware PWM, 1-Wire or I²C ports that aquaPi discovers by
+itself and offers in its Wiring editor. The channels on the two PCA9685 PWM expanders
+(DC/LED ports, Q2/Q3/Q5/Q6, power bars) need a PCA9685 driver in aquaPi, which is not
+written yet.
 
-> Status: **v1 layout complete** (tag `v1.0.1`, branch `release/v1`): schematic ERC clean,
-> board fully routed, DRC clean; no prototypes built yet. Fabrication is on hold while
-> the [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit) is checked for budget and
-> sense - if v2 is dropped, v1 continues with fab outputs and a 1:1 print check.
+> Status: **v2 layout complete** on `main` (2026-10-23): schematic ERC clean, board fully
+> routed, DRC without errors (silkscreen warnings only; the deliberate overlap of the ADC
+> socket courtyards is waived by a rule in `kicad/aquaPCB.kicad_dru`). No prototypes built
+> yet; the [open questions](#open-questions-asked-to-robo-tank-or-measure) and the aquaPi
+> PCA9685 driver are still pending. v1 (tag `v1.0.1`, branch `release/v1`, layout complete,
+> DRC clean) stays the restart point. Sections marked *v1* below still describe v1; v2
+> changes are in the [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
 > Not a beginner kit: SMD parts are assembled by the PCB fab (JLCPCB economic PCBA);
 > only through-hole connectors are hand-soldered.
 
 ## Key figures
 
 ```
-Supply          12 V DC, 8 A max total (parts rated >= 40 V; 24 V operation planned, not yet validated)
+Supply          12-24 V DC, 8 A max total (parts rated >= 40 V; 24 V operation not yet validated)
 Pi              Zero 2 W plugged on face-up; Pi 3/4 via 40-pin ribbon (Pi 5: own PSU)
-Power outputs   6x low-side MOSFET, 5 A each, 2 with hardware PWM (Q1..Q6)
-SSR outputs     4x open-collector sink, ULN2803A, for SSR / relay modules (S1..S4)
-Inputs          4x protected 3.3 V digital inputs (IN1..IN4)
-1-Wire          GPIO4, 1 sensor terminal (bus: several sensors per terminal), parasitic power supported
-Analog          ADS1115, 16 bit, 4 channels single-ended: on-board pH amplifier (BNC),
-                module input 0..5 V (e.g. PH-4502C, ORP board), general 0..3.3 V input
-Expansion       I2C header (OLED, PCA9685, ...); optional: 2nd I2C header, SPI display header
-Board           100 x 100 mm, 2 layers, 1 oz Cu, 4x M3
+Power outputs   6x low-side MOSFET, 5 A each, 8 A total; Q1/Q4 on hardware PWM,
+                Q2/Q3/Q5/Q6 on PCA9685 #1 (shared with LED port pins 2..5)
+PWM ports       DC port + LED port, 7 channels each, 0-5 V PWM (PCA9685 #1, 74HCT244),
+                2x4 box headers with the Robo-Tank v3 pinout
+Power bars      2 ports x 8 outlets, 3.3 V logic (PCA9685 #2), 2x5 box headers for an IDC DB9
+                adapter; 2 hardware backup float inputs for bar 1 outlets 1/2
+Inputs          6x sensor inputs, 5 V tolerant (GPIO 5,6,20-23), 2x4 box header
+1-Wire          GPIO4, 1 terminal (bus: several sensors per terminal)
+Analog          ADS1115, 16 bit, 4x 0-5 V sockets; pH/ORP amplifiers on add-on modules
+Expansion       2x 3.3 V I2C header, SPI display header
+Board           100 x 100 mm, 2 layers, 1 oz Cu
 ```
 
 No mains voltage on this board. Mains loads (heater, pumps) are switched by external
-SSRs or relay modules driven from S1..S4.
+SSRs or relay modules on the Q outputs, or by Robo-Tank power bars.
 
 ## Block diagram
+
+*v1 - for v2 see [aquaPCB v2 connectors](#aquapcb-v2-connectors) and [v1 -> v2 changes](#v1---v2-changes).*
 
 ```
  12 V in ──[fuse 8A]───[rev.pol. P-FET]──┬──[TVS]── V_IN rail ─────────────┐
@@ -52,6 +64,8 @@ SSRs or relay modules driven from S1..S4.
 ```
 
 ## Pin map (BCM numbering)
+
+*v1 - for v2 see [aquaPCB v2 connectors](#aquapcb-v2-connectors) and [v1 -> v2 changes](#v1---v2-changes).*
 
 Outputs sit on GPIO 9 and above only: those pins default to pull-down at boot, so no load
 switches on while the Pi boots. GPIO 0..8 default to pull-up and are used for inputs and
@@ -83,6 +97,8 @@ Raspberry Pi OS settings: `dtoverlay=pwm-2chan,pin=18,func=2,pin2=19,func2=2`,
 `dtoverlay=w1-gpio,gpiopin=4`, `dtparam=i2c_arm=on`, `dtparam=spi=on` (display only).
 
 ## Circuit blocks
+
+*v1 - for v2 see [aquaPCB v2 connectors](#aquapcb-v2-connectors) and [v1 -> v2 changes](#v1---v2-changes).*
 
 ### Power input
 - 2-pin push-in terminal, 8 A fuse in a Littelfuse OMNI-BLOK holder (replaceable Nano2
@@ -185,6 +201,8 @@ GPIO4 with 4.7 kΩ pull-up to 3.3 V; one 3-pin terminal (GND / DQ / 3V3), so bot
 
 ## Schematic
 
+*v1 - for v2 see [aquaPCB v2 connectors](#aquapcb-v2-connectors) and [v1 -> v2 changes](#v1---v2-changes).*
+
 KiCad 10 project in [kicad/](kicad): root sheet `aquaPCB.kicad_sch` with six sub-sheets
 (power, Pi connector, power outputs, SSR outputs, inputs/1-Wire/display, ADC/pH) and a
 project footprint library `aquaPCB.pretty` (Littelfuse OMNI-BLOK fuse holder).
@@ -264,6 +282,8 @@ signals                   < 0.1 A   0.25 mm
 
 ## Cost estimate
 
+*v1 - for v2 see [aquaPCB v2 connectors](#aquapcb-v2-connectors) and [v1 -> v2 changes](#v1---v2-changes).*
+
 Based on the checked part prices in [BOM.md](BOM.md) (2026-09-29). Fab fees and shipping
 are estimates.
 
@@ -321,8 +341,8 @@ selection:
 
 ## v2 plan: Robo-Tank v3 compatible head unit
 
-*Decided 2026-10-10. Spec only - no schematic yet. v1 (tag `v1.0.1`, branch `release/v1`)
-stays the restart point if v2 is abandoned; v1-only fixes go to `release/v1` and are merged
+*Decided 2026-10-10. Schematic and layout done on `main` (2026-10-23), no prototype yet.
+v1 (tag `v1.0.1`, branch `release/v1`) stays the restart point if v2 is abandoned; v1-only fixes go to `release/v1` and are merged
 into `main`.*
 
 ### Goal
@@ -335,7 +355,8 @@ controllers (v1 Rev A/B+, about 10 v2 boards) get the mapping table only.
 
 Reference: Robo-Tank manual "Controller and its ports" (v3, last updated 2021-12-28),
 linked from robo-tank.ca/reef-pi_Related_User_Manuals. Pin positions below are read from
-its photos - verify with a meter on a real v3 module or cable before layout.
+its photos; pin and channel numbers were re-checked against the manual text on 2026-10-23
+(see [Port by port](#port-by-port)). A meter check on a real v3 module or cable is still advisable.
 
 ### Robo-Tank v3 ports to match
 
@@ -591,6 +612,126 @@ pH BNC                  pH/ORP add-on module    ADS1115 input (aquaPi; reef-pi: 
 Power in (barrel plug)  J1 push-in terminal     barrel-to-terminal adapter (<€1)
 ```
 
+#### Port by port
+
+Checked 2026-10-23 against the Robo-Tank v3 manual "Controller and its ports" (last updated
+2021-12-28) and the aquaPCB v2 netlist. In reef-pi, the "pin" of driver "Extra Ports - PCA9685" is
+the PCA9685 channel. aquaPi port names are the IoRegistry pattern; the PCA9685 ones are suggestions
+until aquaPi has a PCA9685 driver, the board silkscreen uses them shortened (`PCA#1 ch15`).
+
+**DC ports - identical.** Same pins, same channels (PCA #1, 0x40), so v3 cables, the DC Ports module
+and existing reef-pi settings keep working. The irregular channel order is Robo-Tank's.
+
+```
+pin   Robo-Tank v3      aquaPCB v2 (J28)    aquaPi port
+1     GND               GND
+2     ch 9              ch 9                "PCA9685 #1 ch 9"
+3     ch 6              ch 6                "PCA9685 #1 ch 6"
+4     ch 7              ch 7                "PCA9685 #1 ch 7"
+5     ch 4              ch 4                "PCA9685 #1 ch 4"
+6     ch 3              ch 3                "PCA9685 #1 ch 3"
+7     ch 2              ch 2                "PCA9685 #1 ch 2"
+8     ch 1              ch 1                "PCA9685 #1 ch 1"
+```
+
+**LED ports - identical, plus the Q outputs.** Same pins and channels. On aquaPCB, pins 2..5 also
+drive the power outputs Q2, Q3, Q5, Q6 through the gate buffer: a Q output and its LED pin always
+switch together. Use either the LED pin or the Q output of a pair, not both for different loads.
+
+```
+pin   Robo-Tank v3      aquaPCB v2 (J29)    shared with   aquaPi port
+1     GND               GND
+2     ch 15             ch 15               Q2 (J5)       "PCA9685 #1 ch 15"
+3     ch 14             ch 14               Q3 (J6)       "PCA9685 #1 ch 14"
+4     ch 13             ch 13               Q5 (J8)       "PCA9685 #1 ch 13"
+5     ch 12             ch 12               Q6 (J9)       "PCA9685 #1 ch 12"
+6     ch 11             ch 11                             "PCA9685 #1 ch 11"
+7     ch 10             ch 10                             "PCA9685 #1 ch 10"
+8     ch 8              ch 8                              "PCA9685 #1 ch 8"
+```
+
+PCA #1 ch 0 (the v3 feeder) and ch 5 stay free on aquaPCB.
+
+**Power outputs Q1..Q6 - aquaPCB only.** Low-side MOSFETs, terminal pair +V_IN / OUT, max 5 A
+each, 8 A in total.
+
+```
+output   terminal   driven by                  aquaPi port
+Q1       J4         GPIO 18, hardware PWM0     "PWM 0"
+Q2       J5         PCA #1 ch 15 (LED pin 2)   "PCA9685 #1 ch 15"
+Q3       J6         PCA #1 ch 14 (LED pin 3)   "PCA9685 #1 ch 14"
+Q4       J7         GPIO 19, hardware PWM1     "PWM 1"
+Q5       J8         PCA #1 ch 13 (LED pin 4)   "PCA9685 #1 ch 13"
+Q6       J9         PCA #1 ch 12 (LED pin 5)   "PCA9685 #1 ch 12"
+```
+
+**Power bars - same plug, different driver.** The DB9 pinout is unchanged (1..4 = outlet 1..4,
+6..9 = outlet 8..5, 5 = GND), reached through the IDC DB9 adapter on the 2x5 header (header pins
+1/3/5/7 = outlet 1..4, 2/4/6/8 = outlet 8..5). But v3 drives the outlets from Pi GPIOs, aquaPCB from
+PCA #2 (0x41): **in reef-pi, every outlet must be moved from driver "Raspberry Pi" to the PCA9685 #2
+driver.** Outlet n of bar 1 is ch n-1, outlet n of bar 2 is ch n+7.
+
+```
+outlet   Robo-Tank v3 bar 1 / bar 2     aquaPCB v2 bar 1 (J32) / bar 2 (J33)
+1        GPIO 21 / GPIO 5               PCA #2 ch 0 / ch 8
+2        GPIO 20 / GPIO 11              PCA #2 ch 1 / ch 9
+3        GPIO 16 / GPIO 9               PCA #2 ch 2 / ch 10
+4        GPIO 6  / GPIO 10              PCA #2 ch 3 / ch 11
+5        GPIO 12 / GPIO 24              PCA #2 ch 4 / ch 12
+6        GPIO 13 / GPIO 25              PCA #2 ch 5 / ch 13
+7        GPIO 19 / GPIO 8               PCA #2 ch 6 / ch 14
+8        GPIO 26 / GPIO 7               PCA #2 ch 7 / ch 15
+```
+
+aquaPi ports: "PCA9685 #2 ch 0" .. "PCA9685 #2 ch 15". Header pin 9 is GND, pin 10 +3V3_EXT (feeder
+supply, not wired by the IDC DB9).
+
+**Backup floats - straight on aquaPCB, crossed on v3.** Both cut an outlet of power bar 1 in
+hardware when the float opens (bridge the terminal if unused, or the outlet stays off). On v3,
+**AC1 cuts outlet 2 and AC2 cuts outlet 1** (manual: "AC1 = Outlet 2 and AC2 = Outlet 1"). On
+aquaPCB, Float 1 cuts outlet 1 and Float 2 cuts outlet 2. A v3 owner moving a float over must swap
+terminals, or the wrong outlet loses its protection.
+
+```
+               Robo-Tank v3        aquaPCB v2
+outlet 1       AC2                 Float 1 (J30), in series with PCA #2 ch 0
+outlet 2       AC1                 Float 2 (J31), in series with PCA #2 ch 1
+```
+
+**Sensors - same pin positions, different GPIOs.** v3 sensor modules plug in unchanged, but the
+reef-pi inputs must be re-assigned; only sensor 6 keeps its GPIO. v3 uses the UART pins 14/15,
+aquaPCB keeps them free. aquaPCB inputs are 5 V tolerant (1 k + clamp), no jumpers.
+
+```
+pin   sensor   Robo-Tank v3   aquaPCB v2 (J34)   aquaPi port
+1     -        GND            GND
+2     6        GPIO 23        GPIO 23            "GPIO 23 in"
+3     5        GPIO 27        GPIO 22            "GPIO 22 in"
+4     4        GPIO 18        GPIO 21            "GPIO 21 in"
+5     3        GPIO 17        GPIO 20            "GPIO 20 in"
+6     2        GPIO 15        GPIO 6             "GPIO 6 in"
+7     1        GPIO 14        GPIO 5             "GPIO 5 in"
+8     -        +5 V           +5V_EXT (fused)
+```
+
+**Feeder - no own port.** v3: 3-pole port on PCA ch 0 (switched GND, < 500 mA). aquaPCB: on a power
+bar header, pin 10 (+3V3_EXT) / any PCA #2 channel as signal / pin 9 (GND). The channel used for the
+feeder can't switch an outlet. Bigger DC loads go on a Q output.
+
+**Temperature - one bus instead of two ports.** v3: Temp 1 on GPIO 4, Temp 2 on GPIO 22 (two
+`w1-gpio` overlays). aquaPCB: one 3-pole terminal (+5 V / data / GND), GPIO 4, all probes on one bus
+(aquaPi: "DS1820 #1", "#2", ...). v3's second overlay must not be copied: GPIO 22 is a sensor input
+on aquaPCB.
+
+**I2C - 3.3 V only.** v3's port is the 5 V side of a level shifter; aquaPCB's I2C headers (J22,
+J23, same bus) are 3.3 V. 5 V-only modules need an external level shifter.
+
+**Analog - aquaPCB only.** Four sockets J37/J36/J27/J26 = "ADC #1 in 0".."in 3", 0-5 V each,
+numbered right to left.
+
+**Power in.** v3: 5.5/2.1 barrel, 12-24 V, at least 1 A. aquaPCB: J1 push-in terminal, 12-24 V,
+8 A total (fuse), sized for the Q output loads.
+
 ### v1 -> v2 changes
 
 Ports with their aquaPi IoRegistry names. Existing names as aquaPi reports them today
@@ -686,7 +827,7 @@ v2 ([Robo-Tank v3 compatible head unit](#v2-plan-robo-tank-v3-compatible-head-un
    – questions sent to info@robo-tank.ca 2026-10-10, waiting for the reply
 3. Budget and sense check → go/no-go; on no-go, continue with v1 step 4
 4. aquaPi PCA9685 driver (needed for the DC/LED ports and power bars)
-5. Schematic and layout, starting from the v1 design
+5. Schematic and layout, starting from the v1 design – done (2026-10-23)
 6. 0-10 V add-on module
 
 ## Licence

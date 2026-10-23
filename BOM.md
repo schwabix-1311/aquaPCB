@@ -1,5 +1,8 @@
 # aquaPCB – Bill of Materials (v1)
 
+> This is the v1 BOM. The v2 part changes (2x PCA9685, 74HCT244 buffers, resistor arrays, ...)
+> are listed in the README under "v1 -> v2 changes"; a priced v2 BOM is still to be compiled.
+
 Prices and stock checked 2026-09-29 (LCSC/JLCPCB parts API, reichelt.de product pages).
 Quantities per board, taken from the schematic (`kicad-cli sch export bom`).
 The ADS1115 address solder jumper JP4 is a PCB feature, no part.
