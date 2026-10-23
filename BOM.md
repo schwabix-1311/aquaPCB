@@ -109,6 +109,12 @@ and sensor port headers come from LCSC.
 - Plain 2×4 / 2×5 pin headers (e.g. A2541WV-2x4P C225519, 254PZ-2x4P-V C53055679): cheaper and better
   stocked, but not keyed – the ports use keyed box headers so a module cable can't be plugged in
   reversed.
+- Plain 2×5 pin header with one pin pulled and a coding insert in the cable socket (instead of the
+  box headers): blocks a reversed plug, but not a socket pushed on offset by one column or row, and
+  the DC/LED/sensor ports use all 8 pins of their 2×4, so they would grow to 2×5 (re-layout) and need
+  extra coding parts on the cable side. Fallback if the 2×4 box header ever runs out: a 2×5 box
+  header (e.g. Reichelt WSL 10G) on those ports with pins 9/10 unconnected – same pinout, keyed, one
+  part type for all five ports; costs the same footprint change and re-layout.
 - PCA9685PW,112 (C2688894): no stock; PCA9685BS (HVQFN-28): different footprint, low stock.
 - PTC alternatives SMD1206P050TF/13.2 (C43379) and 500mA/24V (C2984676) work too, at about twice the
   price; nSMD050 (6 V) is enough on the 5 V rail.
