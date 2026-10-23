@@ -34,7 +34,7 @@ PWM ports       DC port + LED port, 7 channels each, 0-5 V PWM (PCA9685 #1, 74HC
 Power bars      2 ports x 8 outlets, 3.3 V logic (PCA9685 #2), 2x5 box headers for an IDC DB9
                 adapter; 2 hardware backup float inputs for bar 1 outlets 1/2
 Inputs          6x sensor inputs, 5 V tolerant (GPIO 5,6,20-23), 2x4 box header
-1-Wire          GPIO4, 1 terminal (bus: several sensors per terminal)
+1-Wire          GPIO4, 1x3 pin header (bus: several sensors on one header)
 Analog          ADS1115, 16 bit, 4x 0-5 V sockets; pH/ORP amplifiers on add-on modules
 Expansion       2x 3.3 V I2C header, SPI display header
 Board           100 x 100 mm, 2 layers, 1 oz Cu
@@ -282,29 +282,27 @@ signals                   < 0.1 A   0.25 mm
 
 ## Cost estimate
 
-*v1 - for v2 see [aquaPCB v2 connectors](#aquapcb-v2-connectors) and [v1 -> v2 changes](#v1---v2-changes).*
-
-Based on the checked part prices in [BOM.md](BOM.md) (2026-09-29). Fab fees and shipping
-are estimates.
+Based on the checked part prices in [BOM.md](BOM.md) (v2, 2026-10-23; ≈ €0.92 per $). Fab fees,
+shipping and import charges are estimates.
 
 ```
 per board                                     batch 5    batch 10
   PCB 100x100, 2 layers                         ~ €2       ~ €1.5
-  SMD parts (LCSC, checked)                     ~ €8       ~ €7.5
-  PCBA setup + 11 extended-part fees, share     ~ €7.5     ~ €3.75
-  THT parts (LCSC: terminals, fuse, BNC;
-            Reichelt: rest)                     ~ €8       ~ €8
+  SMD parts (LCSC, checked; 2x PCA9685 ~ €6)    ~ €14      ~ €13
+  PCBA setup + 13 extended-part fees, share     ~ €8.5     ~ €4.5
+  THT parts (LCSC: terminals, box headers, fuse;
+            Reichelt: Pi header, pin headers, C1) ~ €5.5   ~ €5.5
   shipping JLC + Reichelt, share                ~ €5       ~ €2.5
-  EU import VAT 19 % + €3 duty/category (JLC)   ~ €4       ~ €3.5
+  EU import VAT 19 % + €3 duty/category (JLC)   ~ €5       ~ €4.5
   -----------------------------------------------------------------
-                                                ~ €35      ~ €27
+                                                ~ €40      ~ €31
 ```
 
-Target limit **≤ €40 per board** at batch 5 is met with margin (about €35) after dropping the UART
-header and two 1-Wire terminals, moving the BNC to LCSC and switching to LCSC push-in terminals.
-The on-board pH amplifier costs about €1.50 (BNC, TLV9062, styroflex). Levers: order 10 boards
-(~€27 each), or leave the on-board pH amplifier unpopulated when an external amplifier board is
-used on AIN2.
+v2 just meets the **≤ €40 per board** target at batch 5 (v1: about €35 / €27). The two PCA9685
+are the largest single item; v2 saves the on-board pH front end, the ULN2803 and four 3-pole
+terminals, but adds two PCA9685, two buffers, eight resistor arrays and the box headers. Levers:
+order 10 boards (~€31 each), or leave the second PCA9685 (power bars) and its arrays unpopulated
+for users without Robo-Tank power bars or a feeder (both run on PCA #2).
 
 ## Not on v1
 
@@ -385,10 +383,11 @@ Sensors         2x4 box header         6 GPIO inputs (5,6,20,21,22,23), 5 V tole
                 (pin n = v3 RJ45 pin n; Robo-Tank modules via an RJ45 adapter cable wired 1:1)
 Power Bar 1, 2  2x5 box header each    PCA #2 ch 0..15, push-pull at 3.3 V like Pi GPIO;
                 + adapter cable        pin 9 GND, pin 10 +3V3_EXT (not wired by the IDC DB9)
-Backup floats   2x 2-pole terminal     in series with bar 1 outlets 1/2, pull-down -> OFF
+Backup floats   2x 1x2 pin header      in series with bar 1 outlets 1/2, pull-down -> OFF;
+                                       a jumper shunt bridges an unused input
 Feeder          power bar header       no own port: pins 10 (+3V3_EXT) / any channel / 9 (GND)
-Temp            1x 3-pole terminal     1-Wire on GPIO 4, +5 V / Data / GND order as v3;
-                                       one bus, both probes into the same terminal
+Temp            1x3 pin header (J19)   1-Wire on GPIO 4, +5 V / Data / GND order as v3;
+                                       one bus, both probes on the same header
 I2C             3.3 V headers (as v1)  3.3 V only (decided 2026-10-15): 5 V-only modules via an
                                        external level-shifter breakout
 Analog / pH     4x 3-pole socket       one per ADS1115 input AIN0..AIN3, all identical,
@@ -604,9 +603,9 @@ LED Ports RJ45          LED header + adapter    PCA9685 ch as on v3, address 0x4
                                                 LED 1..4 also drive Q2/Q3/Q5/Q6
 Sensors RJ45            Sensor header + adapter GPIO 5,6,20,21,22,23 (sensor 1..6)
 Power Bar 1/2 (DB9)     header + DB9 adapter    PCA9685 #2 ch 0..7 / 8..15
-AC1/AC2 backup floats   float terminals         hardware only
+AC1/AC2 backup floats   float headers           hardware only
 Feeder (+3.3V/Sig/GND)  power bar hdr 10/ch/9   PCA9685 #2 channel of the chosen bar pin
-Temp 1/2                one Temp terminal       1-Wire GPIO 4, both probes on one bus
+Temp 1/2                one Temp header         1-Wire GPIO 4, both probes on one bus
 I2C (+5 V)              3.3 V I2C header        bus 1; 5 V add-ons via external level shifter
 pH BNC                  pH/ORP add-on module    ADS1115 input (aquaPi; reef-pi: TBD)
 Power in (barrel plug)  J1 push-in terminal     barrel-to-terminal adapter (<€1)
@@ -687,10 +686,10 @@ aquaPi ports: "PCA9685 #2 ch 0" .. "PCA9685 #2 ch 15". Header pin 9 is GND, pin 
 supply, not wired by the IDC DB9).
 
 **Backup floats - straight on aquaPCB, crossed on v3.** Both cut an outlet of power bar 1 in
-hardware when the float opens (bridge the terminal if unused, or the outlet stays off). On v3,
+hardware when the float opens (fit a jumper shunt if unused, or the outlet stays off). On v3,
 **AC1 cuts outlet 2 and AC2 cuts outlet 1** (manual: "AC1 = Outlet 2 and AC2 = Outlet 1"). On
 aquaPCB, Float 1 cuts outlet 1 and Float 2 cuts outlet 2. A v3 owner moving a float over must swap
-terminals, or the wrong outlet loses its protection.
+the two float connections, or the wrong outlet loses its protection.
 
 ```
                Robo-Tank v3        aquaPCB v2
@@ -719,7 +718,7 @@ bar header, pin 10 (+3V3_EXT) / any PCA #2 channel as signal / pin 9 (GND). The 
 feeder can't switch an outlet. Bigger DC loads go on a Q output.
 
 **Temperature - one bus instead of two ports.** v3: Temp 1 on GPIO 4, Temp 2 on GPIO 22 (two
-`w1-gpio` overlays). aquaPCB: one 3-pole terminal (+5 V / data / GND), GPIO 4, all probes on one bus
+`w1-gpio` overlays). aquaPCB: one 1x3 pin header (+5 V / data / GND), GPIO 4, all probes on one bus
 (aquaPi: "DS1820 #1", "#2", ...). v3's second overlay must not be copied: GPIO 22 is a sensor input
 on aquaPCB.
 
@@ -748,7 +747,7 @@ Q2,Q3,Q5,Q6       GPIO 12,13,16,26 -> "GPIO n out"   PCA9685 #1 ch 15,14,13,12, 
 S1..S4 SSR out    GPIO 17,22,23,27 -> "GPIO n out"   dropped (SSRs go on Q outputs)
 IN1..IN4          GPIO 5,6,20,21 -> "GPIO n in"      replaced by sensor header (6 inputs):
                                                      GPIO 5,6,20,21,22,23 -> "GPIO n in"
-1-Wire temp       1 terminal, GPIO 4 -> "DS1820 #n"  unchanged: 1 terminal, GPIO 4, one bus for
+1-Wire temp       1 terminal, GPIO 4 -> "DS1820 #n"  1x3 pin header, GPIO 4, one bus for
                                                      all probes -> "DS1820 #n"
 DC ports (7)      -                                  PCA9685 #1 ch 1,2,3,4,6,7,9 (0-5 V PWM)
                                                      -> [S] "PCA9685 #1 ch n"
@@ -787,7 +786,7 @@ ADDED
   AMS1117-3.3                           +3V3_EXT for the feeder (power bar header pin 10)
   sensor-input protection, 6 inputs     5 V tolerant, no jumpers -> 1k series + BAT54S
   BAT54S clamps, 4 analog sockets       after the 10k/20k divider + RC
-  PTC/fuse for +5 V (+5V_EXT)           sensor header, analog sockets, 1-Wire terminal
+  PTC/fuse for +5 V (+5V_EXT)           sensor header, analog sockets, 1-Wire header
 
 UNCHANGED
   TPS54360B 5 V buck (check the budget: sensors, add-ons, 2x PCA9685 now on 5 V/3.3 V),
