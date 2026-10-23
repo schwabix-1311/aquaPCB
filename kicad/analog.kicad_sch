@@ -3250,7 +3250,7 @@
 		)
 		(uuid "fdec95a0-56c5-4e79-b2d5-064adecc7976")
 	)
-	(label "AIN0_IN"
+	(label "AIN1_IN"
 		(at 62.23 101.6 180)
 		(effects
 			(font
@@ -3260,7 +3260,7 @@
 		)
 		(uuid "3b35997b-93a1-4022-ae3d-450fbffcb9b1")
 	)
-	(label "AIN2"
+	(label "AIN3"
 		(at 86.36 208.28 0)
 		(effects
 			(font
@@ -3270,7 +3270,7 @@
 		)
 		(uuid "46510acd-19c7-4a99-a61a-75542eeda3cb")
 	)
-	(label "AIN1_IN"
+	(label "AIN0_IN"
 		(at 62.23 133.35 180)
 		(effects
 			(font
@@ -3280,7 +3280,7 @@
 		)
 		(uuid "6a15b734-aaba-4374-b935-546787f716fb")
 	)
-	(label "AIN3"
+	(label "AIN2"
 		(at 86.36 247.65 0)
 		(effects
 			(font
@@ -3290,7 +3290,7 @@
 		)
 		(uuid "6fd0bd4e-086c-4851-9e55-81027eac6829")
 	)
-	(label "AIN1"
+	(label "AIN0"
 		(at 121.92 127 90)
 		(effects
 			(font
@@ -3300,7 +3300,7 @@
 		)
 		(uuid "78d709ea-92da-4760-85e4-ed969278c0e8")
 	)
-	(label "AIN0"
+	(label "AIN1"
 		(at 96.52 101.6 180)
 		(effects
 			(font
@@ -3320,7 +3320,7 @@
 		)
 		(uuid "88598980-d417-4a14-80ad-4d87c5861381")
 	)
-	(label "AIN0"
+	(label "AIN1"
 		(at 121.92 95.25 90)
 		(effects
 			(font
@@ -3330,7 +3330,7 @@
 		)
 		(uuid "8e95a116-fd33-4c8e-b529-7e7cb261c939")
 	)
-	(label "AIN0_IN"
+	(label "AIN1_IN"
 		(at 35.56 101.6 180)
 		(effects
 			(font
@@ -3340,7 +3340,7 @@
 		)
 		(uuid "a394010f-fec6-4f37-8a36-af9e53ebf5bf")
 	)
-	(label "AIN0"
+	(label "AIN1"
 		(at 74.93 101.6 0)
 		(effects
 			(font
@@ -3350,7 +3350,7 @@
 		)
 		(uuid "b4f6ead1-b6e0-4766-ab2a-2fce4fce22e1")
 	)
-	(label "AIN1"
+	(label "AIN0"
 		(at 96.52 133.35 180)
 		(effects
 			(font
@@ -3360,7 +3360,7 @@
 		)
 		(uuid "c4230b7c-dafb-4b3b-9d2a-5077434616bd")
 	)
-	(label "AIN1"
+	(label "AIN0"
 		(at 74.93 133.35 0)
 		(effects
 			(font
@@ -3380,7 +3380,7 @@
 		)
 		(uuid "cd3a30fb-5818-49b0-8049-2fe4c58267c7")
 	)
-	(label "AIN1"
+	(label "AIN0"
 		(at 144.78 134.62 270)
 		(effects
 			(font
@@ -3410,7 +3410,7 @@
 		)
 		(uuid "ecefd7d5-e4e1-4236-8e38-6e6391fa0976")
 	)
-	(label "AIN1_IN"
+	(label "AIN0_IN"
 		(at 35.56 133.35 180)
 		(effects
 			(font
@@ -3420,7 +3420,7 @@
 		)
 		(uuid "ee2d76f3-9ce7-498b-b934-37bc21e149d0")
 	)
-	(label "AIN0"
+	(label "AIN1"
 		(at 144.78 102.87 270)
 		(effects
 			(font
@@ -3599,7 +3599,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 102.87 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -3632,7 +3632,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C4184"
+		(property "LCSC" "C4328"
 			(at 102.87 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -4004,7 +4004,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 102.87 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -4037,7 +4037,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C4184"
+		(property "LCSC" "C4328"
 			(at 102.87 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -4969,7 +4969,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 121.92 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -5002,7 +5002,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C19702"
+		(property "LCSC" "C15850"
 			(at 121.92 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -5151,7 +5151,7 @@
 				)
 			)
 		)
-		(property "Value" "ADC #1 in 3"
+		(property "Value" "ADC#1-2"
 			(at 36.576 253.238 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5901,7 +5901,7 @@
 				)
 			)
 		)
-		(property "Value" "ADC #1 in 0"
+		(property "Value" "ADC#1-1"
 			(at 38.1 106.68 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6182,7 +6182,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 68.58 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -6215,7 +6215,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25804"
+		(property "LCSC" "C17414"
 			(at 68.58 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -6684,7 +6684,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 68.58 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -6717,7 +6717,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C25804"
+		(property "LCSC" "C17414"
 			(at 68.58 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -6997,7 +6997,7 @@
 				)
 			)
 		)
-		(property "Value" "ADC #1 in 2"
+		(property "Value" "ADC#1-3"
 			(at 38.354 211.328 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7188,7 +7188,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 57.15 251.46 0)
 			(hide yes)
 			(show_name no)
@@ -7221,7 +7221,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C4184"
+		(property "LCSC" "C4328"
 			(at 57.15 251.46 0)
 			(hide yes)
 			(show_name no)
@@ -7278,7 +7278,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 121.92 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -7311,7 +7311,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C19702"
+		(property "LCSC" "C15850"
 			(at 121.92 133.35 0)
 			(hide yes)
 			(show_name no)
@@ -7514,7 +7514,7 @@
 				)
 			)
 		)
-		(property "Value" "ADC #1 in 1"
+		(property "Value" "ADC#1-0"
 			(at 38.1 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)

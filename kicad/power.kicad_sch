@@ -7173,7 +7173,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 72.39 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -7206,7 +7206,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C19702"
+		(property "LCSC" "C15850"
 			(at 72.39 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -8091,7 +8091,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 80.01 265.43 0)
 			(hide yes)
 			(show_name no)
@@ -8124,7 +8124,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C19702"
+		(property "LCSC" "C15850"
 			(at 80.01 265.43 0)
 			(hide yes)
 			(show_name no)

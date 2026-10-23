@@ -4709,7 +4709,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 120.65 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -4742,7 +4742,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21190"
+		(property "LCSC" "C17513"
 			(at 120.65 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -4878,7 +4878,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 161.29 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -4911,7 +4911,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21190"
+		(property "LCSC" "C17513"
 			(at 161.29 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -4968,7 +4968,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 39.37 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -5001,7 +5001,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21190"
+		(property "LCSC" "C17513"
 			(at 39.37 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -5058,7 +5058,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 242.57 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -5091,7 +5091,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21190"
+		(property "LCSC" "C17513"
 			(at 242.57 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -5148,7 +5148,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 201.93 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -5181,7 +5181,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21190"
+		(property "LCSC" "C17513"
 			(at 201.93 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -5392,7 +5392,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 80.01 154.94 0)
 			(hide yes)
 			(show_name no)
@@ -5425,7 +5425,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C21190"
+		(property "LCSC" "C17513"
 			(at 80.01 154.94 0)
 			(hide yes)
 			(show_name no)

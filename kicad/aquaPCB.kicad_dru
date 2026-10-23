@@ -1,0 +1,8 @@
+(version 1)
+
+# The ADC sockets J26/J27 and J36/J37 are placed deliberately on a common 2.54 mm grid,
+# so the courtyards of each pair overlap by design.
+(rule "ADC socket pairs on 2.54 mm grid"
+  (constraint courtyard_clearance)
+  (condition "(A.Reference == 'J26' && B.Reference == 'J27') || (A.Reference == 'J27' && B.Reference == 'J26') || (A.Reference == 'J36' && B.Reference == 'J37') || (A.Reference == 'J37' && B.Reference == 'J36')")
+  (severity ignore))
