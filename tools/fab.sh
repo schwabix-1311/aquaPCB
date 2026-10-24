@@ -27,9 +27,15 @@ import csv, sys, collections
 pos, bom, out = sys.argv[1:4]
 P = list(csv.DictReader(open(pos)))
 fields = {r['Reference']: r for r in csv.DictReader(open(bom))}
+# JLC places parts in the orientation of the EasyEDA footprint of each LCSC part. Offsets KiCad -> JLC,
+# checked 2026-10-24 against the EasyEDA footprints (pin 1 / cathode / tab direction); parts not listed: 0.
+ROT = {'C5978': 270, 'C131088': 270, 'C37593': 270, 'C524806': 270, 'C25506': 270,   # SOIC/TSSOP/MSOP, R arrays
+       'C12765': 180, 'C400894': 180, 'C5359358': 180, 'C6186': 180}                 # SOT-23, DPAK P-FETs, SOT-223
 with open(f'{out}/aquaPCB-cpl-jlc.csv', 'w', newline='') as f:
     w = csv.writer(f); w.writerow(['Designator', 'Mid X', 'Mid Y', 'Layer', 'Rotation'])
-    for r in P: w.writerow([r['Ref'], f"{float(r['PosX']):.4f}mm", f"{float(r['PosY']):.4f}mm", 'Top' if r['Side'] == 'top' else 'Bottom', f"{float(r['Rot']):.1f}"])
+    for r in P:
+        rot = (float(r['Rot']) + ROT.get((fields.get(r['Ref']) or {}).get('LCSC', ''), 0)) % 360
+        w.writerow([r['Ref'], f"{float(r['PosX']):.4f}mm", f"{float(r['PosY']):.4f}mm", 'Top' if r['Side'] == 'top' else 'Bottom', f"{rot:.1f}"])
 groups = collections.OrderedDict(); missing = []
 for r in P:
     fr = fields.get(r['Ref'])
