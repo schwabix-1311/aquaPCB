@@ -328,24 +328,33 @@ signals                       < 0.1 A  0.25 mm
 
 The 5 V currents assume a Pi 4/5 on its own supply (see above); the buck itself is sized for 3 A.
 
-Component temperatures (estimate, ±30 %; rise above ambient, 1 oz copper areas as routed):
+Component temperatures (estimate, ±30 %; rise above ambient, 1 oz copper areas as routed), at full
+load - outputs 6.5 A in total, 5 V load 2.1 A (Pi Zero 2 W, feeder, all ports):
 
 ```
-part                                load                         loss        rise
-Q10 reverse-polarity FET + F1 fuse  VIN 7.5 A (6.5 A outputs)    ~0.6+0.4 W  ~+50 °C  (Q10 drain zone ~1.25 cm²)
-  (share one copper island)         VIN 6 A                      ~0.4+0.25 W ~+32 °C
-Q1..Q6 output MOSFET                5 A, gate at 5 V             ~0.3 W      ~+22 °C
-U1 buck IC                          5 V / 2.1 A, 12 / 24 V in    0.5 / 0.75 W ~+25 / +38 °C
-D4 buck diode (SS54)                5 V / 2.1 A, 12 / 24 V in    0.6 / 0.8 W ~+45 / +60 °C
-U2 3.3 V LDO                        typ. / all 3.3 V loads max   0.1 / 0.5 W ~+13 / +65 °C
-U11 feeder LDO                      feeder 0.2 A (only while feeding) 0.34 W ~+45 °C
+hotspot                             12 V supply              24 V supply              why it differs
+Q10 reverse-polarity FET + F1 fuse  +51 °C (VIN 7.5 A)       +44 °C (VIN 7.0 A)       buck draws half the current at 24 V
+  (one copper island, ~1.25 cm²)
+D4 buck diode (SS54)                +45 °C (0.6 W)           +60 °C (0.8 W)           conducts longer (duty 21 % vs 43 %)
+U1 buck IC                          +25 °C (0.5 W)           +38 °C (0.75 W)          switching loss rises with V_IN
+Q1..Q6 output MOSFET (5 A each)     +22 °C                   +23 °C                   same conduction loss
+U2 3.3 V LDO                        +13 °C typ / +65 °C max  same                     fed from 5 V
+U11 feeder LDO (only while feeding) +45 °C                   same                     fed from 5 V
+freewheel diode, PWM inductive load up to ~+90 °C (5 A, 50 %) same                    depends on load current only
 ```
 
-With 45 °C inside an enclosure the hottest spot (Q10/F1 at 6.5 A on the outputs) reaches about 95 °C;
-measure it on the prototype at full load. If it runs too warm, limit the total input to 6 A (outputs
-about 5 A). Inductive loads (pumps, fans, motors) driven by **PWM** dump their current into the output's
-freewheel diode (SS54, SMA) during every off-phase - about 1.25 W at 5 A and 50 % duty -, so keep them at
-about 2 A per output or switch them on/off only; LED strips and plain on/off loads are not affected.
+- **12 V:** the hotspot is Q10/F1, which carries the whole input current; D4 comes next.
+- **24 V:** D4 and Q10/F1 swap places and U1 gets noticeably warmer - the 5 V buck becomes the warmest
+  block. Loads of the same power draw half the current at 24 V, so with 24 V devices Q10/F1, the output
+  MOSFETs and the freewheel diodes run much cooler than this same-current table shows.
+
+With 45 °C inside an enclosure the hottest spot reaches about 95-105 °C. Measure on the prototype at full
+load: Q10/F1 at 12 V, and additionally D4 and U1 at 24 V. If it runs too warm: limit the total input to
+6 A (outputs about 5 A); D4 can drop by 15-20 °C in an SMC package (e.g. B540C, larger footprint), and a
+synchronous buck would remove it altogether (circuit change). Inductive loads (pumps, fans, motors)
+driven by **PWM** dump their current into the output's freewheel diode (SS54, SMA) during every off-phase -
+about 1.25 W at 5 A and 50 % duty -, so keep them at about 2 A per output or switch them on/off only;
+LED strips and plain on/off loads are not affected.
 
 1 oz copper is sufficient; 2 oz would halve the widths but costs noticeably more.
 
