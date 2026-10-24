@@ -7700,7 +7700,7 @@
 				)
 			)
 		)
-		(property "Value" "8A"
+		(property "Value" "10A"
 			(at 66.04 59.69 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7743,7 +7743,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C206919"
+		(property "LCSC" "C206921"
 			(at 69.85 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -9255,7 +9255,7 @@
 				)
 			)
 		)
-		(property "Value" "AOD4185"
+		(property "Value" "DMP4010SK3Q"
 			(at 90.17 56.896 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9298,7 +9298,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C400894"
+		(property "LCSC" "C5359358"
 			(at 85.09 54.61 0)
 			(hide yes)
 			(show_name no)
