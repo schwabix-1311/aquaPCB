@@ -23,7 +23,7 @@ Reichelt EUR incl. 19 % VAT.
 | 1 | buck inductor 10 µH, 4.8 A, 20 mΩ | TDK SLF12565T-100M4R8-PF | 12.5×12.5 mm | C138303 | ext | 1 538 | 0.52 |
 | 7 | freewheel Q1–Q6 + buck catch diode, 40 V 5 A | SS54 | SMA | C22452 | **basic** | 2 M | 0.044 |
 | 6 | power switch Q1–Q6, 40 V, 7 mΩ@10 V | AOS AOD4184A | TO-252 | C99124 | ext | 15 834 | 0.35 |
-| 1 | reverse-polarity P-FET, −40 V | AOS AOD4185 | TO-252 | C400894 | ext | 74 141 | 0.37 |
+| 1 | reverse-polarity P-FET, −40 V, 9.9 mΩ | Diodes Inc. DMP4010SK3Q-13 | TO-252 | C5359358 | ext | 10 739 | 0.63 |
 | 1 | P-FET gate clamp 15 V | BZT52C15 | SOD-123 | C173427 | ext | 157 271 | 0.016 |
 | 1 | input TVS 33 V, 600 W | SMBJ33A | SMB | C78419 | ext | 12 780 | 0.074 |
 | 1 | gate buffer Q1–Q6, 3.3 V → 5 V | Nexperia 74HCT244D,653 | SOIC-20 | C5978 | ext | 14 023 | 0.39 |
@@ -33,7 +33,7 @@ Reichelt EUR incl. 19 % VAT.
 | 1 | ADC 16 bit, 4 ch, I²C | TI ADS1115IDGSR | VSSOP-10 | C37593 | ext | 4 397 | 1.51 |
 | 11 | clamps: 6 sensor inputs, 4 analog sockets, 1-Wire | BAT54S | SOT-23 | C12765 | ext | 242 564 | 0.014 |
 | 2 | 3.3 V LDO 1 A (+3V3, +3V3_EXT for the feeder) | AMS1117-3.3 | SOT-223 | C6186 | basic | 1.5 M | 0.20 |
-| 1 | PTC +5V_EXT (sensors, analog, 1-Wire), hold 0.5 A | nSMD050 | 1206 | C69688 | ext | 17 252 | 0.042 |
+| 1 | PTC +5V_EXT (sensors, analog, 1-Wire, feeder via +3V3_EXT), hold 1.1 A, trip 2.2 A | nSMD110 | 1206 | C71465 | ext | 10 134 | 0.044 |
 | 7 | status LEDs Q1–Q6, 3V3 (green) | KT-0805G | 0805 | C2297 | basic | 2.4 M | 0.016 |
 | 1 | power LED (red, V_IN) | NCD0805R1 | 0805 | C84256 | basic | 3.1 M | 0.013 |
 | 18 | 10 kΩ pull-downs/-ups, dividers, filters | 0805 1 % | 0805 | C17414 | basic | 54.4 M | 0.003 |
@@ -52,7 +52,7 @@ Reichelt EUR incl. 19 % VAT.
 | 1 | buck COMP 10 nF | X7R | 0805 | C1710 | basic | 1.4 M | 0.009 |
 | 1 | buck COMP 47 pF | C0G | 0805 | C14857 | basic | 103 426 | 0.008 |
 
-SMD parts ≈ **$15.15 per board**; the two PCA9685 alone are $6.67. Extended parts:
+SMD parts ≈ **$15.41 per board**; the two PCA9685 alone are $6.67. Extended parts:
 **13 unique** → ≈ $39 loading fees per order.
 
 PCA9685PW stock is the tightest of the assembled parts (5 569 at LCSC); the automotive
@@ -65,10 +65,10 @@ variant PCA9685PW/Q900,118 (C92206) is a drop-in fallback at a slightly higher p
 | 7 | V_IN, Q1–Q6 terminals: push-in spring, 2-pole, 3.5 mm, 8 A | Ningbo Kangnex WJ250B-3.5-02P-11-00A | C8454 | 22 733 | 0.12 |
 | 3 | DC, LED, sensor ports: box header 2×4, 2.54 mm, keyed | DC3-2.54-8PAS | C5156664 | 536 | 0.068 |
 | 2 | power bar ports: box header 2×5, 2.54 mm, keyed | DC3-2.54-10PAS | C2977596 | 57 | 0.083 |
-| 1 | input fuse, OMNI-BLOK holder incl. 8 A Nano2 fuse (large SMD) | Littelfuse 0154008.DR | C206919 | 2 294 | 2.13 |
+| 1 | input fuse, OMNI-BLOK holder incl. 10 A Nano2 fuse (large SMD) | Littelfuse 0154010.DR | C206921 | 3 408 | 1.76 |
 | (2) | alternative 2×5 box header, grey, more stock | DC3-2.54-10PAS-Grey | C49261191 | 236 | 0.12 |
 
-LCSC through-hole parts ≈ **$3.32 per board**. The 2×5 box header has low stock at LCSC;
+LCSC through-hole parts ≈ **$2.94 per board**. The 2×5 box header has low stock at LCSC;
 Reichelt's WSL 10G (below) fits the same footprint. Terminal footprints and wiring notes as in v1:
 `aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered` has a hole in both pin rows for every
 pole, so Kangnex and MAX MX250-B terminals fit; rating 8 A (IEC) / 7 A (UL) per contact, which sets the
@@ -82,7 +82,7 @@ board's total current.
 | 1 | Pi connector, variant Zero (plug-on) | MPE 094-2-040 | female header 2×20, 2.54 mm | 1.10 |
 | (1) | Pi connector, variant Pi 3/4 (ribbon) | WSL 40G | box header 40-pole, straight | 0.23 |
 | 1 | 1-Wire, 4 analog sockets, floats, I²C 1, JP1 (25 pins; +16 for the optional headers below) | ECON SL40G1 | pin header 1×40, 2.54 mm (cut to length) | 0.75 |
-| 3 | JP1 5V→Pi; bridges for unused float inputs J30/J31 (+1 for optional JP3) | JUMPER 2,54 SW | shunt, 2.54 mm | 0.02 |
+| 3 | JP1 5V→Pi (Pi Zero 2 W / Pi 3; open for a Pi 4/5 with its own supply); bridges for unused float inputs J30/J31 (+1 for optional JP3) | JUMPER 2,54 SW | shunt, 2.54 mm | 0.02 |
 | (2) | alternative to the LCSC 2×5 box headers | WSL 10G | box header 10-pole, straight (price checked 2026-10-23) | 0.15 |
 | 2 | Pi Zero standoffs (H5/H6, Zero variant only) | – | M2.5 × 11 mm, any Pi mounting kit | – |
 
@@ -116,7 +116,13 @@ and sensor port headers come from LCSC.
   header (e.g. Reichelt WSL 10G) on those ports with pins 9/10 unconnected – same pinout, keyed, one
   part type for all five ports; costs the same footprint change and re-layout.
 - PCA9685PW,112 (C2688894): no stock; PCA9685BS (HVQFN-28): different footprint, low stock.
-- PTC alternatives SMD1206P050TF/13.2 (C43379) and 500mA/24V (C2984676) work too, at about twice the
-  price; nSMD050 (6 V) is enough on the 5 V rail.
+- PTC nSMD050 (0.5 A hold, C69688): replaced 2026-10-25 by nSMD110 (1.1 A hold) - the feeder (up to
+  500 mA) shares the PTC with the sensors, analog sockets and 1-Wire. 6 V rating is enough on the 5 V
+  rail; SMD1206P110TF (C20801) and 1206L110THYR (C126818) are drop-in alternatives.
+- AOD4185 (C400894, 15 mΩ) as reverse-polarity FET: replaced 2026-10-25 by DMP4010SK3Q-13 (9.9 mΩ, same DPAK
+  pinout G-D-S) to cut its loss by a third; SUD50P04-08-GE3 (C506582, 8.1 mΩ) would save another ~5 °C but
+  costs $1.45 and has less stock.
+- 8 A fuse (0154008.DR, C206919): replaced by the 10 A insert of the same holder - Littelfuse recommends at
+  most ~75 % of the rating as continuous current (8 A -> 6 A); the 8 A continuous limit is set by the terminals.
 - From the v1 check, still valid: 74HCT541 (no stock) → 74HCT244; 5×20 mm PCB fuse holders (6.3 A
   only); screw terminals and lever terminals (price) → push-in spring terminals.

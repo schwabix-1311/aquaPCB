@@ -25,10 +25,11 @@ written yet.
 ## Key figures
 
 ```
-Supply          12-24 V DC, 8 A max total (parts rated >= 40 V; 24 V operation not yet validated)
-Pi              Zero 2 W plugged on face-up; Pi 3/4 via 40-pin ribbon (Pi 5: own PSU)
-Power outputs   6x low-side MOSFET, 5 A each, 8 A total; Q1/Q4 on hardware PWM,
-                Q2/Q3/Q5/Q6 on PCA9685 #1 (shared with LED port pins 2..5)
+Supply          12-24 V DC, 8 A max total, 10 A fuse (parts rated >= 40 V; 24 V not yet validated)
+Pi              Zero 2 W plugged on face-up, powered from the board; Pi 3 via 40-pin ribbon;
+                Pi 4/5 with their own power supply (JP1 open)
+Power outputs   6x low-side MOSFET, 5 A each, 6.5 A total (up to ~7 A, see current budget);
+                Q1/Q4 on hardware PWM, Q2/Q3/Q5/Q6 on PCA9685 #1 (shared with LED port pins 2..5)
 PWM ports       DC port + LED port, 7 channels each, 0-5 V PWM (PCA9685 #1, 74HCT244),
                 2x4 box headers with the Robo-Tank v3 pinout
 Power bars      2 ports x 8 outlets, 3.3 V logic (PCA9685 #2), 2x5 box headers for an IDC DB9
@@ -269,16 +270,90 @@ design variants once they are needed.
 
 ## Current budget and copper
 
+All current enters at J1 (8 A continuous, set by the terminal; 10 A fuse F1). Besides the six power outputs only the 5 V buck (U1) draws from
+V_IN (plus about 2-3 mA for the power LED and the reverse-polarity FET's gate resistor); the Pi, the
+ports and all logic hang on the buck's 5 V output.
+
+**Power outputs Q1..Q6: max 5 A each, 6.5 A in total** (printed on the board). What is left of the
+8 A input for the outputs depends on the 5 V load (buck at 5.16 V, efficiency 82-89 %):
+
 ```
-Path                      current   trace width, 1 oz, 10 °C rise (IPC-2221)
-V_IN input + GND return    8 A      5.3 mm  -> copper pour / bottom GND plane
-one power output Q        5 A       2.8 mm
-buck input                ~1.5 A    0.7 mm
-5 V to Pi                 3 A       1.4 mm
-signals                   < 0.1 A   0.25 mm
+5 V load (buck output)                          V_IN current       left for Q1..Q6
+                                                12 V     24 V      12 V     24 V
+typical: Pi Zero 2 W, a few sensors   ~0.55 A   0.28 A   0.15 A    7.7 A    7.8 A
+Pi Zero 2 W, feeder running, all DC/LED
+  and power bar outputs on            ~2.1 A    1.0 A    0.53 A    7.0 A    7.5 A
+buck design limit                      3 A      1.47 A   0.75 A    6.5 A    7.2 A
 ```
 
-1 oz copper with pours is sufficient; 2 oz would halve the widths but costs noticeably more.
+6.5 A holds for any 5 V load the buck can deliver at 12 V; with a Pi Zero 2 W about 7 A are
+available. 5 V loads behind those rows (typical / max):
+
+```
+Pi Zero 2 W (JP1 fitted)                                         0.35 A / 1.0 A
++5V_EXT through PTC F2: sensors, analog sockets, 1-Wire, and the
+  feeder via +3V3_EXT (U11); PTC hold 1.1 A, trip 2.2 A          0.1 A  / 1.1 A
+74HCT244 x3: Q status LEDs, 14 DC/LED port channels (6 mA each)  0.035 A / 0.1 A
++3V3 via U2: 2x PCA9685, 16 power bar outputs, ADS1115,
+  display, I2C add-ons                                           0.06 A / 0.3 A
+```
+
+**Pi 4 and Pi 5 need their own power supply** (official PSU; leave JP1 open so the two supplies
+don't meet). A Pi 4 alone may draw 3 A (Pi 5: 5 A), which together with the ports exceeds the 3 A
+buck, and the 40-pin ribbon carries 5 V on only two wires. A Pi Zero 2 W (plugged on) and a Pi 3
+(ribbon, up to about 2 A) are powered from the board through JP1.
+
+Copper (1 oz, IPC-2221 temperature rise for an outer layer at the design current). Target: at most
+10 °C even with this pessimistic method, which treats every run as a long conductor; short runs next
+to large pads stay cooler. Parallel F/B runs share the current roughly by width.
+
+```
+Path                          current  copper                                  rise
+J1 -> F1 -> Q10 (VIN_RAW)       8 A    3 mm on F and B in parallel             ~5 °C
+F1 -> Q10 drain                 8 A    5.5 mm F, 1.4 mm between the pads       ~9 °C
+Q10 source -> terminals (VIN)   8 A    source pad -> 10 vias -> 3 mm B         ~8 °C
+                                       + 2 mm F in parallel up to J4
+Q1..Q6 output -> terminal       5 A    3 mm                                    ~9 °C
+MOSFET source -> GND            5 A    9 vias each into the B.Cu GND plane
+J1 GND -> GND plane (return)    8 A    thermal relief, 7 spokes of 1.0 mm      ~2 °C
+                                       (J1 only; 0.5 mm elsewhere) + 2x 1.0 mm F
+buck input                       1 A   1.0 mm                                  ~1 °C
+buck switch node SW (short)    2.1 A   1.5 mm                                  ~4 °C
+5 V: L1 -> JP1                 2.1 A   1.5 mm                                  ~4 °C
+5 V: JP1 -> Pi (5V_PI)           2 A   1.5 mm (Pi Zero 2 W / Pi 3 only)        ~3 °C
++5V -> F2 / U2                 1.4 A   0.75 mm                                 ~5 °C
++5V_EXT / +3V3_EXT          1.1 / 0.5 A 0.5 mm                                 ~5 / ~1 °C
+signals                       < 0.1 A  0.25 mm
+```
+
+The 5 V currents assume a Pi 4/5 on its own supply (see above); the buck itself is sized for 3 A.
+
+Component temperatures (estimate, ±30 %; rise above ambient, 1 oz copper areas as routed):
+
+```
+part                                load                         loss        rise
+Q10 reverse-polarity FET + F1 fuse  VIN 7.5 A (6.5 A outputs)    ~0.6+0.4 W  ~+50 °C  (Q10 drain zone ~1.25 cm²)
+  (share one copper island)         VIN 6 A                      ~0.4+0.25 W ~+32 °C
+Q1..Q6 output MOSFET                5 A, gate at 5 V             ~0.3 W      ~+22 °C
+U1 buck IC                          5 V / 2.1 A, 12 / 24 V in    0.5 / 0.75 W ~+25 / +38 °C
+D4 buck diode (SS54)                5 V / 2.1 A, 12 / 24 V in    0.6 / 0.8 W ~+45 / +60 °C
+U2 3.3 V LDO                        typ. / all 3.3 V loads max   0.1 / 0.5 W ~+13 / +65 °C
+U11 feeder LDO                      feeder 0.2 A (only while feeding) 0.34 W ~+45 °C
+```
+
+With 45 °C inside an enclosure the hottest spot (Q10/F1 at 6.5 A on the outputs) reaches about 95 °C;
+measure it on the prototype at full load. If it runs too warm, limit the total input to 6 A (outputs
+about 5 A). Inductive loads (pumps, fans, motors) driven by **PWM** dump their current into the output's
+freewheel diode (SS54, SMA) during every off-phase - about 1.25 W at 5 A and 50 % duty -, so keep them at
+about 2 A per output or switch them on/off only; LED strips and plain on/off loads are not affected.
+
+1 oz copper is sufficient; 2 oz would halve the widths but costs noticeably more.
+
+A solder mask opening on the bottom exposes the VIN trunk between the via group and J4 (3.4 x 2.6 mm).
+HASL tins it at the fab, which adds almost nothing; if a prototype runs warm at 8 A, a hand-drawn solder
+bead (0.3-0.5 mm) roughly doubles the cross-section there (60-80 W iron, wide chisel tip, flux, ideally
+preheat the board). No opening next to F1/Q10: exposed copper at an SMD pad would draw solder off the
+joint during reflow; that strip is widened to 5.5 mm instead.
 
 ## Cost estimate
 
@@ -395,7 +470,7 @@ Analog / pH     4x 3-pole socket       one per ADS1115 input AIN0..AIN3, all ide
                                        modules (see below), no reference input
 Power in        push-in terminal (J1)  12-24 V, 8 A as v1 - no barrel socket (rated for
                                        far less current than the board's 8 A)
-Power outputs   push-in terminals      Q1..Q6, 5 A low-side as v1: Q1/Q4 on the Pi's
+Power outputs   push-in terminals      Q1..Q6, 5 A each, 6.5 A total, low-side: Q1/Q4 on the Pi's
                                        hardware PWM0/1, Q2/Q3/Q5/Q6 on PCA #1 ch 15,14,13,12
                                        (shared with LED ports 1..4, dimmable)
 SSR outputs     -                      S1..S4 and the ULN2803 dropped: SSRs and relay coils
@@ -652,7 +727,7 @@ pin   Robo-Tank v3      aquaPCB v2 (J29)    shared with   aquaPi port
 PCA #1 ch 0 (the v3 feeder) and ch 5 stay free on aquaPCB.
 
 **Power outputs Q1..Q6 - aquaPCB only.** Low-side MOSFETs, terminal pair +V_IN / OUT, max 5 A
-each, 8 A in total.
+each, 6.5 A in total (up to about 7 A, see [current budget](#current-budget-and-copper)).
 
 ```
 output   terminal   driven by                  aquaPi port
@@ -729,7 +804,8 @@ J23, same bus) are 3.3 V. 5 V-only modules need an external level shifter.
 numbered right to left.
 
 **Power in.** v3: 5.5/2.1 barrel, 12-24 V, at least 1 A. aquaPCB: J1 push-in terminal, 12-24 V,
-8 A total (fuse), sized for the Q output loads.
+8 A total (terminal rating; 10 A fuse): the Q outputs (6.5 A) plus the board's own 5 V supply. A Pi 4/5 needs its own power
+supply on aquaPCB (JP1 open), see [current budget](#current-budget-and-copper).
 
 ### v1 -> v2 changes
 
@@ -786,12 +862,13 @@ ADDED
   AMS1117-3.3                           +3V3_EXT for the feeder (power bar header pin 10)
   sensor-input protection, 6 inputs     5 V tolerant, no jumpers -> 1k series + BAT54S
   BAT54S clamps, 4 analog sockets       after the 10k/20k divider + RC
-  PTC/fuse for +5 V (+5V_EXT)           sensor header, analog sockets, 1-Wire header
+  PTC/fuse for +5 V (+5V_EXT)           sensor header, analog sockets, 1-Wire header, feeder
+                                        (+3V3_EXT): nSMD110, 1.1 A hold
 
 UNCHANGED
   TPS54360B 5 V buck (check the budget: sensors, add-ons, 2x PCA9685 now on 5 V/3.3 V),
   AMS1117-3.3, ADS1115, 74HCT244 gate buffer (Q1..Q6), 6x AOD4184A + SS54,
-  AOD4185 reverse-polarity FET + zener, SMBJ33A TVS, LEDs
+  reverse-polarity P-FET (v2: DMP4010SK3Q) + zener, SMBJ33A TVS, LEDs
 
 ON ADD-ON BOARDS
   pH/ORP non-isolated: TLV9062 (+ v1 passives incl. 1 MΩ)
