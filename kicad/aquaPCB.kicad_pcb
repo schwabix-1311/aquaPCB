@@ -40349,8 +40349,8 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "PCA#1 ch15"
-		(at 120.925 130.050872 270)
+	(gr_text "PCA#1 ch15 ≙ LED 2"
+		(at 120.925 127.170872 270)
 		(layer "B.SilkS")
 		(uuid "b6f54789-934b-4899-ae52-33b5a0597e00")
 		(effects
@@ -40361,8 +40361,8 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "PCA#1 ch14"
-		(at 132.275 130.050872 270)
+	(gr_text "PCA#1 ch14 ≙ LED 3"
+		(at 132.275 127.170872 270)
 		(layer "B.SilkS")
 		(uuid "53d713a8-0dcc-43ad-b93f-6acf3e2465ec")
 		(effects
@@ -40373,8 +40373,8 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "PCA#1 ch13"
-		(at 154.975 130.050872 270)
+	(gr_text "PCA#1 ch13 ≙ LED 4"
+		(at 154.975 127.170872 270)
 		(layer "B.SilkS")
 		(uuid "8b96d869-765f-4bb8-ab42-e7f7fc3312f1")
 		(effects
@@ -40385,8 +40385,8 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "PCA#1 ch12"
-		(at 166.325 130.050872 270)
+	(gr_text "PCA#1 ch12 ≙ LED 5"
+		(at 166.325 127.170872 270)
 		(layer "B.SilkS")
 		(uuid "35f5a6a6-cfaa-4f68-99aa-3a4e166c4732")
 		(effects
@@ -40410,7 +40410,7 @@
 		)
 	)
 	(gr_text "max 5A, total 6.5A"
-		(at 134.1 122.1 0)
+		(at 134.1 119.4 0)
 		(layer "B.SilkS")
 		(uuid "c02a3c5b-479c-4ccb-ace9-2ae7bab3184d")
 		(effects
