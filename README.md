@@ -816,6 +816,62 @@ numbered right to left.
 8 A total (terminal rating; 10 A fuse): the Q outputs (6.5 A) plus the board's own 5 V supply. A Pi 4/5 needs its own power
 supply on aquaPCB (JP1 open), see [current budget](#current-budget-and-copper).
 
+### aquaPCB for reef-pi
+
+Checked 2026-10-26 against the reef-pi source: the PCA9685 driver offers `PWM` **and** `DigitalOutput`
+(so a channel can be a jack or an outlet, address is a parameter), the ADS1x15 driver offers
+`AnalogInput` (address and gain configurable), the built-in Raspberry Pi driver offers GPIO 2-27 as
+digital in/out plus hardware PWM channels 0/1, and the temperature module reads 1-Wire probes from
+`/sys/bus/w1/devices`. reef-pi modules: ato, doser, equipment, lighting, macro, ph, temperature, timer.
+
+Drivers to add in reef-pi: **PCA9685 at 0x40** (PCA #1), **PCA9685 at 0x41** (PCA #2), **ADS1115 at
+0x48**; the Raspberry Pi driver is built in. `/boot/config.txt` (or `/boot/firmware/config.txt`):
+
+```
+dtparam=i2c_arm=on
+dtoverlay=w1-gpio,gpiopin=4                          # 1-Wire on GPIO 4 only (no second overlay on GPIO 22!)
+dtoverlay=pwm-2chan,pin=18,func=2,pin2=19,func2=2    # only if Q1/Q4 are used as PWM jacks
+```
+
+```
+aquaPCB port                   reef-pi driver -> connector              control loops (modules)
+Q1 (GPIO 18), Q4 (GPIO 19)     Raspberry Pi: PWM channel 0/1 -> jack    lighting, doser (pump speed);
+                               or GPIO -> outlet                        or equipment, timer, ATO pump
+Q2/Q3/Q5/Q6 (PCA #1 ch 15-12)  PCA9685 0x40 -> jack or outlet           lighting, doser, equipment,
+                                                                        temperature (heater)
+DC port (PCA #1 ch 1-4,6,7,9)  PCA9685 0x40 -> jacks                    doser, flow pumps, lighting
+LED port (PCA #1 ch 8,10-15)   PCA9685 0x40 -> jacks                    lighting (Robo-Tank LED module)
+power bar 1/2 (PCA #2 0-15)    PCA9685 0x41 -> outlets (on/off)         equipment, temperature (heater/
+                                                                        chiller), ATO (top-off pump), timer
+feeder (on a power bar channel) PCA9685 0x41 -> outlet                  timer (short on-pulse), macro
+sensors (GPIO 5,6,20-23)       Raspberry Pi -> inlets                   ATO (level), leak / emergency stop
+                                                                        via macro
+1-Wire (GPIO 4)                kernel w1, several probes on one bus     temperature (heater/chiller via
+                                                                        outlets)
+ADC in 0-3 (ADS1115 0x48)      ADS1115 -> analog inputs                 ph (with calibration), ORP or other
+                                                                        0-5 V sensors
+I2C 1/2 (3.3 V)                bus for further reef-pi drivers          e.g. ezo, ph_board, sht3x
+display header J24 (SPI)       - no reef-pi driver -                    aquaPi only
+float 1/2 (J30/J31)            - hardware cut-off only -                not visible in reef-pi
+```
+
+Notes:
+
+- **Power bars:** Robo-Tank v3 drives them from Pi GPIOs; on aquaPCB move every outlet to the PCA9685
+  0x41 driver (outlet n of bar 1 = channel n-1, bar 2 = channel n+7, see [Port by port](#port-by-port)).
+  Each reef-pi outlet has a "reverse" option if a bar switches inverted.
+- **Shared channels:** Q2/Q3/Q5/Q6 share PCA #1 ch 15-12 with LED port pins 2-5 (silkscreen
+  "PCA#1 ch15 ≙ LED 2" etc.). Use each of these channels only once in reef-pi - as the LED jack or as
+  the Q output.
+- **Q1/Q4:** without the `pwm-2chan` overlay they are plain GPIO outlets; with it they are jacks.
+- **Analog sockets:** 0-5 V reach the ADS1115 through a 10k/20k divider (0-3.33 V). The ph module's
+  calibration absorbs that; for other sensors include the divider in the conversion.
+- **Sensor inputs have no pull resistors on aquaPCB** (1 kΩ series + BAT54S clamp only) and reef-pi
+  doesn't enable the Pi's internal pulls, so an input floats without a module. Sensors with an open
+  contact need a pull-up or pull-down on the module side, as on Robo-Tank's sensor module.
+- **Backup floats** cut power bar 1 outlets 1/2 in hardware; to see a float in reef-pi as well, add a
+  switch on a sensor input.
+
 ### v1 -> v2 changes
 
 Ports with their aquaPi IoRegistry names. Existing names as aquaPi reports them today
