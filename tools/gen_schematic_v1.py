@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
-"""Generate the aquaPCB schematic draft (hierarchical, KiCad).
+"""aquaPCB **v1 only**: generated the first v1 schematic draft (hierarchical, KiCad).
 
-    python3 tools/gen_schematic.py   (then upgrade + ERC, see README, section "Schematic")
+RETIRED. The v2 schematic in kicad/ was edited in eeschema and is the source of truth;
+this script still describes the v1 board (ULN2803, on-board pH, BNC, Reichelt parts of 2026-09)
+and must not be used for v2.
+
+    python3 tools/gen_schematic_v1.py   (then upgrade + ERC, see README, section "Schematic")
 
 Pin map, parts and values follow README.md / BOM.md. Nets are connected by name
 (power symbols, local and global labels), so the drawing is a readable netlist, not a
@@ -12,7 +16,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
-from schgen import Project, NC   # noqa: E402
+from schgen_v1 import Project, NC   # noqa: E402
 
 OUT = os.path.join(os.path.dirname(__file__), '..', 'kicad')
 
