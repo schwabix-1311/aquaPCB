@@ -370,23 +370,47 @@ Based on the checked part prices in [BOM.md](BOM.md) (v2, 2026-10-23; ≈ €0.9
 shipping and import charges are estimates.
 
 ```
-per board                                     batch 5    batch 10
-  PCB 100x100, 2 layers                         ~ €2       ~ €1.5
-  SMD parts (LCSC, checked; 2x PCA9685 ~ €6)    ~ €14      ~ €13
-  PCBA setup + 13 extended-part fees, share     ~ €8.5     ~ €4.5
-  THT parts (LCSC: terminals, box headers, fuse;
-            Reichelt: Pi header, pin headers, C1) ~ €5.5   ~ €5.5
-  shipping JLC + Reichelt, share                ~ €5       ~ €2.5
-  EU import VAT 19 % + €3 duty/category (JLC)   ~ €5       ~ €4.5
-  -----------------------------------------------------------------
-                                                ~ €40      ~ €31
+per board                                full v2             light (aquaPi only)
+                                         batch 5  batch 10   batch 5  batch 10
+  PCB 100x100, 2 layers                  ~ €2     ~ €1.5     ~ €2     ~ €1.5
+  SMD parts (LCSC, checked)              ~ €14    ~ €13      ~ €10    ~ €9
+  PCBA setup + extended-part fees        ~ €8.5   ~ €4.5     ~ €7.5   ~ €4
+    (13 extended parts, light 11), share
+  THT parts (LCSC: terminals, box
+    headers, fuse; Reichelt: Pi header,
+    pin headers, C1)                     ~ €5.5   ~ €5.5     ~ €5     ~ €5
+  shipping JLC + Reichelt, share         ~ €5     ~ €2.5     ~ €5     ~ €2.5
+  EU import VAT 19 % + €3 duty/category  ~ €5     ~ €4.5     ~ €4     ~ €3.5
+  ------------------------------------------------------------------------------
+                                         ~ €40    ~ €31      ~ €34    ~ €26
 ```
 
 v2 just meets the **≤ €40 per board** target at batch 5 (v1: about €35 / €27). The two PCA9685
 are the largest single item; v2 saves the on-board pH front end, the ULN2803 and four 3-pole
 terminals, but adds two PCA9685, two buffers, eight resistor arrays and the box headers. Levers:
-order 10 boards (~€31 each), or leave the second PCA9685 (power bars) and its arrays unpopulated
-for users without Robo-Tank power bars or a feeder (both run on PCA #2).
+order 10 boards (~€31 each), or build the light variant below.
+
+### Light variant (aquaPi only)
+
+Same PCB and Gerbers, fewer parts: everything that only serves Robo-Tank modules, power bars, floats
+and the feeder stays unpopulated (DNP):
+
+- PCA #2 path: U10, RN5-RN8, C23, R53, R54, U11 + C25 (+3V3_EXT), J30-J33.
+- DC/LED ports: U8, U9 (74HCT244PW), RN1-RN4, C21, C22, J28, J29.
+
+PCA #1 (U7) stays: it drives Q2/Q3/Q5/Q6. The light board keeps the 6 power outputs, the 4 analog
+sockets, 1-Wire, the 6 sensor inputs and I²C, which covers v1 except its four SSR outputs (SSRs go on
+Q outputs, as in v2). It loses Leviathan/Robo-Tank/reef-pi compatibility of the DC, LED and power bar
+ports. The silkscreen of the unpopulated headers stays.
+
+Saving: about €6 per board at batch 5 (SMD ≈ $4.20, solder joints ≈ $0.25, two extended-part fees
+≈ $6 per order, THT ≈ $0.45).
+
+Upgrading a light board to the full version needs only hand soldering: 2× TSSOP-20 + 1× TSSOP-28
+(0.65 mm pitch), 8 resistor arrays (4× 0603), one SOT-223, four 0805 capacitors, two 0603 resistors
+and six through-hole headers. The stencil still prints paste on the empty pads, so after assembly
+they are tinned; flatten them with solder wick before fitting a TSSOP. A fine tip, flux and wick are
+enough.
 
 ## Not on v1
 

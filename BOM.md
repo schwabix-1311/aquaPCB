@@ -93,6 +93,25 @@ pin header strip covers them.
 Reichelt parts ≈ **€2.50 per board** (Zero variant). Reichelt has no 2×4 box header, so the DC, LED
 and sensor port headers come from LCSC.
 
+## Light variant (aquaPi only)
+
+Same PCB and Gerbers; `tools/fab.sh` also writes `fab/light/aquaPCB-light-{bom,cpl}-jlc.csv`
+without these parts (see README "Light variant" for what the board can still do):
+
+| Qty | Not populated | Refs | $/board |
+|---:|---|---|---:|
+| 1 | PCA9685PW (PCA #2, power bars) | U10 | 3.33 |
+| 2 | 74HCT244PW (DC/LED port buffers) | U8, U9 | 0.50 |
+| 1 | AMS1117-3.3 (+3V3_EXT, feeder) | U11 | 0.20 |
+| 8 | 4×100 Ω arrays | RN1–RN8 | 0.06 |
+| 4 | 100 nF (3), 10 µF (1) | C21, C22, C23, C25 | 0.11 |
+| 2 | 10 kΩ 0603 float pull-downs | R53, R54 | 0.004 |
+| 2 + 2 | box headers 2×4 (DC, LED), 2×5 (power bars) | J28, J29, J32, J33 | 0.30 |
+| 2 + 2 | float pin headers + shunts | J30, J31 | ≈ €0.15 |
+
+SMD ≈ **$4.20 less per board** (light: ≈ $11.20), ≈ 148 fewer solder joints, and two extended
+parts fewer (74HCT244PW C131088, arrays C25506: 11 instead of 13 → ≈ $6 less per order).
+
 ## Changes from v1
 
 - Added: 2× PCA9685PW, 2× 74HCT244PW, 8× 4×100 Ω arrays, second AMS1117-3.3 (+3V3_EXT for the
