@@ -78,7 +78,6 @@ board's total current.
 
 | Qty | Function | Reichelt Art.-Nr. | Description | €/pc |
 |---:|---|---|---|---:|
-| 1 | bulk capacitor 470 µF 50 V (C1) | RAD FR 470/50 | Panasonic FR, low ESR, 105 °C | 0.60 |
 | 1 | Pi connector, variant Zero (plug-on) | MPE 094-2-040 | female header 2×20, 2.54 mm | 1.10 |
 | (1) | Pi connector, variant Pi 3/4 (ribbon) | WSL 40G | box header 40-pole, straight | 0.23 |
 | 1 | 1-Wire, 4 analog sockets, floats, I²C 1, JP1 (25 pins; +16 for the optional headers below) | ECON SL40G1 | pin header 1×40, 2.54 mm (cut to length) | 0.75 |
@@ -90,8 +89,14 @@ Optional, marked DNP (not in the exported BOM / placement file; pads are on the 
 J23 second I²C header (4), J24 display header (10), JP3 backlight jumper (2 + shunt) – a second
 pin header strip covers them.
 
-Reichelt parts ≈ **€2.50 per board** (Zero variant). Reichelt has no 2×4 box header, so the DC, LED
+Reichelt parts ≈ **€1.90 per board** (Zero variant). Reichelt has no 2×4 box header, so the DC, LED
 and sensor port headers come from LCSC.
+
+**C1, bulk capacitor 470 µF 50 V:** must be **10 mm** in diameter (footprint `CP_Radial_D10.0mm_P5.00mm`):
+**Rubycon 50ZLJ470M10X20** – 10 × 20 mm, 5 mm pitch, low ESR (37 mΩ), 1.375 A ripple, 105 °C /
+10 000 h; from Mouser or DigiKey (dimensions from distributor data 2026-11-17, check the Rubycon
+datasheet). The Panasonic FR 470 µF / 50 V (EEU-FR1H471, Reichelt RAD FR 470/50) planned before is
+12.5 mm: it leaves 0.12 mm to D2 and R23 nominally and touches D2 with the usual +0.5 mm can tolerance.
 
 ## Light variant (aquaPi only)
 
@@ -143,5 +148,7 @@ parts fewer (74HCT244PW C131088, arrays C25506: 11 instead of 13 → ≈ $6 less
   costs $1.45 and has less stock.
 - 8 A fuse (0154008.DR, C206919): replaced by the 10 A insert of the same holder - Littelfuse recommends at
   most ~75 % of the rating as continuous current (8 A -> 6 A); the 8 A continuous limit is set by the terminals.
+- Panasonic FR 470 µF / 50 V (EEU-FR1H471, Reichelt RAD FR 470/50) for C1: 12.5 mm can on a 10 mm
+  footprint, collides with D2 – replaced 2026-11-17 by Rubycon 50ZLJ470M10X20 (10 × 20 mm).
 - From the v1 check, still valid: 74HCT541 (no stock) → 74HCT244; 5×20 mm PCB fuse holders (6.3 A
   only); screw terminals and lever terminals (price) → push-in spring terminals.

@@ -220,7 +220,8 @@ for f in kicad/*.kicad_sch; do kicad-cli sch upgrade "$f"; done
 kicad-cli sch erc --severity-all kicad/aquaPCB.kicad_sch
 ```
 
-Footprint to confirm on the 1:1 print: 470 µF capacitor C1 diameter (D10 assumed).
+C1 diameter checked 2026-11-17: the footprint is D10, so C1 must be a 10 mm can (Rubycon
+50ZLJ470M10X20, see [BOM.md](BOM.md)); a 12.5 mm 470 µF / 50 V touches D2.
 The BNC footprint (`aquaPCB.pretty`) is made from the LCSC/EasyEDA pad data and the maker drawing.
 
 ## Build options
@@ -378,7 +379,7 @@ per board                                full v2             light (aquaPi only)
     (13 extended parts, light 11), share
   THT parts (LCSC: terminals, box
     headers, fuse; Reichelt: Pi header,
-    pin headers, C1)                     ~ €5.5   ~ €5.5     ~ €5     ~ €5
+    pin headers; C1 Mouser/DigiKey)      ~ €5.5   ~ €5.5     ~ €5     ~ €5
   shipping JLC + Reichelt, share         ~ €5     ~ €2.5     ~ €5     ~ €2.5
   EU import VAT 19 % + €3 duty/category  ~ €5     ~ €4.5     ~ €4     ~ €3.5
   ------------------------------------------------------------------------------
@@ -436,9 +437,11 @@ qty  part                           Mouser / manufacturer part number      €/p
 2    jumper 2.54 mm                 Würth 60900213421                      0.28
 ```
 
-The base THT parts (C1, Pi header, pin headers, shunts) stay with Reichelt - the upgrade is a
-separate, later order. If base parts and upgrade kits are ordered at the same time, put the
-Reichelt parts into the Mouser cart instead: one shipment, and it helps to reach €75.
+The base THT parts (Pi header, pin headers, shunts) stay with Reichelt - the upgrade is a
+separate, later order. C1 (10 mm, Rubycon 50ZLJ470M10X20) comes from Mouser or DigiKey anyway. If
+base parts and upgrade kits are ordered at the same time, put the Reichelt parts into the Mouser cart
+instead (Pi socket e.g. Sullins PPTC202LFBN-RC, 8.51 mm high like the MPE 094): one shipment, and it
+helps to reach €75.
 
 ## Not on v1
 
