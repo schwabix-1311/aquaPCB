@@ -27357,7 +27357,7 @@
 				)
 			)
 		)
-		(property "Reichelt" "RAD FR 470/50"
+		(property "MPN" "Rubycon 50ZLJ470M10X20"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")

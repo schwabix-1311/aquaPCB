@@ -9480,7 +9480,7 @@
 				)
 			)
 		)
-		(property "Reichelt" "RAD FR 470/50"
+		(property "MPN" "Rubycon 50ZLJ470M10X20"
 			(at 118.11 81.28 0)
 			(hide yes)
 			(show_name no)
