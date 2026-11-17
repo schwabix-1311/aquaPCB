@@ -411,6 +411,9 @@ Upgrading a light board to the full version needs only hand soldering: 2× TSSOP
 and six through-hole headers. The stencil still prints paste on the empty pads, so after assembly
 they are tinned; flatten them with solder wick before fitting a TSSOP. A fine tip, flux and wick are
 enough.
+Reichelt doesn't stock the PCA9685PW, the 74HCT244 in TSSOP-20 or the 2×4 box header (checked
+2026-11-17), so if an upgrade is likely, order the parts from the [BOM.md](BOM.md) light table
+loose from LCSC together with the board order.
 
 ## Not on v1
 
