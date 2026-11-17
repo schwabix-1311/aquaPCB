@@ -443,6 +443,44 @@ base parts and upgrade kits are ordered at the same time, put the Reichelt parts
 instead (Pi socket e.g. Sullins PPTC202LFBN-RC, 8.51 mm high like the MPE 094): one shipment, and it
 helps to reach €75.
 
+### First prototype order: 5 light boards, 2 upgrade kits
+
+Planned 2026-11-17: 5 boards assembled as light by JLC; one or two are upgraded by hand to test
+the full version (DC/LED ports, power bars, floats, PCA #2). Everything loose comes from LCSC and
+ships combined with the JLC order (LCSC checkout: "Combine with JLCPCB order"), so no Mouser or
+Reichelt order is needed; pin headers from stock.
+
+1. JLC: `fab/aquaPCB-gerbers.zip`, 5 boards, assemble all 5 with `fab/light/aquaPCB-light-bom-jlc.csv`
+   and `fab/light/aquaPCB-light-cpl-jlc.csv`. In the 3D preview, check the orientation of U1, U3, U5,
+   U7, the diodes and the SOT-23 parts.
+2. LCSC, loose, combined with the JLC order:
+
+```
+LCSC       part                                         qty   for
+base parts, 5 boards
+C8454      push-in terminal 2-pole, 3.5 mm              35    J1, J4-J9
+C5156664   box header 2x4, keyed                         9    J34 (5) + J28/J29 upgrade (4)
+C206921    OMNI-BLOK fuse holder incl. 10 A fuse          5    F1
+C2902875   Rubycon 50ZLJ470M10X20, 470 uF 50 V, 10x20     5    C1 (MOQ 5)
+C2977589   female header 2x20, 8.5 mm, straight          5    J2, Pi Zero socket (ZHOURI)
+C100114    shunt 2.54 mm, closed top                     10    JP1 (5) + float bridges (4)
+2 upgrade kits
+C2678753   PCA9685PW                                      2    U10
+C131088    74HCT244PW                                     5    U8, U9 (4; multiples of 5)
+C25506     4x100 R array                                 16    RN1-RN8
+C6186      AMS1117-3.3                                    2    U11
+C49678     100 nF 50 V X7R 0805                           6    C21-C23
+C15850     10 uF 25 V X5R 0805                            2    C25
+C25804     10 k 1 % 0603                                  4    R53, R54
+C2977596   box header 2x5, keyed (low stock;              4    J32, J33
+           alt. C49261191 grey)
+```
+
+Rough cost of the loose parts: about $25 plus import VAT; passives may come in larger minimum
+quantities. LCSC numbers for C1, J2 and the shunts are from search results (2026-11-17) - check
+stock and price in the LCSC cart. After an upgrade, aquaPi's I²C scan must find both PCA9685
+(0x40 and 0x41).
+
 ## Not on v1
 
 - **PCA9685 PWM expander**: plug a breakout into an I²C header once aquaPi has a
