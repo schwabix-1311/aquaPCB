@@ -481,6 +481,38 @@ quantities. LCSC numbers for C1, J2 and the shunts are from search results (2026
 stock and price in the LCSC cart. After an upgrade, aquaPi's I²C scan must find both PCA9685
 (0x40 and 0x41).
 
+#### Checking part orientation at JLC
+
+1. Upload `fab/aquaPCB-gerbers.zip`, enable "PCB Assembly" (top side).
+2. Upload BOM and CPL (`fab/light/` for the light variant); no line may stay "unmatched".
+3. Step "Component Placements": the 2D/3D preview marks pin 1 of every part with a red dot. It
+   must sit on the pin-1 mark of the silkscreen (triangle or dot), and all pads must land on pads -
+   a part turned by 180° looks almost right, only the dot is on the wrong side. A wrong part can be
+   selected in the list and turned in 90° steps.
+4. Tick "Confirm Parts Placement" (about $0.45): JLC sends a placement picture for approval before
+   production, and an engineer checks polarities as well.
+
+```
+part                          mark                                   offset in fab.sh
+U1  TPS54360, SO-8 PowerPAD   pin-1 dot, thermal pad centred          +270°
+U3  74HCT244, SOIC-20         pin 1 at the triangle                   +270°
+U5  ADS1115, VSSOP-10         pin 1 at the triangle                   +270°
+U7  PCA9685, TSSOP-28         pin 1 at the triangle                   none  <- check closely
+U2  AMS1117, SOT-223          large tab on the silkscreen tab         +180°
+Q10 DMP4010, DPAK             tab (drain) on the silkscreen tab       +180°
+Q1-Q6 AOD4184A, DPAK          tab towards the output terminals        none  <- check closely
+D26-D36 BAT54S, SOT-23        1 pin on one side, 2 on the other       +180°
+D4, D6-D16 SS54, SMA          cathode band to the silkscreen bar      none
+D1 zener, D2 TVS              cathode band                            none
+LEDs 0805                     cathode to the silkscreen bar/line      none
+full version also: U8/U9 (TSSOP-20, +270°), U10 (as U7), U11 (as U2), RN1-RN8 (+270°)
+```
+
+The offsets in `tools/fab.sh` were checked against the EasyEDA footprints (2026-10-24), not yet
+against assembled boards; parts without an offset assume KiCad and JLC orientation agree. If the
+preview shows a part turned, rotate it there for this order and correct the `ROT` table in
+`tools/fab.sh` (offset per LCSC number) for the next one.
+
 ## Not on v1
 
 - **PCA9685 PWM expander**: plug a breakout into an I²C header once aquaPi has a
