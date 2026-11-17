@@ -411,9 +411,34 @@ Upgrading a light board to the full version needs only hand soldering: 2× TSSOP
 and six through-hole headers. The stencil still prints paste on the empty pads, so after assembly
 they are tinned; flatten them with solder wick before fitting a TSSOP. A fine tip, flux and wick are
 enough.
-Reichelt doesn't stock the PCA9685PW, the 74HCT244 in TSSOP-20 or the 2×4 box header (checked
-2026-11-17), so if an upgrade is likely, order the parts from the [BOM.md](BOM.md) light table
-loose from LCSC together with the board order.
+
+Where to get the upgrade parts (checked 2026-11-17):
+
+- **With the board order:** loose from LCSC (LCSC numbers in the [BOM.md](BOM.md) light table),
+  shipped together with the JLC order.
+- **Later:** Mouser has the whole kit in stock from 1 piece, German VAT at checkout, no customs.
+  About €12 per kit incl. VAT; shipping is free from €75, below that about €25. Reichelt doesn't
+  stock the PCA9685PW, the 74HCT244 in TSSOP-20 or the 2×4 box header; TME has the PCA9685PW only
+  in reels of 2500; a standalone LCSC order is delivered with import VAT and fees still to pay.
+
+```
+qty  part                           Mouser / manufacturer part number      €/pc net
+1    PCA9685, TSSOP-28              NXP PCA9685PW/Q900,118 (or PCA9685PW,118) 3.76
+2    74HCT244, TSSOP-20             Nexperia 74HCT244PW,118                0.37
+8    4×100 Ω array, 0603×4          Bourns CAY16-101J4LF                   0.09
+1    3.3 V LDO, SOT-223             onsemi NCP1117ST33T3G (AMS1117 pinout) 0.57
+3    100 nF 50 V X7R 0805           Samsung CL21B104KBCNNNC                0.09
+1    10 µF 25 V X5R 0805            Samsung CL21A106KAYNNNF                0.32
+2    10 kΩ 1 % 0603                 Yageo RC0603FR-0710KL                  0.11
+2    box header 2×4, straight       Würth 61200821621                      0.96
+2    box header 2×5, straight       Würth 61201021621                      0.42
+2    pin header 1×3 (floats)        Würth 61300311121                      0.12
+2    jumper 2.54 mm                 Würth 60900213421                      0.28
+```
+
+The base THT parts (C1, Pi header, pin headers, shunts) stay with Reichelt - the upgrade is a
+separate, later order. If base parts and upgrade kits are ordered at the same time, put the
+Reichelt parts into the Mouser cart instead: one shipment, and it helps to reach €75.
 
 ## Not on v1
 
