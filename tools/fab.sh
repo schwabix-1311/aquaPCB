@@ -31,7 +31,7 @@ fields = {r['Reference']: r for r in csv.DictReader(open(bom))}
 # JLC places parts in the orientation of the EasyEDA footprint of each LCSC part. Offsets KiCad -> JLC,
 # checked 2026-10-24 against the EasyEDA footprints (pin 1 / cathode / tab direction); parts not listed: 0.
 ROT = {'C5978': 270, 'C131088': 270, 'C37593': 270, 'C524806': 270, 'C25506': 270,   # SOIC/TSSOP/MSOP, R arrays
-       'C12765': 180, 'C400894': 180, 'C5359358': 180, 'C6186': 180}                 # SOT-23, DPAK P-FETs, SOT-223
+       'C7420333': 180, 'C400894': 180, 'C5359358': 180, 'C6186': 180}                 # SOT-23, DPAK P-FETs, SOT-223
 # Light variant (aquaPi only, see README "Light variant"): same PCB, these parts stay unpopulated
 LIGHT_DNP = {'U8', 'U9', 'U10', 'U11', 'RN1', 'RN2', 'RN3', 'RN4', 'RN5', 'RN6', 'RN7', 'RN8',
              'C21', 'C22', 'C23', 'C25', 'R53', 'R54'}     # SMD; THT J28-J33 are hand-fitted anyway

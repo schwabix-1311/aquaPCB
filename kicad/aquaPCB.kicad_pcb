@@ -5455,7 +5455,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C173427"
+		(property "LCSC" "C19077412"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -6680,7 +6680,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C12765"
+		(property "LCSC" "C7420333"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10656,7 +10656,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C12765"
+		(property "LCSC" "C7420333"
 			(at -5.5 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -12575,7 +12575,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C12765"
+		(property "LCSC" "C7420333"
 			(at -5.4375 -0.55 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -14825,7 +14825,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C12765"
+		(property "LCSC" "C7420333"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -15220,7 +15220,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C12765"
+		(property "LCSC" "C7420333"
 			(at -5.5 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -16215,7 +16215,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C12765"
+		(property "LCSC" "C7420333"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -18492,7 +18492,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C78419"
+		(property "LCSC" "C19077586"
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -22759,7 +22759,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C12765"
+		(property "LCSC" "C7420333"
 			(at 4.5 1 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -23795,7 +23795,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C12765"
+		(property "LCSC" "C7420333"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -26755,7 +26755,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C12765"
+		(property "LCSC" "C7420333"
 			(at 4.5 1 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -32961,7 +32961,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C12765"
+		(property "LCSC" "C7420333"
 			(at 0 0 90)
 			(layer "F.SilkS")
 			(hide yes)
@@ -39739,7 +39739,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C12765"
+		(property "LCSC" "C7420333"
 			(at 5.5 1 90)
 			(layer "F.SilkS")
 			(hide yes)

@@ -375,21 +375,21 @@ per board                                full v2             light (aquaPi only)
                                          batch 5  batch 10   batch 5  batch 10
   PCB 100x100, 2 layers                  ~ €2     ~ €1.5     ~ €2     ~ €1.5
   SMD parts (LCSC, checked)              ~ €14    ~ €13      ~ €10    ~ €9
-  PCBA setup + extended-part fees        ~ €8.5   ~ €4.5     ~ €7.5   ~ €4
-    (13 extended parts, light 11), share
+  PCBA setup + extended-part fees        ~ €7     ~ €3.5     ~ €6     ~ €3
+    (10 extended parts, light 8), share
   THT parts (LCSC: terminals, box
     headers, fuse; Reichelt: Pi header,
     pin headers; C1 Mouser/DigiKey)      ~ €5.5   ~ €5.5     ~ €5     ~ €5
   shipping JLC + Reichelt, share         ~ €5     ~ €2.5     ~ €5     ~ €2.5
   EU import VAT 19 % + €3 duty/category  ~ €5     ~ €4.5     ~ €4     ~ €3.5
   ------------------------------------------------------------------------------
-                                         ~ €40    ~ €31      ~ €34    ~ €26
+                                         ~ €38    ~ €30      ~ €32    ~ €25
 ```
 
-v2 just meets the **≤ €40 per board** target at batch 5 (v1: about €35 / €27). The two PCA9685
+v2 meets the **≤ €40 per board** target at batch 5 (v1: about €35 / €27). The two PCA9685
 are the largest single item; v2 saves the on-board pH front end, the ULN2803 and four 3-pole
 terminals, but adds two PCA9685, two buffers, eight resistor arrays and the box headers. Levers:
-order 10 boards (~€31 each), or build the light variant below.
+order 10 boards (~€30 each), or build the light variant below.
 
 ### Light variant (aquaPi only)
 
@@ -501,15 +501,17 @@ U7  PCA9685, TSSOP-28         pin 1 at the triangle                   none  <- c
 U2  AMS1117, SOT-223          large tab on the silkscreen tab         +180°
 Q10 DMP4010, DPAK             tab (drain) on the silkscreen tab       +180°
 Q1-Q6 AOD4184A, DPAK          tab towards the output terminals        none  <- check closely
-D26-D36 BAT54S, SOT-23        1 pin on one side, 2 on the other       +180°
+D26-D36 BAT54S, SOT-23        1 pin on one side, 2 on the other       +180° <- check (new part)
 D4, D6-D16 SS54, SMA          cathode band to the silkscreen bar      none
-D1 zener, D2 TVS              cathode band                            none
+D1 zener, D2 TVS              cathode band                            none  <- check (new part)
 LEDs 0805                     cathode to the silkscreen bar/line      none
 full version also: U8/U9 (TSSOP-20, +270°), U10 (as U7), U11 (as U2), RN1-RN8 (+270°)
 ```
 
 The offsets in `tools/fab.sh` were checked against the EasyEDA footprints (2026-10-24), not yet
-against assembled boards; parts without an offset assume KiCad and JLC orientation agree. If the
+against assembled boards; parts without an offset assume KiCad and JLC orientation agree. D1, D2 and
+D26-D36 changed to other LCSC parts on 2026-11-19 (same package; the BAT54S keeps the SOT-23
+offset), their EasyEDA footprints are unchecked. If the
 preview shows a part turned, rotate it there for this order and correct the `ROT` table in
 `tools/fab.sh` (offset per LCSC number) for the next one.
 

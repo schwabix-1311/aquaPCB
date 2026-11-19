@@ -12,7 +12,7 @@ Sourcing rule:
   parts LCSC doesn't stock well, which come from **Reichelt**.
 
 JLC "extended" parts cost a one-time loading fee per unique part and order (currently
-about $3 each); "basic" parts don't. Prices below: LCSC USD at qty 1–49, excl. VAT;
+about $3 each); "basic" and "preferred extended" (`pref`) parts don't. Prices below: LCSC USD at qty 1–49, excl. VAT;
 Reichelt EUR incl. 19 % VAT.
 
 ## SMD, assembled by JLCPCB
@@ -24,14 +24,14 @@ Reichelt EUR incl. 19 % VAT.
 | 7 | freewheel Q1–Q6 + buck catch diode, 40 V 5 A | SS54 | SMA | C22452 | **basic** | 2 M | 0.044 |
 | 6 | power switch Q1–Q6, 40 V, 7 mΩ@10 V | AOS AOD4184A | TO-252 | C99124 | ext | 15 834 | 0.35 |
 | 1 | reverse-polarity P-FET, −40 V, 9.9 mΩ | Diodes Inc. DMP4010SK3Q-13 | TO-252 | C5359358 | ext | 10 739 | 0.63 |
-| 1 | P-FET gate clamp 15 V | BZT52C15 | SOD-123 | C173427 | ext | 157 271 | 0.016 |
-| 1 | input TVS 33 V, 600 W | SMBJ33A | SMB | C78419 | ext | 12 780 | 0.074 |
+| 1 | P-FET gate clamp 15 V | BZT52C15 (hongjiacheng) | SOD-123 | C19077412 | pref | 507 933 | 0.018 |
+| 1 | input TVS 33 V, 600 W | SMBJ33A (hongjiacheng) | SMB | C19077586 | pref | 54 218 | 0.051 |
 | 1 | gate buffer Q1–Q6, 3.3 V → 5 V | Nexperia 74HCT244D,653 | SOIC-20 | C5978 | ext | 14 023 | 0.39 |
 | 2 | PWM expander 16 ch, I²C (#1 DC/LED + Q2/Q3/Q5/Q6, #2 power bars) | NXP PCA9685PW,118 | TSSOP-28 | C2678753 | ext | 5 569 | 3.33 |
 | 2 | 0-5 V buffers for the 14 DC/LED port channels | Nexperia 74HCT244PW,118 | TSSOP-20 | C131088 | ext | 24 143 | 0.25 |
 | 8 | series resistors, 14 DC/LED + 16 power bar lines | 4×100 Ω array | 0603×4 | C25506 | ext | 162 715 | 0.008 |
 | 1 | ADC 16 bit, 4 ch, I²C | TI ADS1115IDGSR | VSSOP-10 | C37593 | ext | 4 397 | 1.51 |
-| 11 | clamps: 6 sensor inputs, 4 analog sockets, 1-Wire | BAT54S | SOT-23 | C12765 | ext | 242 564 | 0.014 |
+| 11 | clamps: 6 sensor inputs, 4 analog sockets, 1-Wire | BAT54S (hongjiacheng) | SOT-23 | C7420333 | pref | 402 535 | 0.013 |
 | 2 | 3.3 V LDO 1 A (+3V3, +3V3_EXT for the feeder) | AMS1117-3.3 | SOT-223 | C6186 | basic | 1.5 M | 0.20 |
 | 1 | PTC +5V_EXT (sensors, analog, 1-Wire, feeder via +3V3_EXT), hold 1.1 A, trip 2.2 A | nSMD110 | 1206 | C71465 | ext | 10 134 | 0.044 |
 | 7 | status LEDs Q1–Q6, 3V3 (green) | KT-0805G | 0805 | C2297 | basic | 2.4 M | 0.016 |
@@ -52,8 +52,14 @@ Reichelt EUR incl. 19 % VAT.
 | 1 | buck COMP 10 nF | X7R | 0805 | C1710 | basic | 1.4 M | 0.009 |
 | 1 | buck COMP 47 pF | C0G | 0805 | C14857 | basic | 103 426 | 0.008 |
 
-SMD parts ≈ **$15.41 per board**; the two PCA9685 alone are $6.67. Extended parts:
-**13 unique** → ≈ $39 loading fees per order.
+SMD parts ≈ **$15.38 per board**; the two PCA9685 alone are $6.67. Extended parts:
+**10 unique** → ≈ $30 loading fees per order.
+
+2026-11-19: BAT54S, BZT52C15 and SMBJ33A moved to preferred-extended parts of the same type and
+package (no fee; the old SMBJ33A C78419 was down to 2 681 in stock). No fee-free equivalent exists
+for the other extended parts: TPS54360B, L1, AOD4184A, DMP4010, ADS1115 and PCA9685 are deliberate
+choices; the nSMD110 PTC (no basic/preferred 1206 PTC at JLC) and the 74HCT244D (no basic/preferred
+74HCT244 in SOIC-20W) stay too.
 
 PCA9685PW stock is the tightest of the assembled parts (5 569 at LCSC); the automotive
 variant PCA9685PW/Q900,118 (C92206) is a drop-in fallback at a slightly higher price.
@@ -115,7 +121,7 @@ without these parts (see README "Light variant" for what the board can still do)
 | 2 + 2 | float pin headers + shunts | J30, J31 | ≈ €0.15 |
 
 SMD ≈ **$4.20 less per board** (light: ≈ $11.20), ≈ 148 fewer solder joints, and two extended
-parts fewer (74HCT244PW C131088, arrays C25506: 11 instead of 13 → ≈ $6 less per order).
+parts fewer (74HCT244PW C131088, arrays C25506: 8 instead of 10 → ≈ $6 less per order).
 
 ## Changes from v1
 
