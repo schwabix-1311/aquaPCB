@@ -9,14 +9,16 @@ and I²C add-ons.
 
 Most channels are plain GPIO, hardware PWM, 1-Wire or I²C ports that aquaPi discovers by
 itself and offers in its Wiring editor. The channels on the two PCA9685 PWM expanders
-(DC/LED ports, Q2/Q3/Q5/Q6, power bars) need a PCA9685 driver in aquaPi, which is not
-written yet.
+(DC/LED ports, Q2/Q3/Q5/Q6, power bars) use aquaPi's PCA9685 driver, which finds the chips by
+an I²C scan (0x40-0x47) and offers only the ports of the chips it finds. It ships with aquaPi 1.0
+(branch `release/1.0`) and still has to be tested on real hardware.
 
 > Status: **v2 layout complete** on `main` (2026-10-23): schematic ERC clean, board fully
 > routed, DRC without errors (silkscreen warnings only; the deliberate overlap of the ADC
 > socket courtyards is waived by a rule in `kicad/aquaPCB.kicad_dru`). No prototypes built
-> yet; the [open questions](#open-questions-asked-to-robo-tank-or-measure) and the aquaPi
-> PCA9685 driver are still pending. v1 (tag `v1.0.1`, branch `release/v1`, layout complete,
+> yet; the [first prototype order](#first-prototype-order-5-light-boards-2-upgrade-kits) (5 light
+> boards, 2 upgrade kits) is planned, the [open questions](#open-questions-asked-to-robo-tank-or-measure)
+> to Robo-Tank are still open. v1 (tag `v1.0.1`, branch `release/v1`, layout complete,
 > DRC clean) stays the restart point. Sections marked *v1* below still describe v1; v2
 > changes are in the [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
 > Not a beginner kit: SMD parts are assembled by the PCB fab (JLCPCB economic PCBA);
@@ -518,8 +520,8 @@ preview shows a part turned, rotate it there for this order and correct the `ROT
 
 ## Not on v1
 
-- **PCA9685 PWM expander**: plug a breakout into an I²C header once aquaPi has a
-  driver for it (see aquaPi's ROADMAP.md). v2 puts two PCA9685s on the board, see
+- **PCA9685 PWM expander**: plug a breakout into an I²C header; aquaPi's PCA9685 driver
+  finds it at 0x40-0x47. v2 puts two PCA9685s on the board, see
   [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
 - **Robo-Tank compatibility and 0..10 V lamp dimming**: planned for v2, see
   [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
@@ -827,8 +829,10 @@ Power in (barrel plug)  J1 push-in terminal     barrel-to-terminal adapter (<€
 
 Checked 2026-10-23 against the Robo-Tank v3 manual "Controller and its ports" (last updated
 2021-12-28) and the aquaPCB v2 netlist. In reef-pi, the "pin" of driver "Extra Ports - PCA9685" is
-the PCA9685 channel. aquaPi port names are the IoRegistry pattern; the PCA9685 ones are suggestions
-until aquaPi has a PCA9685 driver, the board silkscreen uses them shortened (`PCA#1 ch15`).
+the PCA9685 channel. aquaPi port names are the IoRegistry names; every PCA9685 channel is offered twice, as
+`PCA9685 #1 CH15 PWM` (dimming) and `PCA9685 #1 CH15 out` (on/off), the tables list the PWM one.
+The #1/#2 count the chips aquaPi finds, in address order (0x40, 0x41). The board silkscreen uses them
+shortened (`PCA#1 ch15`).
 
 **DC ports - identical.** Same pins, same channels (PCA #1, 0x40), so v3 cables, the DC Ports module
 and existing reef-pi settings keep working. The irregular channel order is Robo-Tank's.
@@ -836,13 +840,13 @@ and existing reef-pi settings keep working. The irregular channel order is Robo-
 ```
 pin   Robo-Tank v3      aquaPCB v2 (J28)    aquaPi port
 1     GND               GND
-2     ch 9              ch 9                "PCA9685 #1 ch 9"
-3     ch 6              ch 6                "PCA9685 #1 ch 6"
-4     ch 7              ch 7                "PCA9685 #1 ch 7"
-5     ch 4              ch 4                "PCA9685 #1 ch 4"
-6     ch 3              ch 3                "PCA9685 #1 ch 3"
-7     ch 2              ch 2                "PCA9685 #1 ch 2"
-8     ch 1              ch 1                "PCA9685 #1 ch 1"
+2     ch 9              ch 9                "PCA9685 #1 CH9 PWM"
+3     ch 6              ch 6                "PCA9685 #1 CH6 PWM"
+4     ch 7              ch 7                "PCA9685 #1 CH7 PWM"
+5     ch 4              ch 4                "PCA9685 #1 CH4 PWM"
+6     ch 3              ch 3                "PCA9685 #1 CH3 PWM"
+7     ch 2              ch 2                "PCA9685 #1 CH2 PWM"
+8     ch 1              ch 1                "PCA9685 #1 CH1 PWM"
 ```
 
 **LED ports - identical, plus the Q outputs.** Same pins and channels. On aquaPCB, pins 2..5 also
@@ -852,13 +856,13 @@ switch together. Use either the LED pin or the Q output of a pair, not both for 
 ```
 pin   Robo-Tank v3      aquaPCB v2 (J29)    shared with   aquaPi port
 1     GND               GND
-2     ch 15             ch 15               Q2 (J5)       "PCA9685 #1 ch 15"
-3     ch 14             ch 14               Q3 (J6)       "PCA9685 #1 ch 14"
-4     ch 13             ch 13               Q5 (J8)       "PCA9685 #1 ch 13"
-5     ch 12             ch 12               Q6 (J9)       "PCA9685 #1 ch 12"
-6     ch 11             ch 11                             "PCA9685 #1 ch 11"
-7     ch 10             ch 10                             "PCA9685 #1 ch 10"
-8     ch 8              ch 8                              "PCA9685 #1 ch 8"
+2     ch 15             ch 15               Q2 (J5)       "PCA9685 #1 CH15 PWM"
+3     ch 14             ch 14               Q3 (J6)       "PCA9685 #1 CH14 PWM"
+4     ch 13             ch 13               Q5 (J8)       "PCA9685 #1 CH13 PWM"
+5     ch 12             ch 12               Q6 (J9)       "PCA9685 #1 CH12 PWM"
+6     ch 11             ch 11                             "PCA9685 #1 CH11 PWM"
+7     ch 10             ch 10                             "PCA9685 #1 CH10 PWM"
+8     ch 8              ch 8                              "PCA9685 #1 CH8 PWM"
 ```
 
 PCA #1 ch 0 (the v3 feeder) and ch 5 stay free on aquaPCB.
@@ -869,11 +873,11 @@ each, 6.5 A in total (up to about 7 A, see [current budget](#current-budget-and-
 ```
 output   terminal   driven by                  aquaPi port
 Q1       J4         GPIO 18, hardware PWM0     "PWM 0"
-Q2       J5         PCA #1 ch 15 (LED pin 2)   "PCA9685 #1 ch 15"
-Q3       J6         PCA #1 ch 14 (LED pin 3)   "PCA9685 #1 ch 14"
+Q2       J5         PCA #1 ch 15 (LED pin 2)   "PCA9685 #1 CH15 PWM"
+Q3       J6         PCA #1 ch 14 (LED pin 3)   "PCA9685 #1 CH14 PWM"
 Q4       J7         GPIO 19, hardware PWM1     "PWM 1"
-Q5       J8         PCA #1 ch 13 (LED pin 4)   "PCA9685 #1 ch 13"
-Q6       J9         PCA #1 ch 12 (LED pin 5)   "PCA9685 #1 ch 12"
+Q5       J8         PCA #1 ch 13 (LED pin 4)   "PCA9685 #1 CH13 PWM"
+Q6       J9         PCA #1 ch 12 (LED pin 5)   "PCA9685 #1 CH12 PWM"
 ```
 
 **Power bars - same plug, different driver.** The DB9 pinout is unchanged (1..4 = outlet 1..4,
@@ -894,7 +898,7 @@ outlet   Robo-Tank v3 bar 1 / bar 2     aquaPCB v2 bar 1 (J32) / bar 2 (J33)
 8        GPIO 26 / GPIO 7               PCA #2 ch 7 / ch 15
 ```
 
-aquaPi ports: "PCA9685 #2 ch 0" .. "PCA9685 #2 ch 15". Header pin 9 is GND, pin 10 +3V3_EXT (feeder
+aquaPi ports: "PCA9685 #2 CH0 PWM" .. "PCA9685 #2 CH15 PWM" (and "... out" for on/off). Header pin 9 is GND, pin 10 +3V3_EXT (feeder
 supply, not wired by the IDC DB9).
 
 **Backup floats - straight on aquaPCB, crossed on v3.** Both cut an outlet of power bar 1 in
@@ -1003,8 +1007,8 @@ Notes:
 ### v1 -> v2 changes
 
 Ports with their aquaPi IoRegistry names. Existing names as aquaPi reports them today
-(`GPIO 17 out`, `PWM 0`, `DS1820 #1`, `ADC #1 in 0`); the PCA9685 names don't exist yet
-and follow the same pattern. **[S]** = suggestion, not yet decided.
+(`GPIO 17 out`, `PWM 0`, `DS1820 #1`, `ADC #1 in 0`, `PCA9685 #1 CH15 PWM` / `... out`).
+**[S]** = suggestion, not yet decided.
 
 ```
 function          v1: GPIO / aquaPi port             v2: GPIO / aquaPi port
@@ -1012,19 +1016,19 @@ function          v1: GPIO / aquaPi port             v2: GPIO / aquaPi port
 Q1 power out      GPIO 18, PWM0 -> "PWM 0"           unchanged
 Q4 power out      GPIO 19, PWM1 -> "PWM 1"           unchanged
 Q2,Q3,Q5,Q6       GPIO 12,13,16,26 -> "GPIO n out"   PCA9685 #1 ch 15,14,13,12, shared with
-                                                     LED ports 1..4 -> [S] "PCA9685 #1 ch n"
+                                                     LED ports 1..4 -> "PCA9685 #1 CHn PWM"
 S1..S4 SSR out    GPIO 17,22,23,27 -> "GPIO n out"   dropped (SSRs go on Q outputs)
 IN1..IN4          GPIO 5,6,20,21 -> "GPIO n in"      replaced by sensor header (6 inputs):
                                                      GPIO 5,6,20,21,22,23 -> "GPIO n in"
 1-Wire temp       1 terminal, GPIO 4 -> "DS1820 #n"  1x3 pin header, GPIO 4, one bus for
                                                      all probes -> "DS1820 #n"
 DC ports (7)      -                                  PCA9685 #1 ch 1,2,3,4,6,7,9 (0-5 V PWM)
-                                                     -> [S] "PCA9685 #1 ch n"
-LED ports (7)     -                                  PCA9685 #1 ch 8,10..15 -> [S] same pattern
+                                                     -> "PCA9685 #1 CHn PWM"
+LED ports (7)     -                                  PCA9685 #1 ch 8,10..15 -> same pattern
 feeder            -                                  power bar header: +3V3_EXT pin 10, any PCA #2 ch
 spare             -                                  PCA9685 #1 ch 0, ch 5
 power bar 1, 2    -                                  PCA9685 #2 ch 0..7, 8..15, 3.3 V logic
-                                                     -> [S] "PCA9685 #2 ch n"
+                                                     -> "PCA9685 #2 CHn PWM"
 backup floats     -                                  hardware only, no port
 AIN0              on-board pH amp -> "ADC #1 in 0"   socket 1, 0-5 V -> "ADC #1 in 0"
 AIN1              PH_REF monitor -> "ADC #1 in 1"    socket 2, 0-5 V -> "ADC #1 in 1"
@@ -1084,7 +1088,7 @@ ON ADD-ON BOARDS
 2. Schematic in KiCad, ERC clean – done
 3. Layout, DRC clean – done
 4. Gerbers, JLC BOM/CPL, 1:1 print check (terminals, BNC, Pi header), order 5 prototypes
-   – on hold until the v2 go/no-go below
+   – superseded: the first prototypes are v2 light boards (v2 step 7)
 5. Bring-up at 12 V: rails without Pi, then with Pi Zero 2 W, boot with loads attached
    (no output may toggle), all channels from the aquaPi dashboard, 5 A thermal test
 6. Validate 24 V operation
@@ -1094,10 +1098,13 @@ v2 ([Robo-Tank v3 compatible head unit](#v2-plan-robo-tank-v3-compatible-head-un
 1. Spec – done
 2. Answers from Robo-Tank, or measure a v3 module and cable (open questions in the v2 plan)
    – questions sent to info@robo-tank.ca 2026-10-10, waiting for the reply
-3. Budget and sense check → go/no-go; on no-go, continue with v1 step 4
-4. aquaPi PCA9685 driver (needed for the DC/LED ports and power bars)
+3. Budget and sense check → go/no-go – go (2026-11-17, first prototype order decided)
+4. aquaPi PCA9685 driver (needed for the DC/LED ports and power bars) – done in aquaPi 1.0
+   (`release/1.0`, 2026-11-17); test on real hardware pending
 5. Schematic and layout, starting from the v1 design – done (2026-10-23)
 6. 0-10 V add-on module
+7. [First prototype order](#first-prototype-order-5-light-boards-2-upgrade-kits): 5 light boards,
+   2 upgrade kits – planned, not ordered yet; then bring-up as in v1 steps 5 and 6
 
 ## Licence
 
