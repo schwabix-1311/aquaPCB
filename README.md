@@ -562,7 +562,22 @@ selection:
   documented; keep the silk labels (Q1..Q6, S1..S4, IN1..IN4, ...) and the profile names
   identical. (v2 replaces S1..S4 with power bar outputs, see [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).)
 - **ID EEPROM on GPIO 0/1.** The pins are already reserved. With an EEPROM fitted, aquaPi
-  could recognise the board and pick its profile without asking.
+  could recognise the board and pick its profile without asking. Planned for a future revision
+  (v2.1), worked out 2026-11-19:
+  - M24C64-RMN6TP (SOIC-8, LCSC C79988, JLC preferred part, no fee) at 0x50 (A0-A2 = GND), 3.9 kΩ
+    pull-ups on ID_SD (GPIO 0, J2.27) and ID_SC (GPIO 1, J2.28), 10 kΩ WP pull-up with a solder
+    jumper to GND for writing, 100 nF. Check WP and pull-ups against the HAT+ specification.
+  - Supplied from the Pi's 3.3 V (J2.1/17, today deliberately unconnected), not from +3V3: a Pi 4/5
+    on its own supply (JP1 open) must read it with the board unpowered, and a powered board must
+    not feed an unpowered Pi through the pull-ups.
+  - Place above J2 under the Pi (free area x 118-124, y 58-69, next to J2.27/28); about $0.20 and
+    15 solder joints per board.
+  - Content: vendor, product, `product_ver` (board revision), UUID; no device-tree overlay at
+    first. Written once per board with the Pi's `eepmake` / `eepflash.sh -t=24c64`, source file
+    kept in this repo. Light vs. full is not stored (an upgrade would make it wrong); aquaPi's I²C
+    scan already tells them apart.
+  - aquaPi side (software session): read `/proc/device-tree/hat/product` and `product_ver` to
+    select the board profile; keep I²C bus 0 free.
 - **Pluggable wiring.** Box headers for module cables (Robo-Tank v3 modules via RJ45 adapter
   cables), so a controller can be swapped without rewiring - see [v2 plan](#v2-plan-robo-tank-v3-compatible-head-unit).
 - **0-10 V / PCA9685**: PCA9685s on board, 0-10 V as an optional add-on module - see
@@ -1133,6 +1148,8 @@ v2 ([Robo-Tank v3 compatible head unit](#v2-plan-robo-tank-v3-compatible-head-un
 6. 0-10 V add-on module
 7. [First prototype order](#first-prototype-order-5-light-boards-2-upgrade-kits): 5 light boards,
    2 upgrade kits – planned, not ordered yet; then bring-up as in v1 steps 5 and 6
+8. Future revision (v2.1): ID EEPROM on GPIO 0/1 (see "ID EEPROM on GPIO 0/1" in the v1
+   selection notes), plus whatever the prototypes show
 
 ## Licence
 
