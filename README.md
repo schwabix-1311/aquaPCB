@@ -5,7 +5,8 @@ modular aquarium controller. v2 is a head unit that also fits Robo-Tank v3 modul
 and power bars (through adapter cables): one board with a 12-24 V supply input, six 5 A
 power outputs, DC and LED ports with 7 PWM channels each, two power bar ports, six sensor
 inputs, 1-Wire, four 0-5 V analog sockets on an ADS1115, and headers for a small display
-and I²C add-ons.
+and I²C add-ons. A cheaper **light** assembly of the same PCB is for aquaPi only - it is
+**not** a Robo-Tank replacement (see [Light variant](#light-variant-aquapi-only)).
 
 Most channels are plain GPIO, hardware PWM, 1-Wire or I²C ports that aquaPi discovers by
 itself and offers in its Wiring editor. The channels on the two PCA9685 PWM expanders
@@ -394,6 +395,10 @@ terminals, but adds two PCA9685, two buffers, eight resistor arrays and the box 
 order 10 boards (~€30 each), or build the light variant below.
 
 ### Light variant (aquaPi only)
+
+> **Not a Robo-Tank replacement:** only the full variant replaces a Robo-Tank v3 head unit. The
+> light variant has no DC/LED ports, power bar ports, floats or feeder supply and no PCA9685, so
+> Robo-Tank modules, cables, power bars and reef-pi setups for them don't work with it.
 
 Same PCB and Gerbers, fewer parts: everything that only serves Robo-Tank modules, power bars, floats
 and the feeder stays unpopulated (DNP):
@@ -848,6 +853,8 @@ Based on the AMC3311 data sheet (TI SBASAQ5A) and TLV9062 data sheet, checked 20
 
 ### Robo-Tank v3 -> aquaPCB v2 mapping
 
+Applies to the **full** variant only; the light variant is not a Robo-Tank replacement.
+
 ```
 Robo-Tank v3            aquaPCB v2              reef-pi setting on aquaPCB v2
 DC Ports RJ45           DC header + adapter     PCA9685 ch as on v3, address 0x40
@@ -988,6 +995,8 @@ numbered right to left.
 supply on aquaPCB (JP1 open), see [current budget](#current-budget-and-copper).
 
 ### aquaPCB for reef-pi
+
+Applies to the **full** variant only; the light variant has no PCA9685 and is for aquaPi only.
 
 Checked 2026-10-26 against the reef-pi source: the PCA9685 driver offers `PWM` **and** `DigitalOutput`
 (so a channel can be a jack or an outlet, address is a parameter), the ADS1x15 driver offers
