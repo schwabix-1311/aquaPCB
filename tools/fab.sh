@@ -20,9 +20,9 @@ kicad-cli pcb export drill --format excellon --excellon-units mm --excellon-zero
   --excellon-oval-format alternate --excellon-separate-th --generate-map --map-format pdf -o "$OUT/gerbers/" "$PCB" >/dev/null
 (cd "$OUT/gerbers" && zip -q -j "$OUT/aquaPCB-gerbers.zip" ./*.g?? ./*.gm1 ./*.drl)
 
-# 3) assembly: CPL (SMD only, no DNP) and the matching JLC BOM
-kicad-cli pcb export pos --format csv --units mm --side front --smd-only --exclude-dnp -o "$TMP/pos.csv" "$PCB" >/dev/null
-kicad-cli sch export bom --fields 'Reference,Value,Footprint,LCSC' --group-by '' -o "$TMP/bom.csv" "$SCH" >/dev/null
+# 3) assembly: CPL (SMD only) and the matching JLC BOM; DNP parts are filtered per variant below
+kicad-cli pcb export pos --format csv --units mm --side front --smd-only -o "$TMP/pos.csv" "$PCB" >/dev/null
+kicad-cli sch export bom --fields 'Reference,Value,Footprint,LCSC,${DNP}' --group-by '' -o "$TMP/bom.csv" "$SCH" >/dev/null
 python3 - "$TMP/pos.csv" "$TMP/bom.csv" "$OUT" <<'PY'
 import csv, sys, collections
 pos, bom, out = sys.argv[1:4]
@@ -32,9 +32,12 @@ fields = {r['Reference']: r for r in csv.DictReader(open(bom))}
 # checked 2026-10-24 against the EasyEDA footprints (pin 1 / cathode / tab direction); parts not listed: 0.
 ROT = {'C5978': 270, 'C131088': 270, 'C37593': 270, 'C524806': 270, 'C25506': 270,   # SOIC/TSSOP/MSOP, R arrays
        'C7420333': 180, 'C400894': 180, 'C5359358': 180, 'C6186': 180}                 # SOT-23, DPAK P-FETs, SOT-223
-# Light variant (aquaPi only, see README "Light variant"): same PCB, these parts stay unpopulated
-LIGHT_DNP = {'U8', 'U9', 'U10', 'U11', 'RN1', 'RN2', 'RN3', 'RN4', 'RN5', 'RN6', 'RN7', 'RN8',
+# Light variant (aquaPi only, see README "Light variant"): same PCB, these parts stay unpopulated ...
+LIGHT_DNP = {'U7', 'C20', 'U8', 'U9', 'U10', 'U11', 'RN1', 'RN2', 'RN3', 'RN4', 'RN5', 'RN6', 'RN7', 'RN8',
              'C21', 'C22', 'C23', 'C25', 'R53', 'R54'}     # SMD; THT J28-J33 are hand-fitted anyway
+# ... and these, DNP in the schematic (full board), are fitted: 1k GPIO taps for Q2/Q3/Q5/Q6 without U7
+LIGHT_ADD = {'R69', 'R70', 'R71', 'R72'}
+def dnp(ref): return bool((fields.get(ref) or {}).get('DNP', '').strip())
 def natural(s): return (s.rstrip('0123456789'), int(s[len(s.rstrip('0123456789')):] or 0))
 def write(cpl, bom, rows):
     with open(cpl, 'w', newline='') as f:
@@ -51,12 +54,12 @@ def write(cpl, bom, rows):
         w = csv.writer(f); w.writerow(['Comment', 'Designator', 'Footprint', 'LCSC Part #'])
         for (val, fp, lc), refs in groups.items(): w.writerow([val, ','.join(sorted(refs, key=natural)), fp, lc])
     return len(rows), len(groups), missing
-n, g, missing = write(f'{out}/aquaPCB-cpl-jlc.csv', f'{out}/aquaPCB-bom-jlc.csv', P)
+n, g, missing = write(f'{out}/aquaPCB-cpl-jlc.csv', f'{out}/aquaPCB-bom-jlc.csv', [r for r in P if not dnp(r['Ref'])])
 print(f'CPL {n} parts, BOM {g} lines' + (f', WITHOUT LCSC: {missing}' if missing else ''))
-absent = LIGHT_DNP - {r['Ref'] for r in P}
-if absent: print(f'LIGHT_DNP refs not on the board: {sorted(absent)}'); sys.exit(1)
+absent = (LIGHT_DNP | LIGHT_ADD) - {r['Ref'] for r in P}
+if absent: print(f'LIGHT_DNP/LIGHT_ADD refs not on the board: {sorted(absent)}'); sys.exit(1)
 n, g, _ = write(f'{out}/light/aquaPCB-light-cpl-jlc.csv', f'{out}/light/aquaPCB-light-bom-jlc.csv',
-                [r for r in P if r['Ref'] not in LIGHT_DNP])
+                [r for r in P if r['Ref'] in LIGHT_ADD or (not dnp(r['Ref']) and r['Ref'] not in LIGHT_DNP)])
 print(f'light: CPL {n} parts, BOM {g} lines')
 if missing: sys.exit(1)
 PY

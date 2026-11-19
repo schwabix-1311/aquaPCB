@@ -376,16 +376,16 @@ shipping and import charges are estimates.
 per board                                full v2             light (aquaPi only)
                                          batch 5  batch 10   batch 5  batch 10
   PCB 100x100, 2 layers                  ~ €2     ~ €1.5     ~ €2     ~ €1.5
-  SMD parts (LCSC, checked)              ~ €14    ~ €13      ~ €10    ~ €9
-  PCBA setup + extended-part fees        ~ €7     ~ €3.5     ~ €6     ~ €3
-    (10 extended parts, light 8), share
+  SMD parts (LCSC, checked)              ~ €14    ~ €13      ~ €7     ~ €6.5
+  PCBA setup + extended-part fees        ~ €7     ~ €3.5     ~ €5.5   ~ €3
+    (10 extended parts, light 7), share
   THT parts (LCSC: terminals, box
     headers, fuse; Reichelt: Pi header,
     pin headers; C1 Mouser/DigiKey)      ~ €5.5   ~ €5.5     ~ €5     ~ €5
   shipping JLC + Reichelt, share         ~ €5     ~ €2.5     ~ €5     ~ €2.5
   EU import VAT 19 % + €3 duty/category  ~ €5     ~ €4.5     ~ €4     ~ €3.5
   ------------------------------------------------------------------------------
-                                         ~ €38    ~ €30      ~ €32    ~ €25
+                                         ~ €38    ~ €30      ~ €28.5  ~ €22
 ```
 
 v2 meets the **≤ €40 per board** target at batch 5 (v1: about €35 / €27). The two PCA9685
@@ -398,20 +398,42 @@ order 10 boards (~€30 each), or build the light variant below.
 Same PCB and Gerbers, fewer parts: everything that only serves Robo-Tank modules, power bars, floats
 and the feeder stays unpopulated (DNP):
 
-- PCA #2 path: U10, RN5-RN8, C23, R53, R54, U11 + C25 (+3V3_EXT), J30-J33.
+- PCA #1 and #2: U7 + C20, U10, RN5-RN8, C23, R53, R54, U11 + C25 (+3V3_EXT), J30-J33.
 - DC/LED ports: U8, U9 (74HCT244PW), RN1-RN4, C21, C22, J28, J29.
 
-PCA #1 (U7) stays: it drives Q2/Q3/Q5/Q6. The light board keeps the 6 power outputs, the 4 analog
-sockets, 1-Wire, the 6 sensor inputs and I²C, which covers v1 except its four SSR outputs (SSRs go on
-Q outputs, as in v2). It loses Leviathan/Robo-Tank/reef-pi compatibility of the DC, LED and power bar
-ports. The silkscreen of the unpopulated headers stays.
+Instead of U7, four 1 kΩ taps R69-R72 (DNP on the full board, fitted only in the light BOM) drive
+Q2/Q3/Q5/Q6 from Pi GPIOs into the same gate buffer inputs; the 10 kΩ pull-downs keep the outputs
+off while the Pi boots, as before:
 
-Saving: about €6 per board at batch 5 (SMD ≈ $4.20, solder joints ≈ $0.25, two extended-part fees
-≈ $6 per order, THT ≈ $0.45).
+```
+output   light board (R69-R72 fitted, no U7)    full board (U7 fitted, R69-R72 not)
+Q1, Q4   "PWM 0", "PWM 1" (hardware PWM)        same
+Q2       GPIO 16 via R70 -> "GPIO 16 out"       "PCA9685 #1 CH15 PWM" / "... out"
+Q3       GPIO 26 via R69 -> "GPIO 26 out"       "PCA9685 #1 CH14 PWM" / "... out"
+Q5       GPIO 13 via R71 -> "GPIO 13 out"       "PCA9685 #1 CH13 PWM" / "... out"
+Q6       GPIO 12 via R72 -> "GPIO 12 out"       "PCA9685 #1 CH12 PWM" / "... out"
+```
 
-Upgrading a light board to the full version needs only hand soldering: 2× TSSOP-20 + 1× TSSOP-28
-(0.65 mm pitch), 8 resistor arrays (4× 0603), one SOT-223, four 0805 capacitors, two 0603 resistors
-and six through-hole headers. The stencil still prints paste on the empty pads, so after assembly
+So the light board has 2 dimmable outputs (Q1, Q4) and 4 on/off outputs (pumps, CO2, heater), as
+v1; more dimmable outputs are a reason for the full version. It needs no I²C chip to switch its
+outputs. If R69-R72 and U7 are both fitted, the 1 kΩ limits the conflict to about 3 mA, but remove
+the taps when upgrading - otherwise aquaPi offers a GPIO port and a PCA port for the same output.
+The light board keeps the 6 power outputs, the 4 analog sockets, 1-Wire, the 6 sensor inputs and
+I²C, which covers v1 except its four SSR outputs (SSRs go on Q outputs, as in v2). It loses
+Leviathan/Robo-Tank/reef-pi compatibility of the DC, LED and power bar ports.
+
+Both variants share one silkscreen, so an upgraded board stays correctly labelled: the front labels
+of Q2/Q3/Q5/Q6 name both sources (`ch15/GPIO16` = PCA #1 channel on the full board / GPIO on the
+light board), the back labels say `PCA#1 ch15 ≙ LED 2` and `light: GPIO16`, and the silkscreen of
+the unpopulated headers stays. A check box `□ light □ full` between the board name and the copyright
+is ticked with a pen after assembly and changed on upgrade.
+
+Saving: about €9.5 per board at batch 5 (SMD ≈ $7.55, solder joints ≈ $0.30, three extended-part
+fees ≈ $9 per order, THT ≈ $0.45).
+
+Upgrading a light board to the full version needs only hand soldering: remove R69-R72 (4× 0603),
+then fit 2× TSSOP-20 + 2× TSSOP-28 (0.65 mm pitch), 8 resistor arrays (4× 0603), one SOT-223, five
+0805 capacitors, two 0603 resistors and six through-hole headers, and tick `full` on the silkscreen. The stencil still prints paste on the empty pads, so after assembly
 they are tinned; flatten them with solder wick before fitting a TSSOP. A fine tip, flux and wick are
 enough.
 
@@ -420,17 +442,17 @@ Where to get the upgrade parts (checked 2026-11-17):
 - **With the board order:** loose from LCSC (LCSC numbers in the [BOM.md](BOM.md) light table),
   shipped together with the JLC order.
 - **Later:** Mouser has the whole kit in stock from 1 piece, German VAT at checkout, no customs.
-  About €12 per kit incl. VAT; shipping is free from €75, below that about €25. Reichelt doesn't
+  About €16 per kit incl. VAT; shipping is free from €75, below that about €25. Reichelt doesn't
   stock the PCA9685PW, the 74HCT244 in TSSOP-20 or the 2×4 box header; TME has the PCA9685PW only
   in reels of 2500; a standalone LCSC order is delivered with import VAT and fees still to pay.
 
 ```
 qty  part                           Mouser / manufacturer part number      €/pc net
-1    PCA9685, TSSOP-28              NXP PCA9685PW/Q900,118 (or PCA9685PW,118) 3.76
+2    PCA9685, TSSOP-28              NXP PCA9685PW/Q900,118 (or PCA9685PW,118) 3.76
 2    74HCT244, TSSOP-20             Nexperia 74HCT244PW,118                0.37
 8    4×100 Ω array, 0603×4          Bourns CAY16-101J4LF                   0.09
 1    3.3 V LDO, SOT-223             onsemi NCP1117ST33T3G (AMS1117 pinout) 0.57
-3    100 nF 50 V X7R 0805           Samsung CL21B104KBCNNNC                0.09
+4    100 nF 50 V X7R 0805           Samsung CL21B104KBCNNNC                0.09
 1    10 µF 25 V X5R 0805            Samsung CL21A106KAYNNNF                0.32
 2    10 kΩ 1 % 0603                 Yageo RC0603FR-0710KL                  0.11
 2    box header 2×4, straight       Würth 61200821621                      0.96
@@ -454,7 +476,7 @@ Reichelt order is needed; pin headers from stock.
 
 1. JLC: `fab/aquaPCB-gerbers.zip`, 5 boards, assemble all 5 with `fab/light/aquaPCB-light-bom-jlc.csv`
    and `fab/light/aquaPCB-light-cpl-jlc.csv`. In the 3D preview, check the orientation of U1, U3, U5,
-   U7, the diodes and the SOT-23 parts.
+   the diodes and the SOT-23 parts.
 2. LCSC, loose, combined with the JLC order:
 
 ```
@@ -467,21 +489,21 @@ C2902875   Rubycon 50ZLJ470M10X20, 470 uF 50 V, 10x20     5    C1 (MOQ 5)
 C2977589   female header 2x20, 8.5 mm, straight          5    J2, Pi Zero socket (ZHOURI)
 C100114    shunt 2.54 mm, closed top                     10    JP1 (5) + float bridges (4)
 2 upgrade kits
-C2678753   PCA9685PW                                      2    U10
+C2678753   PCA9685PW                                      4    U7, U10
 C131088    74HCT244PW                                     5    U8, U9 (4; multiples of 5)
 C25506     4x100 R array                                 16    RN1-RN8
 C6186      AMS1117-3.3                                    2    U11
-C49678     100 nF 50 V X7R 0805                           6    C21-C23
+C49678     100 nF 50 V X7R 0805                           8    C20-C23
 C15850     10 uF 25 V X5R 0805                            2    C25
 C25804     10 k 1 % 0603                                  4    R53, R54
 C2977596   box header 2x5, keyed (low stock;              4    J32, J33
            alt. C49261191 grey)
 ```
 
-Rough cost of the loose parts: about $25 plus import VAT; passives may come in larger minimum
+Rough cost of the loose parts: about $32 plus import VAT; passives may come in larger minimum
 quantities. LCSC numbers for C1, J2 and the shunts are from search results (2026-11-17) - check
-stock and price in the LCSC cart. After an upgrade, aquaPi's I²C scan must find both PCA9685
-(0x40 and 0x41).
+stock and price in the LCSC cart. An upgrade starts with removing R69-R72; afterwards aquaPi's
+I²C scan must find both PCA9685 (0x40 and 0x41).
 
 #### Checking part orientation at JLC
 
@@ -499,7 +521,6 @@ part                          mark                                   offset in f
 U1  TPS54360, SO-8 PowerPAD   pin-1 dot, thermal pad centred          +270°
 U3  74HCT244, SOIC-20         pin 1 at the triangle                   +270°
 U5  ADS1115, VSSOP-10         pin 1 at the triangle                   +270°
-U7  PCA9685, TSSOP-28         pin 1 at the triangle                   none  <- check closely
 U2  AMS1117, SOT-223          large tab on the silkscreen tab         +180°
 Q10 DMP4010, DPAK             tab (drain) on the silkscreen tab       +180°
 Q1-Q6 AOD4184A, DPAK          tab towards the output terminals        none  <- check closely
@@ -508,7 +529,9 @@ D4, D6-D16 SS54, SMA          cathode band to the silkscreen bar      none
 D1 zener, D2 TVS              cathode band                            none  <- check (new part)
 L1 SMDRI127, 12.3 mm square   both pads on the two large pads         none  <- check (new part)
 LEDs 0805                     cathode to the silkscreen bar/line      none
-full version also: U8/U9 (TSSOP-20, +270°), U10 (as U7), U11 (as U2), RN1-RN8 (+270°)
+R69-R72 1 kΩ 0603 (light only) not polarised                         none
+full version also: U7/U10 (PCA9685, TSSOP-28, pin 1 at the triangle, no offset <- check
+closely), U8/U9 (TSSOP-20, +270°), U11 (as U2), RN1-RN8 (+270°)
 ```
 
 The offsets in `tools/fab.sh` were checked against the EasyEDA footprints (2026-10-24), not yet
@@ -631,6 +654,8 @@ Design rules behind this table:
   owner keeps the LED port. Caveat: a shared pair always switches together - whoever uses
   LED port 1..4 for a Robo-Tank module leaves Q2/Q3/Q5/Q6 unconnected. This frees GPIO 12,
   13, 16, 26. Boot safety: the PCA9685 starts with all outputs off; the gate buffer's pull-downs stay.
+  The light variant (2026-11-19) leaves U7 out and drives Q2/Q3/Q5/Q6 from GPIO 16/26/13/12 through
+  the 1 kΩ taps R69-R72 instead (on/off only, see [Light variant](#light-variant-aquapi-only)).
 - **PCA #2 drives the 16 power bar outputs.** They start up off, so nothing switches while the
   Pi boots - unlike v3, where the bar pins are raw GPIOs including boot-time pull-ups.
   Addresses fixed: PCA #1 0x40, PCA #2 0x41 (decided 2026-10-13); keep the PCA9685 All-Call
@@ -832,7 +857,8 @@ Checked 2026-10-23 against the Robo-Tank v3 manual "Controller and its ports" (l
 the PCA9685 channel. aquaPi port names are the IoRegistry names; every PCA9685 channel is offered twice, as
 `PCA9685 #1 CH15 PWM` (dimming) and `PCA9685 #1 CH15 out` (on/off), the tables list the PWM one.
 The #1/#2 count the chips aquaPi finds, in address order (0x40, 0x41). The board silkscreen uses them
-shortened (`PCA#1 ch15`).
+shortened (`PCA#1 ch15` on the back; `ch15/GPIO16` on the front, which also names the light board's
+GPIO).
 
 **DC ports - identical.** Same pins, same channels (PCA #1, 0x40), so v3 cables, the DC Ports module
 and existing reef-pi settings keep working. The irregular channel order is Robo-Tank's.
@@ -873,11 +899,11 @@ each, 6.5 A in total (up to about 7 A, see [current budget](#current-budget-and-
 ```
 output   terminal   driven by                  aquaPi port
 Q1       J4         GPIO 18, hardware PWM0     "PWM 0"
-Q2       J5         PCA #1 ch 15 (LED pin 2)   "PCA9685 #1 CH15 PWM"
-Q3       J6         PCA #1 ch 14 (LED pin 3)   "PCA9685 #1 CH14 PWM"
+Q2       J5         PCA #1 ch 15 (LED pin 2)   "PCA9685 #1 CH15 PWM"    light: "GPIO 16 out"
+Q3       J6         PCA #1 ch 14 (LED pin 3)   "PCA9685 #1 CH14 PWM"    light: "GPIO 26 out"
 Q4       J7         GPIO 19, hardware PWM1     "PWM 1"
-Q5       J8         PCA #1 ch 13 (LED pin 4)   "PCA9685 #1 CH13 PWM"
-Q6       J9         PCA #1 ch 12 (LED pin 5)   "PCA9685 #1 CH12 PWM"
+Q5       J8         PCA #1 ch 13 (LED pin 4)   "PCA9685 #1 CH13 PWM"    light: "GPIO 13 out"
+Q6       J9         PCA #1 ch 12 (LED pin 5)   "PCA9685 #1 CH12 PWM"    light: "GPIO 12 out"
 ```
 
 **Power bars - same plug, different driver.** The DB9 pinout is unchanged (1..4 = outlet 1..4,
@@ -1016,7 +1042,8 @@ function          v1: GPIO / aquaPi port             v2: GPIO / aquaPi port
 Q1 power out      GPIO 18, PWM0 -> "PWM 0"           unchanged
 Q4 power out      GPIO 19, PWM1 -> "PWM 1"           unchanged
 Q2,Q3,Q5,Q6       GPIO 12,13,16,26 -> "GPIO n out"   PCA9685 #1 ch 15,14,13,12, shared with
-                                                     LED ports 1..4 -> "PCA9685 #1 CHn PWM"
+                                                     LED ports 1..4 -> "PCA9685 #1 CHn PWM";
+                                                     light: GPIO 16,26,13,12 -> "GPIO n out"
 S1..S4 SSR out    GPIO 17,22,23,27 -> "GPIO n out"   dropped (SSRs go on Q outputs)
 IN1..IN4          GPIO 5,6,20,21 -> "GPIO n in"      replaced by sensor header (6 inputs):
                                                      GPIO 5,6,20,21,22,23 -> "GPIO n in"
@@ -1040,7 +1067,8 @@ I2C addresses     ADS1115 0x48                       + PCA9685 #1 0x40, #2 0x41 
                                                      keep 0x70 (All-Call) free
 display SPI       GPIO 7..11, 24, 25                 open: not decided for v2
 GPIO 0/1, 14/15   ID EEPROM reserved / unused        unchanged
-free GPIOs        -                                  12,13,16,17,26,27 (after [S] sensor pins)
+free GPIOs        -                                  12,13,16,17,26,27 (after [S] sensor pins);
+                                                     light board: 17, 27
 ```
 
 Active parts on the main board:

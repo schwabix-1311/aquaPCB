@@ -119,17 +119,21 @@ without these parts (see README "Light variant" for what the board can still do)
 
 | Qty | Not populated | Refs | $/board |
 |---:|---|---|---:|
-| 1 | PCA9685PW (PCA #2, power bars) | U10 | 3.33 |
+| 2 | PCA9685PW (PCA #1 and #2) | U7, U10 | 6.67 |
 | 2 | 74HCT244PW (DC/LED port buffers) | U8, U9 | 0.50 |
 | 1 | AMS1117-3.3 (+3V3_EXT, feeder) | U11 | 0.20 |
 | 8 | 4×100 Ω arrays | RN1–RN8 | 0.06 |
-| 4 | 100 nF (3), 10 µF (1) | C21, C22, C23, C25 | 0.11 |
+| 5 | 100 nF (4), 10 µF (1) | C20, C21, C22, C23, C25 | 0.13 |
 | 2 | 10 kΩ 0603 float pull-downs | R53, R54 | 0.004 |
 | 2 + 2 | box headers 2×4 (DC, LED), 2×5 (power bars) | J28, J29, J32, J33 | 0.30 |
 | 2 + 2 | float pin headers + shunts | J30, J31 | ≈ €0.15 |
 
-SMD ≈ **$4.20 less per board** (light: ≈ $10.90), ≈ 148 fewer solder joints, and two extended
-parts fewer (74HCT244PW C131088, arrays C25506: 8 instead of 10 → ≈ $6 less per order).
+Fitted only in the light BOM (DNP in the schematic, i.e. on the full board): 4× 1 kΩ 0603
+(C21190, basic) R69–R72, GPIO taps for Q2/Q3/Q5/Q6 instead of PCA #1 (see README "Light variant").
+
+SMD ≈ **$7.55 less per board** (light: ≈ $7.55), ≈ 180 fewer solder joints, and three extended
+parts fewer (PCA9685PW C2678753, 74HCT244PW C131088, arrays C25506: 7 instead of 10 → ≈ $9 less per
+order). The light board doesn't depend on PCA9685 stock.
 
 ## Changes from v1
 
