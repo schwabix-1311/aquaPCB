@@ -111,7 +111,7 @@ Raspberry Pi OS settings: `dtoverlay=pwm-2chan,pin=18,func=2,pin2=19,func2=2`,
 
 ### 5 V and 3.3 V
 - Buck converter TPS54360B (60 V input, 3.5 A), non-synchronous with SS54 catch diode and
-  10 µH / 4.8 A inductor, set to 5 V / 3 A. 3 A covers Pi Zero 2 W through Pi 4.
+  10 µH / 5.4 A inductor, set to 5 V / 3 A. 3 A covers Pi Zero 2 W through Pi 4.
   Based on TI's 5 V design example (datasheet SNVSB93, fig. 32), values moved to JLC basic
   parts: RT 150 k (644 kHz), feedback 12 k / 2.2 k (5.16 V), compensation 12 k + 10 nF,
   47 pF, 2x 47 µF output. EN left open (internal 4.3 V UVLO).
@@ -504,14 +504,15 @@ Q1-Q6 AOD4184A, DPAK          tab towards the output terminals        none  <- c
 D26-D36 BAT54S, SOT-23        1 pin on one side, 2 on the other       +180° <- check (new part)
 D4, D6-D16 SS54, SMA          cathode band to the silkscreen bar      none
 D1 zener, D2 TVS              cathode band                            none  <- check (new part)
+L1 SMDRI127, 12.3 mm square   both pads on the two large pads         none  <- check (new part)
 LEDs 0805                     cathode to the silkscreen bar/line      none
 full version also: U8/U9 (TSSOP-20, +270°), U10 (as U7), U11 (as U2), RN1-RN8 (+270°)
 ```
 
 The offsets in `tools/fab.sh` were checked against the EasyEDA footprints (2026-10-24), not yet
-against assembled boards; parts without an offset assume KiCad and JLC orientation agree. D1, D2 and
-D26-D36 changed to other LCSC parts on 2026-11-19 (same package; the BAT54S keeps the SOT-23
-offset), their EasyEDA footprints are unchecked. If the
+against assembled boards; parts without an offset assume KiCad and JLC orientation agree. D1, D2,
+D26-D36 and L1 changed to other LCSC parts on 2026-11-19 (the BAT54S keeps the SOT-23 offset),
+their EasyEDA footprints are unchecked. If the
 preview shows a part turned, rotate it there for this order and correct the `ROT` table in
 `tools/fab.sh` (offset per LCSC number) for the next one.
 

@@ -34556,7 +34556,7 @@
 			)
 		)
 	)
-	(footprint "Inductor_SMD:L_TDK_SLF12565"
+	(footprint "aquaPCB:L_SLF12565_CDRH127"
 		(layer "F.Cu")
 		(uuid "e567d447-e8e9-48e2-a0ab-939953cea82a")
 		(at 156.35 87.175)
@@ -34618,7 +34618,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C138303"
+		(property "LCSC" "C9904"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -34654,7 +34654,7 @@
 			(uuid "1e99f4aa-27aa-4828-a2dc-ccd2e6d42d10")
 		)
 		(fp_line
-			(start -6.36 -1.86)
+			(start -6.36 -2.46)
 			(end -6.36 -6.36)
 			(stroke
 				(width 0.12)
@@ -34665,7 +34665,7 @@
 		)
 		(fp_line
 			(start -6.36 6.36)
-			(end -6.36 1.86)
+			(end -6.36 2.46)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -34685,7 +34685,7 @@
 		)
 		(fp_line
 			(start 6.36 -6.36)
-			(end 6.36 -1.86)
+			(end 6.36 -2.46)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -34694,7 +34694,7 @@
 			(uuid "92b552bb-bb6b-4008-8218-d401f6ae00b7")
 		)
 		(fp_line
-			(start 6.36 1.86)
+			(start 6.36 2.46)
 			(end 6.36 6.36)
 			(stroke
 				(width 0.12)
@@ -34726,8 +34726,8 @@
 			(uuid "30e9afa2-b42e-4308-a20f-bf3e170e7a19")
 		)
 		(fp_line
-			(start -7.1 -1.85)
-			(end -6.5 -1.85)
+			(start -7.1 -2.45)
+			(end -6.5 -2.45)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -34736,8 +34736,8 @@
 			(uuid "85197edd-beef-49ab-8c9a-584f591317b5")
 		)
 		(fp_line
-			(start -7.1 1.85)
-			(end -7.1 -1.85)
+			(start -7.1 2.45)
+			(end -7.1 -2.45)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -34756,7 +34756,7 @@
 			(uuid "da944c72-3a24-4dc6-b878-4934e0138ea1")
 		)
 		(fp_line
-			(start -6.5 -1.85)
+			(start -6.5 -2.45)
 			(end -6.5 -6.5)
 			(stroke
 				(width 0.05)
@@ -34766,8 +34766,8 @@
 			(uuid "40e85da2-0db3-4688-a31e-2c47a2e0ae94")
 		)
 		(fp_line
-			(start -6.5 1.85)
-			(end -7.1 1.85)
+			(start -6.5 2.45)
+			(end -7.1 2.45)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -34777,7 +34777,7 @@
 		)
 		(fp_line
 			(start -6.5 6.5)
-			(end -6.5 1.85)
+			(end -6.5 2.45)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -34787,7 +34787,7 @@
 		)
 		(fp_line
 			(start 6.5 -6.5)
-			(end 6.5 -1.85)
+			(end 6.5 -2.45)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -34796,8 +34796,8 @@
 			(uuid "8e67abdf-7dea-422b-92e5-c1bd0bbcf3ba")
 		)
 		(fp_line
-			(start 6.5 -1.85)
-			(end 7.1 -1.85)
+			(start 6.5 -2.45)
+			(end 7.1 -2.45)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -34806,7 +34806,7 @@
 			(uuid "be4f8fec-d933-483b-b4a2-2b10820fa20d")
 		)
 		(fp_line
-			(start 6.5 1.85)
+			(start 6.5 2.45)
 			(end 6.5 6.5)
 			(stroke
 				(width 0.05)
@@ -34826,8 +34826,8 @@
 			(uuid "8b4ab237-0e97-404f-96ae-2b76058f4934")
 		)
 		(fp_line
-			(start 7.1 -1.85)
-			(end 7.1 1.85)
+			(start 7.1 -2.45)
+			(end 7.1 2.45)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -34836,8 +34836,8 @@
 			(uuid "3c53f4c2-1bbf-4d44-b33f-5c92d1bd472c")
 		)
 		(fp_line
-			(start 7.1 1.85)
-			(end 6.5 1.85)
+			(start 7.1 2.45)
+			(end 6.5 2.45)
 			(stroke
 				(width 0.05)
 				(type solid)
@@ -34879,20 +34879,20 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -5.55 0)
-			(size 2.6 3.2)
+			(at -5.175 0)
+			(size 3.35 4.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.096154)
+			(roundrect_rratio 0.074627)
 			(net "/Power supply/SW")
 			(pinfunction "1_1")
 			(pintype "passive")
 			(uuid "6091e459-cd5d-46f1-9ba1-1ca6bb7ab4d1")
 		)
 		(pad "2" smd roundrect
-			(at 5.55 0)
-			(size 2.6 3.2)
+			(at 5.175 0)
+			(size 3.35 4.4)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.096154)
+			(roundrect_rratio 0.074627)
 			(net "+5V")
 			(pinfunction "2_2")
 			(pintype "passive")

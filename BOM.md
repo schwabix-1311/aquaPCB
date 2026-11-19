@@ -20,7 +20,7 @@ Reichelt EUR incl. 19 % VAT.
 | Qty | Function | Part | Package | LCSC | Lib | Stock | $/pc |
 |---:|---|---|---|---|---|---:|---:|
 | 1 | 5 V buck, 60 V, 3.5 A (non-synchronous) | TI TPS54360BDDAR | SOIC-8-EP | C524806 | ext | 60 810 | 0.76 |
-| 1 | buck inductor 10 µH, 4.8 A, 20 mΩ | TDK SLF12565T-100M4R8-PF | 12.5×12.5 mm | C138303 | ext | 1 538 | 0.52 |
+| 1 | buck inductor 10 µH, 5.4 A, 21 mΩ (alternatives below) | SXN SMDRI127-100MT | 12.3×12.3×8 mm | C9904 | ext | 13 891 | 0.23 |
 | 7 | freewheel Q1–Q6 + buck catch diode, 40 V 5 A | SS54 | SMA | C22452 | **basic** | 2 M | 0.044 |
 | 6 | power switch Q1–Q6, 40 V, 7 mΩ@10 V | AOS AOD4184A | TO-252 | C99124 | ext | 15 834 | 0.35 |
 | 1 | reverse-polarity P-FET, −40 V, 9.9 mΩ | Diodes Inc. DMP4010SK3Q-13 | TO-252 | C5359358 | ext | 10 739 | 0.63 |
@@ -52,7 +52,7 @@ Reichelt EUR incl. 19 % VAT.
 | 1 | buck COMP 10 nF | X7R | 0805 | C1710 | basic | 1.4 M | 0.009 |
 | 1 | buck COMP 47 pF | C0G | 0805 | C14857 | basic | 103 426 | 0.008 |
 
-SMD parts ≈ **$15.38 per board**; the two PCA9685 alone are $6.67. Extended parts:
+SMD parts ≈ **$15.09 per board**; the two PCA9685 alone are $6.67. Extended parts:
 **10 unique** → ≈ $30 loading fees per order.
 
 2026-11-19: BAT54S, BZT52C15 and SMBJ33A moved to preferred-extended parts of the same type and
@@ -60,6 +60,14 @@ package (no fee; the old SMBJ33A C78419 was down to 2 681 in stock). No fee-free
 for the other extended parts: TPS54360B, L1, AOD4184A, DMP4010, ADS1115 and PCA9685 are deliberate
 choices; the nSMD110 PTC (no basic/preferred 1206 PTC at JLC) and the 74HCT244D (no basic/preferred
 74HCT244 in SOIC-20W) stay too.
+
+**L1** (2026-11-19): the TDK SLF12565T-100M4R8-PF (C138303) that the board was designed with is down to
+751 at JLC/LCSC, and no basic or preferred 10 µH power inductor of this size exists. L1 is now the SXN
+SMDRI127-100MT (C9904, 10 µH, 21 mΩ, Isat 5.4 A, $0.23) in the common CDRH127 size. The footprint
+`aquaPCB:L_SLF12565_CDRH127` carries pads for both: the SLF12565 pads extended 0.75 mm inward and to
+4.4 mm height, so the CDRH127 terminals (recommended pads 2.9×5.4 mm, 7.0 mm gap) land fully. Drop-in
+alternatives: SHOU HAN CYH127-10UH (C2929499, 23.4 mΩ, 5.4 A) or the TDK. 8.0 mm high (TDK 6.5 mm),
+fine outside the Pi area (L1 is not under the Zero).
 
 PCA9685PW stock is the tightest of the assembled parts (5 569 at LCSC); the automotive
 variant PCA9685PW/Q900,118 (C92206) is a drop-in fallback at a slightly higher price.
@@ -120,7 +128,7 @@ without these parts (see README "Light variant" for what the board can still do)
 | 2 + 2 | box headers 2×4 (DC, LED), 2×5 (power bars) | J28, J29, J32, J33 | 0.30 |
 | 2 + 2 | float pin headers + shunts | J30, J31 | ≈ €0.15 |
 
-SMD ≈ **$4.20 less per board** (light: ≈ $11.20), ≈ 148 fewer solder joints, and two extended
+SMD ≈ **$4.20 less per board** (light: ≈ $10.90), ≈ 148 fewer solder joints, and two extended
 parts fewer (74HCT244PW C131088, arrays C25506: 8 instead of 10 → ≈ $6 less per order).
 
 ## Changes from v1

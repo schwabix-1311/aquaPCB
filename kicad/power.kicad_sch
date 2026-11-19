@@ -6561,7 +6561,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_TDK_SLF12565"
+		(property "Footprint" "aquaPCB:L_SLF12565_CDRH127"
 			(at 129.54 146.05 0)
 			(hide yes)
 			(show_name no)
@@ -6594,7 +6594,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C138303"
+		(property "LCSC" "C9904"
 			(at 129.54 146.05 0)
 			(hide yes)
 			(show_name no)
