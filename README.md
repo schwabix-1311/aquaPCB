@@ -496,8 +496,7 @@ C6186      AMS1117-3.3                                    2    U11
 C49678     100 nF 50 V X7R 0805                           8    C20-C23
 C15850     10 uF 25 V X5R 0805                            2    C25
 C25804     10 k 1 % 0603                                  4    R53, R54
-C2977596   box header 2x5, keyed (low stock;              4    J32, J33
-           alt. C49261191 grey)
+C2977596   box header 2x5, keyed                         4    J32, J33
 ```
 
 Rough cost of the loose parts: about $32 plus import VAT; passives may come in larger minimum

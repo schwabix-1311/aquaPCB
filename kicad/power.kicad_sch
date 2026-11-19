@@ -6551,7 +6551,7 @@
 				)
 			)
 		)
-		(property "Value" "10uH 4.8A"
+		(property "Value" "10uH 5.4A"
 			(at 132.588 143.256 90)
 			(show_name no)
 			(do_not_autoplace no)

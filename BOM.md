@@ -27,10 +27,10 @@ Reichelt EUR incl. 19 % VAT.
 | 1 | P-FET gate clamp 15 V | BZT52C15 (hongjiacheng) | SOD-123 | C19077412 | pref | 507 933 | 0.018 |
 | 1 | input TVS 33 V, 600 W | SMBJ33A (hongjiacheng) | SMB | C19077586 | pref | 54 218 | 0.051 |
 | 1 | gate buffer Q1–Q6, 3.3 V → 5 V | Nexperia 74HCT244D,653 | SOIC-20 | C5978 | ext | 14 023 | 0.39 |
-| 2 | PWM expander 16 ch, I²C (#1 DC/LED + Q2/Q3/Q5/Q6, #2 power bars) | NXP PCA9685PW,118 | TSSOP-28 | C2678753 | ext | 5 569 | 3.33 |
+| 2 | PWM expander 16 ch, I²C (#1 DC/LED + Q2/Q3/Q5/Q6, #2 power bars) | NXP PCA9685PW,118 | TSSOP-28 | C2678753 | ext | 1 896 | 3.33 |
 | 2 | 0-5 V buffers for the 14 DC/LED port channels | Nexperia 74HCT244PW,118 | TSSOP-20 | C131088 | ext | 24 143 | 0.25 |
 | 8 | series resistors, 14 DC/LED + 16 power bar lines | 4×100 Ω array | 0603×4 | C25506 | ext | 162 715 | 0.008 |
-| 1 | ADC 16 bit, 4 ch, I²C | TI ADS1115IDGSR | VSSOP-10 | C37593 | ext | 4 397 | 1.51 |
+| 1 | ADC 16 bit, 4 ch, I²C | TI ADS1115IDGSR | VSSOP-10 | C37593 | ext | 2 791 | 1.51 |
 | 11 | clamps: 6 sensor inputs, 4 analog sockets, 1-Wire | BAT54S (hongjiacheng) | SOT-23 | C7420333 | pref | 402 535 | 0.013 |
 | 2 | 3.3 V LDO 1 A (+3V3, +3V3_EXT for the feeder) | AMS1117-3.3 | SOT-223 | C6186 | basic | 1.5 M | 0.20 |
 | 1 | PTC +5V_EXT (sensors, analog, 1-Wire, feeder via +3V3_EXT), hold 1.1 A, trip 2.2 A | nSMD110 | 1206 | C71465 | ext | 10 134 | 0.044 |
@@ -69,21 +69,24 @@ SMDRI127-100MT (C9904, 10 µH, 21 mΩ, Isat 5.4 A, $0.23) in the common CDRH127 
 alternatives: SHOU HAN CYH127-10UH (C2929499, 23.4 mΩ, 5.4 A) or the TDK. 8.0 mm high (TDK 6.5 mm),
 fine outside the Pi area (L1 is not under the Zero).
 
-PCA9685PW stock is the tightest of the assembled parts (5 569 at LCSC); the automotive
-variant PCA9685PW/Q900,118 (C92206) is a drop-in fallback at a slightly higher price.
+PCA9685PW stock is the tightest of the assembled parts and falling (1 896 at JLC/LCSC on
+2026-11-19, 5 569 a month earlier); the automotive variant PCA9685PW/Q900,118 (C92206, 395 in
+stock) is a drop-in fallback. The light board needs no PCA9685 at all.
+
+Stock figures in these tables are from 2026-10-23, updated 2026-11-19 where they changed a lot.
 
 ## THT and hand-soldered, LCSC
 
 | Qty | Function | Part | LCSC | Stock | $/pc |
 |---:|---|---|---|---:|---:|
 | 7 | V_IN, Q1–Q6 terminals: push-in spring, 2-pole, 3.5 mm, 8 A | Ningbo Kangnex WJ250B-3.5-02P-11-00A | C8454 | 22 733 | 0.12 |
-| 3 | DC, LED, sensor ports: box header 2×4, 2.54 mm, keyed | DC3-2.54-8PAS | C5156664 | 536 | 0.068 |
-| 2 | power bar ports: box header 2×5, 2.54 mm, keyed | DC3-2.54-10PAS | C2977596 | 57 | 0.083 |
+| 3 | DC, LED, sensor ports: box header 2×4, 2.54 mm, keyed | DC3-2.54-8PAS | C5156664 | 277 | 0.068 |
+| 2 | power bar ports: box header 2×5, 2.54 mm, keyed | DC3-2.54-10PAS | C2977596 | 7 715 | 0.083 |
 | 1 | input fuse, OMNI-BLOK holder incl. 10 A Nano2 fuse (large SMD) | Littelfuse 0154010.DR | C206921 | 3 408 | 1.76 |
-| (2) | alternative 2×5 box header, grey, more stock | DC3-2.54-10PAS-Grey | C49261191 | 236 | 0.12 |
+| (2) | alternative 2×5 box header, grey | DC3-2.54-10PAS-Grey | C49261191 | 184 | 0.12 |
 
-LCSC through-hole parts ≈ **$2.94 per board**. The 2×5 box header has low stock at LCSC;
-Reichelt's WSL 10G (below) fits the same footprint. Terminal footprints and wiring notes as in v1:
+LCSC through-hole parts ≈ **$2.94 per board**. The 2×4 box header is now the scarcer one at LCSC;
+Reichelt's WSL 10G (below) fits the 2×5 footprint. Terminal footprints and wiring notes as in v1:
 `aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered` has a hole in both pin rows for every
 pole, so Kangnex and MAX MX250-B terminals fit; rating 8 A (IEC) / 7 A (UL) per contact, which sets the
 board's total current.

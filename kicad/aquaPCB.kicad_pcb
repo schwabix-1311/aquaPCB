@@ -35059,7 +35059,7 @@
 				)
 			)
 		)
-		(property "Value" "10uH 4.8A"
+		(property "Value" "10uH 5.4A"
 			(at 6.15 -7.175 0)
 			(layer "F.Fab")
 			(uuid "25f0c6b0-190a-4c0a-b765-8f526c3164ef")
