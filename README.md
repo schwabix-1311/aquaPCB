@@ -376,16 +376,16 @@ shipping and import charges are estimates.
 per board                                full v2             light (aquaPi only)
                                          batch 5  batch 10   batch 5  batch 10
   PCB 100x100, 2 layers                  ~ €2     ~ €1.5     ~ €2     ~ €1.5
-  SMD parts (LCSC, checked)              ~ €14    ~ €13      ~ €7     ~ €6.5
-  PCBA setup + extended-part fees        ~ €7     ~ €3.5     ~ €5.5   ~ €3
-    (10 extended parts, light 7), share
+  SMD parts (LCSC, checked, incl. F1)    ~ €15.5  ~ €14.5    ~ €8.5   ~ €8
+  PCBA setup + extended-part fees        ~ €7.5   ~ €3.5     ~ €6     ~ €3
+    (11 extended parts, light 8), share
   THT parts (LCSC: terminals, box
-    headers, fuse; Reichelt: Pi header,
-    pin headers; C1 Mouser/DigiKey)      ~ €5.5   ~ €5.5     ~ €5     ~ €5
+    headers; Reichelt: Pi header,
+    pin headers; C1 Mouser/DigiKey)      ~ €4     ~ €4       ~ €3.5   ~ €3.5
   shipping JLC + Reichelt, share         ~ €5     ~ €2.5     ~ €5     ~ €2.5
   EU import VAT 19 % + €3 duty/category  ~ €5     ~ €4.5     ~ €4     ~ €3.5
   ------------------------------------------------------------------------------
-                                         ~ €38    ~ €30      ~ €28.5  ~ €22
+                                         ~ €39    ~ €30      ~ €29    ~ €22
 ```
 
 v2 meets the **≤ €40 per board** target at batch 5 (v1: about €35 / €27). The two PCA9685
@@ -428,7 +428,7 @@ light board), the back labels say `PCA#1 ch15 ≙ LED 2` and `light: GPIO16`, an
 the unpopulated headers stays. A check box `□ light □ full` between the board name and the copyright
 is ticked with a pen after assembly and changed on upgrade.
 
-Saving: about €9.5 per board at batch 5 (SMD ≈ $7.55, solder joints ≈ $0.30, three extended-part
+Saving: about €10 per board at batch 5 (SMD ≈ $7.55, solder joints ≈ $0.30, three extended-part
 fees ≈ $9 per order, THT ≈ $0.45).
 
 Upgrading a light board to the full version needs only hand soldering: remove R69-R72 (4× 0603),
@@ -484,7 +484,6 @@ LCSC       part                                         qty   for
 base parts, 5 boards
 C8454      push-in terminal 2-pole, 3.5 mm              35    J1, J4-J9
 C5156664   box header 2x4, keyed                         9    J34 (5) + J28/J29 upgrade (4)
-C206921    OMNI-BLOK fuse holder incl. 10 A fuse          5    F1
 C2902875   Rubycon 50ZLJ470M10X20, 470 uF 50 V, 10x20     5    C1 (MOQ 5)
 C2977589   female header 2x20, 8.5 mm, straight          5    J2, Pi Zero socket (ZHOURI)
 C100114    shunt 2.54 mm, closed top                     10    JP1 (5) + float bridges (4)
@@ -499,7 +498,7 @@ C25804     10 k 1 % 0603                                  4    R53, R54
 C2977596   box header 2x5, keyed                         4    J32, J33
 ```
 
-Rough cost of the loose parts: about $32 plus import VAT; passives may come in larger minimum
+Rough cost of the loose parts: about $23 plus import VAT; passives may come in larger minimum
 quantities. LCSC numbers for C1, J2 and the shunts are from search results (2026-11-17) - check
 stock and price in the LCSC cart. An upgrade starts with removing R69-R72; afterwards aquaPi's
 I²C scan must find both PCA9685 (0x40 and 0x41).

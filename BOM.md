@@ -24,6 +24,7 @@ Reichelt EUR incl. 19 % VAT.
 | 7 | freewheel Q1–Q6 + buck catch diode, 40 V 5 A | SS54 | SMA | C22452 | **basic** | 2 M | 0.044 |
 | 6 | power switch Q1–Q6, 40 V, 7 mΩ@10 V | AOS AOD4184A | TO-252 | C99124 | ext | 15 834 | 0.35 |
 | 1 | reverse-polarity P-FET, −40 V, 9.9 mΩ | Diodes Inc. DMP4010SK3Q-13 | TO-252 | C5359358 | ext | 10 739 | 0.63 |
+| 1 | input fuse F1, OMNI-BLOK holder incl. 10 A Nano2 fuse (large SMD) | Littelfuse 0154010.DR | SMD 9.7×5 mm | C206921 | ext | 4 288 | 1.76 |
 | 1 | P-FET gate clamp 15 V | BZT52C15 (hongjiacheng) | SOD-123 | C19077412 | pref | 507 933 | 0.018 |
 | 1 | input TVS 33 V, 600 W | SMBJ33A (hongjiacheng) | SMB | C19077586 | pref | 54 218 | 0.051 |
 | 1 | gate buffer Q1–Q6, 3.3 V → 5 V | Nexperia 74HCT244D,653 | SOIC-20 | C5978 | ext | 14 023 | 0.39 |
@@ -52,8 +53,9 @@ Reichelt EUR incl. 19 % VAT.
 | 1 | buck COMP 10 nF | X7R | 0805 | C1710 | basic | 1.4 M | 0.009 |
 | 1 | buck COMP 47 pF | C0G | 0805 | C14857 | basic | 103 426 | 0.008 |
 
-SMD parts ≈ **$15.09 per board**; the two PCA9685 alone are $6.67. Extended parts:
-**10 unique** → ≈ $30 loading fees per order.
+SMD parts ≈ **$16.85 per board**; the two PCA9685 alone are $6.67. Extended parts:
+**11 unique** → ≈ $33 loading fees per order. F1 is assembled by JLC too (decided
+2026-11-19; the earlier reflow concern was a solder mask opening at its pad, removed 2026-10-25).
 
 2026-11-19: BAT54S, BZT52C15 and SMBJ33A moved to preferred-extended parts of the same type and
 package (no fee; the old SMBJ33A C78419 was down to 2 681 in stock). No fee-free equivalent exists
@@ -75,17 +77,16 @@ stock) is a drop-in fallback. The light board needs no PCA9685 at all.
 
 Stock figures in these tables are from 2026-10-23, updated 2026-11-19 where they changed a lot.
 
-## THT and hand-soldered, LCSC
+## THT, LCSC
 
 | Qty | Function | Part | LCSC | Stock | $/pc |
 |---:|---|---|---|---:|---:|
 | 7 | V_IN, Q1–Q6 terminals: push-in spring, 2-pole, 3.5 mm, 8 A | Ningbo Kangnex WJ250B-3.5-02P-11-00A | C8454 | 22 733 | 0.12 |
 | 3 | DC, LED, sensor ports: box header 2×4, 2.54 mm, keyed | DC3-2.54-8PAS | C5156664 | 277 | 0.068 |
 | 2 | power bar ports: box header 2×5, 2.54 mm, keyed | DC3-2.54-10PAS | C2977596 | 7 715 | 0.083 |
-| 1 | input fuse, OMNI-BLOK holder incl. 10 A Nano2 fuse (large SMD) | Littelfuse 0154010.DR | C206921 | 3 408 | 1.76 |
 | (2) | alternative 2×5 box header, grey | DC3-2.54-10PAS-Grey | C49261191 | 184 | 0.12 |
 
-LCSC through-hole parts ≈ **$2.94 per board**. The 2×4 box header is now the scarcer one at LCSC;
+LCSC through-hole parts ≈ **$1.18 per board**. The 2×4 box header is now the scarcer one at LCSC;
 Reichelt's WSL 10G (below) fits the 2×5 footprint. Terminal footprints and wiring notes as in v1:
 `aquaPCB:TerminalBlock_Kangnex_WJ250B-3.5-02P_P3.50mm_Staggered` has a hole in both pin rows for every
 pole, so Kangnex and MAX MX250-B terminals fit; rating 8 A (IEC) / 7 A (UL) per contact, which sets the
@@ -134,8 +135,8 @@ without these parts (see README "Light variant" for what the board can still do)
 Fitted only in the light BOM (DNP in the schematic, i.e. on the full board): 4× 1 kΩ 0603
 (C21190, basic) R69–R72, GPIO taps for Q2/Q3/Q5/Q6 instead of PCA #1 (see README "Light variant").
 
-SMD ≈ **$7.55 less per board** (light: ≈ $7.55), ≈ 180 fewer solder joints, and three extended
-parts fewer (PCA9685PW C2678753, 74HCT244PW C131088, arrays C25506: 7 instead of 10 → ≈ $9 less per
+SMD ≈ **$7.55 less per board** (light: ≈ $9.30), ≈ 180 fewer solder joints, and three extended
+parts fewer (PCA9685PW C2678753, 74HCT244PW C131088, arrays C25506: 8 instead of 11 → ≈ $9 less per
 order). The light board doesn't depend on PCA9685 stock.
 
 ## Changes from v1
